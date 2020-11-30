@@ -27,8 +27,8 @@ Install
 %_desktopdir/kernel-manager.desktop
 
 Changelog
-* Mon Nov 30 2020 1.4
+* Mon Nov 30 2020 v1.4
 - New version
 
-* Thu Nov 26 2020 1.3
+* Thu Nov 26 2020 v1.3
 - initial build
