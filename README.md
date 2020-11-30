@@ -19,3 +19,26 @@ python3-base
 python3-module-PyQt5
 xdg-utils
 update-kernel
+
+Install
+mkdir -p %buildroot%_desktopdir
+mkdir -p %buildroot/opt/kernel-manager
+mv kernel-manager.desktop %buildroot%_desktopdir
+cp -r * %buildroot/opt/kernel-manager
+
+Files
+%_desktopdir/kernel-manager.desktop
+%attr(755,root,root)/opt/kernel-manager/kernel_manager.py
+/opt/kernel-manager/icons*
+/opt/kernel-manager/form*
+/opt/kernel-manager/mod*
+/opt/kernel-manager/LICENSE
+/opt/kernel-manager/README.md
+/opt/kernel-manager/resources.py
+
+Changelog
+* Mon Nov 30 2020 1.4
+- New version
+
+* Thu Nov 26 2020 1.3
+- initial build
