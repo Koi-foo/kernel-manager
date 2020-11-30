@@ -1,9 +1,7 @@
-#Specification
-
 Name: kernel-manage
 Version: 1.3
 License: GPL3
-Url: https://github.com/Koi-foo/kernel-manager-1.4/edit/main/README.md
+Url: https://github.com/Koi-foo/kernel-manager-1.4.git
 
 Summary: 
 Kernel Manage - kernel update program
