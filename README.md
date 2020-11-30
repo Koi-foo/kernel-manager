@@ -5,7 +5,7 @@ Source Code: https://github.com/Koi-foo/kernel-manager.git
 
 Summary:
 -------
-program for updating kernels in altlinux p9
+Program for updating kernels in altlinux p9
 
 Description:
 ------------
