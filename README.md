@@ -24,9 +24,11 @@ Install
 * /opt/kernel-manager
 * %_desktopdir/kernel-manager.desktop
 
+
 Changelog
 * Mon Nov 30 2020 v1.4
 - New version
+
 
 * Thu Nov 26 2020 v1.3
 - initial build
