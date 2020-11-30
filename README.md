@@ -19,11 +19,11 @@ Version Python 3
 
 Requires:
 ---------
-xterm
-python3-base
-python3-module-PyQt5
-xdg-utils
-update-kernel
+* xterm
+* python3-base
+* python3-module-PyQt5
+* xdg-utils
+* update-kernel
 
 Install
 -------
@@ -32,8 +32,8 @@ Install
 
 Changelog
 ---------
-- Mon Nov 30 2020 v1.4
-- New version
+* Mon Nov 30 2020 v1.4
+* New version
 
-- Thu Nov 26 2020 v1.3
-- initial build
+* Thu Nov 26 2020 v1.3
+* initial build
