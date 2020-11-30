@@ -3,7 +3,7 @@
 Name: kernel-manage
 Version: 1.3
 License: GPL3
-Url: https://yadi.sk/d/zffFtRhhjjDUd
+Url: https://github.com/Koi-foo/kernel-manager-1.4/edit/main/README.md
 
 Summary: 
 Kernel Manage - kernel update program
@@ -31,8 +31,8 @@ Requires: xdg-utils
 Requires: update-kernel
 
 Changelog:
-* Mon Nov 30 2020 Koi <eg.evgeniy@gmail.com> 1.4-alt1
+* Mon Nov 30 2020 1.4-alt1
 - New version
 
-* Thu Nov 26 2020 Koi <eg.evgeniy@gmail.com> 1.3-alt1
+* Thu Nov 26 2020 1.3-alt1
 - initial build
