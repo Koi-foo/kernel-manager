@@ -21,14 +21,12 @@ xdg-utils
 update-kernel
 
 Install
-mkdir -p %buildroot%_desktopdir
-mkdir -p %buildroot/opt/kernel-manager
-mv kernel-manager.desktop %buildroot%_desktopdir
-cp -r * %buildroot/opt/kernel-manager
+kernel-manager.desktop %buildroot%_desktopdir
+opt/kernel-manager
 
 Files
-%_desktopdir/kernel-manager.desktop
-%attr(755,root,root)/opt/kernel-manager/kernel_manager.py
+#%_desktopdir/kernel-manager.desktop
+/opt/kernel-manager/kernel_manager.py
 /opt/kernel-manager/icons*
 /opt/kernel-manager/form*
 /opt/kernel-manager/mod*
