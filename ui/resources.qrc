@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/picture">
+        <file>icons/kernel-manager.png</file>
+        <file>icons/what.png</file>
+    </qresource>
+</RCC>

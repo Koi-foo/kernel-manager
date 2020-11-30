@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Categories=System;Utility;Archiving;
+Exec=/usr/bin/xdg-su -c '/opt/kernel-manager/kernel_manager.py'
+Terminal=false
+Icon=/opt/kernel-manager/icons/kernel-manager.png
+Name=Kernel manager
+GenericName=Linux kernel update
+GenericName[ru]=Обновление ядра Linux
+Comment=Uses the command update-kernel
+Comment[ru]=Использует команду update-kernel
