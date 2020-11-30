@@ -22,9 +22,8 @@ update-kernel
 
 Install
 
-/opt/kernel-manager
-
-%_desktopdir/kernel-manager.desktop
+* /opt/kernel-manager
+* %_desktopdir/kernel-manager.desktop
 
 Changelog
 * Mon Nov 30 2020 v1.4
