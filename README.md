@@ -21,7 +21,6 @@ xdg-utils
 update-kernel
 
 Install
-
 * /opt/kernel-manager
 * %_desktopdir/kernel-manager.desktop
 
