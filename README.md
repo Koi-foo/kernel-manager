@@ -21,18 +21,7 @@ xdg-utils
 update-kernel
 
 Install
-kernel-manager.desktop %buildroot%_desktopdir
-opt/kernel-manager
-
-Files
-#%_desktopdir/kernel-manager.desktop
-/opt/kernel-manager/kernel_manager.py
-/opt/kernel-manager/icons*
-/opt/kernel-manager/form*
-/opt/kernel-manager/mod*
-/opt/kernel-manager/LICENSE
-/opt/kernel-manager/README.md
-/opt/kernel-manager/resources.py
+/opt/kernel-manager
 
 Changelog
 * Mon Nov 30 2020 1.4
