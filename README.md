@@ -21,6 +21,7 @@ xdg-utils
 update-kernel
 
 Install
+
 /opt/kernel-manager
 
 Changelog
