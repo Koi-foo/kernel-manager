@@ -23,10 +23,10 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Управление модулями ядер</string>
+   <string>Управление ядрами</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources.qrc">
+   <iconset>
     <normaloff>:/picture/icons/kernel-manager.png</normaloff>:/picture/icons/kernel-manager.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -53,7 +53,7 @@
       </property>
       <widget class="QWidget" name="Tab1_Question">
        <attribute name="icon">
-        <iconset resource="../resources.qrc">
+        <iconset>
          <normaloff>:/picture/icons/what.png</normaloff>:/picture/icons/what.png</iconset>
        </attribute>
        <attribute name="title">
