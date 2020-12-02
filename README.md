@@ -20,7 +20,7 @@ The program can update the kernel, change the build type, remove old kernels, cl
 
 ## Install
 
-* Recommended installation to / opt directory
+* Recommended installation to /opt directory
 * When changing directory, fix path in kernel-manager.desktop
 ```
 /opt/kernel-manager
