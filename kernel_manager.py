@@ -32,7 +32,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_KERN.clicked.connect(self.upgrade_kernel)
         self.pushButton_ChangeFlavour.clicked.connect(self.change_flavour)
         
-        
     def update_cache(self):
         """Обновление кэша"""
         self.bar("kernel " + release())
@@ -152,6 +151,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_ChangeFlavour.setDisabled(btn_off_on)
         
         
+    def update_list_kernel(self):
+        """Обновление виджета listwidget"""
+        self.listWidget_Kernel.clear()
+        Thread(target=self.systemic_kernel).start()
+        
+        
     # Функции кнопок
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
@@ -160,6 +165,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             run(f"xterm -e 'apt-get remove {item.text()} ; \
                 sleep 3'", shell=True)
+            
+            self.update_list_kernel()
             
             
     def change_flavour(self):
@@ -180,6 +187,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 update-kernel -t {flavour} ; sleep 3'", shell=True)
         except UnboundLocalError:
             pass
+        else:
+            self.update_list_kernel()
         
         
     def distribution_up(self):
@@ -192,6 +201,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Удаление старых ядер"""
         run("xterm -e 'remove-old-kernels ; \
             sleep 3'",shell=True)
+        
+        self.update_list_kernel()
         
         
     def cache_clear_apt(self):
