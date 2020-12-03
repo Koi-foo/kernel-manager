@@ -5,8 +5,8 @@
 import os
 import re
 import sys
+import datetime
 from subprocess import run, PIPE
-from getpass import getuser
 from platform import release
 from threading import Thread
 # PyQt
@@ -20,10 +20,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        
+        self.bar()
         self.combobox_flavour()
-    
-        Thread(target=self.update_cache).start()
+        
         Thread(target=self.systemic_kernel).start()
+        Thread(target=self.update_cache).start()
         
         # Кнопки
         self.pushButton_DISTR.clicked.connect(self.distribution_up)
@@ -34,26 +36,39 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def update_cache(self):
         """Обновление кэша"""
-        self.bar("kernel " + release())
-
         up_cache = "apt-get update"
-        users = getuser()
         
-        if users == 'root':
-            self.button_switch(True)
+        try:
+            current_date = datetime.date.today()
+            date_change = datetime.date.fromtimestamp(
+                os.path.getmtime('/var/lib/apt/lists/lock'))
+            compare_dates = current_date > date_change
+        
+            if compare_dates:
+                self.button_switch(True)
+                
+                self.bar(messages='U')            
+                
+                run(up_cache, shell=True)
+                
+                self.button_switch(False)
+                
+                Thread(target=self.search_kernel).start()
+        except PermissionError:
+            pass
             
-            self.bar('Обновление cache ждите завершения...')            
             
-            run(up_cache, shell=True)
-            
-            self.button_switch(False)
-            
-            Thread(target=self.search_kernel).start()
-            
-            
-    def bar(self, messages):
+    def bar(self, messages='0'):
         """Передача информации в статус бар"""
-        self.statusbar.showMessage(messages)
+        # U - Обновление кэша
+        # N - Доступна новая версия ядра
+        # 0 - Сообщение по умолчанию активное ядро
+        if messages == 'U':
+            self.statusbar.showMessage('Обновление cache ждите завершения...')
+        elif messages == 'N':
+            self.statusbar.showMessage("kernel " + release() + " --> " + new_version)
+        else:
+            self.statusbar.showMessage("kernel " + release())
             
             
     def search_kernel(self):
@@ -94,9 +109,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def compare_kernel(self, new_version, real_number):
         """Сравнения версий ядер"""
         if new_version == real_number:
-            self.bar("kernel " + release())
+            self.bar()
         elif new_version > real_number:
-            self.bar("kernel " + release() + " --> " + new_version)
+            self.bar(messages='N')
             
             
     def systemic_kernel(self):
@@ -121,7 +136,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 kernel_list.remove(x)
                 
         if not kernel_list:
-            kernel_list.append('Ядра для удаления не обнаружены (no)')
+            kernel_list.append('Ядра для удаления не обнаружены')
             
         self.show_list_kernel_gui(kernel_list)
         
@@ -160,7 +175,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     # Функции кнопок
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
-        if 'no' in item.text():
+        if 'Ядра' in item.text():
             pass
         else:
             run(f"xterm -e 'apt-get remove {item.text()} ; \
