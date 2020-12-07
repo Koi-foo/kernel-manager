@@ -142,7 +142,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.Tab1.setCurrentIndex(0)
+        self.Tab1.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -163,7 +163,7 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br />Окно смены<span style=\" font-style:italic;\"> flavour\'s</span> ( типы сборки ) ядер операционной системы.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br /><span style=\" background-color:transparent;\">Вкладка</span> смены<span style=\" font-style:italic;\"> flavour\'s</span> ( типы сборки ) ядер операционной системы.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: STD-DEF</span><br />Стандартное ядро. При сборке используются патчи из стабильной ветки ядер исправляющие работу д<span style=\" background-color:transparent;\">райверов и ПО.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: OLD-DEF</span><br />Предыдущая ветка ядра std-def. Ядро old-def поддерживает более старое оборудование и длительную поддержку.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: UN-DEF</span><br />Экспериментальное ядро для десктопов. Ядро un-def имеет более новую версию и может поддерживать оборудование которое не работает в <span style=\" font-style:italic;\">std-def</span>.</p></body></html>"))
