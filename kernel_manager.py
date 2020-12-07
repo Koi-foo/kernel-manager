@@ -170,8 +170,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Обновление виджета listwidget"""
         self.listWidget_Kernel.clear()
         Thread(target=self.systemic_kernel).start()
-        
-        
+ 
+ 
     # Функции кнопок
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
