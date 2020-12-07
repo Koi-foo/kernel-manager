@@ -43,7 +43,7 @@
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -136,7 +136,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Заметка&lt;/span&gt;&lt;br /&gt;Окно смены&lt;span style=&quot; font-style:italic;&quot;&gt; flavour's&lt;/span&gt; ( типы сборки ) ядер операционной системы.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Заметка&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;Вкладка&lt;/span&gt; смены&lt;span style=&quot; font-style:italic;&quot;&gt; flavour's&lt;/span&gt; ( типы сборки ) ядер операционной системы.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ядро: STD-DEF&lt;/span&gt;&lt;br /&gt;Стандартное ядро. При сборке используются патчи из стабильной ветки ядер исправляющие работу д&lt;span style=&quot; background-color:transparent;&quot;&gt;райверов и ПО.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ядро: OLD-DEF&lt;/span&gt;&lt;br /&gt;Предыдущая ветка ядра std-def. Ядро old-def поддерживает более старое оборудование и длительную поддержку.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ядро: UN-DEF&lt;/span&gt;&lt;br /&gt;Экспериментальное ядро для десктопов. Ядро un-def имеет более новую версию и может поддерживать оборудование которое не работает в &lt;span style=&quot; font-style:italic;&quot;&gt;std-def&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
