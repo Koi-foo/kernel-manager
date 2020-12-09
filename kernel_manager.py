@@ -21,9 +21,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         
-        self.bar()
         self.combobox_flavour()
+        self.bar()
         
+        Thread(target=self.search_kernel).start()
         Thread(target=self.systemic_kernel).start()
         Thread(target=self.update_cache).start()
         
@@ -43,7 +44,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             date_change = datetime.date.fromtimestamp(
                 os.path.getmtime('/var/lib/apt/lists/lock'))
             compare_dates = current_date > date_change
-        
+        except PermissionError:
+            pass
+        else:
             if compare_dates:
                 self.button_switch(True)
                 
@@ -52,13 +55,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 run(up_cache, shell=True)
                 
                 self.button_switch(False)
-                
+                                
                 Thread(target=self.search_kernel).start()
-        except PermissionError:
-            pass
             
             
-    def bar(self, messages='0'):
+    def bar(self, messages='0', new_version=''):
         """Передача информации в статус бар"""
         # U - Обновление кэша
         # N - Доступна новая версия ядра
@@ -111,17 +112,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if new_version == real_number:
             self.bar()
         elif new_version > real_number:
-            self.bar(messages='N')
+            self.bar(messages='N', new_version=new_version)
             
             
     def systemic_kernel(self):
         """Системные ядера"""
         real_number = self.search_re(kernel_num=release())
-        
         kernel_sys = run(
             'rpm -qa | grep kernel-image-', \
                 shell=True, stdout=PIPE, encoding='utf-8').stdout
-        
+
         raw_list_kernel = self.search_re(prefix=kernel_sys)
         kernel_list = []
         
@@ -129,8 +129,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             pkg = run(f'apt-cache pkgnames {x}', \
                 shell=True, stdout=PIPE, encoding='utf-8').stdout
             
+            if not pkg:
+                for i in [2, 3, 4, 5]:
+                    x = x.replace('f#1:', f'f#{i}:')
+                    pkg = run(f'apt-cache pkgnames {x}', \
+                        shell=True, stdout=PIPE, encoding='utf-8').stdout
+                    if not pkg:
+                        continue
+
             kernel_list.append(pkg.rstrip())
-            
+ 
         for x in kernel_list:
             if real_number in x:
                 kernel_list.remove(x)
@@ -230,6 +238,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Обновление ядра"""
         run("xterm -e 'apt-get dist-upgrade ; \
             update-kernel ; sleep 3'", shell=True)
+        
+        self.update_list_kernel()
         
 
 if __name__ == '__main__':
