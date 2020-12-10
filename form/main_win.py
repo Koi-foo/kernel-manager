@@ -26,6 +26,7 @@ class Ui_MainWindow(object):
         font.setPointSize(10)
         font.setKerning(True)
         self.Tab1.setFont(font)
+        self.Tab1.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.Tab1.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.Tab1.setIconSize(QtCore.QSize(16, 16))
         self.Tab1.setObjectName("Tab1")
@@ -34,6 +35,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QtWidgets.QGridLayout(self.Tab1_Question)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.text_Question = QtWidgets.QTextBrowser(self.Tab1_Question)
+        self.text_Question.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.text_Question.setObjectName("text_Question")
         self.gridLayout_2.addWidget(self.text_Question, 0, 0, 1, 1)
         icon1 = QtGui.QIcon()
@@ -56,6 +58,7 @@ class Ui_MainWindow(object):
         self.comboBox_ChangeKernel.setObjectName("comboBox_ChangeKernel")
         self.gridLayout_3.addWidget(self.comboBox_ChangeKernel, 1, 2, 1, 1)
         self.text_Change_Kernel = QtWidgets.QTextBrowser(self.Tab2_ChangeKernel)
+        self.text_Change_Kernel.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.text_Change_Kernel.setObjectName("text_Change_Kernel")
         self.gridLayout_3.addWidget(self.text_Change_Kernel, 0, 0, 1, 3)
         self.Tab1.addTab(self.Tab2_ChangeKernel, "")
@@ -74,6 +77,7 @@ class Ui_MainWindow(object):
         font.setPointSize(10)
         font.setKerning(True)
         self.listWidget_Kernel.setFont(font)
+        self.listWidget_Kernel.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.listWidget_Kernel.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.listWidget_Kernel.setAutoFillBackground(False)
         self.listWidget_Kernel.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -116,6 +120,7 @@ class Ui_MainWindow(object):
         self.gridLayout_5 = QtWidgets.QGridLayout(self.Tab4_UpdateKernel)
         self.gridLayout_5.setObjectName("gridLayout_5")
         self.text_Update_kernel = QtWidgets.QTextBrowser(self.Tab4_UpdateKernel)
+        self.text_Update_kernel.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.text_Update_kernel.setObjectName("text_Update_kernel")
         self.gridLayout_5.addWidget(self.text_Update_kernel, 0, 0, 1, 3)
         self.pushButton_KERN = QtWidgets.QPushButton(self.Tab4_UpdateKernel)
@@ -142,7 +147,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.Tab1.setCurrentIndex(3)
+        self.Tab1.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
