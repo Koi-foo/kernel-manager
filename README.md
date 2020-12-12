@@ -27,6 +27,10 @@ The program can update the kernel, change the build type, remove old kernels, cl
 ```
 
 ## Changelog
+* New version v1.6
+
+* New version v1.5
+
 * New version v1.4
 
 * New version v1.3
@@ -34,4 +38,8 @@ The program can update the kernel, change the build type, remove old kernels, cl
 ## Preview
 <p align="center">
   <img src="./preview/preview-1.png" alt="Size Limit CLI" width="738">
+</p>
+
+<p align="center">
+  <img src="./preview/preview-2.png" alt="Size Limit CLI" width="738">
 </p>
