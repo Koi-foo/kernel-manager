@@ -10,9 +10,11 @@ from subprocess import run, PIPE
 from platform import release
 from threading import Thread
 # PyQt
-from PyQt5 import QtWidgets, QtGui
+from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5.QtCore import pyqtSignal
 # Forms
 from form.main_win import Ui_MainWindow
+from form.process_win import Ui_InfoProcessWin
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -20,11 +22,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.proc_win = ProcessWindow()
         
-        self.combobox_flavour()
         self.bar()
-        
-        Thread(target=self.search_kernel).start()
+        self.combobox_flavour()
+       
         Thread(target=self.systemic_kernel).start()
         Thread(target=self.update_cache).start()
         
@@ -34,6 +36,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_Clean.clicked.connect(self.cache_clear_apt)
         self.pushButton_KERN.clicked.connect(self.upgrade_kernel)
         self.pushButton_ChangeFlavour.clicked.connect(self.change_flavour)
+        
+        # Сигналы
+        self.proc_win.closeWindow.connect(self.close_window)
+        
         
     def update_cache(self):
         """Обновление кэша"""
@@ -51,13 +57,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.button_switch(True)
                 
                 self.bar(messages='U')            
-                
+            
                 run(up_cache, shell=True)
                 
                 self.button_switch(False)
                                 
-                Thread(target=self.search_kernel).start()
-            
+        Thread(target=self.search_kernel).start()
+        
             
     def bar(self, messages='0', new_version=''):
         """Передача информации в статус бар"""
@@ -118,6 +124,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def systemic_kernel(self):
         """Системные ядера"""
         real_number = self.search_re(kernel_num=release())
+     
         kernel_sys = run(
             'rpm -qa | grep kernel-image-', \
                 shell=True, stdout=PIPE, encoding='utf-8').stdout
@@ -178,6 +185,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Обновление виджета listwidget"""
         self.listWidget_Kernel.clear()
         Thread(target=self.systemic_kernel).start()
+        
+        
+    def close_window(self):
+        """Cлот закрытия окна"""
+        self.update_list_kernel()
  
  
     # Функции кнопок
@@ -185,11 +197,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Удаление ядра из списка listwidget """
         if 'Ядра' in item.text():
             pass
-        else:
-            run(f"xterm -e 'apt-get remove {item.text()} ; \
-                sleep 3'", shell=True)
-            
-            self.update_list_kernel()
+        else:            
+            command = f"apt-get remove {item.text()}"
+        
+            self.proc_win.show()
+      
+            self.proc_win.start_qprocess(command)
+        
+            self.proc_win.textEdit.clear()
             
             
     def change_flavour(self):
@@ -206,40 +221,131 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             flavour = 'un-def'
         
         try:
-            run(f"xterm -e 'apt-get dist-upgrade ; \
-                update-kernel -t {flavour} ; sleep 3'", shell=True)
+            command = f"update-kernel -t {flavour}"
+        
+            self.proc_win.show()
+      
+            self.proc_win.start_qprocess(command)
+        
+            self.proc_win.textEdit.clear()
+            
         except UnboundLocalError:
             pass
-        else:
-            self.update_list_kernel()
         
         
     def distribution_up(self):
         """Обновить дистрибутив"""
-        run("xterm -e 'apt-get dist-upgrade ; \
-            sleep 3'", shell=True)
-
+        command = "apt-get dist-upgrade"
         
+        self.proc_win.show()
+        
+        self.proc_win.start_qprocess(command)
+        
+        self.proc_win.textEdit.clear()
+   
+   
     def del_kernel_old(self):
         """Удаление старых ядер"""
-        run("xterm -e 'remove-old-kernels ; \
-            sleep 3'",shell=True)
+        command = "remove-old-kernels"
         
-        self.update_list_kernel()
+        self.proc_win.show()
         
+        self.proc_win.start_qprocess(command)
+        
+        self.proc_win.textEdit.clear()
+                
         
     def cache_clear_apt(self):
         """Очистка кэша пакетов"""
-        run("xterm -e 'apt-get autoclean ; \
-            sleep 3'", shell=True)
+        command = "apt-get autoclean"
+        
+        self.proc_win.show()
+
+        self.proc_win.start_qprocess(command)
+        
+        self.proc_win.textEdit.clear()
         
         
     def upgrade_kernel(self):
         """Обновление ядра"""
-        run("xterm -e 'apt-get dist-upgrade ; \
-            update-kernel ; sleep 3'", shell=True)
+        command = "update-kernel"
         
-        self.update_list_kernel()
+        self.proc_win.show()
+        
+        self.proc_win.start_qprocess(command)
+        
+        self.proc_win.textEdit.clear()
+    
+        
+class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
+    closeWindow = pyqtSignal()
+    """Окно выолнения процессов"""
+    def __init__(self):
+        super().__init__()
+        self.setWindowModality(QtCore.Qt.ApplicationModal)
+        self.setupUi(self)
+                                
+        #Кнопки
+        self.pushButton_Cancel.clicked.connect(self.cancel_button)
+        self.pushButton_Ok.clicked.connect(self.confirm_button)
+        
+        
+    def closeEvent(self, event):
+        """Переопределение события"""
+        self.closeWindow.emit()
+        
+        
+    def start_qprocess(self, command=''):
+        """Запуск qprocess в окне process_win"""
+        self.qproc = QtCore.QProcess()
+        
+        self.bar(messages='W')
+        
+        self.qproc.finished.connect(self.bar)
+        self.qproc.start(command)
+            
+        self.qproc.readyRead.connect(self.text_widget)
+        
+        
+    def bar(self, messages='0'):
+        """Передача информации в статус бар"""
+        # W - Ждать завершения работы
+        if messages == 'W':
+            self.statusbar.showMessage('Процесс запущен, ждите...')
+        else:
+            self.statusbar.showMessage('Завершено успешно')
+            self.textEdit.insertPlainText('Процесс выполнен. Вы множите закрыть окно.')
+   
+   
+    def text_widget(self):
+        """Параметры виджета textEdit"""
+        content = self.qproc.readAll().data().decode('utf-8')
+        
+        cursor = self.textEdit.textCursor()
+        cursor.movePosition(QtGui.QTextCursor.End)
+        self.textEdit.insertPlainText(content)
+        self.textEdit.ensureCursorVisible()
+        
+        
+    #Функции кнопок    
+    def confirm_button(self):
+        """Подтвердить установку"""
+        command = 'y' + "\n"
+        
+        try:
+            self.qproc.write(command.encode())
+        except AttributeError:
+            pass
+
+    
+    def cancel_button(self):
+        """Отменить установку"""
+        command = 'n' + "\n"
+        
+        try:
+            self.qproc.write(command.encode())
+        except AttributeError:
+            pass
         
 
 if __name__ == '__main__':
