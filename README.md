@@ -12,7 +12,6 @@ Language logic Python 3
 The program can update the kernel, change the build type, remove old kernels, clean the file storage, update the distribution.
 
 ## Requires:
-* xterm
 * python3-base
 * python3-module-PyQt5
 * xdg-utils
