@@ -201,6 +201,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             command = f"apt-get remove {item.text()}"
         
             self.proc_win.show()
+            self.proc_win.setWindowTitle('Удаление ядра')
       
             self.proc_win.start_qprocess(command)
         
@@ -224,6 +225,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             command = f"update-kernel -t {flavour}"
         
             self.proc_win.show()
+            self.proc_win.setWindowTitle(f'Установка flavour-{flavour}')
       
             self.proc_win.start_qprocess(command)
         
@@ -238,6 +240,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "apt-get dist-upgrade"
         
         self.proc_win.show()
+        self.proc_win.setWindowTitle('Обновление дистрибутива')
         
         self.proc_win.start_qprocess(command)
         
@@ -249,6 +252,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "remove-old-kernels"
         
         self.proc_win.show()
+        self.proc_win.setWindowTitle('Удаление старых версий ядер')
         
         self.proc_win.start_qprocess(command)
         
@@ -260,6 +264,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "apt-get autoclean"
         
         self.proc_win.show()
+        self.proc_win.setWindowTitle('Очистка apt-cache')
 
         self.proc_win.start_qprocess(command)
         
@@ -271,6 +276,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "update-kernel"
         
         self.proc_win.show()
+        self.proc_win.setWindowTitle('Обновление ядра')
         
         self.proc_win.start_qprocess(command)
         
