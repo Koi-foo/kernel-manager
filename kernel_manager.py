@@ -6,6 +6,7 @@ import os
 import re
 import sys
 import datetime
+import gettext
 from subprocess import run, PIPE
 from platform import release
 from threading import Thread
@@ -15,6 +16,8 @@ from PyQt5.QtCore import pyqtSignal
 # Forms
 from form.main_win import Ui_MainWindow
 from form.process_win import Ui_InfoProcessWin
+# Локализация
+gettext.install('kernel_manager', 'locale')
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -71,7 +74,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # N - Доступна новая версия ядра
         # 0 - Сообщение по умолчанию активное ядро
         if messages == 'U':
-            self.statusbar.showMessage('Обновление cache ждите завершения...')
+            self.statusbar.showMessage(_('Обновление cache ждите завершения...'))
         elif messages == 'N':
             self.statusbar.showMessage("kernel " + release() + " --> " + new_version)
         else:
@@ -151,17 +154,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 kernel_list.remove(x)
                 
         if not kernel_list:
-            kernel_list.append('Ядра для удаления не обнаружены')
+            kernel_list.append(_('Ядра для удаления не обнаружены'))
             
         self.show_list_kernel_gui(kernel_list)
         
         
     def combobox_flavour(self):
         """Widget comboBox и список flavour в нем"""
-        self.comboBox_ChangeKernel.addItem('Flavour - не выбран')
-        self.comboBox_ChangeKernel.addItem('Ядро STD-DEF ( основное ядро )')
-        self.comboBox_ChangeKernel.addItem('Ядро OLD-DEF ( старая ветка std-def )')
-        self.comboBox_ChangeKernel.addItem('Ядро UN-DEF ( экспериментальное ядро )')
+        self.comboBox_ChangeKernel.addItem(_('Flavour - не выбран'))
+        self.comboBox_ChangeKernel.addItem(_('Ядро STD-DEF ( основное ядро )'))
+        self.comboBox_ChangeKernel.addItem(_('Ядро OLD-DEF ( старая ветка std-def )'))
+        self.comboBox_ChangeKernel.addItem(_('Ядро UN-DEF ( экспериментальное ядро )'))
         
             
     def show_list_kernel_gui(self, kernel_list):
@@ -201,7 +204,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             command = f"apt-get remove {item.text()}"
         
             self.proc_win.show()
-            self.proc_win.setWindowTitle('Удаление ядра')
+            self.proc_win.setWindowTitle(_('Удаление ядра'))
       
             self.proc_win.start_qprocess(command)
         
@@ -240,7 +243,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "apt-get dist-upgrade"
         
         self.proc_win.show()
-        self.proc_win.setWindowTitle('Обновление дистрибутива')
+        self.proc_win.setWindowTitle(_('Обновление дистрибутива'))
         
         self.proc_win.start_qprocess(command)
         
@@ -252,7 +255,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "remove-old-kernels"
         
         self.proc_win.show()
-        self.proc_win.setWindowTitle('Удаление старых версий ядер')
+        self.proc_win.setWindowTitle(_('Удаление старых версий ядер'))
         
         self.proc_win.start_qprocess(command)
         
@@ -264,7 +267,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "apt-get autoclean"
         
         self.proc_win.show()
-        self.proc_win.setWindowTitle('Очистка apt-cache')
+        self.proc_win.setWindowTitle(_('Очистка apt-cache'))
 
         self.proc_win.start_qprocess(command)
         
@@ -276,7 +279,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = "update-kernel"
         
         self.proc_win.show()
-        self.proc_win.setWindowTitle('Обновление ядра')
+        self.proc_win.setWindowTitle(_('Обновление ядра'))
         
         self.proc_win.start_qprocess(command)
         
@@ -317,10 +320,10 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         """Передача информации в статус бар"""
         # W - Ждать завершения работы
         if messages == 'W':
-            self.statusbar.showMessage('Процесс запущен, ждите...')
+            self.statusbar.showMessage(_('Процесс запущен, ждите...'))
         else:
-            self.statusbar.showMessage('Завершено успешно')
-            self.textEdit.insertPlainText('Процесс выполнен. Вы множите закрыть окно.')
+            self.statusbar.showMessage(_('Завершено успешно'))
+            self.textEdit.insertPlainText(_('Процесс выполнен. Вы множите закрыть окно.'))
    
    
     def text_widget(self):
