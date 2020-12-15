@@ -55,11 +55,11 @@ class Ui_InfoProcessWin(object):
 
     def retranslateUi(self, InfoProcessWin):
         _translate = QtCore.QCoreApplication.translate
-        InfoProcessWin.setWindowTitle(_translate("InfoProcessWin", "Информация"))
-        self.groupBox.setTitle(_translate("InfoProcessWin", "Ход выполнения задачи"))
-        self.pushButton_Cancel.setToolTip(_translate("InfoProcessWin", "Остановить процесс"))
-        self.pushButton_Cancel.setText(_translate("InfoProcessWin", "Отменить"))
-        self.pushButton_Ok.setToolTip(_translate("InfoProcessWin", "Согласиться для<br>продолжения работы процесса"))
-        self.pushButton_Ok.setText(_translate("InfoProcessWin", "Подтвердить"))
+        InfoProcessWin.setWindowTitle(_translate("InfoProcessWin", _("Информация")))
+        self.groupBox.setTitle(_translate("InfoProcessWin", _("Ход выполнения задачи")))
+        self.pushButton_Cancel.setToolTip(_translate("InfoProcessWin", _("Остановить процесс")))
+        self.pushButton_Cancel.setText(_translate("InfoProcessWin", _("Отменить")))
+        self.pushButton_Ok.setToolTip(_translate("InfoProcessWin", _("Согласиться для<br>продолжения работы процесса")))
+        self.pushButton_Ok.setText(_translate("InfoProcessWin", _("Подтвердить")))
 
 import resources

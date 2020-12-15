@@ -152,43 +152,43 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Управление ядрами"))
-        self.text_Question.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        MainWindow.setWindowTitle(_translate("MainWindow", _("Управление ядрами")))
+        self.text_Question.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Справка по программе.</span><br />Данная программа предоставляет средство простого графического управления скриптами: <span style=\" font-style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Смена ядра.</span><span style=\" background-color:transparent;\"><br />Позволяет изменить тип ядра на выбор ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Удаление ядер.</span><span style=\" background-color:transparent;\"><br />Показывает список установленных в системе ядер. Двойной клик на строку удаляет выбранное ядро и его модули.<br />Кнопка «Удалить ядра» очищает систему от всех старых версий ядер. Активное в данный момент ядро удалить нельзя.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Обновить ядро.</span><span style=\" background-color:transparent;\"><br />Автоматически обновляет ядро и модули до самой новой версии. Кнопка «Дистрибутив» обновляет ПО до актуальной версии.</span></p></body></html>"))
-        self.pushButton_ChangeFlavour.setToolTip(_translate("MainWindow", "Изменить тип flavour"))
-        self.pushButton_ChangeFlavour.setText(_translate("MainWindow", "Изменить"))
-        self.comboBox_ChangeKernel.setToolTip(_translate("MainWindow", "Выберите ядро из списка и нажмите кнопку<br>«Изменить» для перехода на новый flavour"))
-        self.text_Change_Kernel.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Обновить ядро.</span><span style=\" background-color:transparent;\"><br />Автоматически обновляет ядро и модули до самой новой версии. Кнопка «Дистрибутив» обновляет ПО до актуальной версии.</span></p></body></html>")))
+        self.pushButton_ChangeFlavour.setToolTip(_translate("MainWindow", _("Изменить тип flavour")))
+        self.pushButton_ChangeFlavour.setText(_translate("MainWindow", _("Изменить")))
+        self.comboBox_ChangeKernel.setToolTip(_translate("MainWindow", _("Выберите ядро из списка и нажмите кнопку<br>«Изменить» для перехода на новый flavour")))
+        self.text_Change_Kernel.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br /><span style=\" background-color:transparent;\">Вкладка</span> смены<span style=\" font-style:italic;\"> flavour\'s</span> ( типы сборки ) ядер операционной системы.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: STD-DEF</span><br />Стандартное ядро. При сборке используются патчи из стабильной ветки ядер исправляющие работу д<span style=\" background-color:transparent;\">райверов и ПО.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: OLD-DEF</span><br />Предыдущая ветка ядра std-def. Ядро old-def поддерживает более старое оборудование и длительную поддержку.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: UN-DEF</span><br />Экспериментальное ядро для десктопов. Ядро un-def имеет более новую версию и может поддерживать оборудование которое не работает в <span style=\" font-style:italic;\">std-def</span>.</p></body></html>"))
-        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", "Смена ядра"))
-        self.pushButton_Clean.setToolTip(_translate("MainWindow", "Очистка локального кэша"))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: UN-DEF</span><br />Экспериментальное ядро для десктопов. Ядро un-def имеет более новую версию и может поддерживать оборудование которое не работает в <span style=\" font-style:italic;\">std-def</span>.</p></body></html>")))
+        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Смена ядра")))
+        self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Очистка локального кэша")))
         self.pushButton_Clean.setText(_translate("MainWindow", "autoclean"))
-        self.pushButton_DELK.setToolTip(_translate("MainWindow", "Удаляет старые версии ядер"))
-        self.pushButton_DELK.setText(_translate("MainWindow", "Удалить ядра"))
-        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab3_DelKernel), _translate("MainWindow", "Удаление ядер"))
-        self.text_Update_kernel.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Удаляет старые версии ядер")))
+        self.pushButton_DELK.setText(_translate("MainWindow", _("Удалить ядра")))
+        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab3_DelKernel), _translate("MainWindow", _("Удаление ядер")))
+        self.text_Update_kernel.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br />Перед обновлением ядра рекомендуется обновить дистрибутив до последней версии. Такое обновление поможет избежать лишних проблем при обновлении ядра.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Кнопка «Обновить ядро»</span><br />Обновляет текущее активное ядро системы и все установленные для него модули.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Все действия программы будут выведены в терминал и требуют подтверждения пользователя. <span style=\" text-decoration: underline;\">Если Вы не уверены в своих действиях, отмените обновление.</span></p></body></html>"))
-        self.pushButton_KERN.setToolTip(_translate("MainWindow", "Обновление ядра"))
-        self.pushButton_KERN.setText(_translate("MainWindow", "Обновить ядро"))
-        self.pushButton_DISTR.setToolTip(_translate("MainWindow", "Обновление дистрибутива"))
-        self.pushButton_DISTR.setText(_translate("MainWindow", "Дистрибутив"))
-        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab4_UpdateKernel), _translate("MainWindow", "Обновить ядро"))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Все действия программы будут выведены в терминал и требуют подтверждения пользователя. <span style=\" text-decoration: underline;\">Если Вы не уверены в своих действиях, отмените обновление.</span></p></body></html>")))
+        self.pushButton_KERN.setToolTip(_translate("MainWindow", _("Обновление ядра")))
+        self.pushButton_KERN.setText(_translate("MainWindow", _("Обновить ядро")))
+        self.pushButton_DISTR.setToolTip(_translate("MainWindow", _("Обновление дистрибутива")))
+        self.pushButton_DISTR.setText(_translate("MainWindow", _("Дистрибутив")))
+        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab4_UpdateKernel), _translate("MainWindow", _("Обновить ядро")))
 
 import resources
