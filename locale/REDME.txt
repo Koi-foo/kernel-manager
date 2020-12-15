@@ -1,0 +1,29 @@
+[en_US]
+=======
+Poedit is used for translation.
+This program can be installed from the repositories.
+
+Translation.
+File draft "kernel_manager.pot"
+Open the kernel_manager.pot file in Poedit.
+Click "create new translation".
+Choose your language.
+Translate the contents of the file and save.
+2 files * .mo, * .po will appear.
+Add them to git: https://github.com/Koi-foo/kernel-manager
+Or send by mail: "eg.evgeniy@gmail.com". Post subject: Translation of the kernel manager.
+
+[ru_RU]
+=======
+Poedit используется для перевода.
+Эту программу можно установить из репозиториев.
+
+Перевод.
+Черновик файла "kernel_manager.pot"
+Откройте файл kernel_manager.pot в Poedit.
+Нажмите «создать новый перевод».
+Выберите свой язык.
+Переведите содержимое файла и сохраните.
+Появятся 2 файла * .mo, * .po.
+Добавьте их в git: https://github.com/Koi-foo/kernel-manager
+Или отправьте по почте: "eg.evgeniy@gmail.com". Тема сообщения: Перевод kernel manager.
