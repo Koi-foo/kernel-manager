@@ -11,9 +11,13 @@ Rendering the interface Qt5\PyQt5
 Language logic Python 3
 The program can update the kernel, change the build type, remove old kernels, clean the file storage, update the distribution.
 
+## Translation of the program.
+The program has been translated into Russian and English. The English version needs some work. Translation instructions are located in the locale directory of the root directory of kernel-manager.
+
 ## Requires:
 * python3-base
 * python3-module-PyQt5
+* python3-module-gettext
 * xdg-utils
 * update-kernel
 
