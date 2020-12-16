@@ -1,12 +1,21 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
-Type=Application
 Categories=System;Utility;Archiving;
-Exec=/usr/bin/xdg-su -c '/opt/kernel-manager/kernel_manager.py'
-Terminal=false
+Comment[ru_RU]=Использует команду update-kernel
+Comment=Использует команду update-kernel
+#Exec=/usr/bin/xdg-su -c '/opt/kernel-manager/kernel_manager.py'
+Exec=/usr/bin/xdg-su -c 'cd /opt/kernel-manager ; ./kernel_manager.py'
+GenericName[ru_RU]=Обновление ядра Linux
+GenericName=Обновление ядра Linux
 Icon=/opt/kernel-manager/icons/kernel-manager.png
+MimeType=
+Name[ru_RU]=Kernel manager
 Name=Kernel manager
-GenericName=Linux kernel update
-GenericName[ru]=Обновление ядра Linux
-Comment=Uses the command update-kernel
-Comment[ru]=Использует команду update-kernel
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=none
+X-KDE-SubstituteUID=false
+X-KDE-Username=
