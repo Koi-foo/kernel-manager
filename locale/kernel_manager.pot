@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2020-12-15 21:08+0300\n"
+"POT-Creation-Date: 2020-12-16 09:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -16,166 +16,167 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../../..\n"
-"X-Poedit-SearchPath-0: form/process_win.py\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: kernel_manager.py\n"
 "X-Poedit-SearchPath-1: form/main_win.py\n"
-"X-Poedit-SearchPath-2: kernel_manager.py\n"
+"X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/main_win.py:155
-msgid "Управление ядрами"
+#: form/main_win.py:159
+msgid "Kernels management"
 msgstr ""
 
-#: form/main_win.py:156
+#: form/main_win.py:160
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Справка по программе.</span><br />Данная программа предоставляет средство простого графического управления скриптами: <span style=\" font-style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Смена ядра.</span><span style=\" background-color:transparent;\"><br />Позволяет изменить тип ядра на выбор ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Удаление ядер.</span><span style=\" background-color:transparent;\"><br />Показывает список установленных в системе ядер. Двойной клик на строку удаляет выбранное ядро и его модули.<br />Кнопка «Удалить ядра» очищает систему от всех старых версий ядер. Активное в данный момент ядро удалить нельзя.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Обновить ядро.</span><span style=\" background-color:transparent;\"><br />Автоматически обновляет ядро и модули до самой новой версии. Кнопка «Дистрибутив» обновляет ПО до актуальной версии.</span></p></body></html>"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Program help.</span><br />This program provides a simple graphical script management tool: <span style=\" font-style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Change of kernel.</span><span style=\" background-color:transparent;\"><br />Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Removing kernels.</span><span style=\" background-color:transparent;\"><br />Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove Kernels button cleans the system of all old kernels. The currently active kernel cannot be deleted.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Update kernel.</span><span style=\" background-color:transparent;\"><br />Automatically updates the kernel and modules to the newest version. The &quot;Distribution&quot; button updates the software to the current version.</span></p></body></html>"
 msgstr ""
 
-#: form/main_win.py:164
-msgid "Изменить тип flavour"
+#: form/main_win.py:169
+msgid "Change flavor type"
 msgstr ""
 
-#: form/main_win.py:165
-msgid "Изменить"
+#: form/main_win.py:170
+msgid "Change"
 msgstr ""
 
-#: form/main_win.py:166
-msgid "Выберите ядро из списка и нажмите кнопку<br>«Изменить» для перехода на новый flavour"
+#: form/main_win.py:171
+msgid "Select a kernel from the list and click the <br>\"Change\" button to switch to a new flavor"
 msgstr ""
 
-#: form/main_win.py:167
+#: form/main_win.py:172
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br /><span style=\" background-color:transparent;\">Вкладка</span> смены<span style=\" font-style:italic;\"> flavour's</span> ( типы сборки ) ядер операционной системы.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: STD-DEF</span><br />Стандартное ядро. При сборке используются патчи из стабильной ветки ядер исправляющие работу д<span style=\" background-color:transparent;\">райверов и ПО.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: OLD-DEF</span><br />Предыдущая ветка ядра std-def. Ядро old-def поддерживает более старое оборудование и длительную поддержку.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: UN-DEF</span><br />Экспериментальное ядро для десктопов. Ядро un-def имеет более новую версию и может поддерживать оборудование которое не работает в <span style=\" font-style:italic;\">std-def</span>.</p></body></html>"
-msgstr ""
-
-#: form/main_win.py:175
-msgid "Смена ядра"
-msgstr ""
-
-#: form/main_win.py:176
-msgid "Очистка локального кэша"
-msgstr ""
-
-#: form/main_win.py:178
-msgid "Удаляет старые версии ядер"
-msgstr ""
-
-#: form/main_win.py:179
-msgid "Удалить ядра"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />The tab for changing the flavour's (assembly types) of the operating system kernels.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: STD-DEF</span><br />Standard kernel. During the assembly, patches from the stable kernel branch are used to correct the work of drivers and software.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: OLD-DEF</span><br />Previous kernel branch std-def. The old-def kernel supports older hardware and long-term support.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.</p></body></html>"
 msgstr ""
 
 #: form/main_win.py:180
-msgid "Удаление ядер"
+msgid "Change of kernels"
 msgstr ""
 
 #: form/main_win.py:181
+msgid "Clearing the local cache"
+msgstr ""
+
+#: form/main_win.py:183
+msgid "Removes old versions of kernels"
+msgstr ""
+
+#: form/main_win.py:184
+msgid "Remove kernels"
+msgstr ""
+
+#: form/main_win.py:185
+msgid "Removing kernels"
+msgstr ""
+
+#: form/main_win.py:186
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br />Перед обновлением ядра рекомендуется обновить дистрибутив до последней версии. Такое обновление поможет избежать лишних проблем при обновлении ядра.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Кнопка «Обновить ядро»</span><br />Обновляет текущее активное ядро системы и все установленные для него модули.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Все действия программы будут выведены в терминал и требуют подтверждения пользователя. <span style=\" text-decoration: underline;\">Если Вы не уверены в своих действиях, отмените обновление.</span></p></body></html>"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />It is recommended to update the distribution to the latest version before updating the kernel. Such an update will help to avoid unnecessary problems when updating the kernel.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Update Kernel button</span><br />Updates the current active system kernel and all modules installed for it.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program will be displayed in the terminal and require user confirmation. If you are unsure of your actions, cancel the update.</p></body></html>"
 msgstr ""
 
-#: form/main_win.py:188 kernel_manager.py:281
-msgid "Обновление ядра"
+#: form/main_win.py:193 kernel_manager.py:282
+msgid "Kernel update"
 msgstr ""
 
-#: form/main_win.py:189 form/main_win.py:192
-msgid "Обновить ядро"
+#: form/main_win.py:194 form/main_win.py:197
+msgid "Update kernel"
 msgstr ""
 
-#: form/main_win.py:190 kernel_manager.py:245
-msgid "Обновление дистрибутива"
+#: form/main_win.py:195 kernel_manager.py:246
+msgid "Distribution update"
 msgstr ""
 
-#: form/main_win.py:191
-msgid "Дистрибутив"
-msgstr ""
-
-#: form/process_win.py:58
-msgid "Информация"
+#: form/main_win.py:196
+msgid "Distribution"
 msgstr ""
 
 #: form/process_win.py:59
-msgid "Ход выполнения задачи"
+msgid "Information"
 msgstr ""
 
 #: form/process_win.py:60
-msgid "Остановить процесс"
+msgid "Task progress"
 msgstr ""
 
 #: form/process_win.py:61
-msgid "Отменить"
+msgid "Stop the process"
 msgstr ""
 
 #: form/process_win.py:62
-msgid "Согласиться для<br>продолжения работы процесса"
+msgid "Cancel"
 msgstr ""
 
 #: form/process_win.py:63
-msgid "Подтвердить"
+msgid "Agree to continue the process"
 msgstr ""
 
-#: kernel_manager.py:76
-msgid "Обновление cache ждите завершения..."
+#: form/process_win.py:64
+msgid "Confirm"
 msgstr ""
 
-#: kernel_manager.py:156
-msgid "Ядра для удаления не обнаружены"
+#: kernel_manager.py:77
+msgid "Updating cache wait for completion ..."
 msgstr ""
 
-#: kernel_manager.py:163
-msgid "Flavour - не выбран"
+#: kernel_manager.py:157
+msgid "No kernels found to be removed"
 msgstr ""
 
 #: kernel_manager.py:164
-msgid "Ядро STD-DEF ( основное ядро )"
+msgid "Flavor - not selected"
 msgstr ""
 
 #: kernel_manager.py:165
-msgid "Ядро OLD-DEF ( старая ветка std-def )"
+msgid "STD-DEF kernel (main kernel)"
 msgstr ""
 
 #: kernel_manager.py:166
-msgid "Ядро UN-DEF ( экспериментальное ядро )"
+msgid "OLD-DEF kernel (old std-def branch)"
 msgstr ""
 
-#: kernel_manager.py:206
-msgid "Удаление ядра"
+#: kernel_manager.py:167
+msgid "UN-DEF kernel (experimental kernel)"
 msgstr ""
 
-#: kernel_manager.py:257
-msgid "Удаление старых версий ядер"
+#: kernel_manager.py:207
+msgid "Removing the kernel"
 msgstr ""
 
-#: kernel_manager.py:269
-msgid "Очистка apt-cache"
+#: kernel_manager.py:258
+msgid "Removing old kernels"
 msgstr ""
 
-#: kernel_manager.py:322
-msgid "Процесс запущен, ждите..."
+#: kernel_manager.py:270
+msgid "Cleaning apt-cache"
 msgstr ""
 
-#: kernel_manager.py:324
-msgid "Завершено успешно"
+#: kernel_manager.py:323
+msgid "Process started, please wait ..."
 msgstr ""
 
 #: kernel_manager.py:325
-msgid "Процесс выполнен. Вы множите закрыть окно."
+msgid "Completed successfully"
+msgstr ""
+
+#: kernel_manager.py:326
+msgid "The process is complete. You are multiplying to close the window."
 msgstr ""
