@@ -8,6 +8,7 @@ import sys
 import datetime
 import gettext
 from subprocess import run, PIPE
+from getpass import getuser
 from platform import release
 from threading import Thread
 # PyQt
@@ -29,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.bar()
         self.combobox_flavour()
-       
+        
         Thread(target=self.systemic_kernel).start()
         Thread(target=self.update_cache).start()
         
@@ -46,6 +47,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def update_cache(self):
         """Обновление кэша"""
+        user = getuser()
+        if user != 'root':
+            sys.exit(0)
+        
         up_cache = "apt-get update"
         
         try:
@@ -126,6 +131,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
     def systemic_kernel(self):
         """Системные ядера"""
+        user = getuser()
+        if user != 'root':
+            sys.exit(0)
+        
         real_number = self.search_re(kernel_num=release())
      
         kernel_sys = run(
