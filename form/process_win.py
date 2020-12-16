@@ -19,6 +19,7 @@ class Ui_InfoProcessWin(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/picture/icons/kernel-manager.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         InfoProcessWin.setWindowIcon(icon)
+        InfoProcessWin.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
         self.centralwidget = QtWidgets.QWidget(InfoProcessWin)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -55,11 +56,11 @@ class Ui_InfoProcessWin(object):
 
     def retranslateUi(self, InfoProcessWin):
         _translate = QtCore.QCoreApplication.translate
-        InfoProcessWin.setWindowTitle(_translate("InfoProcessWin", _("Информация")))
-        self.groupBox.setTitle(_translate("InfoProcessWin", _("Ход выполнения задачи")))
-        self.pushButton_Cancel.setToolTip(_translate("InfoProcessWin", _("Остановить процесс")))
-        self.pushButton_Cancel.setText(_translate("InfoProcessWin", _("Отменить")))
-        self.pushButton_Ok.setToolTip(_translate("InfoProcessWin", _("Согласиться для<br>продолжения работы процесса")))
-        self.pushButton_Ok.setText(_translate("InfoProcessWin", _("Подтвердить")))
+        InfoProcessWin.setWindowTitle(_translate("InfoProcessWin", _("Information")))
+        self.groupBox.setTitle(_translate("InfoProcessWin", _("Task progress")))
+        self.pushButton_Cancel.setToolTip(_translate("InfoProcessWin", _("Stop the process")))
+        self.pushButton_Cancel.setText(_translate("InfoProcessWin", _("Cancel")))
+        self.pushButton_Ok.setToolTip(_translate("InfoProcessWin", _("Agree to continue the process")))
+        self.pushButton_Ok.setText(_translate("InfoProcessWin", _("Confirm")))
 
 import resources

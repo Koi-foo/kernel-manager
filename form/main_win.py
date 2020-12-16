@@ -14,9 +14,13 @@ class Ui_MainWindow(object):
         MainWindow.resize(600, 400)
         MainWindow.setMinimumSize(QtCore.QSize(600, 400))
         MainWindow.setMaximumSize(QtCore.QSize(800, 600))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        MainWindow.setFont(font)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/picture/icons/kernel-manager.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
+        MainWindow.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -152,43 +156,44 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", _("Управление ядрами")))
+        MainWindow.setWindowTitle(_translate("MainWindow", _("Kernels management")))
         self.text_Question.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Справка по программе.</span><br />Данная программа предоставляет средство простого графического управления скриптами: <span style=\" font-style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Смена ядра.</span><span style=\" background-color:transparent;\"><br />Позволяет изменить тип ядра на выбор ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Удаление ядер.</span><span style=\" background-color:transparent;\"><br />Показывает список установленных в системе ядер. Двойной клик на строку удаляет выбранное ядро и его модули.<br />Кнопка «Удалить ядра» очищает систему от всех старых версий ядер. Активное в данный момент ядро удалить нельзя.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Обновить ядро.</span><span style=\" background-color:transparent;\"><br />Автоматически обновляет ядро и модули до самой новой версии. Кнопка «Дистрибутив» обновляет ПО до актуальной версии.</span></p></body></html>")))
-        self.pushButton_ChangeFlavour.setToolTip(_translate("MainWindow", _("Изменить тип flavour")))
-        self.pushButton_ChangeFlavour.setText(_translate("MainWindow", _("Изменить")))
-        self.comboBox_ChangeKernel.setToolTip(_translate("MainWindow", _("Выберите ядро из списка и нажмите кнопку<br>«Изменить» для перехода на новый flavour")))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Program help.</span><br />This program provides a simple graphical script management tool: <span style=\" font-style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Change of kernel.</span><span style=\" background-color:transparent;\"><br />Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Removing kernels.</span><span style=\" background-color:transparent;\"><br />Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove Kernels button cleans the system of all old kernels. The currently active kernel cannot be deleted.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Update kernel.</span><span style=\" background-color:transparent;\"><br />Automatically updates the kernel and modules to the newest version. The &quot;Distribution&quot; button updates the software to the current version.</span></p></body></html>")))
+        self.pushButton_ChangeFlavour.setToolTip(_translate("MainWindow", _("Change flavor type")))
+        self.pushButton_ChangeFlavour.setText(_translate("MainWindow", _("Change")))
+        self.comboBox_ChangeKernel.setToolTip(_translate("MainWindow", _("Select a kernel from the list and click the <br>\"Change\" button to switch to a new flavor")))
         self.text_Change_Kernel.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br /><span style=\" background-color:transparent;\">Вкладка</span> смены<span style=\" font-style:italic;\"> flavour\'s</span> ( типы сборки ) ядер операционной системы.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: STD-DEF</span><br />Стандартное ядро. При сборке используются патчи из стабильной ветки ядер исправляющие работу д<span style=\" background-color:transparent;\">райверов и ПО.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: OLD-DEF</span><br />Предыдущая ветка ядра std-def. Ядро old-def поддерживает более старое оборудование и длительную поддержку.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Ядро: UN-DEF</span><br />Экспериментальное ядро для десктопов. Ядро un-def имеет более новую версию и может поддерживать оборудование которое не работает в <span style=\" font-style:italic;\">std-def</span>.</p></body></html>")))
-        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Смена ядра")))
-        self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Очистка локального кэша")))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />The tab for changing the flavour\'s (assembly types) of the operating system kernels.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: STD-DEF</span><br />Standard kernel. During the assembly, patches from the stable kernel branch are used to correct the work of drivers and software.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: OLD-DEF</span><br />Previous kernel branch std-def. The old-def kernel supports older hardware and long-term support.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.</p></body></html>")))
+        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Change of kernels")))
+        self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache")))
         self.pushButton_Clean.setText(_translate("MainWindow", "autoclean"))
-        self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Удаляет старые версии ядер")))
-        self.pushButton_DELK.setText(_translate("MainWindow", _("Удалить ядра")))
-        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab3_DelKernel), _translate("MainWindow", _("Удаление ядер")))
+        self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Removes old versions of kernels")))
+        self.pushButton_DELK.setText(_translate("MainWindow", _("Remove kernels")))
+        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab3_DelKernel), _translate("MainWindow", _("Removing kernels")))
         self.text_Update_kernel.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Заметка</span><br />Перед обновлением ядра рекомендуется обновить дистрибутив до последней версии. Такое обновление поможет избежать лишних проблем при обновлении ядра.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Кнопка «Обновить ядро»</span><br />Обновляет текущее активное ядро системы и все установленные для него модули.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Все действия программы будут выведены в терминал и требуют подтверждения пользователя. <span style=\" text-decoration: underline;\">Если Вы не уверены в своих действиях, отмените обновление.</span></p></body></html>")))
-        self.pushButton_KERN.setToolTip(_translate("MainWindow", _("Обновление ядра")))
-        self.pushButton_KERN.setText(_translate("MainWindow", _("Обновить ядро")))
-        self.pushButton_DISTR.setToolTip(_translate("MainWindow", _("Обновление дистрибутива")))
-        self.pushButton_DISTR.setText(_translate("MainWindow", _("Дистрибутив")))
-        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab4_UpdateKernel), _translate("MainWindow", _("Обновить ядро")))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />It is recommended to update the distribution to the latest version before updating the kernel. Such an update will help to avoid unnecessary problems when updating the kernel.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Update Kernel button</span><br />Updates the current active system kernel and all modules installed for it.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program will be displayed in the terminal and require user confirmation. If you are unsure of your actions, cancel the update.</p></body></html>")))
+        self.pushButton_KERN.setToolTip(_translate("MainWindow", _("Kernel update")))
+        self.pushButton_KERN.setText(_translate("MainWindow", _("Update kernel")))
+        self.pushButton_DISTR.setToolTip(_translate("MainWindow", _("Distribution update")))
+        self.pushButton_DISTR.setText(_translate("MainWindow", _("Distribution")))
+        self.Tab1.setTabText(self.Tab1.indexOf(self.Tab4_UpdateKernel), _translate("MainWindow", _("Update kernel")))
 
 import resources
