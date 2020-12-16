@@ -274,7 +274,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="text">
-           <string>autoclean</string>
+           <string>Clear cache</string>
           </property>
          </widget>
         </item>
