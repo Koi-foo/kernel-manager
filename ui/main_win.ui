@@ -268,7 +268,7 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <property name="toolTip">
-           <string>Clearing the local cache</string>
+           <string>Clearing the local cache&lt;br&gt;using the «autoclean» command.</string>
           </property>
           <property name="whatsThis">
            <string/>

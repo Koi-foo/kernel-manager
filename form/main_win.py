@@ -178,7 +178,7 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: OLD-DEF</span><br />Previous kernel branch std-def. The old-def kernel supports older hardware and long-term support.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.</p></body></html>")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Change of kernels")))
-        self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache")))
+        self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache<br>using the «autoclean» command.")))
         self.pushButton_Clean.setText(_translate("MainWindow", _("Clear cache")))
         self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Removes old versions of kernels")))
         self.pushButton_DELK.setText(_translate("MainWindow", _("Remove kernels")))

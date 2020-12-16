@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2020-12-16 18:23+0300\n"
+"POT-Creation-Date: 2020-12-16 20:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -67,7 +67,7 @@ msgid "Change of kernels"
 msgstr ""
 
 #: form/main_win.py:181
-msgid "Clearing the local cache"
+msgid "Clearing the local cache<br>using the «autoclean» command."
 msgstr ""
 
 #: form/main_win.py:182
@@ -97,7 +97,7 @@ msgid ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program will be displayed in the terminal and require user confirmation. If you are unsure of your actions, cancel the update.</p></body></html>"
 msgstr ""
 
-#: form/main_win.py:193 kernel_manager.py:282
+#: form/main_win.py:193 kernel_manager.py:291
 msgid "Kernel update"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Update kernel"
 msgstr ""
 
-#: form/main_win.py:195 kernel_manager.py:246
+#: form/main_win.py:195 kernel_manager.py:255
 msgid "Distribution update"
 msgstr ""
 
@@ -137,50 +137,50 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: kernel_manager.py:77
+#: kernel_manager.py:82
 msgid "Updating cache wait for completion ..."
 msgstr ""
 
-#: kernel_manager.py:157
+#: kernel_manager.py:166
 msgid "No kernels found to be removed"
 msgstr ""
 
-#: kernel_manager.py:164
+#: kernel_manager.py:173
 msgid "Flavor - not selected"
 msgstr ""
 
-#: kernel_manager.py:165
+#: kernel_manager.py:174
 msgid "STD-DEF kernel (main kernel)"
 msgstr ""
 
-#: kernel_manager.py:166
+#: kernel_manager.py:175
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr ""
 
-#: kernel_manager.py:167
+#: kernel_manager.py:176
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr ""
 
-#: kernel_manager.py:207
+#: kernel_manager.py:216
 msgid "Removing the kernel"
 msgstr ""
 
-#: kernel_manager.py:258
+#: kernel_manager.py:267
 msgid "Removing old kernels"
 msgstr ""
 
-#: kernel_manager.py:270
+#: kernel_manager.py:279
 msgid "Cleaning apt-cache"
 msgstr ""
 
-#: kernel_manager.py:323
+#: kernel_manager.py:332
 msgid "Process started, please wait ..."
 msgstr ""
 
-#: kernel_manager.py:325
+#: kernel_manager.py:334
 msgid "Completed successfully"
 msgstr ""
 
-#: kernel_manager.py:326
+#: kernel_manager.py:335
 msgid "The process is complete. You are multiplying to close the window."
 msgstr ""
