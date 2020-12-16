@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2020-12-16 09:28+0300\n"
+"POT-Creation-Date: 2020-12-16 18:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -68,6 +68,10 @@ msgstr ""
 
 #: form/main_win.py:181
 msgid "Clearing the local cache"
+msgstr ""
+
+#: form/main_win.py:182
+msgid "Clear cache"
 msgstr ""
 
 #: form/main_win.py:183
