@@ -22,12 +22,20 @@
     <height>600</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>Управление ядрами</string>
+   <string>Kernels management</string>
   </property>
   <property name="windowIcon">
    <iconset>
     <normaloff>:/picture/icons/kernel-manager.png</normaloff>:/picture/icons/kernel-manager.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -73,10 +81,11 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Справка по программе.&lt;/span&gt;&lt;br /&gt;Данная программа предоставляет средство простого графического управления скриптами: &lt;span style=&quot; font-style:italic;&quot;&gt;update-kernel&lt;/span&gt;, &lt;span style=&quot; font-style:italic;&quot;&gt;remove-old-kernel&lt;/span&gt;.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Смена ядра.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Позволяет изменить тип ядра на выбор ( STD-DEF, UN-DEF, OLD-DEF ).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Удаление ядер.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Показывает список установленных в системе ядер. Двойной клик на строку удаляет выбранное ядро и его модули.&lt;br /&gt;Кнопка «Удалить ядра» очищает систему от всех старых версий ядер. Активное в данный момент ядро удалить нельзя.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Обновить ядро.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Автоматически обновляет ядро и модули до самой новой версии. Кнопка «Дистрибутив» обновляет ПО до актуальной версии.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Program help.&lt;/span&gt;&lt;br /&gt;This program provides a simple graphical script management tool: &lt;span style=&quot; font-style:italic;&quot;&gt;update-kernel&lt;/span&gt;, &lt;span style=&quot; font-style:italic;&quot;&gt;remove-old-kernel&lt;/span&gt;.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Change of kernel.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Removing kernels.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;The Remove Kernels button cleans the system of all old kernels. The currently active kernel cannot be deleted.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Update kernel.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Automatically updates the kernel and modules to the newest version. The &amp;quot;Distribution&amp;quot; button updates the software to the current version.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -84,7 +93,7 @@ p, li { white-space: pre-wrap; }
       </widget>
       <widget class="QWidget" name="Tab2_ChangeKernel">
        <attribute name="title">
-        <string>Смена ядра</string>
+        <string>Change of kernels</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="1" column="1">
@@ -109,13 +118,13 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <property name="toolTip">
-           <string>Изменить тип flavour</string>
+           <string>Change flavor type</string>
           </property>
           <property name="whatsThis">
            <string/>
           </property>
           <property name="text">
-           <string>Изменить</string>
+           <string>Change</string>
           </property>
          </widget>
         </item>
@@ -128,7 +137,7 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <property name="toolTip">
-           <string>Выберите ядро из списка и нажмите кнопку&lt;br&gt;«Изменить» для перехода на новый flavour</string>
+           <string>Select a kernel from the list and click the &lt;br&gt;&quot;Change&quot; button to switch to a new flavor</string>
           </property>
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
@@ -145,10 +154,10 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Заметка&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;Вкладка&lt;/span&gt; смены&lt;span style=&quot; font-style:italic;&quot;&gt; flavour's&lt;/span&gt; ( типы сборки ) ядер операционной системы.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ядро: STD-DEF&lt;/span&gt;&lt;br /&gt;Стандартное ядро. При сборке используются патчи из стабильной ветки ядер исправляющие работу д&lt;span style=&quot; background-color:transparent;&quot;&gt;райверов и ПО.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ядро: OLD-DEF&lt;/span&gt;&lt;br /&gt;Предыдущая ветка ядра std-def. Ядро old-def поддерживает более старое оборудование и длительную поддержку.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ядро: UN-DEF&lt;/span&gt;&lt;br /&gt;Экспериментальное ядро для десктопов. Ядро un-def имеет более новую версию и может поддерживать оборудование которое не работает в &lt;span style=&quot; font-style:italic;&quot;&gt;std-def&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;The note&lt;/span&gt;&lt;br /&gt;The tab for changing the flavour's (assembly types) of the operating system kernels.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Kernel: STD-DEF&lt;/span&gt;&lt;br /&gt;Standard kernel. During the assembly, patches from the stable kernel branch are used to correct the work of drivers and software.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Kernel: OLD-DEF&lt;/span&gt;&lt;br /&gt;Previous kernel branch std-def. The old-def kernel supports older hardware and long-term support.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Kernel: UN-DEF&lt;/span&gt;&lt;br /&gt;An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -156,7 +165,7 @@ p, li { white-space: pre-wrap; }
       </widget>
       <widget class="QWidget" name="Tab3_DelKernel">
        <attribute name="title">
-        <string>Удаление ядер</string>
+        <string>Removing kernels</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0" colspan="3">
@@ -259,7 +268,7 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <property name="toolTip">
-           <string>Очистка локального кэша</string>
+           <string>Clearing the local cache</string>
           </property>
           <property name="whatsThis">
            <string/>
@@ -291,13 +300,13 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <property name="toolTip">
-           <string>Удаляет старые версии ядер</string>
+           <string>Removes old versions of kernels</string>
           </property>
           <property name="whatsThis">
            <string/>
           </property>
           <property name="text">
-           <string>Удалить ядра</string>
+           <string>Remove kernels</string>
           </property>
          </widget>
         </item>
@@ -308,7 +317,7 @@ p, li { white-space: pre-wrap; }
       </widget>
       <widget class="QWidget" name="Tab4_UpdateKernel">
        <attribute name="title">
-        <string>Обновить ядро</string>
+        <string>Update kernel</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="0" column="0" colspan="3">
@@ -321,9 +330,9 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Заметка&lt;/span&gt;&lt;br /&gt;Перед обновлением ядра рекомендуется обновить дистрибутив до последней версии. Такое обновление поможет избежать лишних проблем при обновлении ядра.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Кнопка «Обновить ядро»&lt;/span&gt;&lt;br /&gt;Обновляет текущее активное ядро системы и все установленные для него модули.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Все действия программы будут выведены в терминал и требуют подтверждения пользователя. &lt;span style=&quot; text-decoration: underline;&quot;&gt;Если Вы не уверены в своих действиях, отмените обновление.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;The note&lt;/span&gt;&lt;br /&gt;It is recommended to update the distribution to the latest version before updating the kernel. Such an update will help to avoid unnecessary problems when updating the kernel.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Update Kernel button&lt;/span&gt;&lt;br /&gt;Updates the current active system kernel and all modules installed for it.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;All actions of the program will be displayed in the terminal and require user confirmation. If you are unsure of your actions, cancel the update.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -336,13 +345,13 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
           <property name="toolTip">
-           <string>Обновление ядра</string>
+           <string>Kernel update</string>
           </property>
           <property name="whatsThis">
            <string/>
           </property>
           <property name="text">
-           <string>Обновить ядро</string>
+           <string>Update kernel</string>
           </property>
          </widget>
         </item>
@@ -374,7 +383,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="toolTip">
-           <string>Обновление дистрибутива</string>
+           <string>Distribution update</string>
           </property>
           <property name="whatsThis">
            <string/>
@@ -386,7 +395,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="text">
-           <string>Дистрибутив</string>
+           <string>Distribution</string>
           </property>
          </widget>
         </item>

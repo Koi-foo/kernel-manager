@@ -22,11 +22,14 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Информация</string>
+   <string>Information</string>
   </property>
   <property name="windowIcon">
    <iconset>
     <normaloff>:/picture/icons/kernel-manager.png</normaloff>:/picture/icons/kernel-manager.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -36,7 +39,7 @@
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="title">
-       <string>Ход выполнения задачи</string>
+       <string>Task progress</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -61,10 +64,10 @@
           </size>
          </property>
          <property name="toolTip">
-          <string>Остановить процесс</string>
+          <string>Stop the process</string>
          </property>
          <property name="text">
-          <string>Отменить</string>
+          <string>Cancel</string>
          </property>
         </widget>
        </item>
@@ -90,10 +93,10 @@
           </size>
          </property>
          <property name="toolTip">
-          <string>Согласиться для&lt;br&gt;продолжения работы процесса</string>
+          <string>Agree to continue the process</string>
          </property>
          <property name="text">
-          <string>Подтвердить</string>
+          <string>Confirm</string>
          </property>
         </widget>
        </item>
