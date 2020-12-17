@@ -1,0 +1,320 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Kernel Manager\n"
+"POT-Creation-Date: 2020-12-17 17:19+0300\n"
+"PO-Revision-Date: 2020-12-17 17:28+0300\n"
+"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: kernel_manager.py\n"
+"X-Poedit-SearchPath-1: form/main_win.py\n"
+"X-Poedit-SearchPath-2: form/process_win.py\n"
+
+#: form/main_win.py:159
+msgid "Kernels management"
+msgstr "内核管理"
+
+#: form/main_win.py:160
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Program help.</span><br />This program provides a simple "
+"graphical script management tool: <span style=\" font-style:italic;\">update-"
+"kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>."
+"</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600; background-color:transparent;\">Change of kernel.</span><span "
+"style=\" background-color:transparent;\"><br />Allows you to change the "
+"kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600; background-color:transparent;\">Removing kernels.</span><span "
+"style=\" background-color:transparent;\"><br />Shows a list of kernels "
+"installed on the system. Double clicking on a line removes the selected "
+"kernel and its modules.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
+"color:transparent;\">The Remove Kernels button cleans the system of all old "
+"kernels. The currently active kernel cannot be deleted.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600; background-color:transparent;\">Update kernel.</span><span style="
+"\" background-color:transparent;\"><br />Automatically updates the kernel "
+"and modules to the newest version. The &quot;Distribution&quot; button "
+"updates the software to the current version.</span></p></body></html>"
+msgstr ""
+"<！DOCTYPE HTML PUBLIC“-// W3C // DTD HTML 4.0 // EN”“ http://www.w3.org/TR/"
+"REC-html40/strict.dtd”>\n"
+"<html> <head> <meta name =“ qrichtext” content =“ 1” /> <style type =“ "
+"text / css”>\n"
+"p，li {空白：预包装； }\n"
+"</ style> </ head> <body style =“ font-family：'Sans Serif'; font-size："
+"10pt; font-weight：400; font-style：normal;”>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>程序帮助。</ span> <br />该程序提供了一个简单的图形脚本管理工"
+"具：<span style =“ font-style：italic;”> update-kernel </ span> ，<span "
+"style =“ font-style：italic;”>删除旧内核</ span>。</ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600; background-color：transparent;”>更改内核。</ span> <span style "
+"=“ background-color：transparent;”> <br />允许您更改内核类型以供选择（STD-"
+"DEF，UN-DEF，OLD-DEF）。</ span> </ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600; background-color：transparent;”>删除内核。</ span> <span style "
+"=“ background-color：transparent;”> <br />显示系统上已安装内核的列表。双击一"
+"行将删除所选的内核及其模块。</ span> </ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ "
+"background-color：transparent;”>“删除内核”按钮将清除所有旧内核的系统。当前活"
+"动的内核无法删除。</ span> </ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600; background-color：transparent;”>更新内核。</ span> <span style "
+"=“ background-color：transparent;”> <br />自动将内核和模块更新为最新版本。"
+"该“分发”指的是“分发”。按钮将软件更新为当前版本。</ span> </ p> </ body> </ "
+"html>"
+
+#: form/main_win.py:169
+msgid "Change flavor type"
+msgstr "改变口味类型"
+
+#: form/main_win.py:170
+msgid "Change"
+msgstr "更改"
+
+#: form/main_win.py:171
+msgid ""
+"Select a kernel from the list and click the <br>\"Change\" button to switch "
+"to a new flavor"
+msgstr "从列表中选择一个内核，然后单击<br>“更改”按钮以切换到新的样式"
+
+#: form/main_win.py:172
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">The note</span><br />The tab for changing the flavour's "
+"(assembly types) of the operating system kernels.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Kernel: STD-DEF</span><br />Standard kernel. During the "
+"assembly, patches from the stable kernel branch are used to correct the work "
+"of drivers and software.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Kernel: OLD-DEF</span><br />Previous kernel branch std-def. "
+"The old-def kernel supports older hardware and long-term support.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. "
+"The un-def kernel is newer and may support hardware that does not work in "
+"std-def.</p></body></html>"
+msgstr ""
+"<！DOCTYPE HTML PUBLIC“-// W3C // DTD HTML 4.0 // EN”“ http://www.w3.org/TR/"
+"REC-html40/strict.dtd”>\n"
+"<html> <head> <meta name =“ qrichtext” content =“ 1” /> <style type =“ "
+"text / css”>\n"
+"p，li {空白：预包装； }\n"
+"</ style> </ head> <body style =“ font-family：'Sans Serif'; font-size："
+"10pt; font-weight：400; font-style：normal;”>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>注释</ span> <br />用于更改操作系统内核的风味（汇编类型）的标"
+"签。</ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>内核：STD-DEF </ span> <br />标准内核。在组装过程中，使用稳定内"
+"核分支中的补丁程序来纠正驱动程序和软件的工作。</ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>内核：OLD-DEF </ span> <br />以前的内核分支std-def。 old-def内"
+"核支持较旧的硬件和长期支持。</ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>内核：UN-DEF </ span> <br />台式机的实验核心。 undef内核较新，"
+"并且可能支持在std-def中不起作用的硬件。</ p> </ body> </ html>"
+
+#: form/main_win.py:180
+msgid "Change of kernels"
+msgstr "更改内核"
+
+#: form/main_win.py:181
+msgid ""
+"Clearing the local cache of obsolete<br>packages with apt-get autoclean "
+"command"
+msgstr "使用apt-get autoclean命令清除过时软件包的本地缓存"
+
+#: form/main_win.py:182
+msgid "Clear cache"
+msgstr "清除缓存"
+
+#: form/main_win.py:183
+msgid "Removes old versions of kernels"
+msgstr "删除旧版本的内核"
+
+#: form/main_win.py:184
+msgid "Remove kernels"
+msgstr "删除内核"
+
+#: form/main_win.py:185
+msgid "Removing kernels"
+msgstr "删除内核"
+
+#: form/main_win.py:186
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">The note</span><br />It is recommended to update the "
+"distribution to the latest version before updating the kernel. Such an "
+"update will help to avoid unnecessary problems when updating the kernel.</"
+"p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Update Kernel button</span><br />Updates the current active "
+"system kernel and all modules installed for it.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program "
+"will be displayed in the terminal and require user confirmation. If you are "
+"unsure of your actions, cancel the update.</p></body></html>"
+msgstr ""
+"<！DOCTYPE HTML PUBLIC“-// W3C // DTD HTML 4.0 // EN”“ http://www.w3.org/TR/"
+"REC-html40/strict.dtd”>\n"
+"<html> <head> <meta name =“ qrichtext” content =“ 1” /> <style type =“ "
+"text / css”>\n"
+"p，li {空白：预包装； }\n"
+"</ style> </ head> <body style =“ font-family：'Sans Serif'; font-size："
+"10pt; font-weight：400; font-style：normal;”>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>注意</ span> <br />建议在更新内核之前将发行版更新到最新版本。这"
+"样的更新将有助于避免在更新内核时出现不必要的问题。</ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>更新内核按钮</ span> <br />更新当前的活动系统内核以及为其安装的"
+"所有模块。</ p>\n"
+"<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”>程序将显示在终端中，并且"
+"需要用户确认。如果不确定您的操作，请取消更新。</ p> </ body> </ html>"
+
+#: form/main_win.py:193 kernel_manager.py:291
+msgid "Kernel update"
+msgstr "内核更新"
+
+#: form/main_win.py:194 form/main_win.py:197
+msgid "Update kernel"
+msgstr "更新内核"
+
+#: form/main_win.py:195 kernel_manager.py:255
+msgid "Distribution update"
+msgstr "发行更新"
+
+#: form/main_win.py:196
+msgid "Distribution"
+msgstr "分配"
+
+#: form/process_win.py:59
+msgid "Information"
+msgstr "信息"
+
+#: form/process_win.py:60
+msgid "Task progress"
+msgstr "任务进度"
+
+#: form/process_win.py:61
+msgid "Stop the process"
+msgstr "停止程序"
+
+#: form/process_win.py:62
+msgid "Cancel"
+msgstr "取消"
+
+#: form/process_win.py:63
+msgid "Agree to continue the process"
+msgstr "同意继续进行"
+
+#: form/process_win.py:64
+msgid "Confirm"
+msgstr "确认"
+
+#: kernel_manager.py:82
+msgid "Updating cache wait for completion ..."
+msgstr "正在更新缓存以等待完成..."
+
+#: kernel_manager.py:166
+msgid "No kernels found to be removed"
+msgstr "没有找到要删除的内核"
+
+#: kernel_manager.py:173
+msgid "Flavor - not selected"
+msgstr "风味-未选择"
+
+#: kernel_manager.py:174
+msgid "STD-DEF kernel (main kernel)"
+msgstr "STD-DEF内核（主内核）"
+
+#: kernel_manager.py:175
+msgid "OLD-DEF kernel (old std-def branch)"
+msgstr "OLD-DEF内核（旧的std-def分支）"
+
+#: kernel_manager.py:176
+msgid "UN-DEF kernel (experimental kernel)"
+msgstr "UN-DEF内核（实验内核）"
+
+#: kernel_manager.py:216
+msgid "Removing the kernel"
+msgstr "删除内核"
+
+#: kernel_manager.py:267
+msgid "Removing old kernels"
+msgstr "删除旧内核"
+
+#: kernel_manager.py:279
+msgid "Cleaning apt-cache"
+msgstr "清理apt-cache"
+
+#: kernel_manager.py:332
+msgid "Process started, please wait ..."
+msgstr "程序已启动，请稍候..."
+
+#: kernel_manager.py:334
+msgid "Completed successfully"
+msgstr "成功完成"
+
+#: kernel_manager.py:335
+msgid "The process is complete. You are multiplying to close the window."
+msgstr "该过程完成。 您正在乘以关闭窗口。"
