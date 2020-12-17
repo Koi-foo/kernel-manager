@@ -17,7 +17,7 @@ from PyQt5.QtCore import pyqtSignal
 # Forms
 from form.main_win import Ui_MainWindow
 from form.process_win import Ui_InfoProcessWin
-# Локализация
+# Language localization
 gettext.install('kernel_manager', 'locale')
 
 
