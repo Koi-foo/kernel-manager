@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2020-12-16 20:15+0300\n"
-"PO-Revision-Date: 2020-12-16 20:17+0300\n"
+"POT-Creation-Date: 2020-12-17 12:16+0300\n"
+"PO-Revision-Date: 2020-12-17 12:18+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -174,8 +174,12 @@ msgid "Change of kernels"
 msgstr "Смена ядер"
 
 #: form/main_win.py:181
-msgid "Clearing the local cache<br>using the «autoclean» command."
-msgstr "Очистка локального кеша<br>с помощью команды «autoclean»."
+msgid ""
+"Clearing the local cache of obsolete<br>packages with apt-get autoclean "
+"command"
+msgstr ""
+"Очистка локального кеша от устаревших<br>пакетов с помощью команды apt-get "
+"autoclean"
 
 #: form/main_win.py:182
 msgid "Clear cache"
