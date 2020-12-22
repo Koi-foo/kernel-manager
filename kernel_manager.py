@@ -81,7 +81,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if messages == 'U':
             self.statusbar.showMessage(_('Updating cache wait for completion ...'))
         elif messages == 'N':
-            self.statusbar.showMessage("kernel " + release() + " --> " + new_version)
+            self.statusbar.showMessage("kernel " + release() + " ➤ " + new_version)
         else:
             self.statusbar.showMessage("kernel " + release())
             
