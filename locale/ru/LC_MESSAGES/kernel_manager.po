@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2020-12-17 12:16+0300\n"
-"PO-Revision-Date: 2020-12-17 12:18+0300\n"
+"PO-Revision-Date: 2021-01-12 16:11+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -187,7 +187,7 @@ msgstr "Очистка cache"
 
 #: form/main_win.py:183
 msgid "Removes old versions of kernels"
-msgstr "Удаляет старые версии ядер"
+msgstr "Удаляет все старые версии ядер<br>оставляя одно самое новое ядро"
 
 #: form/main_win.py:184
 msgid "Remove kernels"
@@ -244,7 +244,7 @@ msgstr ""
 
 #: form/main_win.py:193 kernel_manager.py:291
 msgid "Kernel update"
-msgstr "Обновление ядра"
+msgstr "Обновление текущей версии ядра"
 
 #: form/main_win.py:194 form/main_win.py:197
 msgid "Update kernel"
@@ -252,7 +252,7 @@ msgstr "Обновить ядро"
 
 #: form/main_win.py:195 kernel_manager.py:255
 msgid "Distribution update"
-msgstr "Обновление дистрибутива"
+msgstr "Обновление дистрибутива<br>и его программного обеспечения"
 
 #: form/main_win.py:196
 msgid "Distribution"
@@ -296,15 +296,15 @@ msgstr "Flavor - не выбран"
 
 #: kernel_manager.py:174
 msgid "STD-DEF kernel (main kernel)"
-msgstr "Ядро STD-DEF (основное ядро)"
+msgstr "Ядро STD-DEF ( основное ядро )"
 
 #: kernel_manager.py:175
 msgid "OLD-DEF kernel (old std-def branch)"
-msgstr "Ядро OLD-DEF (старая ветка std-def)"
+msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 
 #: kernel_manager.py:176
 msgid "UN-DEF kernel (experimental kernel)"
-msgstr "Ядро UN-DEF (экспериментальное ядро)"
+msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
 #: kernel_manager.py:216
 msgid "Removing the kernel"
