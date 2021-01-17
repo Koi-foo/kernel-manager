@@ -30,6 +30,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.bar()
         self.combobox_flavour()
+        self.combobox_repo()
         
         Thread(target=self.systemic_kernel).start()
         Thread(target=self.update_cache).start()
@@ -174,6 +175,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboBox_ChangeKernel.addItem(_('STD-DEF kernel (main kernel)'))
         self.comboBox_ChangeKernel.addItem(_('OLD-DEF kernel (old std-def branch)'))
         self.comboBox_ChangeKernel.addItem(_('UN-DEF kernel (experimental kernel)'))
+        self.comboBox_ChangeKernel.addItem(_('Sisyphus (kernel un-def)'))
+        
+        
+    def combobox_repo(self):
+        """Widget comboBox и список репозиториев в нем"""
+        self.comboBox_ChangeRepo.addItem('P9')
         
             
     def show_list_kernel_gui(self, kernel_list):
@@ -202,8 +209,45 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def close_window(self):
         """Cлот закрытия окна"""
         self.update_list_kernel()
- 
- 
+        
+        
+    def branches(self, ud='', uk='', uf='', kernel=''):
+        """Смена репозиториев"""
+        list_repo = run('apt-repo', shell=True, stdout=PIPE, encoding='utf-8').stdout
+        combobox_item = self.comboBox_ChangeRepo.currentIndex()
+        
+        if ud:
+            if 0 == combobox_item:
+                if 'p9' in list_repo.split('\n',1)[0]:
+                    udp = "apt-get dist-upgrade"
+                    return udp
+                else:
+                    udp = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
+                        + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
+                            + ";" + "apt-get\" \"dist-upgrade"
+                    return udp
+        elif uk:
+            if 0 == combobox_item:
+                if 'p9' in list_repo.split('\n',1)[0]:
+                    udp = "update-kernel"
+                    return udp
+                else:
+                    udp = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
+                        + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
+                            + ";" + "update-kernel"
+                    return udp
+        elif uf:
+            if 0 == combobox_item:
+                if 'p9' in list_repo.split('\n',1)[0]:
+                    udp = f"update-kernel -t {kernel}"
+                    return udp
+                else:
+                    udp = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
+                        + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
+                            + ";" + f"update-kernel\" \"-t\" \"{kernel}"
+                    return udp
+            
+                 
     # Функции кнопок
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
@@ -232,9 +276,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             flavour = 'old-def'
         elif 3 == combobox_item:
             flavour = 'un-def'
-        
+        elif 4 == combobox_item:                        
+            self.sisyphus_flavour()
+                    
         try:
-            command = f"update-kernel -t {flavour}"
+            command = self.branches(uf='Y', kernel=flavour)
         
             self.proc_win.show()
             self.proc_win.setWindowTitle(f'Установка flavour-{flavour}')
@@ -247,10 +293,27 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             pass
         
         
+    def sisyphus_flavour(self):
+        """Замена ядра на ядро UN-DEF из Sisyphus"""
+        flavour = 'un-def'
+        command = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
+            + "apt-repo\" \"add\" \"Sisyphus" + ";" + "apt-get\" \"update" \
+                + ";" + f"update-kernel\" \"-t\" \"{flavour}" + ";" + "apt-repo\" \"rm\" \"all" \
+                    + ";" + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
+                        + ";" + "apt-get\" \"autoclean"
+        
+        self.proc_win.show()
+        self.proc_win.setWindowTitle(f'Sisyphus flavour-{flavour}')
+      
+        self.proc_win.start_qprocess(command)
+                
+        self.proc_win.textEdit.clear()
+        
+        
     def distribution_up(self):
         """Обновить дистрибутив"""
-        command = "apt-get dist-upgrade"
-        
+        command = self.branches(ud='Y')
+                
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Distribution update'))
         
@@ -285,7 +348,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def upgrade_kernel(self):
         """Обновление ядра"""
-        command = "update-kernel"
+        command = self.branches(uk='Y')
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Kernel update'))
