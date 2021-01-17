@@ -11,8 +11,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(600, 400)
-        MainWindow.setMinimumSize(QtCore.QSize(600, 400))
+        MainWindow.resize(701, 450)
+        MainWindow.setMinimumSize(QtCore.QSize(700, 450))
         MainWindow.setMaximumSize(QtCore.QSize(800, 600))
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -123,15 +123,15 @@ class Ui_MainWindow(object):
         self.Tab4_UpdateKernel.setObjectName("Tab4_UpdateKernel")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.Tab4_UpdateKernel)
         self.gridLayout_5.setObjectName("gridLayout_5")
-        self.text_Update_kernel = QtWidgets.QTextBrowser(self.Tab4_UpdateKernel)
-        self.text_Update_kernel.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
-        self.text_Update_kernel.setObjectName("text_Update_kernel")
-        self.gridLayout_5.addWidget(self.text_Update_kernel, 0, 0, 1, 3)
         self.pushButton_KERN = QtWidgets.QPushButton(self.Tab4_UpdateKernel)
         self.pushButton_KERN.setMinimumSize(QtCore.QSize(150, 0))
         self.pushButton_KERN.setWhatsThis("")
         self.pushButton_KERN.setObjectName("pushButton_KERN")
         self.gridLayout_5.addWidget(self.pushButton_KERN, 1, 0, 1, 1)
+        self.text_Update_kernel = QtWidgets.QTextBrowser(self.Tab4_UpdateKernel)
+        self.text_Update_kernel.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.text_Update_kernel.setObjectName("text_Update_kernel")
+        self.gridLayout_5.addWidget(self.text_Update_kernel, 0, 0, 1, 4)
         spacerItem2 = QtWidgets.QSpacerItem(253, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_5.addItem(spacerItem2, 1, 1, 1, 1)
         self.pushButton_DISTR = QtWidgets.QPushButton(self.Tab4_UpdateKernel)
@@ -142,7 +142,11 @@ class Ui_MainWindow(object):
         self.pushButton_DISTR.setAccessibleName("")
         self.pushButton_DISTR.setAccessibleDescription("")
         self.pushButton_DISTR.setObjectName("pushButton_DISTR")
-        self.gridLayout_5.addWidget(self.pushButton_DISTR, 1, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.pushButton_DISTR, 1, 3, 1, 1)
+        self.comboBox_ChangeRepo = QtWidgets.QComboBox(self.Tab4_UpdateKernel)
+        self.comboBox_ChangeRepo.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.comboBox_ChangeRepo.setObjectName("comboBox_ChangeRepo")
+        self.gridLayout_5.addWidget(self.comboBox_ChangeRepo, 1, 2, 1, 1)
         self.Tab1.addTab(self.Tab4_UpdateKernel, "")
         self.gridLayout.addWidget(self.Tab1, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -176,24 +180,27 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />The tab for changing the flavour\'s (assembly types) of the operating system kernels.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: STD-DEF</span><br />Standard kernel. During the assembly, patches from the stable kernel branch are used to correct the work of drivers and software.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: OLD-DEF</span><br />Previous kernel branch std-def. The old-def kernel supports older hardware and long-term support.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.</p></body></html>")))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of the latest software. Recommended for Intel integrated graphics not supported by other kernels. When using the kernel from this repository, you will not be able to work with programs that depend on the version of the module in the stable repositories.</p></body></html>")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Change of kernels")))
         self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache of obsolete<br>packages with apt-get autoclean command")))
         self.pushButton_Clean.setText(_translate("MainWindow", _("Clear cache")))
         self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Removes old versions of kernels")))
         self.pushButton_DELK.setText(_translate("MainWindow", _("Remove kernels")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab3_DelKernel), _translate("MainWindow", _("Removing kernels")))
+        self.pushButton_KERN.setToolTip(_translate("MainWindow", _("Kernel update")))
+        self.pushButton_KERN.setText(_translate("MainWindow", _("Update kernel")))
         self.text_Update_kernel.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />It is recommended to update the distribution to the latest version before updating the kernel. Such an update will help to avoid unnecessary problems when updating the kernel.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Update Kernel button</span><br />Updates the current active system kernel and all modules installed for it.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program will be displayed in the terminal and require user confirmation. If you are unsure of your actions, cancel the update.</p></body></html>")))
-        self.pushButton_KERN.setToolTip(_translate("MainWindow", _("Kernel update")))
-        self.pushButton_KERN.setText(_translate("MainWindow", _("Update kernel")))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program will be displayed in the terminal and require user confirmation. If you are unsure of your actions, cancel the update.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Repositories</span><br />Allows changing repositories. Shows the currently connected repositories. Allows you to update the OS platform.<br />Currently only the &quot;p9&quot; platform is available.</p></body></html>")))
         self.pushButton_DISTR.setToolTip(_translate("MainWindow", _("Distribution update")))
         self.pushButton_DISTR.setText(_translate("MainWindow", _("Distribution")))
+        self.comboBox_ChangeRepo.setToolTip(_translate("MainWindow", _("Change repository")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab4_UpdateKernel), _translate("MainWindow", _("Update kernel")))
 
 import resources
