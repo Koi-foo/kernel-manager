@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2021-01-17 14:48+0300\n"
-"PO-Revision-Date: 2021-01-17 14:48+0300\n"
+"PO-Revision-Date: 2021-01-17 18:54+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -278,7 +278,7 @@ msgstr ""
 
 #: form/main_win.py:201 kernel_manager.py:283
 msgid "Distribution update"
-msgstr "Обновление дистрибутива<br>и его программного обеспечения"
+msgstr "Обновление дистрибутива и его программного обеспечения"
 
 #: form/main_win.py:202
 msgid "Distribution"
