@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2020-12-17 12:16+0300\n"
-"PO-Revision-Date: 2021-01-12 16:11+0300\n"
+"POT-Creation-Date: 2021-01-17 14:48+0300\n"
+"PO-Revision-Date: 2021-01-17 14:48+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -23,11 +23,11 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/main_win.py:159
+#: form/main_win.py:163
 msgid "Kernels management"
 msgstr "Управление ядрами"
 
-#: form/main_win.py:160
+#: form/main_win.py:164
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -99,15 +99,15 @@ msgstr ""
 "модули до последней версии. Кнопка «Дистрибутив» обновляет программное "
 "обеспечение до текущей версии.</span></p></body></html>"
 
-#: form/main_win.py:169
+#: form/main_win.py:173
 msgid "Change flavor type"
 msgstr "Изменить тип flavor"
 
-#: form/main_win.py:170
+#: form/main_win.py:174
 msgid "Change"
 msgstr "Изменить"
 
-#: form/main_win.py:171
+#: form/main_win.py:175
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
@@ -115,7 +115,7 @@ msgstr ""
 "Выберите ядро из списка и нажмите<br>кнопку «Изменить», чтобы переключиться "
 "на новый вариант"
 
-#: form/main_win.py:172
+#: form/main_win.py:176
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -141,7 +141,14 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. "
 "The un-def kernel is newer and may support hardware that does not work in "
-"std-def.</p></body></html>"
+"std-def.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of "
+"the latest software. Recommended for Intel integrated graphics not supported "
+"by other kernels. When using the kernel from this repository, you will not "
+"be able to work with programs that depend on the version of the module in "
+"the stable repositories.</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -167,13 +174,20 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Kernel: UN-DEF</span><br />Экспериментальное ядро для "
 "десктопов. Ядро un-def новее и может поддерживать оборудование, которое не "
-"работает в std-def.</p></body></html>"
+"работает в std-def.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Sisyphus: UN-DEF </span><br />Это нестабильный репозиторий "
+"новейшего программного обеспечения. Рекомендуется для встроенной графики "
+"Intel, не поддерживаемой другими ядрами. При использовании ядра из этого "
+"репозитория вы не сможете работать с программами, которые зависят от версии "
+"модуля в стабильных репозиториях.</p></body></html>"
 
-#: form/main_win.py:180
+#: form/main_win.py:185
 msgid "Change of kernels"
 msgstr "Смена ядер"
 
-#: form/main_win.py:181
+#: form/main_win.py:186
 msgid ""
 "Clearing the local cache of obsolete<br>packages with apt-get autoclean "
 "command"
@@ -181,23 +195,31 @@ msgstr ""
 "Очистка локального кеша от устаревших<br>пакетов с помощью команды apt-get "
 "autoclean"
 
-#: form/main_win.py:182
+#: form/main_win.py:187
 msgid "Clear cache"
 msgstr "Очистка cache"
 
-#: form/main_win.py:183
+#: form/main_win.py:188
 msgid "Removes old versions of kernels"
 msgstr "Удаляет все старые версии ядер<br>оставляя одно самое новое ядро"
 
-#: form/main_win.py:184
+#: form/main_win.py:189
 msgid "Remove kernels"
 msgstr "Удалить ядра"
 
-#: form/main_win.py:185
+#: form/main_win.py:190
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:186
+#: form/main_win.py:191 kernel_manager.py:319
+msgid "Kernel update"
+msgstr "Обновление текущей версии ядра"
+
+#: form/main_win.py:192 form/main_win.py:204
+msgid "Update kernel"
+msgstr "Обновить ядро"
+
+#: form/main_win.py:193
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -219,7 +241,13 @@ msgid ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program "
 "will be displayed in the terminal and require user confirmation. If you are "
-"unsure of your actions, cancel the update.</p></body></html>"
+"unsure of your actions, cancel the update.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Repositories</span><br />Allows changing repositories. Shows "
+"the currently connected repositories. Allows you to update the OS platform."
+"<br />Currently only the &quot;p9&quot; platform is available.</p></body></"
+"html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -240,23 +268,25 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Все действия программы "
 "будут отображаться в терминале и требовать подтверждения от пользователя. "
-"Если вы не уверены в своих действиях, отмените обновление.</p></body></html>"
+"Если вы не уверены в своих действиях, отмените обновление.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Репозитории</span><br />Позволяет менять репозитории. "
+"Показывает подключенные в данный момент репозитории. Позволяет обновить "
+"платформу ОС.<br />В настоящее время доступна только платформа «p9».</p></"
+"body></html>"
 
-#: form/main_win.py:193 kernel_manager.py:291
-msgid "Kernel update"
-msgstr "Обновление текущей версии ядра"
-
-#: form/main_win.py:194 form/main_win.py:197
-msgid "Update kernel"
-msgstr "Обновить ядро"
-
-#: form/main_win.py:195 kernel_manager.py:255
+#: form/main_win.py:201 kernel_manager.py:283
 msgid "Distribution update"
 msgstr "Обновление дистрибутива<br>и его программного обеспечения"
 
-#: form/main_win.py:196
+#: form/main_win.py:202
 msgid "Distribution"
 msgstr "Дистрибутив"
+
+#: form/main_win.py:203
+msgid "Change repository"
+msgstr "Изменить репозиторий"
 
 #: form/process_win.py:59
 msgid "Information"
@@ -306,27 +336,31 @@ msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
-#: kernel_manager.py:216
+#: kernel_manager.py:177
+msgid "Sisyphus (kernel un-def)"
+msgstr "Sisyphus ( ядро un-def )"
+
+#: kernel_manager.py:217
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:267
+#: kernel_manager.py:295
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:279
+#: kernel_manager.py:307
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:332
+#: kernel_manager.py:360
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:334
+#: kernel_manager.py:362
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:335
+#: kernel_manager.py:363
 msgid "The process is complete. You are multiplying to close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
