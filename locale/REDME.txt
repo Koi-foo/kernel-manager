@@ -14,16 +14,10 @@ Add them to git: https://github.com/Koi-foo/kernel-manager
 Or send by mail: "eg.evgeniy@gmail.com". Post subject: Translation of the kernel manager.
 
 Updating translations.
-Copy your language file from:
-kernel-manager/locale/"your_language"/LC_MESSAGES/kernel_manager.po
-IN:
-kernel-manager/locale
-Open the kernel_manager.po file with Poedit.
-Click the Update From Code button.
-Translate or update translations.
-Save your changes.
-After saving, the file kernel_manager.mo will appear
-Send the kernel_manager.mo and kernel_manager.po files to the developer.
+Open the * .po file with your translation using Poedit.
+At the top, click the Catalog menu item and select Update from *.pot file. Select a file.
+Complete the translation and save.
+Send the new * .po and * .mo translation files to the developer.
 
 
 [ru_RU]
@@ -42,13 +36,7 @@ Poedit используется для перевода.
 Или отправьте по почте: "eg.evgeniy@gmail.com". Тема сообщения: Перевод kernel manager.
 
 Обновление перевода.
-Скопируйте свой языковой файл из:
-kernel-manager/locale/"Ваш_язык"/LC_MESSAGES/kernel_manager.po
-В:
-kernel-manager/locale
-Откройте файл kernel_manager.po с помощью Poedit.
-Нажмите кнопку «Обновить из кода».
-Переведите или обновите переводы.
-Сохраните изменения.
-После сохранения появится файл kernel_manager.mo
-Отправьте разработчику файлы kernel_manager.mo и kernel_manager.po.
+Откройте * .po файл с вашим переводом с помощью Poedit.
+Вверху щелкните пункт меню «Каталог» и выберите «Обновить из файла *.pot». Выберите файл.
+Завершите перевод и сохраните.
+Отправьте разработчику новые файлы перевода * .po и * .mo.
