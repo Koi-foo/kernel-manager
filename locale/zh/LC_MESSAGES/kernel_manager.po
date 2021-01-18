@@ -5,11 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2020-12-17 17:19+0300\n"
-"PO-Revision-Date: 2020-12-17 17:28+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"POT-Creation-Date: 2021-01-17 14:46+0300\n"
+"PO-Revision-Date: 2021-01-18 03:42+0700\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,16 +15,18 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
+"Last-Translator: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "X-Poedit-SearchPath-0: kernel_manager.py\n"
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/main_win.py:159
+#: form/main_win.py:163
 msgid "Kernels management"
 msgstr "内核管理"
 
-#: form/main_win.py:160
+#: form/main_win.py:164
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -96,21 +96,21 @@ msgstr ""
 "该“分发”指的是“分发”。按钮将软件更新为当前版本。</ span> </ p> </ body> </ "
 "html>"
 
-#: form/main_win.py:169
+#: form/main_win.py:173
 msgid "Change flavor type"
 msgstr "改变口味类型"
 
-#: form/main_win.py:170
+#: form/main_win.py:174
 msgid "Change"
 msgstr "更改"
 
-#: form/main_win.py:171
+#: form/main_win.py:175
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
 msgstr "从列表中选择一个内核，然后单击<br>“更改”按钮以切换到新的样式"
 
-#: form/main_win.py:172
+#: form/main_win.py:176
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -136,7 +136,14 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. "
 "The un-def kernel is newer and may support hardware that does not work in "
-"std-def.</p></body></html>"
+"std-def.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of "
+"the latest software. Recommended for Intel integrated graphics not supported "
+"by other kernels. When using the kernel from this repository, you will not "
+"be able to work with programs that depend on the version of the module in "
+"the stable repositories.</p></body></html>"
 msgstr ""
 "<！DOCTYPE HTML PUBLIC“-// W3C // DTD HTML 4.0 // EN”“ http://www.w3.org/TR/"
 "REC-html40/strict.dtd”>\n"
@@ -162,33 +169,41 @@ msgstr ""
 "weight：600;”>内核：UN-DEF </ span> <br />台式机的实验核心。 undef内核较新，"
 "并且可能支持在std-def中不起作用的硬件。</ p> </ body> </ html>"
 
-#: form/main_win.py:180
+#: form/main_win.py:185
 msgid "Change of kernels"
 msgstr "更改内核"
 
-#: form/main_win.py:181
+#: form/main_win.py:186
 msgid ""
 "Clearing the local cache of obsolete<br>packages with apt-get autoclean "
 "command"
 msgstr "使用apt-get autoclean命令清除过时软件包的本地缓存"
 
-#: form/main_win.py:182
+#: form/main_win.py:187
 msgid "Clear cache"
 msgstr "清除缓存"
 
-#: form/main_win.py:183
+#: form/main_win.py:188
 msgid "Removes old versions of kernels"
 msgstr "删除旧版本的内核"
 
-#: form/main_win.py:184
+#: form/main_win.py:189
 msgid "Remove kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:185
+#: form/main_win.py:190
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:186
+#: form/main_win.py:191 kernel_manager.py:319
+msgid "Kernel update"
+msgstr "内核更新"
+
+#: form/main_win.py:192 form/main_win.py:204
+msgid "Update kernel"
+msgstr "更新内核"
+
+#: form/main_win.py:193
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -210,7 +225,13 @@ msgid ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program "
 "will be displayed in the terminal and require user confirmation. If you are "
-"unsure of your actions, cancel the update.</p></body></html>"
+"unsure of your actions, cancel the update.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Repositories</span><br />Allows changing repositories. Shows "
+"the currently connected repositories. Allows you to update the OS platform."
+"<br />Currently only the &quot;p9&quot; platform is available.</p></body></"
+"html>"
 msgstr ""
 "<！DOCTYPE HTML PUBLIC“-// W3C // DTD HTML 4.0 // EN”“ http://www.w3.org/TR/"
 "REC-html40/strict.dtd”>\n"
@@ -229,23 +250,23 @@ msgstr ""
 "所有模块。</ p>\n"
 "<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
 "right：0px; -qt-block-indent：0; text-indent：0px;”>程序将显示在终端中，并且"
-"需要用户确认。如果不确定您的操作，请取消更新。</ p> </ body> </ html>"
+"需要用户确认。如果您不确定自己的操作，请取消更新。</ p>\n"
+"<p style =“ margin-top：0px; margin-bottom：0px; margin-left：0px; margin-"
+"right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
+"weight：600;”>存储库</ span> <br />允许更改存储库。显示当前连接的存储库。允许"
+"您更新OS平台。<br />当前只有“ p9”平台可用。</ p> </ body> </ html>"
 
-#: form/main_win.py:193 kernel_manager.py:291
-msgid "Kernel update"
-msgstr "内核更新"
-
-#: form/main_win.py:194 form/main_win.py:197
-msgid "Update kernel"
-msgstr "更新内核"
-
-#: form/main_win.py:195 kernel_manager.py:255
+#: form/main_win.py:201 kernel_manager.py:283
 msgid "Distribution update"
 msgstr "发行更新"
 
-#: form/main_win.py:196
+#: form/main_win.py:202
 msgid "Distribution"
 msgstr "分配"
+
+#: form/main_win.py:203
+msgid "Change repository"
+msgstr "变更资料库"
 
 #: form/process_win.py:59
 msgid "Information"
@@ -295,26 +316,30 @@ msgstr "OLD-DEF内核（旧的std-def分支）"
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF内核（实验内核）"
 
-#: kernel_manager.py:216
+#: kernel_manager.py:177
+msgid "Sisyphus (kernel un-def)"
+msgstr "西西弗斯（内核un-def）"
+
+#: kernel_manager.py:217
 msgid "Removing the kernel"
 msgstr "删除内核"
 
-#: kernel_manager.py:267
+#: kernel_manager.py:295
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:279
+#: kernel_manager.py:307
 msgid "Cleaning apt-cache"
 msgstr "清理apt-cache"
 
-#: kernel_manager.py:332
+#: kernel_manager.py:360
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:334
+#: kernel_manager.py:362
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:335
+#: kernel_manager.py:363
 msgid "The process is complete. You are multiplying to close the window."
 msgstr "该过程完成。 您正在乘以关闭窗口。"
