@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-01-17 14:48+0300\n"
-"PO-Revision-Date: 2021-01-17 18:54+0300\n"
+"POT-Creation-Date: 2021-01-18 18:32+0300\n"
+"PO-Revision-Date: 2021-01-18 18:35+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -211,7 +211,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:191 kernel_manager.py:319
+#: form/main_win.py:191 kernel_manager.py:356
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -276,7 +276,7 @@ msgstr ""
 "платформу ОС.<br />В настоящее время доступна только платформа «p9».</p></"
 "body></html>"
 
-#: form/main_win.py:201 kernel_manager.py:283
+#: form/main_win.py:201 kernel_manager.py:320
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -312,57 +312,65 @@ msgstr "Согласитесь продолжить процесс"
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: kernel_manager.py:82
+#: kernel_manager.py:85
 msgid "Updating cache wait for completion ..."
 msgstr "Обновление кеша, дождитесь завершения ..."
 
-#: kernel_manager.py:166
+#: kernel_manager.py:169
 msgid "No kernels found to be removed"
 msgstr "Ядра для удаления не обнаружены"
 
-#: kernel_manager.py:173
+#: kernel_manager.py:176
 msgid "Flavor - not selected"
 msgstr "Flavor - не выбран"
 
-#: kernel_manager.py:174
+#: kernel_manager.py:177
 msgid "STD-DEF kernel (main kernel)"
 msgstr "Ядро STD-DEF ( основное ядро )"
 
-#: kernel_manager.py:175
+#: kernel_manager.py:178
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 
-#: kernel_manager.py:176
+#: kernel_manager.py:179
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
-#: kernel_manager.py:177
+#: kernel_manager.py:180
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:217
+#: kernel_manager.py:262
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:295
+#: kernel_manager.py:288
+msgid "Installation"
+msgstr "Установка"
+
+#: kernel_manager.py:332
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:307
+#: kernel_manager.py:344
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:360
+#: kernel_manager.py:397
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:362
+#: kernel_manager.py:399
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:363
+#: kernel_manager.py:400
 msgid "The process is complete. You are multiplying to close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
+
+#, python-brace-format
+#~ msgid "Installation flavour-{flavour}"
+#~ msgstr "Установка flavour-{flavour}"
 
 #~ msgid "Clearing the local cache"
 #~ msgstr "Очистка локального кеша"
