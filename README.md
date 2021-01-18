@@ -15,6 +15,7 @@ The program can update the kernel, change the build type, remove old kernels, cl
 The program has been translated into Russian and English. The English version needs some work. Translation instructions are located in the locale directory of the root directory of kernel-manager. Instructions and a file for translation in the [archive](https://yadi.sk/d/kXPPBUHCcbNnyg).
 ### Thanks to the translators:
 * gosts_87 - Дмитрий ( Chinese, Hindi )
+* Δημητριος - ( Greek language )
 
 ## Requires:
 * python3-base
