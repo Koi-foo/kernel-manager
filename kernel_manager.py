@@ -283,7 +283,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             command = self.branches(uf='Y', kernel=flavour)
         
             self.proc_win.show()
-            self.proc_win.setWindowTitle(f'Установка flavour-{flavour}')
+            self.proc_win.setWindowTitle(_('Installation') + " " + f'flavour-{flavour}')
       
             self.proc_win.start_qprocess(command)
         
