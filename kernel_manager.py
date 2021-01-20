@@ -98,9 +98,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             shell=True, stdout=PIPE, encoding='utf-8').stdout
         
         for x in search_version.splitlines():
-            act = self.search_re(kernel_num=x)
-            if act > new_version:
-                new_version = act
+            act = self.search_re(kernel_num=x).split(".")
+            
+            if act[0] >= new_version.split(".")[0] and \
+                act[1] >= new_version.split(".")[1] and \
+                    act[2] >= new_version.split(".")[2]:
+                        new_version = ".".join(act)
         
         self.compare_kernel(new_version, real_number) 
         
