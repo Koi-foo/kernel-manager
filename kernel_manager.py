@@ -102,8 +102,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
             if act[0] >= new_version.split(".")[0] and \
                 act[1] >= new_version.split(".")[1] and \
-                    act[2] >= new_version.split(".")[2]:
-                        new_version = ".".join(act)
+                act[2] >= new_version.split(".")[2]:
+                    new_version = ".".join(act)
         
         self.compare_kernel(new_version, real_number) 
         
