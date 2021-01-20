@@ -1,11 +1,13 @@
 [Desktop Entry]
 Categories=System;Utility;Archiving;
 Comment[ru_RU]=Использует команду update-kernel
-Comment=Использует команду update-kernel
+Comment[el]=Χρησιμοποιεί την εντολή update-kernel
+Comment=Uses the update-kernel command
 #Exec=/usr/bin/xdg-su -c '/opt/kernel-manager/kernel_manager.py'
 Exec=/usr/bin/xdg-su -c 'cd /opt/kernel-manager ; ./kernel_manager.py'
 GenericName[ru_RU]=Обновление ядра Linux
-GenericName=Обновление ядра Linux
+GenericName[el]=Ενημέρωση πυρήνα Linux
+GenericName=Linux kernel update
 Icon=/opt/kernel-manager/icons/kernel-manager.png
 MimeType=
 Name[ru_RU]=Kernel manager
