@@ -225,9 +225,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     udp = "apt-get dist-upgrade"
                     return udp
                 else:
-                    udp = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
-                        + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
-                            + ";" + "apt-get\" \"dist-upgrade"
+                    udp = "/bin/sh -c" + " " \
+                        + "apt-repo\" \"rm\" \"all" + ";" \
+                        + "apt-repo\" \"add\" \"p9" + ";" \
+                        + "apt-get\" \"update" + ";" \
+                        + "apt-get\" \"dist-upgrade"
                     return udp
         elif uk:
             if 0 == combobox_item:
@@ -235,9 +237,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     udp = "update-kernel"
                     return udp
                 else:
-                    udp = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
-                        + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
-                            + ";" + "update-kernel"
+                    udp = "/bin/sh -c" + " " \
+                        + "apt-repo\" \"rm\" \"all" + ";" \
+                        + "apt-repo\" \"add\" \"p9" + ";" \
+                        + "apt-get\" \"update" + ";" \
+                        + "update-kernel"
                     return udp
         elif uf:
             if 0 == combobox_item:
@@ -245,9 +249,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     udp = f"update-kernel -t {kernel}"
                     return udp
                 else:
-                    udp = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
-                        + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
-                            + ";" + f"update-kernel\" \"-t\" \"{kernel}"
+                    udp = "/bin/sh -c" + " " \
+                        + "apt-repo\" \"rm\" \"all" + ";" \
+                        + "apt-repo\" \"add\" \"p9" + ";" \
+                        + "apt-get\" \"update" + ";" \
+                        + f"update-kernel\" \"-t\" \"{kernel}"
                     return udp
             
                  
@@ -299,11 +305,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def sisyphus_flavour(self):
         """Замена ядра на ядро UN-DEF из Sisyphus"""
         flavour = 'un-def'
-        command = "/bin/sh -c" + " " + "apt-repo\" \"rm\" \"all" + ";" \
-            + "apt-repo\" \"add\" \"Sisyphus" + ";" + "apt-get\" \"update" \
-                + ";" + f"update-kernel\" \"-t\" \"{flavour}" + ";" + "apt-repo\" \"rm\" \"all" \
-                    + ";" + "apt-repo\" \"add\" \"p9" + ";" + "apt-get\" \"update" \
-                        + ";" + "apt-get\" \"autoclean"
+        command = "/bin/sh -c" + " " \
+            + "apt-repo\" \"rm\" \"all" + ";" \
+            + "apt-repo\" \"add\" \"Sisyphus" + ";" \
+            + "apt-get\" \"update" + ";" \
+            + f"update-kernel\" \"-t\" \"{flavour}" + ";" \
+            + "apt-repo\" \"rm\" \"all" + ";" \
+            + "apt-repo\" \"add\" \"p9" + ";" \
+            + "apt-get\" \"update" + ";" \
+            + "apt-get\" \"autoclean"
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(f'Sisyphus flavour-{flavour}')
