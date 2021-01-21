@@ -5,11 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-01-18 18:32+0300\n"
-"PO-Revision-Date: 2021-01-18 21:00+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"POT-Creation-Date: 2021-01-17 14:46+0300\n"
+"PO-Revision-Date: 2021-01-21 21:41+0200\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,7 +15,9 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ..\n"
+"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: el\n"
 "X-Poedit-SearchPath-0: kernel_manager.py\n"
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
@@ -101,7 +101,7 @@ msgstr ""
 
 #: form/main_win.py:173
 msgid "Change flavor type"
-msgstr "Αλλαγή τύπου flavor"
+msgstr "Αλλαγή (τύπου - έκδοση) του Πυρήνα"
 
 #: form/main_win.py:174
 msgid "Change"
@@ -113,7 +113,7 @@ msgid ""
 "to a new flavor"
 msgstr ""
 "Επιλέξτε έναν πυρήνα από τη λίστα και κάντε κλικ στο<br>Κουμπί \"Αλλαγή\" "
-"για μετάβαση σε νέο flavor"
+"για μετάβαση σε νέο τύπο (πυρήνα)"
 
 #: form/main_win.py:176
 msgid ""
@@ -159,8 +159,9 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Το σημείωμα</span><br />Η καρτέλα για την αλλαγή των flavour's "
-"(τύποι συναρμολόγησης) των πυρήνων του λειτουργικού συστήματος.</p>\n"
+"weight:600;\">Το σημείωμα</span><br />Η καρτέλα για την αλλαγή του (τύπου-"
+"έκδοση) των (πυρήνων), οι (τύποι συναρμολόγησης) των πυρήνων του "
+"λειτουργικού συστήματος.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Kernel: STD-DEF</span><br />Βασικός kernel. Κατά τη "
@@ -169,9 +170,9 @@ msgstr ""
 "του λογισμικού.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Kernel: OLD-DEF</span><br />Προηγούμενος Κλάδος (πυρήνα) "
-"kernel std-def. Ο παλιός (πυρήνας)-def kernel υποστηρίζει παλαιότερο υλικό "
-"και εχει μακροπρόθεσμη υποστήριξη.</p>\n"
+"weight:600;\">Kernel: OLD-DEF</span><br />Προηγούμενη έκδοση (πυρήνα) kernel "
+"std-def. Ο παλιός (πυρήνας)-def kernel υποστηρίζει παλαιότερο υλικό και εχει "
+"μακροπρόθεσμη υποστήριξη.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Kernel: UN-DEF</span><br />Ένας πειραματικός πυρήνας για "
@@ -214,7 +215,7 @@ msgstr "Αφαίρεση (πυρήνων) kernels"
 msgid "Removing kernels"
 msgstr "Αφαίρεση (πυρήνων) kernels"
 
-#: form/main_win.py:191 kernel_manager.py:356
+#: form/main_win.py:191 kernel_manager.py:319
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
@@ -282,7 +283,7 @@ msgstr ""
 "την πλατφόρμα λειτουργικού συστήματος.<br />Προς το παρόν μόνο η &quot;"
 "p9&quot;  πλατφόρμα είναι διαθέσιμη.</p></body></html>"
 
-#: form/main_win.py:201 kernel_manager.py:320
+#: form/main_win.py:201 kernel_manager.py:283
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
@@ -316,64 +317,56 @@ msgstr "Συμφωνείτε να συνεχίσετε τη διαδικασία
 
 #: form/process_win.py:64
 msgid "Confirm"
-msgstr "Επιβεβαιώνω"
+msgstr "Επιβεβαίωση"
 
-#: kernel_manager.py:85
+#: kernel_manager.py:82
 msgid "Updating cache wait for completion ..."
 msgstr "Ενημέρωση προσωρινής μνήμης για ολοκλήρωση ..."
 
-#: kernel_manager.py:169
+#: kernel_manager.py:166
 msgid "No kernels found to be removed"
 msgstr "Δεν βρέθηκαν (πυρήνες) kernels για να αφαιρεθούν"
 
-#: kernel_manager.py:176
+#: kernel_manager.py:173
 msgid "Flavor - not selected"
-msgstr "Flavor - δεν επιλέχθηκαν"
+msgstr "(Τυπός-'Εκδοση) Πυρήνα - δεν επιλέχθηκαν"
 
-#: kernel_manager.py:177
+#: kernel_manager.py:174
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF kernel (Βασικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:178
+#: kernel_manager.py:175
 msgid "OLD-DEF kernel (old std-def branch)"
-msgstr "OLD-DEF (πυρήνας) kernel (παλιός κλάδος- std-def )"
+msgstr "OLD-DEF (πυρήνας) kernel (παλιά Έκδοση - std-def )"
 
-#: kernel_manager.py:179
+#: kernel_manager.py:176
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF kernel (Πειραματικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:180
+#: kernel_manager.py:177
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (kernel un-def)"
 
-#: kernel_manager.py:262
+#: kernel_manager.py:217
 msgid "Removing the kernel"
 msgstr "Αφαίρεση του (πυρηνα) kernel"
 
-#: kernel_manager.py:288
-msgid "Installation"
-msgstr "Εγκατάσταση"
-
-#: kernel_manager.py:332
+#: kernel_manager.py:295
 msgid "Removing old kernels"
 msgstr "Αφαίρεση του παλιού (πυρηνα) kernel"
 
-#: kernel_manager.py:344
+#: kernel_manager.py:307
 msgid "Cleaning apt-cache"
 msgstr "Καθάρισμα apt-cache"
 
-#: kernel_manager.py:397
+#: kernel_manager.py:360
 msgid "Process started, please wait ..."
 msgstr "Η διαδικασία ξεκίνησε, περιμένετε ..."
 
-#: kernel_manager.py:399
+#: kernel_manager.py:362
 msgid "Completed successfully"
 msgstr "Ολοκληρώθηκε επιτυχώς"
 
-#: kernel_manager.py:400
+#: kernel_manager.py:363
 msgid "The process is complete. You are multiplying to close the window."
-msgstr "Η διαδικασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παράθυρο."
-
-#, python-brace-format
-#~ msgid "Installation flavour-{flavour}"
-#~ msgstr "Εγκατάσταση flavour-{flavour}"
+msgstr "Η διαδικασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παραθυρο."
