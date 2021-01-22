@@ -183,7 +183,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def combobox_repo(self):
         """Widget comboBox и список репозиториев в нем"""
-        self.comboBox_ChangeRepo.addItem('P9')
+        current_repo = run('apt-repo', shell=True, stdout=PIPE, \
+            encoding='utf-8').stdout.splitlines()[1]
+        list_repo = ["p9", "Sisyphus"]
+        
+        for name_repo in list_repo:
+            if name_repo in current_repo:
+                self.comboBox_ChangeRepo.addItem(name_repo)
+                list_repo.remove(name_repo)
+                
+                for name_repo in list_repo:
+                    self.comboBox_ChangeRepo.addItem(name_repo)
         
             
     def show_list_kernel_gui(self, kernel_list):
@@ -214,47 +224,21 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.update_list_kernel()
         
         
-    def branches(self, ud='', uk='', uf='', kernel=''):
+    def branches(self):
         """Смена репозиториев"""
-        list_repo = run('apt-repo', shell=True, stdout=PIPE, encoding='utf-8').stdout
-        combobox_item = self.comboBox_ChangeRepo.currentIndex()
+        current_repo = run('apt-repo', shell=True, stdout=PIPE, \
+            encoding='utf-8').stdout.splitlines()[1]
+        combobox_text = self.comboBox_ChangeRepo.currentText()
         
-        if ud:
-            if 0 == combobox_item:
-                if 'p9' in list_repo.split('\n',1)[0]:
-                    udp = "apt-get dist-upgrade"
-                    return udp
-                else:
-                    udp = "/bin/sh -c" + " " \
-                        + "apt-repo\" \"rm\" \"all" + ";" \
-                        + "apt-repo\" \"add\" \"p9" + ";" \
-                        + "apt-get\" \"update" + ";" \
-                        + "apt-get\" \"dist-upgrade"
-                    return udp
-        elif uk:
-            if 0 == combobox_item:
-                if 'p9' in list_repo.split('\n',1)[0]:
-                    udp = "update-kernel"
-                    return udp
-                else:
-                    udp = "/bin/sh -c" + " " \
-                        + "apt-repo\" \"rm\" \"all" + ";" \
-                        + "apt-repo\" \"add\" \"p9" + ";" \
-                        + "apt-get\" \"update" + ";" \
-                        + "update-kernel"
-                    return udp
-        elif uf:
-            if 0 == combobox_item:
-                if 'p9' in list_repo.split('\n',1)[0]:
-                    udp = f"update-kernel -t {kernel}"
-                    return udp
-                else:
-                    udp = "/bin/sh -c" + " " \
-                        + "apt-repo\" \"rm\" \"all" + ";" \
-                        + "apt-repo\" \"add\" \"p9" + ";" \
-                        + "apt-get\" \"update" + ";" \
-                        + f"update-kernel\" \"-t\" \"{kernel}"
-                    return udp
+        if combobox_text in current_repo:
+            return
+        elif combobox_text == 'p9':
+            change_repo = run('apt-repo rm all ; apt-repo add p9', shell=True)
+            return change_repo
+        elif combobox_text == 'Sisyphus':
+            return # переход на сизиф заблокирован
+            change_repo = run('apt-repo rm all ; apt-repo add Sisyphus', shell=True)
+            return change_repo
             
                  
     # Функции кнопок
@@ -289,7 +273,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.sisyphus_flavour()
                     
         try:
-            command = self.branches(uf='Y', kernel=flavour)
+            self.branches()
+            
+            command = f"update-kernel -t {flavour}"
         
             self.proc_win.show()
             self.proc_win.setWindowTitle(_('Installation') + " " + f'flavour-{flavour}')
@@ -325,7 +311,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def distribution_up(self):
         """Обновить дистрибутив"""
-        command = self.branches(ud='Y')
+        self.branches()
+        
+        command = "/bin/sh -c" + " " \
+            + "apt-get\" \"dist-upgrade"
                 
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Distribution update'))
@@ -361,7 +350,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def upgrade_kernel(self):
         """Обновление ядра"""
-        command = self.branches(uk='Y')
+        self.branches()
+        
+        command = "/bin/sh -c" + " " \
+            + "update-kernel"
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Kernel update'))
