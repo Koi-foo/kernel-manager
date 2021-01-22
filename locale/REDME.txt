@@ -19,6 +19,13 @@ At the top, click the Catalog menu item and select Update from *.pot file. Selec
 Complete the translation and save.
 Send the new * .po and * .mo translation files to the developer.
 
+Editing or correcting a translation
+To fix the translation, open the kernel_manager.po file in the desired language directory.
+For example:
+locale/ru/LC_MESSAGES/kernel_manager.po
+Find and fix the lines you want, then save the file.
+After saving the kernel_manager.po file, the kernel_manager.mo file is automatically updated.
+Send the updated files to the developer.
 
 [ru_RU]
 =======
@@ -40,3 +47,11 @@ Poedit используется для перевода.
 Вверху щелкните пункт меню «Каталог» и выберите «Обновить из файла *.pot». Выберите файл.
 Завершите перевод и сохраните.
 Отправьте разработчику новые файлы перевода * .po и * .mo.
+
+Редактирование или исправление перевода.
+Чтобы исправить перевод, откройте файл kernel_manager.po в каталоге нужного языка.
+Например:
+locale/ru/LC_MESSAGES/kernel_manager.po
+Найдите и исправьте нужные строки, затем сохраните файл.
+После сохранения файла kernel_manager.po файл kernel_manager.mo автоматически обновляется.
+Отправьте обновленные файлы разработчику.
