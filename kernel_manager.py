@@ -236,7 +236,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             change_repo = run('apt-repo rm all ; apt-repo add p9', shell=True)
             return change_repo
         elif combobox_text == 'Sisyphus':
-            return # переход на сизиф заблокирован
+            return # заблокиронна смены перо на сизиф
             change_repo = run('apt-repo rm all ; apt-repo add Sisyphus', shell=True)
             return change_repo
             
@@ -269,7 +269,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             flavour = 'old-def'
         elif 3 == combobox_item:
             flavour = 'un-def'
-        elif 4 == combobox_item:                        
+        elif 4 == combobox_item:
             self.sisyphus_flavour()
                     
         try:
@@ -290,16 +290,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def sisyphus_flavour(self):
         """Замена ядра на ядро UN-DEF из Sisyphus"""
+        combobox_text = self.comboBox_ChangeRepo.currentText()
         flavour = 'un-def'
+        
         command = "/bin/sh -c" + " " \
             + "apt-repo\" \"rm\" \"all" + ";" \
             + "apt-repo\" \"add\" \"Sisyphus" + ";" \
             + "apt-get\" \"update" + ";" \
             + f"update-kernel\" \"-t\" \"{flavour}" + ";" \
             + "apt-repo\" \"rm\" \"all" + ";" \
-            + "apt-repo\" \"add\" \"p9" + ";" \
-            + "apt-get\" \"update" + ";" \
-            + "apt-get\" \"autoclean"
+            + f"apt-repo\" \"add\" \"{combobox_text}" + ";" \
+            + "apt-get\" \"update"
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(f'Sisyphus flavour-{flavour}')
@@ -377,7 +378,8 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         
         
     def closeEvent(self, event):
-        """Переопределение события"""
+        """Переопределение события завершения"""
+        close_process = run('killall apt-get dist-upgrade', shell=True)
         self.closeWindow.emit()
         
         
