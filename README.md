@@ -7,8 +7,8 @@ Program for updating kernels in altlinux p9
 
 ## Description:
 Graphical shell for scripts: update-kernel, remove-old-kernels
-Rendering the interface Qt5\PyQt5
-Language logic Python 3
+Rendering the interface Qt5\PyQt5 (5.11.3)
+Language logic Python 3.7
 The program can update the kernel, change the build type, remove old kernels, clean the file storage, update the distribution.
 
 ## Translation of the program.
@@ -23,6 +23,8 @@ The program has been translated into Russian and English. The English version ne
 * python3-module-gettext
 * xdg-utils
 * update-kernel
+* apt-repo
+* apt-scripts
 
 ## Install
 
