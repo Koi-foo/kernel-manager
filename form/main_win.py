@@ -130,6 +130,7 @@ class Ui_MainWindow(object):
         self.gridLayout_5.addWidget(self.pushButton_KERN, 1, 0, 1, 1)
         self.text_Update_kernel = QtWidgets.QTextBrowser(self.Tab4_UpdateKernel)
         self.text_Update_kernel.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.text_Update_kernel.setOpenExternalLinks(True)
         self.text_Update_kernel.setObjectName("text_Update_kernel")
         self.gridLayout_5.addWidget(self.text_Update_kernel, 0, 0, 1, 4)
         spacerItem2 = QtWidgets.QSpacerItem(253, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -169,7 +170,7 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Change of kernel.</span><span style=\" background-color:transparent;\"><br />Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Removing kernels.</span><span style=\" background-color:transparent;\"><br />Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove Kernels button cleans the system of all old kernels. The currently active kernel cannot be deleted.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Update kernel.</span><span style=\" background-color:transparent;\"><br />Automatically updates the kernel and modules to the newest version. The &quot;Distribution&quot; button updates the software to the current version.</span></p></body></html>")))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Update kernel.</span><span style=\" background-color:transparent;\"><br />Automatically updates the kernel and modules to the newest version. The &quot;Distribution&quot; button updates the software to the current version. The repository list allows you to modify the branches of the repository.</span></p></body></html>")))
         self.pushButton_ChangeFlavour.setToolTip(_translate("MainWindow", _("Change flavor type")))
         self.pushButton_ChangeFlavour.setText(_translate("MainWindow", _("Change")))
         self.comboBox_ChangeKernel.setToolTip(_translate("MainWindow", _("Select a kernel from the list and click the <br>\"Change\" button to switch to a new flavor")))
@@ -183,8 +184,8 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of the latest software. Recommended for Intel integrated graphics not supported by other kernels. When using the kernel from this repository, you will not be able to work with programs that depend on the version of the module in the stable repositories.</p></body></html>")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Change of kernels")))
-        self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache of obsolete<br>packages with apt-get autoclean command")))
-        self.pushButton_Clean.setText(_translate("MainWindow", _("Clear cache")))
+        self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache of obsolete packages<br>and removing duplicate packages")))
+        self.pushButton_Clean.setText(_translate("MainWindow", _("Clear")))
         self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Removes old versions of kernels")))
         self.pushButton_DELK.setText(_translate("MainWindow", _("Remove kernels")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab3_DelKernel), _translate("MainWindow", _("Removing kernels")))
@@ -197,7 +198,7 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />It is recommended to update the distribution to the latest version before updating the kernel. Such an update will help to avoid unnecessary problems when updating the kernel.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Update Kernel button</span><br />Updates the current active system kernel and all modules installed for it.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program will be displayed in the terminal and require user confirmation. If you are unsure of your actions, cancel the update.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Repositories</span><br />Allows changing repositories. Shows the currently connected repositories. Allows you to update the OS platform.<br />Currently only the &quot;p9&quot; platform is available.</p></body></html>")))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Repositories</span><br />Allows changing repositories. Shows the currently connected repositories. Allows you to update the OS platform. To switch to a different platform, select a repository and click &quot;Distribution&quot;. The update will start automatically. Before choosing &quot;<a href=\"https://www.altlinux.org/%D0%A7%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, carefully read its description.</p></body></html>")))
         self.pushButton_DISTR.setToolTip(_translate("MainWindow", _("Distribution update")))
         self.pushButton_DISTR.setText(_translate("MainWindow", _("Distribution")))
         self.comboBox_ChangeRepo.setToolTip(_translate("MainWindow", _("Change repository")))
