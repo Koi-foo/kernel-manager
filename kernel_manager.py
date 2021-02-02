@@ -236,7 +236,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             change_repo = run('apt-repo rm all ; apt-repo add p9', shell=True)
             return change_repo
         elif combobox_text == 'Sisyphus':
-            return # заблокиронна смены перо на сизиф
+            return # заблокированна смена перо на сизиф
             change_repo = run('apt-repo rm all ; apt-repo add Sisyphus', shell=True)
             return change_repo
             
@@ -339,7 +339,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def cache_clear_apt(self):
         """Очистка кэша пакетов"""
-        command = "apt-get autoclean"
+        command = "/bin/sh -c" + " " \
+            + "apt-get\" \"autoclean" + ";" \
+            + "apt-get\" \"dedup"
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Cleaning apt-cache'))
@@ -378,8 +380,13 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         
         
     def closeEvent(self, event):
-        """Переопределение события завершения"""
-        close_process = run('killall apt-get dist-upgrade', shell=True)
+        """Переопределение события завершения"""        
+        activ_process = run('pidof apt-get dist-upgrade', shell=True, \
+            stdout=PIPE, encoding='utf-8').stdout
+        
+        if activ_process:
+            close_process = run(f'kill {activ_process}', shell=True)
+        
         self.closeWindow.emit()
         
         
