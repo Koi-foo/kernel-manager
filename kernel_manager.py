@@ -248,7 +248,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             + "apt-get\" \"clean" + ";" \
             + "apt-get\" \"update" + ";" \
             + "apt-get\" \"install\" \"apt\" \"rpm" + ";" \
-            + "apt-get\" \"dist-upgrade" + \
+            + "apt-get\" \"dist-upgrade" + ";" \
             + "update-kernel"
         return sisyphus
             
