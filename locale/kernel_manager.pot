@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-02 23:17+0300\n"
+"POT-Creation-Date: 2021-02-03 12:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -196,5 +196,5 @@ msgid "Completed successfully"
 msgstr ""
 
 #: kernel_manager.py:429
-msgid "The process is complete. You are multiplying to close the window."
+msgid "The process is complete. You can close the window."
 msgstr ""
