@@ -426,7 +426,7 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
             self.statusbar.showMessage(_('Process started, please wait ...'))
         else:
             self.statusbar.showMessage(_('Completed successfully'))
-            self.textEdit.insertPlainText(_('The process is complete. You are multiplying to close the window.'))
+            self.textEdit.insertPlainText(_('The process is complete. You can close the window.'))
    
    
     def text_widget(self):
