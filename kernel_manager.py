@@ -96,14 +96,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         search_version = run(
             f"apt-cache pkgnames kernel-image-{flavour}#",
             shell=True, stdout=PIPE, encoding='utf-8').stdout
-        
+
         for x in search_version.splitlines():
             act = self.search_re(kernel_num=x).split(".")
             
-            if act[0] >= new_version.split(".")[0] and \
-                act[1] >= new_version.split(".")[1] and \
-                act[2] >= new_version.split(".")[2]:
-                    new_version = ".".join(act)
+            if act[0] > new_version.split(".")[0]:
+                new_version = ".".join(act)
+                break
+            
+            if act[1] > new_version.split(".")[1]:
+                new_version = ".".join(act)
+            
+            if int(act[2]) > int(new_version.split(".")[2]):
+                new_version = ".".join(act)
         
         self.compare_kernel(new_version, real_number) 
         
@@ -129,7 +134,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Сравнения версий ядер"""
         if new_version == real_number:
             self.bar()
-        elif new_version > real_number:
+        else:
             self.bar(messages='N', new_version=new_version)
             
             
@@ -259,7 +264,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if 'Ядра' in item.text():
             pass
         else:            
-            command = f"apt-get remove {item.text()}"
+            command = "/bin/sh -c" + " " \
+                + f"apt-get\" \"remove\" \"{item.text()}"
         
             self.proc_win.show()
             self.proc_win.setWindowTitle(_('Removing the kernel'))
