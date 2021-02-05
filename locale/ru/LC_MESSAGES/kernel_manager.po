@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-03 12:22+0300\n"
-"PO-Revision-Date: 2021-02-03 12:37+0300\n"
+"POT-Creation-Date: 2021-02-05 19:15+0300\n"
+"PO-Revision-Date: 2021-02-05 19:25+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -52,8 +52,10 @@ msgid ""
 "weight:600; background-color:transparent;\">Removing kernels.</span><span "
 "style=\" background-color:transparent;\"><br />Shows a list of kernels "
 "installed on the system. Double clicking on a line removes the selected "
-"kernel and its modules.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"kernel and its modules. The currently active kernel is not displayed in the "
+"list. The Clear button clears the cache of obsolete packages and removes "
+"duplicates.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
 "color:transparent;\">The Remove Kernels button cleans the system of all old "
 "kernels. The currently active kernel cannot be deleted.</span></p>\n"
@@ -88,7 +90,8 @@ msgstr ""
 "weight:600; background-color:transparent;\">Удаление ядер.</span><span style="
 "\" background-color:transparent;\"><br />Показывает список ядер, "
 "установленных в системе. Двойной щелчок по строке удаляет выбранное ядро и "
-"его модули.</span></p>\n"
+"его модули. Текущее активное ядро не отображается в списке. Кнопка Очистить "
+"очищает кеш от устаревших пакетов и удаляет дубликаты.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
 "color:transparent;\">Кнопка «Удалить ядра» очищает систему от всех старых "
@@ -213,7 +216,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:192 kernel_manager.py:379
+#: form/main_win.py:192 kernel_manager.py:385
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -286,7 +289,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:202 kernel_manager.py:338
+#: form/main_win.py:202 kernel_manager.py:344
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -326,55 +329,55 @@ msgstr "Подтвердить"
 msgid "Updating cache wait for completion ..."
 msgstr "Обновление кеша, дождитесь завершения ..."
 
-#: kernel_manager.py:170
+#: kernel_manager.py:175
 msgid "No kernels found to be removed"
 msgstr "Ядра для удаления не обнаружены"
 
-#: kernel_manager.py:177
+#: kernel_manager.py:182
 msgid "Flavor - not selected"
 msgstr "Flavor - не выбран"
 
-#: kernel_manager.py:178
+#: kernel_manager.py:183
 msgid "STD-DEF kernel (main kernel)"
 msgstr "Ядро STD-DEF ( основное ядро )"
 
-#: kernel_manager.py:179
+#: kernel_manager.py:184
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 
-#: kernel_manager.py:180
+#: kernel_manager.py:185
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
-#: kernel_manager.py:181
+#: kernel_manager.py:186
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:265
+#: kernel_manager.py:271
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:293
+#: kernel_manager.py:299
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:350
+#: kernel_manager.py:356
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:364
+#: kernel_manager.py:370
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:426
+#: kernel_manager.py:432
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:428
+#: kernel_manager.py:434
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:429
+#: kernel_manager.py:435
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 

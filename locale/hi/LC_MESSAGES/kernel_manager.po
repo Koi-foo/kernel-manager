@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-03 12:22+0300\n"
-"PO-Revision-Date: 2021-02-03 12:45+0300\n"
+"POT-Creation-Date: 2021-02-05 19:15+0300\n"
+"PO-Revision-Date: 2021-02-05 19:44+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: hi_IN\n"
@@ -48,9 +48,10 @@ msgid ""
 "block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:"
 "transparent;\">Removing kernels.</span><span style=\" background-color:transparent;\"><br /"
 ">Shows a list of kernels installed on the system. Double clicking on a line removes the "
-"selected kernel and its modules.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-"
-"block-indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove "
+"selected kernel and its modules. The currently active kernel is not displayed in the list. "
+"The Clear button clears the cache of obsolete packages and removes duplicates.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove "
 "Kernels button cleans the system of all old kernels. The currently active kernel cannot be "
 "deleted.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-"
@@ -60,34 +61,37 @@ msgid ""
 "Distribution&quot; button updates the software to the current version. The repository list "
 "allows you to modify the branches of the repository.</span></p></body></html>"
 msgstr ""
-"<! DOCTYPE HTML PUBLIC \"- // W3C // DTD HTML 4.0 // EN\" \"http://www.w3.org/TR/REC-html40/"
-"strict.dtd\">\n"
-"<html> <head> <meta name = \"qrichtext\" content = \"1\" /> <style type = \"text / css\">\n"
-"पी, ली {व्हाइट-स्पेस: प्री-रैप; }\n"
-"</ style> </ head> <body style = \"font-family: 'Sans Serif'; font-size: 10pt; font-weight: "
-"400; font-style: normal;\">\n"
-"<p स्टाइल = \"मार्जिन-टॉप: 12px; मार्जिन-बॉटम: 12px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt-"
-"block-indent: 0; टेक्स्ट-इंडेंट: 0px;\"> <स्पैन = \"फॉन्ट-वेट: 600;\"> प्रोग्राम हेल्प। </ span> <br /> यह "
-"प्रोग्राम एक सरल ग्राफिकल स्क्रिप्ट मैनेजमेंट टूल प्रदान करता है: <span style = \"font-style: italic;\"> "
-"अपडेट-कर्नेल </ span> , <span style = \"font-style: italic;\"> पुराने-कर्नेल को हटा दें </ span> </ "
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict."
+"dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; "
+"font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">कार्यक्रम की मदद।</"
+"span><br />यह कार्यक्रम एक सरल चित्रमय स्क्रिप्ट प्रबंधन उपकरण प्रदान करता है: <span style=\" font-"
+"style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</"
+"span>.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:"
+"transparent;\">कर्नेल का परिवर्तन।</span><span style=\" background-color:transparent;\"><br /"
+">आपको चुनने के लिए कर्नेल प्रकार को बदलने की अनुमति देता है ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:"
+"transparent;\">गुठली निकालना।</span><span style=\" background-color:transparent;\"><br /"
+">सिस्टम पर स्थापित गुठली की सूची दिखाता है। एक लाइन पर डबल क्लिक करने से चयनित कर्नेल और उसके मॉड्यूल "
+"निकल जाते हैं। वर्तमान में सक्रिय कर्नेल सूची में प्रदर्शित नहीं होता है। क्लियर बटन अप्रचलित पैकेज के कैश को साफ़ "
+"करता है और डुप्लिकेट को हटाता है।</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">निकालें कर्नेल बटन "
+"सभी पुराने कर्नेल की प्रणाली को साफ करता है। वर्तमान में सक्रिय कर्नेल को हटाया नहीं जा सकता है।</span></"
 "p>\n"
-"<p स्टाइल = \"मार्जिन-टॉप: 12px; मार्जिन-बॉटम: 12px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt-"
-"block-indent: 0; टेक्स्ट-इंडेंट: 0px;\"> <स्पैन = \"फ़ॉन्ट-वजन: 600; पृष्ठभूमि-रंग: पारदर्शी;\"> कर्नेल का "
-"परिवर्तन। </ span> <span style = \"पृष्ठभूमि-रंग: पारदर्शी;\"> <br /> आपको चुनने के लिए कर्नेल प्रकार को "
-"बदलने की अनुमति देता है। (STD-DEF, UN-DEF, OLD-DEF) </ span> </ p>\n"
-"<p स्टाइल = \"मार्जिन-टॉप: 12px; मार्जिन-बॉटम: 12px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt-"
-"block-indent: 0; टेक्स्ट-इंडेंट: 0px;\"> <स्पैन = \"फ़ॉन्ट-वजन: 600; पृष्ठभूमि-रंग: पारदर्शी;\"> गुठली "
-"निकालना। </ span> <span style = \"पृष्ठभूमि-रंग: पारदर्शी;\"> <br /> सिस्टम पर स्थापित गुठली की एक "
-"सूची दिखाता है। एक लाइन पर डबल क्लिक करने से चयनित कर्नेल और उसके मॉड्यूल हट जाते हैं। </ span> </ p>\n"
-"<p स्टाइल = \"मार्जिन-टॉप: 12px; मार्जिन-बॉटम: 12px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt-"
-"block-indent: 0; टेक्स्ट-इंडेंट: 0px;\"> <स्पैन = \"पृष्ठभूमि-रंग: पारदर्शी;\"> कर्नेल निकालें बटन सभी पुराने "
-"गुठली की प्रणाली को साफ करता है। वर्तमान में सक्रिय कर्नेल को हटाया नहीं जा सकता है। </ span> </ p>\n"
-"<p स्टाइल = \"मार्जिन-टॉप: 12px; मार्जिन-बॉटम: 12px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt-"
-"block-indent: 0; टेक्स्ट-इंडेंट: 0px;\"> <स्पैन = \"फ़ॉन्ट-भार: 600; पृष्ठभूमि-रंग: पारदर्शी;\"> कर्नेल अद्यतन "
-"करें। </ span> <span style = \"पृष्ठभूमि-रंग: पारदर्शी;\"> <br /> नवीनतम संस्करण में कर्नेल और मॉड्यूल को "
-"स्वचालित रूप से अपडेट करता है। & Quot; वितरण & quot; बटन सॉफ़्टवेयर को वर्तमान संस्करण में अपडेट करता है। "
-"रिपॉजिटरी सूची आपको रिपॉजिटरी की शाखाओं को संशोधित करने की अनुमति देती है। </ span> </ p> </ body> "
-"</ p>"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-"
+"block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:"
+"transparent;\">अद्यतन कर्नेल.</span><span style=\" background-color:transparent;\"><br /"
+">स्वचालित रूप से कर्नेल और मॉड्यूल को नवीनतम संस्करण में अपडेट करता है। द &quot;वितरण&quot; बटन सॉफ्टवेयर "
+"को वर्तमान संस्करण में अपडेट करता है। रिपॉजिटरी सूची आपको रिपॉजिटरी की शाखाओं को संशोधित करने की अनुमति "
+"देती है।</span></p></body></html>"
 
 #: form/main_win.py:174
 msgid "Change flavor type"
@@ -183,7 +187,7 @@ msgstr "गुठली निकाल दें"
 msgid "Removing kernels"
 msgstr "गुठली निकालना"
 
-#: form/main_win.py:192 kernel_manager.py:379
+#: form/main_win.py:192 kernel_manager.py:385
 msgid "Kernel update"
 msgstr "कर्नेल अद्यतन"
 
@@ -244,7 +248,7 @@ msgstr ""
 "रंग: # 8080b9; \"> Sisyphus </ span> </a> & quot ;, ध्यान से इसका वर्णन पढ़ें। </ p> </ body> </ /> "
 "html>"
 
-#: form/main_win.py:202 kernel_manager.py:338
+#: form/main_win.py:202 kernel_manager.py:344
 msgid "Distribution update"
 msgstr "वितरण अद्यतन"
 
@@ -284,54 +288,54 @@ msgstr "पुष्टि करें"
 msgid "Updating cache wait for completion ..."
 msgstr "कैश अपडेट हो रहा है, पूरा होने की प्रतीक्षा करें ..."
 
-#: kernel_manager.py:170
+#: kernel_manager.py:175
 msgid "No kernels found to be removed"
 msgstr "कोई गुठली नहीं निकाली गई"
 
-#: kernel_manager.py:177
+#: kernel_manager.py:182
 msgid "Flavor - not selected"
 msgstr "स्वाद - चयनित नहीं"
 
-#: kernel_manager.py:178
+#: kernel_manager.py:183
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF कर्नेल (मुख्य कर्नेल)"
 
-#: kernel_manager.py:179
+#: kernel_manager.py:184
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF कर्नेल (पुरानी std-def शाखा)"
 
-#: kernel_manager.py:180
+#: kernel_manager.py:185
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF कर्नेल (प्रयोगात्मक कर्नेल)"
 
-#: kernel_manager.py:181
+#: kernel_manager.py:186
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (कर्नेल अन-डिफ)"
 
-#: kernel_manager.py:265
+#: kernel_manager.py:271
 msgid "Removing the kernel"
 msgstr "कर्नेल को हटाना"
 
-#: kernel_manager.py:293
+#: kernel_manager.py:299
 msgid "Installation"
 msgstr "स्थापना"
 
-#: kernel_manager.py:350
+#: kernel_manager.py:356
 msgid "Removing old kernels"
 msgstr "पुरानी गुठली निकालना"
 
-#: kernel_manager.py:364
+#: kernel_manager.py:370
 msgid "Cleaning apt-cache"
 msgstr "सफाई apt-कैश"
 
-#: kernel_manager.py:426
+#: kernel_manager.py:432
 msgid "Process started, please wait ..."
 msgstr "प्रक्रिया शुरू हो गई है, प्रतीक्षा करें ..."
 
-#: kernel_manager.py:428
+#: kernel_manager.py:434
 msgid "Completed successfully"
 msgstr "सफलतापूर्वक पूरा"
 
-#: kernel_manager.py:429
+#: kernel_manager.py:435
 msgid "The process is complete. You can close the window."
-msgstr "प्रक्रिया पूरी हो गई है। आप विंडो बंद कर सकते हैं।"
+msgstr "प्रक्रिया पूरी हो गई है। आप विंडो बंद कर सकते हैं।."

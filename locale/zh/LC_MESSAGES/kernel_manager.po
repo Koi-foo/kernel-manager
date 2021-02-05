@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-03 12:22+0300\n"
-"PO-Revision-Date: 2021-02-03 12:47+0300\n"
+"POT-Creation-Date: 2021-02-05 19:15+0300\n"
+"PO-Revision-Date: 2021-02-05 19:30+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -51,8 +51,10 @@ msgid ""
 "weight:600; background-color:transparent;\">Removing kernels.</span><span "
 "style=\" background-color:transparent;\"><br />Shows a list of kernels "
 "installed on the system. Double clicking on a line removes the selected "
-"kernel and its modules.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"kernel and its modules. The currently active kernel is not displayed in the "
+"list. The Clear button clears the cache of obsolete packages and removes "
+"duplicates.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
 "color:transparent;\">The Remove Kernels button cleans the system of all old "
 "kernels. The currently active kernel cannot be deleted.</span></p>\n"
@@ -104,8 +106,9 @@ msgstr ""
 "<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
 "right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ font-"
 "weight：600; background-color：transparent;”>删除内核。</ span> <span style "
-"=“ background-color：transparent;”> <br />显示系统上已安装内核的列表。双击一"
-"行将删除所选的内核及其模块。</ span> </ p>\n"
+"=“ background-color：transparent;”> <br />显示系统上安装的内核列表。 双击一行"
+"将删除所选的内核及其模块。 当前活动的内核未显示在列表中。 “清除”按钮清除过时"
+"软件包的缓存并删除重复的软件包。</ span> </ p>\n"
 "<p style =“ margin-top：12px; margin-bottom：12px; margin-left：0px; margin-"
 "right：0px; -qt-block-indent：0; text-indent：0px;”> <span style = “ "
 "background-color：transparent;”>“删除内核”按钮将清除所有旧内核的系统。当前活"
@@ -216,7 +219,7 @@ msgstr "删除内核"
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:192 kernel_manager.py:379
+#: form/main_win.py:192 kernel_manager.py:385
 msgid "Kernel update"
 msgstr "内核更新"
 
@@ -285,7 +288,7 @@ msgstr ""
 "decoration：underline; color：＃2980b9;“> Sisyphus </ span> </a>”，请仔细阅读"
 "其说明。</ p> </ body> </ </ html>"
 
-#: form/main_win.py:202 kernel_manager.py:338
+#: form/main_win.py:202 kernel_manager.py:344
 msgid "Distribution update"
 msgstr "发行更新"
 
@@ -325,54 +328,54 @@ msgstr "确认"
 msgid "Updating cache wait for completion ..."
 msgstr "正在更新缓存以等待完成..."
 
-#: kernel_manager.py:170
+#: kernel_manager.py:175
 msgid "No kernels found to be removed"
 msgstr "没有找到要删除的内核"
 
-#: kernel_manager.py:177
+#: kernel_manager.py:182
 msgid "Flavor - not selected"
 msgstr "风味-未选择"
 
-#: kernel_manager.py:178
+#: kernel_manager.py:183
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF内核（主内核）"
 
-#: kernel_manager.py:179
+#: kernel_manager.py:184
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF内核（旧的std-def分支）"
 
-#: kernel_manager.py:180
+#: kernel_manager.py:185
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF内核（实验内核）"
 
-#: kernel_manager.py:181
+#: kernel_manager.py:186
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核un-def）"
 
-#: kernel_manager.py:265
+#: kernel_manager.py:271
 msgid "Removing the kernel"
 msgstr "删除内核"
 
-#: kernel_manager.py:293
+#: kernel_manager.py:299
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:350
+#: kernel_manager.py:356
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:364
+#: kernel_manager.py:370
 msgid "Cleaning apt-cache"
 msgstr "清理apt-cache"
 
-#: kernel_manager.py:426
+#: kernel_manager.py:432
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:428
+#: kernel_manager.py:434
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:429
+#: kernel_manager.py:435
 msgid "The process is complete. You can close the window."
-msgstr "该过程完成。 您可以关闭窗口"
+msgstr "该过程完成。 您可以关闭窗口."
