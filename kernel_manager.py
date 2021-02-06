@@ -8,7 +8,6 @@ import sys
 import datetime
 import gettext
 from subprocess import run, PIPE
-from getpass import getuser
 from platform import release
 from threading import Thread
 # PyQt
@@ -48,10 +47,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def update_cache(self):
         """Обновление кэша"""
-        user = getuser()
-        if user != 'root':
-            sys.exit(0)
-        
         up_cache = "apt-get update"
         
         try:
@@ -126,7 +121,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             flavour_type = "".join(search_flavour.findall(kernel_flavour))
             return flavour_type
         elif prefix:
-            del_prefix = search_prefix.sub("", prefix).replace('f-', 'f#1:')
+            del_prefix = search_prefix.sub("", prefix).replace('f-', 'f | grep ')
             return del_prefix
         
         
@@ -140,36 +135,23 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
     def systemic_kernel(self):
         """Системные ядера"""
-        user = getuser()
-        if user != 'root':
-            sys.exit(0)
-        
         real_number = self.search_re(kernel_num=release())
      
-        kernel_sys = run(
+        raw_list_kernel = run(
             'rpm -qa | grep kernel-image-', \
-                shell=True, stdout=PIPE, encoding='utf-8').stdout
+                shell=True, stdout=PIPE, encoding='utf-8').stdout.splitlines()
 
-        raw_list_kernel = self.search_re(prefix=kernel_sys)
         kernel_list = []
         
-        for x in raw_list_kernel.splitlines():
-            pkg = run(f'apt-cache pkgnames {x}', \
-                shell=True, stdout=PIPE, encoding='utf-8').stdout
+        for line in raw_list_kernel:
+            kernel_info = run(f'rpm -qi {line} | grep Install', shell=True, stdout=PIPE, \
+            encoding='utf-8').stdout
             
-            if not pkg:
-                for i in [2, 3, 4, 5]:
-                    x = x.replace('f#1:', f'f#{i}:')
-                    pkg = run(f'apt-cache pkgnames {x}', \
-                        shell=True, stdout=PIPE, encoding='utf-8').stdout
-                    if not pkg:
-                        continue
-
-            kernel_list.append(pkg.rstrip())
+            kernel_list.append(line + " " + kernel_info.rstrip())
  
-        for x in kernel_list:
-            if real_number in x:
-                kernel_list.remove(x)
+        for line in kernel_list:
+            if real_number in line:
+                kernel_list.remove(line)
                 
         if not kernel_list:
             kernel_list.append(_('No kernels found to be removed'))
@@ -261,18 +243,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     # Функции кнопок
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
-        if 'Ядра' in item.text():
-            pass
-        else:            
-            command = "/bin/sh -c" + " " \
-                + f"apt-get\" \"remove\" \"{item.text()}"
+        kernel_select = run("apt-cache pkgnames" + " " \
+            + self.search_re(prefix=item.text().split(None, 1)[0]), \
+                shell=True, stdout=PIPE, encoding='utf-8').stdout.rstrip()
         
-            self.proc_win.show()
-            self.proc_win.setWindowTitle(_('Removing the kernel'))
+        command = "/bin/sh -c" + " " \
+            + f"apt-get\" \"remove\" \"{kernel_select}"
+        
+        self.proc_win.show()
+        self.proc_win.setWindowTitle(_('Removing the kernel'))
       
-            self.proc_win.start_qprocess(command)
+        self.proc_win.start_qprocess(command)
         
-            self.proc_win.textEdit.clear()
+        self.proc_win.textEdit.clear()
             
             
     def change_flavour(self):
