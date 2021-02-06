@@ -95,11 +95,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         for x in search_version.splitlines():
             act = self.search_re(kernel_num=x).split(".")
             
-            if act[0] > new_version.split(".")[0]:
+            if int(act[0]) > int(new_version.split(".")[0]):
                 new_version = ".".join(act)
-                break
             
-            if act[1] > new_version.split(".")[1]:
+            if int(act[1]) > int(new_version.split(".")[1]):
                 new_version = ".".join(act)
             
             if int(act[2]) > int(new_version.split(".")[2]):
@@ -313,15 +312,21 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
     def distribution_up(self):
         """Обновить дистрибутив"""
-        self.branches()
-            
         command = "/bin/sh -c" + " " \
             + "apt-get\" \"dist-upgrade"
         
         combobox_text = self.comboBox_ChangeRepo.currentText()
+        current_repo = run('apt-repo', shell=True, stdout=PIPE, \
+            encoding='utf-8').stdout.splitlines()[1]
         
         if combobox_text == 'Sisyphus':
             command = self.upgrade_sisyphus()
+        elif combobox_text not in current_repo:
+            command = "/bin/sh -c" + " " \
+                + "apt-get\" \"update" + ";" \
+                + "apt-get\" \"dist-upgrade"
+            
+        self.branches()
                 
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Distribution update'))
