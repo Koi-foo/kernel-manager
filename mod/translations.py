@@ -5,6 +5,7 @@
 
 import os
 import sys
+import datetime
 
 
 class MarkupLine():
@@ -20,23 +21,28 @@ class MarkupLine():
     
     def search_strings(self, files):
         """Поиск и замена строк"""
+        current_date = datetime.date.today()
                 
         for path in files:
+            date_change = datetime.date.fromtimestamp(
+                os.path.getmtime(path))
             
-            if 'main' in path:
-                    window = 'MainWindow'
-            elif 'process' in path:
-                    window = 'InfoProcessWin'
-            
-            with open(path, 'rt') as file_obj:
-                contents = file_obj.read()
+            if current_date == date_change:
                 
-                contents = contents.replace(
-                    f'_translate("{window}", "', \
-                    f'_translate("{window}", _("').replace('"))', \
-                    '")))').replace('resources_rc', 'resources')
+                if 'main' in path:
+                        window = 'MainWindow'
+                elif 'process' in path:
+                        window = 'InfoProcessWin'
                 
-            with open(path, 'wt') as file_obj:
-                file_obj.write(contents)
+                with open(path, 'rt') as file_obj:
+                    contents = file_obj.read()
+                    
+                    contents = contents.replace(
+                        f'_translate("{window}", "', \
+                        f'_translate("{window}", _("').replace('"))', \
+                        '")))').replace('resources_rc', 'resources')
+                    
+                with open(path, 'wt') as file_obj:
+                    file_obj.write(contents)
 
 start_script = MarkupLine()
