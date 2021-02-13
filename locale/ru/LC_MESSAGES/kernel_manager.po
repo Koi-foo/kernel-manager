@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-10 19:58+0300\n"
-"PO-Revision-Date: 2021-02-10 20:01+0300\n"
+"POT-Creation-Date: 2021-02-13 17:14+0300\n"
+"PO-Revision-Date: 2021-02-13 17:17+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -216,7 +216,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:192 kernel_manager.py:373
+#: form/main_win.py:192 kernel_manager.py:389
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -289,7 +289,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:202 kernel_manager.py:332
+#: form/main_win.py:202 kernel_manager.py:348
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -325,59 +325,67 @@ msgstr "Согласитесь продолжить процесс"
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: kernel_manager.py:78
+#: kernel_manager.py:75
 msgid "Updating cache wait for completion ..."
 msgstr "Обновление кеша, дождитесь завершения ..."
 
-#: kernel_manager.py:156
+#: kernel_manager.py:88
+msgid "Updating cache:"
+msgstr "Обновление cache:"
+
+#: kernel_manager.py:92
+msgid "Updating completed:"
+msgstr "Обновление завершено:"
+
+#: kernel_manager.py:172
 msgid "No kernels found to be removed"
 msgstr "Ядра для удаления не обнаружены"
 
-#: kernel_manager.py:163
+#: kernel_manager.py:179
 msgid "Flavor - not selected"
 msgstr "Flavor - не выбран"
 
-#: kernel_manager.py:164
+#: kernel_manager.py:180
 msgid "STD-DEF kernel (main kernel)"
 msgstr "Ядро STD-DEF ( основное ядро )"
 
-#: kernel_manager.py:165
+#: kernel_manager.py:181
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 
-#: kernel_manager.py:166
+#: kernel_manager.py:182
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
-#: kernel_manager.py:167
+#: kernel_manager.py:183
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:253
+#: kernel_manager.py:269
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:281
+#: kernel_manager.py:297
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:344
+#: kernel_manager.py:360
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:358
+#: kernel_manager.py:374
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:420
+#: kernel_manager.py:436
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:422
+#: kernel_manager.py:438
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:423
+#: kernel_manager.py:439
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
