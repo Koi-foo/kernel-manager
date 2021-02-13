@@ -7,9 +7,10 @@ import re
 import sys
 import datetime
 import gettext
-from subprocess import run, PIPE
+from subprocess import run, PIPE, Popen
 from platform import release
 from threading import Thread
+from time import sleep
 # PyQt
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import pyqtSignal
@@ -40,15 +41,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_Clean.clicked.connect(self.cache_clear_apt)
         self.pushButton_KERN.clicked.connect(self.upgrade_kernel)
         self.pushButton_ChangeFlavour.clicked.connect(self.change_flavour)
-        
+                
         # Сигналы
         self.proc_win.closeWindow.connect(self.close_window)
         
         
     def update_cache(self):
-        """Обновление кэша"""
-        up_cache = "apt-get update"
-        
+        """Обновление кэша"""        
         try:
             current_date = datetime.date.today()
             date_change = datetime.date.fromtimestamp(
@@ -61,9 +60,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.button_switch(True)
                 
                 self.bar(messages='U')            
-            
-                run(up_cache, shell=True)
-                
+                            
                 self.button_switch(False)
                                 
         Thread(target=self.search_kernel).start()
@@ -76,6 +73,25 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # 0 - Сообщение по умолчанию активное ядро
         if messages == 'U':
             self.statusbar.showMessage(_('Updating cache wait for completion ...'))
+            
+            up_cache = Popen("apt-get update", shell=True, stdout=PIPE, encoding='utf-8')
+                
+            search_number = re.compile(r'\s([1-9]{1})\s')
+            fulfilled = 0
+    
+            for line in up_cache.stdout.readlines():
+                num_repo = "".join(search_number.findall(line))
+                
+                try:
+                    if int(num_repo) > int(fulfilled):
+                        fulfilled = num_repo
+                        self.statusbar.showMessage(_('Updating cache:') + ' ' + fulfilled + "5%")
+                        sleep(1)
+                except ValueError:
+                    if 'дерева' in line:
+                        self.statusbar.showMessage(_('Updating completed:') + ' ' + "100%")
+                        sleep(2)
+            
         elif messages == 'N':
             self.statusbar.showMessage("kernel " + release() + " ➤ " + new_version)
         else:
