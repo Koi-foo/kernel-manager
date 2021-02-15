@@ -54,7 +54,7 @@
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">QListWidget:item{height: 30px;border-bottom: 1px solid rgb(225, 225, 225);} QListWidget::item:selected {background-color: rgb(249, 249, 249); color: black} QListView::item:selected:!active {background-color: rgb(249, 249, 249); color: black} QListView::item:selected:active {background-color: rgb(249, 249, 249); color: black} QListView::item:hover {background-color: rgb(249, 249, 249); color: black} </string>
+       <string notr="true"/>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -204,7 +204,7 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">QListWidget:item{height: 30px;border-bottom: 1px solid rgb(225, 225, 225);} QListWidget::item:selected {background-color: rgb(249, 249, 249); color: black}</string>
+           <string notr="true">QListWidget:item{height: 30px;border-bottom: 1px solid rgb(225, 225, 225);} QListWidget::item:selected {background-color: rgb(231, 242, 249); color: black} QListView::item:selected:!active {background-color: rgb(231, 242, 249); color: black} QListView::item:selected:active {background-color: rgb(231, 242, 249); color: black} QListView::item:hover {background-color: rgb(231, 242, 249); color: black}</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
