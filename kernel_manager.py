@@ -36,6 +36,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Thread(target=self.update_cache).start()
         
         # Кнопки
+        # Исправление не верного растяжения кнопки в греческой локали
+        greek_lang = run('printenv LANG', shell=True, stdout=PIPE, encoding='utf-8').stdout
+        if greek_lang.rstrip() == 'el_GR.UTF-8':
+            self.pushButton_KERN.setMinimumSize(0, 0)
+        
         self.pushButton_DISTR.clicked.connect(self.distribution_up)
         self.pushButton_DELK.clicked.connect(self.del_kernel_old)
         self.pushButton_Clean.clicked.connect(self.cache_clear_apt)
