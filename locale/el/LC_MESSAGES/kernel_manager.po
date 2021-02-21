@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-14 19:06+0300\n"
-"PO-Revision-Date: 2021-02-15 23:22+0300\n"
+"POT-Creation-Date: 2021-02-18 10:51+0300\n"
+"PO-Revision-Date: 2021-02-18 11:05+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -33,43 +33,38 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">Program help.</span><span style=\" font-"
-"size:10pt;\"><br />This program provides a simple graphical script "
-"management tool: </span><span style=\" font-size:10pt; font-style:italic;"
-"\">update-kernel</span><span style=\" font-size:10pt;\">, </span><span style="
-"\" font-size:10pt; font-style:italic;\">remove-old-kernel</span><span style="
-"\" font-size:10pt;\">.</span></p>\n"
+"weight:600;\">Program help.</span><br />This program provides a simple "
+"graphical script management tool: <span style=\" font-style:italic;\">update-"
+"kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>."
+"</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600; background-color:transparent;\">Change of kernel."
-"</span><span style=\" font-size:10pt; background-color:transparent;\"><br /"
-">Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-"
-"DEF ).</span></p>\n"
+"weight:600; background-color:transparent;\">Change of kernel.</span><span "
+"style=\" background-color:transparent;\"><br />Allows you to change the "
+"kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600; background-color:transparent;\">Removing kernels."
-"</span><span style=\" font-size:10pt; background-color:transparent;\"><br /"
-">Shows a list of kernels installed on the system. Double clicking on a line "
-"removes the selected kernel and its modules. The currently active kernel is "
-"not displayed in the list. The Clear button clears the cache of obsolete "
-"packages and removes duplicates.</span></p>\n"
+"weight:600; background-color:transparent;\">Removing kernels.</span><span "
+"style=\" background-color:transparent;\"><br />Shows a list of kernels "
+"installed on the system. Double clicking on a line removes the selected "
+"kernel and its modules. The currently active kernel is not displayed in the "
+"list. The Clear button clears the cache of obsolete packages and removes "
+"duplicates.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
+"color:transparent;\">The Remove Kernels button cleans the system of all old "
+"kernels. The currently active kernel cannot be deleted.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; background-color:transparent;\">The Remove Kernels button cleans "
-"the system of all old kernels. The currently active kernel cannot be deleted."
-"</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600; background-color:transparent;\">Update kernel.</"
-"span><span style=\" font-size:10pt; background-color:transparent;\"><br /"
-">Automatically updates the kernel and modules to the newest version. The "
-"&quot;Distribution&quot; button updates the software to the current version. "
-"The repository list allows you to modify the branches of the repository.</"
-"span></p></body></html>"
+"weight:600; background-color:transparent;\">Update kernel.</span><span style="
+"\" background-color:transparent;\"><br />Automatically updates the kernel "
+"and modules to the newest version. The &quot;Distribution&quot; button "
+"updates the software to the current version. The repository list allows you "
+"to modify the branches of the repository.</span></p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -134,37 +129,33 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">The note</span><span style=\" font-size:10pt;"
-"\"><br />The tab for changing the flavour's (assembly types) of the "
-"operating system kernels.</span></p>\n"
+"weight:600;\">The note</span><br />The tab for changing the flavour's "
+"(assembly types) of the operating system kernels.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">Kernel: STD-DEF</span><span style=\" font-"
-"size:10pt;\"><br />Standard kernel. During the assembly, patches from the "
-"stable kernel branch are used to correct the work of drivers and software.</"
-"span></p>\n"
+"weight:600;\">Kernel: STD-DEF</span><br />Standard kernel. During the "
+"assembly, patches from the stable kernel branch are used to correct the work "
+"of drivers and software.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">Kernel: OLD-DEF</span><span style=\" font-"
-"size:10pt;\"><br />Previous kernel branch std-def. The old-def kernel "
-"supports older hardware and long-term support.</span></p>\n"
+"weight:600;\">Kernel: OLD-DEF</span><br />Previous kernel branch std-def. "
+"The old-def kernel supports older hardware and long-term support.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">Kernel: UN-DEF</span><span style=\" font-"
-"size:10pt;\"><br />An experimental core for desktops. The un-def kernel is "
-"newer and may support hardware that does not work in std-def.</span></p>\n"
+"weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. "
+"The un-def kernel is newer and may support hardware that does not work in "
+"std-def.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">Sisyphus: UN-DEF </span><span style=\" font-"
-"size:10pt;\"><br />It is an unstable repository of the latest software. "
-"Recommended for Intel integrated graphics not supported by other kernels. "
-"When using the kernel from this repository, you will not be able to work "
-"with programs that depend on the version of the module in the stable "
-"repositories.</span></p></body></html>"
+"weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of "
+"the latest software. Recommended for Intel integrated graphics not supported "
+"by other kernels. When using the kernel from this repository, you will not "
+"be able to work with programs that depend on the version of the module in "
+"the stable repositories.</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -220,8 +211,8 @@ msgid "Clear"
 msgstr "Εκκαθάριση"
 
 #: form/main_win.py:194
-msgid "Removes old versions of kernels"
-msgstr "Κατάργηση Παλαιών εκδόσεων (πυρήνων) kernels"
+msgid "Removes all cores except the currently active one"
+msgstr "Καταργεί όλους τους πυρήνες εκτός από τον τρέχοντα ενεργό"
 
 #: form/main_win.py:195
 msgid "Remove kernels"
@@ -231,7 +222,7 @@ msgstr "Κατάργηση (πυρήνων) kernels"
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:197 kernel_manager.py:389
+#: form/main_win.py:197 kernel_manager.py:394
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
@@ -246,35 +237,32 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">The note</span><span style=\" font-size:10pt;"
-"\"><br />It is recommended to update the distribution to the latest version "
-"before updating the kernel. Such an update will help to avoid unnecessary "
-"problems when updating the kernel.</span></p>\n"
+"weight:600;\">The note</span><br />It is recommended to update the "
+"distribution to the latest version before updating the kernel. Such an "
+"update will help to avoid unnecessary problems when updating the kernel.</"
+"p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">Update Kernel button</span><span style=\" font-"
-"size:10pt;\"><br />Updates the current active system kernel and all modules "
-"installed for it.</span></p>\n"
+"weight:600;\">Update Kernel button</span><br />Updates the current active "
+"system kernel and all modules installed for it.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt;\">All actions of the program will be displayed in the terminal "
-"and require user confirmation. If you are unsure of your actions, cancel the "
-"update.</span></p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">All actions of the program "
+"will be displayed in the terminal and require user confirmation. If you are "
+"unsure of your actions, cancel the update.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600;\">Repositories</span><span style=\" font-"
-"size:10pt;\"><br />Allows changing repositories. Shows the currently "
-"connected repositories. Allows you to update the OS platform. To switch to a "
-"different platform, select a repository and click &quot;Distribution&quot;. "
-"The update will start automatically. Before choosing &quot;</span><a href="
-"\"https://www.altlinux.org/%D0%A7%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE"
-"%D0%B5_Sisyphus%3F\"><span style=\" font-size:10pt; text-decoration: "
-"underline; color:#2980b9;\">Sisyphus</span></a><span style=\" font-size:10pt;"
-"\">&quot;, carefully read its description.</span></p></body></html>"
+"weight:600;\">Repositories</span><br />Allows changing repositories. Shows "
+"the currently connected repositories. Allows you to update the OS platform. "
+"To switch to a different platform, select a repository and click &quot;"
+"Distribution&quot;. The update will start automatically. Before choosing "
+"&quot;<a href=\"https://www.altlinux.org/%D0%A7%D1%82%D0%BE_"
+"%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: "
+"underline; color:#2980b9;\">Sisyphus</span></a>&quot;, carefully read its "
+"description.</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -310,7 +298,7 @@ msgstr ""
 "%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, διαβάστε προσεκτικά την περιγραφή του.</p></body></html>"
 
-#: form/main_win.py:207 kernel_manager.py:348
+#: form/main_win.py:207 kernel_manager.py:353
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
@@ -346,66 +334,69 @@ msgstr "Συμφωνείτε να συνεχιστεί η διεργασία"
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: kernel_manager.py:75
+#: kernel_manager.py:80
 msgid "Updating cache wait for completion ..."
 msgstr "Ενημέρωση προσωρινής μνήμης για ολοκλήρωση ..."
 
-#: kernel_manager.py:88
+#: kernel_manager.py:93
 msgid "Updating cache:"
 msgstr "Ενημέρωση cache:"
 
-#: kernel_manager.py:92
+#: kernel_manager.py:97
 msgid "Updating completed:"
 msgstr ""
 
-#: kernel_manager.py:172
+#: kernel_manager.py:177
 msgid "No kernels found to be removed"
 msgstr "Δεν βρέθηκαν (πυρήνες) kernels για να αφαιρεθούν"
 
-#: kernel_manager.py:179
+#: kernel_manager.py:184
 msgid "Flavor - not selected"
 msgstr "(Τυπός-'Εκδοση) Πυρήνα - δεν επιλέχθηκαν"
 
-#: kernel_manager.py:180
+#: kernel_manager.py:185
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF kernel (Βασικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:181
+#: kernel_manager.py:186
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF (πυρήνας) kernel (παλιά Έκδοση - std-def )"
 
-#: kernel_manager.py:182
+#: kernel_manager.py:187
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF kernel (Πειραματικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:183
+#: kernel_manager.py:188
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (kernel un-def)"
 
-#: kernel_manager.py:269
+#: kernel_manager.py:274
 msgid "Removing the kernel"
 msgstr "Κατάργηση του (πυρηνα) kernel"
 
-#: kernel_manager.py:297
+#: kernel_manager.py:302
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: kernel_manager.py:360
+#: kernel_manager.py:365
 msgid "Removing old kernels"
 msgstr "Κατάργηση παλαιών (πυρήνων) kernels"
 
-#: kernel_manager.py:374
+#: kernel_manager.py:379
 msgid "Cleaning apt-cache"
 msgstr "Καθάρισμα apt-cache"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:441
 msgid "Process started, please wait ..."
 msgstr "Η διεργασία ξεκίνησε,περιμενετε..."
 
-#: kernel_manager.py:438
+#: kernel_manager.py:443
 msgid "Completed successfully"
 msgstr "Ολοκληρώθηκε επιτυχώς"
 
-#: kernel_manager.py:439
+#: kernel_manager.py:444
 msgid "The process is complete. You can close the window."
 msgstr "Η διεργασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παράθυρο."
+
+#~ msgid "Removes old versions of kernels"
+#~ msgstr "Κατάργηση Παλαιών εκδόσεων (πυρήνων) kernels"
