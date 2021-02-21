@@ -63,9 +63,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             if compare_dates:
                 self.button_switch(True)
-                
                 self.bar(messages='U')            
-                            
                 self.button_switch(False)
                                 
         Thread(target=self.search_kernel).start()
@@ -92,6 +90,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         fulfilled = num_repo
                         self.statusbar.showMessage(_('Updating cache:') + ' ' + fulfilled + "5%")
                         sleep(1)
+                        
                 except ValueError:
                     if 'дерева' in line:
                         self.statusbar.showMessage(_('Updating completed:') + ' ' + "100%")
@@ -137,9 +136,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if kernel_num:
             num_version = "".join(search_num.findall(kernel_num))
             return num_version
+        
         elif kernel_flavour:
             flavour_type = "".join(search_flavour.findall(kernel_flavour))
             return flavour_type
+        
         elif prefix:
             del_prefix = search_prefix.sub("", prefix).replace('f-', 'f | grep ')
             return del_prefix
@@ -238,43 +239,45 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         combobox_text = self.comboBox_ChangeRepo.currentText()
         
         if combobox_text in current_repo:
-            return
-        elif combobox_text == 'p9':
-            change_repo = run('apt-repo rm all ; apt-repo add p9', shell=True)
-            return change_repo
-        elif combobox_text == 'Sisyphus':
-            return
+            list_command = "/bin/sh -c" + " " \
+                + "apt-get\" \"dist-upgrade"
+            return list_command
         
+        elif combobox_text == 'Sisyphus' and combobox_text not in current_repo:
+            list_command = "/bin/sh -c" + " " \
+                + "apt-get\" \"dist-upgrade" + ";" \
+                + "apt-repo\" \"rm\" \"all" + ";" \
+                + "apt-repo\" \"add\" \"Sisyphus" + ";" \
+                + "apt-get\" \"clean" + ";" \
+                + "apt-get\" \"update" + ";" \
+                + "apt-get\" \"install\" \"apt\" \"rpm" + ";" \
+                + "apt-get\" \"dist-upgrade" + ";" \
+                + "update-kernel"
+            return list_command
         
-    def upgrade_sisyphus(self):
-        """Обновление на Сизиф"""
-        sisyphus = "/bin/sh -c" + " " \
-            + "apt-get\" \"dist-upgrade" + ";" \
-            + "apt-repo\" \"rm\" \"all" + ";" \
-            + "apt-repo\" \"add\" \"Sisyphus" + ";" \
-            + "apt-get\" \"clean" + ";" \
-            + "apt-get\" \"update" + ";" \
-            + "apt-get\" \"install\" \"apt\" \"rpm" + ";" \
-            + "apt-get\" \"dist-upgrade" + ";" \
-            + "update-kernel"
-        return sisyphus
+        elif combobox_text not in current_repo:
+            change_repo = run(f'apt-repo rm all ; apt-repo add {combobox_text}', shell=True)
+            self.bar()
             
+            list_command = "/bin/sh -c" + " " \
+                + "apt-get\" \"update" + ";" \
+                + "apt-get\" \"dist-upgrade"
+            return list_command
+
                  
     # Функции кнопок
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
         kernel_select = run("apt-cache pkgnames" + " " \
             + self.search_re(prefix=item.text().split(None, 1)[0]), \
-                shell=True, stdout=PIPE, encoding='utf-8').stdout.rstrip()
+            shell=True, stdout=PIPE, encoding='utf-8').stdout.rstrip()
         
         command = "/bin/sh -c" + " " \
             + f"apt-get\" \"remove\" \"{kernel_select}"
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Removing the kernel'))
-      
         self.proc_win.start_qprocess(command)
-        
         self.proc_win.textEdit.clear()
             
             
@@ -300,9 +303,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
             self.proc_win.show()
             self.proc_win.setWindowTitle(_('Installation') + " " + f'flavour-{flavour}')
-      
             self.proc_win.start_qprocess(command)
-        
             self.proc_win.textEdit.clear()
             
         except UnboundLocalError:
@@ -325,35 +326,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(f'Sisyphus flavour-{flavour}')
-      
         self.proc_win.start_qprocess(command)
-                
         self.proc_win.textEdit.clear()
         
         
     def distribution_up(self):
         """Обновить дистрибутив"""
-        command = "/bin/sh -c" + " " \
-            + "apt-get\" \"dist-upgrade"
-        
-        combobox_text = self.comboBox_ChangeRepo.currentText()
-        current_repo = run('apt-repo', shell=True, stdout=PIPE, \
-            encoding='utf-8').stdout.splitlines()[1]
-        
-        if combobox_text == 'Sisyphus':
-            command = self.upgrade_sisyphus()
-        elif combobox_text not in current_repo:
-            command = "/bin/sh -c" + " " \
-                + "apt-get\" \"update" + ";" \
-                + "apt-get\" \"dist-upgrade"
-            
-        self.branches()
+        command = self.branches()
                 
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Distribution update'))
-        
         self.proc_win.start_qprocess(command)
-        
         self.proc_win.textEdit.clear()
    
    
@@ -363,9 +346,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Removing old kernels'))
-        
         self.proc_win.start_qprocess(command)
-        
         self.proc_win.textEdit.clear()
                 
         
@@ -377,9 +358,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Cleaning apt-cache'))
-
         self.proc_win.start_qprocess(command)
-        
         self.proc_win.textEdit.clear()
         
         
@@ -392,9 +371,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Kernel update'))
-        
         self.proc_win.start_qprocess(command)
-        
         self.proc_win.textEdit.clear()
     
         
@@ -425,12 +402,9 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
     def start_qprocess(self, command=''):
         """Запуск qprocess в окне process_win"""
         self.qproc = QtCore.QProcess()
-        
         self.bar(messages='W')
-        
         self.qproc.finished.connect(self.bar)
         self.qproc.start(command)
-            
         self.qproc.readyRead.connect(self.text_widget)
         
         
@@ -450,6 +424,7 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         
         cursor = self.textEdit.textCursor()
         cursor.movePosition(QtGui.QTextCursor.End)
+        
         self.textEdit.insertPlainText(content)
         self.textEdit.ensureCursorVisible()
         
