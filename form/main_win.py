@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'main_win.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -107,21 +109,26 @@ class Ui_MainWindow(object):
         self.listWidget_Kernel.setBatchSize(100)
         self.listWidget_Kernel.setObjectName("listWidget_Kernel")
         self.gridLayout_4.addWidget(self.listWidget_Kernel, 0, 0, 1, 3)
+        self.textBrowser = QtWidgets.QTextBrowser(self.Tab3_DelKernel)
+        self.textBrowser.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.textBrowser.setObjectName("textBrowser")
+        self.gridLayout_4.addWidget(self.textBrowser, 1, 0, 1, 3)
         self.pushButton_Clean = QtWidgets.QPushButton(self.Tab3_DelKernel)
         self.pushButton_Clean.setMinimumSize(QtCore.QSize(150, 0))
         self.pushButton_Clean.setWhatsThis("")
         self.pushButton_Clean.setObjectName("pushButton_Clean")
-        self.gridLayout_4.addWidget(self.pushButton_Clean, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.pushButton_Clean, 2, 0, 1, 1)
         spacerItem1 = QtWidgets.QSpacerItem(253, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem1, 1, 1, 1, 1)
+        self.gridLayout_4.addItem(spacerItem1, 2, 1, 1, 1)
         self.pushButton_DELK = QtWidgets.QPushButton(self.Tab3_DelKernel)
         self.pushButton_DELK.setMinimumSize(QtCore.QSize(150, 0))
         self.pushButton_DELK.setWhatsThis("")
         self.pushButton_DELK.setObjectName("pushButton_DELK")
-        self.gridLayout_4.addWidget(self.pushButton_DELK, 1, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.pushButton_DELK, 2, 2, 1, 1)
         self.listWidget_Kernel.raise_()
         self.pushButton_DELK.raise_()
         self.pushButton_Clean.raise_()
+        self.textBrowser.raise_()
         self.Tab1.addTab(self.Tab3_DelKernel, "")
         self.Tab4_UpdateKernel = QtWidgets.QWidget()
         self.Tab4_UpdateKernel.setObjectName("Tab4_UpdateKernel")
@@ -172,8 +179,8 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Program help.</span><br />This program provides a simple graphical script management tool: <span style=\" font-style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Change of kernel.</span><span style=\" background-color:transparent;\"><br />Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Removing kernels.</span><span style=\" background-color:transparent;\"><br />Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules. The currently active kernel is not displayed in the list. The Clear button clears the cache of obsolete packages and removes duplicates.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove Kernels button cleans the system of all old kernels. The currently active kernel cannot be deleted.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Removing kernels.</span><span style=\" background-color:transparent;\"><br />Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules. The currently active core is not displayed in the list. The Clear button clears the cache of obsolete packages and removes duplicates.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove Kernels button clears the system of all kernels except the current one. The currently active core cannot be removed.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Update kernel.</span><span style=\" background-color:transparent;\"><br />Automatically updates the kernel and modules to the newest version. The &quot;Distribution&quot; button updates the software to the current version. The repository list allows you to modify the branches of the repository.</span></p></body></html>")))
         self.pushButton_ChangeFlavour.setToolTip(_translate("MainWindow", _("Change flavor type")))
         self.pushButton_ChangeFlavour.setText(_translate("MainWindow", _("Change")))
@@ -189,6 +196,14 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of the latest software. Recommended for Intel integrated graphics not supported by other kernels. When using the kernel from this repository, you will not be able to work with programs that depend on the version of the module in the stable repositories.</p></body></html>")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Change of kernels")))
         self.listWidget_Kernel.setSortingEnabled(False)
+        self.textBrowser.setHtml(_translate("MainWindow", _("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />The right mouse button menu provides additional options such as loading the default kernel. For the convenience of orientation, color coding has been introduced.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Color coding.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/picture/icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src=\":/picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</p></body></html>")))
         self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache of obsolete packages<br>and removing duplicate packages")))
         self.pushButton_Clean.setText(_translate("MainWindow", _("Clear")))
         self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Removes all cores except the currently active one")))
@@ -208,5 +223,4 @@ class Ui_MainWindow(object):
         self.pushButton_DISTR.setText(_translate("MainWindow", _("Distribution")))
         self.comboBox_ChangeRepo.setToolTip(_translate("MainWindow", _("Change repository")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab4_UpdateKernel), _translate("MainWindow", _("Update kernel")))
-
 import resources
