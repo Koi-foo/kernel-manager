@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-18 10:51+0300\n"
-"PO-Revision-Date: 2021-02-18 10:54+0300\n"
+"POT-Creation-Date: 2021-03-19 12:31+0300\n"
+"PO-Revision-Date: 2021-03-19 12:32+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -23,11 +23,11 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/main_win.py:168
+#: form/main_win.py:175
 msgid "Kernels management"
 msgstr "Управление ядрами"
 
-#: form/main_win.py:169
+#: form/main_win.py:176
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -52,13 +52,14 @@ msgid ""
 "weight:600; background-color:transparent;\">Removing kernels.</span><span "
 "style=\" background-color:transparent;\"><br />Shows a list of kernels "
 "installed on the system. Double clicking on a line removes the selected "
-"kernel and its modules. The currently active kernel is not displayed in the "
+"kernel and its modules. The currently active core is not displayed in the "
 "list. The Clear button clears the cache of obsolete packages and removes "
 "duplicates.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
-"color:transparent;\">The Remove Kernels button cleans the system of all old "
-"kernels. The currently active kernel cannot be deleted.</span></p>\n"
+"color:transparent;\">The Remove Kernels button clears the system of all "
+"kernels except the current one. The currently active core cannot be removed."
+"</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; background-color:transparent;\">Update kernel.</span><span style="
@@ -94,8 +95,8 @@ msgstr ""
 "очищает кеш от устаревших пакетов и удаляет дубликаты.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
-"color:transparent;\">Кнопка \"Удалить ядра\" очищает систему от всех старых "
-"ядер. Текущее активное ядро не может быть удалено.</span></p>\n"
+"color:transparent;\">Кнопка «Удалить ядра» очищает систему от всех ядер, "
+"кроме текущего. Текущее активное ядро не может быть удалено.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; background-color:transparent;\">Обновить ядро.</span><span style="
@@ -104,15 +105,15 @@ msgstr ""
 "обеспечение до текущей версии. Список репозиториев позволяет вам изменять "
 "ветви репозитория.</span></p></body></html>"
 
-#: form/main_win.py:178
+#: form/main_win.py:185
 msgid "Change flavor type"
 msgstr "Изменить тип flavor"
 
-#: form/main_win.py:179
+#: form/main_win.py:186
 msgid "Change"
 msgstr "Изменить"
 
-#: form/main_win.py:180
+#: form/main_win.py:187
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
@@ -120,7 +121,7 @@ msgstr ""
 "Выберите ядро из списка и нажмите<br>кнопку «Изменить», чтобы переключиться "
 "на новый вариант"
 
-#: form/main_win.py:181
+#: form/main_win.py:188
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -188,11 +189,62 @@ msgstr ""
 "репозитория вы не сможете работать с программами, которые зависят от версии "
 "модуля в стабильных репозиториях.</p></body></html>"
 
-#: form/main_win.py:190
+#: form/main_win.py:197
 msgid "Change of kernels"
 msgstr "Смена ядер"
 
-#: form/main_win.py:192
+#: form/main_win.py:199
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">The note</span><br />The right mouse button menu provides "
+"additional options such as loading the default kernel. For the convenience "
+"of orientation, color coding has been introduced.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+"\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Color coding.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
+"std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/picture/"
+"icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src=\":/"
+"picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</p></"
+"body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Заметка</span><br />Меню правой кнопки мыши предоставляет "
+"дополнительные параметры, такие как загрузка ядра по умолчанию. Для удобства "
+"ориентации введена цветовая кодировка.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+"\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Цветовая кодировка.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
+"std.png\" height=\"12\" /> - тип ядра ( std-def ) <img src=\":/picture/icons/"
+"un.png\" height=\"12\" /> - тип ядра ( un-def ) <img src=\":/picture/icons/"
+"old.png\" height=\"12\" /> - тип ядра ( old-def )</p></body></html>"
+
+#: form/main_win.py:207
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
@@ -200,31 +252,31 @@ msgstr ""
 "Очистка локального кеша от устаревших пакетов<br>и удаление дубликатов "
 "пакетов"
 
-#: form/main_win.py:193
+#: form/main_win.py:208
 msgid "Clear"
 msgstr "Очистка"
 
-#: form/main_win.py:194
+#: form/main_win.py:209
 msgid "Removes all cores except the currently active one"
 msgstr "Удаляет все ядра, кроме текущего активного"
 
-#: form/main_win.py:195
+#: form/main_win.py:210
 msgid "Remove kernels"
 msgstr "Удалить ядра"
 
-#: form/main_win.py:196
+#: form/main_win.py:211
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:197 kernel_manager.py:394
+#: form/main_win.py:212 kernel_manager.py:445
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
-#: form/main_win.py:198 form/main_win.py:210
+#: form/main_win.py:213 form/main_win.py:225
 msgid "Update kernel"
 msgstr "Обновить ядро"
 
-#: form/main_win.py:199
+#: form/main_win.py:214
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -289,15 +341,15 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:207 kernel_manager.py:353
+#: form/main_win.py:222 kernel_manager.py:410
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
-#: form/main_win.py:208
+#: form/main_win.py:223
 msgid "Distribution"
 msgstr "Дистрибутив"
 
-#: form/main_win.py:209
+#: form/main_win.py:224
 msgid "Change repository"
 msgstr "Изменить репозиторий"
 
@@ -325,69 +377,88 @@ msgstr "Согласитесь продолжить процесс"
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: kernel_manager.py:80
+#: kernel_manager.py:81
 msgid "Updating cache wait for completion ..."
 msgstr "Обновление кеша, дождитесь завершения ..."
 
-#: kernel_manager.py:93
+#: kernel_manager.py:94
 msgid "Updating cache:"
 msgstr "Обновление cache:"
 
-#: kernel_manager.py:97
+#: kernel_manager.py:99
+msgid "No access to repository"
+msgstr "Нет доступа к репозиторию"
+
+#: kernel_manager.py:103
 msgid "Updating completed:"
 msgstr "Обновление завершено:"
 
-#: kernel_manager.py:177
+#: kernel_manager.py:189
 msgid "No kernels found to be removed"
 msgstr "Ядра для удаления не обнаружены"
 
-#: kernel_manager.py:184
+#: kernel_manager.py:196
 msgid "Flavor - not selected"
 msgstr "Flavor - не выбран"
 
-#: kernel_manager.py:185
+#: kernel_manager.py:197
 msgid "STD-DEF kernel (main kernel)"
 msgstr "Ядро STD-DEF ( основное ядро )"
 
-#: kernel_manager.py:186
+#: kernel_manager.py:198
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 
-#: kernel_manager.py:187
+#: kernel_manager.py:199
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
-#: kernel_manager.py:188
+#: kernel_manager.py:200
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:274
+#: kernel_manager.py:246
+msgid "Remove the selected kernel"
+msgstr "Удалить выбранное ядро"
+
+#: kernel_manager.py:249
+msgid "Install the default kernel"
+msgstr "Установите ядро по умолчанию"
+
+#: kernel_manager.py:336
+msgid "Setting the default kernel boot"
+msgstr "Установка загрузки ядра по умолчанию"
+
+#: kernel_manager.py:351
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:302
+#: kernel_manager.py:377
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:365
+#: kernel_manager.py:420
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:379
+#: kernel_manager.py:432
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:441
+#: kernel_manager.py:487
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:443
+#: kernel_manager.py:489
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:444
+#: kernel_manager.py:490
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
+
+#~ msgid "Default kernel installation"
+#~ msgstr "Установка ядра по умолчанию"
 
 #~ msgid "Removes old versions of kernels"
 #~ msgstr "Удаляет все старые версии ядер<br>оставляя одно самое новое ядро"
