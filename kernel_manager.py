@@ -13,7 +13,9 @@ from threading import Thread
 from time import sleep
 # PyQt
 from PyQt5 import QtWidgets, QtGui, QtCore
-from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtCore import pyqtSignal, QSize
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QListWidgetItem
 # Forms
 from form.main_win import Ui_MainWindow
 from form.process_win import Ui_InfoProcessWin
@@ -49,6 +51,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 
         # Сигналы
         self.proc_win.closeWindow.connect(self.close_window)
+        self.listWidget_Kernel.installEventFilter(self)
         
         
     def update_cache(self):
@@ -77,9 +80,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if messages == 'U':
             self.statusbar.showMessage(_('Updating cache wait for completion ...'))
             
-            up_cache = Popen("apt-get update", shell=True, stdout=PIPE, encoding='utf-8')
+            up_cache = Popen("LANG=en apt-get update", shell=True, stdout=PIPE, encoding='utf-8')
                 
-            search_number = re.compile(r'\s([1-9]{1})\s')
+            search_number = re.compile(r':([1-9]{1})\s')
             fulfilled = 0
     
             for line in up_cache.stdout.readlines():
@@ -92,7 +95,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         sleep(1)
                         
                 except ValueError:
-                    if 'дерева' in line:
+                    if 'Could' in line:
+                        self.statusbar.showMessage(_('No access to repository'))
+                        sleep(3)
+                        
+                    elif 'Building' in line:
                         self.statusbar.showMessage(_('Updating completed:') + ' ' + "100%")
                         sleep(2)
             
@@ -163,12 +170,16 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 shell=True, stdout=PIPE, encoding='utf-8').stdout.splitlines()
 
         kernel_list = []
+        platform = re.compile(r': ([a-zA-Z0-9]+)')
         
         for line in raw_list_kernel:
             kernel_info = run(f'rpm -qi {line} | grep Install', shell=True, stdout=PIPE, \
             encoding='utf-8').stdout
             
-            kernel_list.append(line + " " + kernel_info.rstrip())
+            dist_tag = str(platform.findall(run(f'rpm -qi {line} | grep DistTag', \
+            shell=True, stdout=PIPE, encoding='utf-8').stdout))
+            
+            kernel_list.append(line + "  ➞  " + kernel_info.rstrip() + "  ➞  " + dist_tag)
  
         for line in kernel_list:
             if real_number in line:
@@ -206,10 +217,52 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
     def show_list_kernel_gui(self, kernel_list):
         """Показать список ядер в listwidget"""
-        for x in kernel_list:
-            self.listWidget_Kernel.addItem(x)
+        self.listWidget_Kernel.setIconSize(QSize(12, 12))
+        
+        for line in kernel_list:
+            if "std" in line:
+                icon = ":/picture/icons/std.png"
+                
+            elif "un" in line:
+                icon = ":/picture/icons/un.png"
+                
+            elif "old" in line:
+                icon = ":/picture/icons/old.png"
+            
+            item = QListWidgetItem(QIcon(icon), line)
+            item.setTextAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
+            self.listWidget_Kernel.addItem(item)
             
         self.listWidget_Kernel.itemDoubleClicked.connect(self.remove_kernel)
+        
+        
+    def eventFilter(self, source, event):
+        """Фильтр событий виджета listWidget и контекстное меню"""
+        if (event.type() == QtCore.QEvent.ContextMenu and
+            source is self.listWidget_Kernel):
+            menu = QtWidgets.QMenu()
+            
+            remove = menu.addAction(
+                QIcon(":/picture/icons/list-remove.svg"), _('Remove the selected kernel'))
+            
+            default = menu.addAction(
+                QIcon(":/picture/icons/go-up.svg"), _('Install the default kernel'))
+            
+            action = menu.exec_(event.globalPos())
+            item = source.itemAt(event.pos())
+            
+            try:
+                if action == remove:
+                    self.remove_kernel(item)
+                
+                elif action == default:
+                    self.boot_default(item)
+            except AttributeError:
+                pass
+            
+            return True
+        
+        return super().eventFilter(source, event)
 
 
     def button_switch(self, btn_off_on):
@@ -266,6 +319,25 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
                  
     # Функции кнопок
+    def boot_default(self, item):
+        """Установка загрузки ядра по умолчанию"""
+        kernel = item.text().split(None, 1)[0].replace(
+            'kernel-image-', '').rsplit('.', 1)[0].split('-')
+        
+        kernel[0], kernel[1], kernel[2] = kernel[2], kernel[0], kernel[1]
+        kernel_num = kernel[0] 
+        kernel = "-".join(kernel)
+        
+        command = "/bin/sh -c" + " " \
+            + f"installkernel\" \"{kernel}"
+        
+        self.proc_win.show()
+        self.proc_win.setWindowTitle(
+            _('Setting the default kernel boot') + f': v{kernel_num}')
+        self.proc_win.start_qprocess(command)
+        self.proc_win.textEdit.clear()
+            
+    
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
         kernel_select = run("apt-cache pkgnames" + " " \
