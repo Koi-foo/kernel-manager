@@ -2,5 +2,10 @@
     <qresource prefix="/picture">
         <file>icons/kernel-manager.png</file>
         <file>icons/what.png</file>
+        <file>icons/un.png</file>
+        <file>icons/old.png</file>
+        <file>icons/std.png</file>
+        <file>icons/go-up.svg</file>
+        <file>icons/list-remove.svg</file>
     </qresource>
 </RCC>
