@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2021-03-19 12:31+0300\n"
-"PO-Revision-Date: 2021-03-20 09:52+0300\n"
+"PO-Revision-Date: 2021-03-20 09:55+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
-"Language: zh_CN\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: form/main_win.py:175
 msgid "Kernels management"
-msgstr "内核管理"
+msgstr "內核管理"
 
 #: form/main_win.py:176
 msgid ""
@@ -76,44 +76,45 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">程序帮助。</span><br />该程序提供了一个简单的图形脚本管理工具："
-"<span style=\" font-style:italic;\">更新内核</span>, <span style=\" font-"
-"style:italic;\">删除旧内核</span></p>\n"
+"weight:600;\">程序幫助。</span><br />該程序提供了一個簡單的圖形腳本管理工具："
+"<span style=\" font-style:italic;\">更新內核</span>, <span style=\" font-"
+"style:italic;\">刪除舊內核</span>.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; background-color:transparent;\">更改内核。</span><span style=\" "
-"background-color:transparent;\"><br />允许您更改内核类型以从中选择（STD-DEF，"
+"weight:600; background-color:transparent;\">內核替換。</span><span style=\" "
+"background-color:transparent;\"><br />更改內核。</span><span style=\" "
+"background-color:transparent;\"><br />允許您更改內核類型以從中選擇（STD-DEF，"
 "UN-DEF，OLD-DEF）。</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; background-color:transparent;\">删除内核。</span><span style=\" "
-"background-color:transparent;\"><br />显示系统上安装的内核列表。 双击一行将删"
-"除所选的内核及其模块。 当前活动的核心未显示在列表中。 “清除”按钮清除过时软件"
-"包的缓存并删除重复项。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"weight:600; background-color:transparent;\">刪除內核。</span><span style=\" "
+"background-color:transparent;\"><br />顯示系統上安裝的內核列表。 雙擊一行將刪"
+"除所選的內核及其模塊。 當前活動的內核未顯示在列表中。 “清除”按鈕清除過時軟件"
+"包的緩存並刪除重複項。</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
-"color:transparent;\">“删除内核”按钮清除系统中除当前内核以外的所有内核。 当前"
-"活动的核心无法删除。</span></p>\n"
+"color:transparent;\">刪除內核按鈕將清除所有舊內核的系統。 當前活動的內核無法"
+"刪除。</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; background-color:transparent;\">更新内核。</span><span style=\" "
-"background-color:transparent;\"><br />自动更新内核和模块到最新版本。&quot;分"
-"配&quot;指的是该分配。 按钮将软件更新到当前版本。 存储库列表允许您修改存储库"
-"的分支。</span></p></body></html>"
+"weight:600; background-color:transparent;\">更新內核。</span><span style=\" "
+"background-color:transparent;\"><br />自動將內核和模塊更新為最新版本。該"
+"&quot;分配&quot;指的是 分配。按鈕將軟件更新為當前版本。 存儲庫列表允許您修改"
+"存儲庫的分支。</span></p></body></html>"
 
 #: form/main_win.py:185
 msgid "Change flavor type"
-msgstr "改变口味类型"
+msgstr "改變口味類型"
 
 #: form/main_win.py:186
 msgid "Change"
-msgstr "更改"
+msgstr "改變"
 
 #: form/main_win.py:187
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
-msgstr "从列表中选择一个内核，然后单击<br>“更改”按钮以切换到新的样式"
+msgstr "從列表中選擇一個內核，然後單擊 <br>“更改”按鈕以切換到新的樣式"
 
 #: form/main_win.py:188
 msgid ""
@@ -159,29 +160,29 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">注意</span><br />用于更改操作系统内核的风味（装配件类型）的选项"
+"weight:600;\">筆記</span><br />用於更改操作系統內核的風味（裝配件類型）的選項"
 "卡。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">内核：STD-DEF</span><br />标准内核。 在组装期间，来自稳定内核分"
-"支的补丁用于更正驱动程序和软件的工作。</p>\n"
+"weight:600;\">內核：STD-DEF</span><br />標準內核。 在組裝期間，來自穩定內核分"
+"支的補丁用於更正驅動程序和軟件的工作。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">内核：OLD-DEF</span><br />以前的内核分支std-def。 old-def内核支"
-"持较旧的硬件和长期支持。</p>\n"
+"weight:600;\">內核：OLD-DEF</span><br />先前的內核分支std-def。 old-def內核支"
+"持較舊的硬件和長期支持。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">内核：UN-DEF</span><br />台式机的实验核心。 台式机的实验核心。 "
-"un-def内核较新，可能支持在std-def中不起作用的硬件。</p>\n"
+"weight:600;\">內核：UN-DEF</span><br />台式機的實驗核心。 un-def 內核較新，並"
+"且可能支持在 std-def 中不起作用的硬件。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Sisyphus: UN-DEF</span><br />它是最新软件的不稳定存储库。 推荐"
-"用于其他内核不支持的英特尔集成显卡。 使用此存储库中的内核时，将无法使用依赖于"
-"稳定存储库中模块版本的程序。</p></body></html>"
+"weight:600;\">西西弗斯島：UN-DEF </span><br />它是最新軟件的不穩定存儲庫。 推"
+"薦用於其他內核不支持的英特爾集成顯卡。 使用此存儲庫中的內核時，將無法使用依賴"
+"於穩定存儲庫中模塊版本的程序。</p></body></html>"
 
 #: form/main_win.py:197
 msgid "Change of kernels"
-msgstr "更改内核"
+msgstr "換仁"
 
 #: form/main_win.py:199
 msgid ""
@@ -219,49 +220,49 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">注意</span><br />鼠标右键菜单提供了其他选项，例如，加载默认内"
-"核。 为了方便定位，已经引入了颜色编码。</p>\n"
+"weight:600;\">筆記</span><br />鼠標右鍵菜單提供了其他選項，例如，加載默認內"
+"核。 為了方便定位，已經引入了顏色編碼。</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
 "\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">颜色编码。</span></p>\n"
+"weight:600;\">顏色編碼。</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
-"std.png\" height=\"12\" /> - 内核类型（std-def）<img src=\":/picture/icons/"
-"un.png\" height=\"12\" /> - 内核类型（un-def） <img src=\":/picture/icons/"
-"old.png\" height=\"12\" /> - 内核类型（old-def）</p></body></html>"
+"std.png\" height=\"12\" /> - 內核類型（std-def）<img src=\":/picture/icons/"
+"un.png\" height=\"12\" /> - 內核類型（un-def）<img src=\":/picture/icons/old."
+"png\" height=\"12\" /> - 內核類型（old-def）</p></body></html>"
 
 #: form/main_win.py:207
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
-msgstr "清除过时软件包的本地缓存<br>并删除重复的软件包"
+msgstr "清除過時軟件包的本地緩存<br>並刪除重複的軟件包"
 
 #: form/main_win.py:208
 msgid "Clear"
-msgstr "明确"
+msgstr "已清除"
 
 #: form/main_win.py:209
 msgid "Removes all cores except the currently active one"
-msgstr "删除除当前活动的核心以外的所有核心"
+msgstr "刪除除當前活動的核心以外的所有核心"
 
 #: form/main_win.py:210
 msgid "Remove kernels"
-msgstr "删除内核"
+msgstr "刪除內核"
 
 #: form/main_win.py:211
 msgid "Removing kernels"
-msgstr "删除内核"
+msgstr "開始刪除內核"
 
 #: form/main_win.py:212 kernel_manager.py:445
 msgid "Kernel update"
-msgstr "内核更新"
+msgstr "內核更新"
 
 #: form/main_win.py:213 form/main_win.py:225
 msgid "Update kernel"
-msgstr "更新内核"
+msgstr "更新內核"
 
 #: form/main_win.py:214
 msgid ""
@@ -306,27 +307,27 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">注意</span><br />建议在更新内核之前将发行版更新到最新版本。这样"
-"的更新将有助于避免在更新内核时出现不必要的问题。</p>\n"
+"weight:600;\">音符</span><br />建議在更新內核之前將發行版更新到最新版本。 這"
+"樣的更新將有助於避免更新內核時出現不必要的問題。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">更新内核按钮</span><br />更新当前的活动系统内核以及为其安装的所"
-"有模块。</p>\n"
+"weight:600;\">更新內核按鈕</span><br />更新當前的活動系統內核和為其安裝的所有"
+"模塊。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">程序的所有动作将显示在终端"
-"中，并且需要用户确认。 如果不确定您的操作，请取消更新。</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">程序的所有動作將顯示在終端"
+"中，並且需要用戶確認。 如果不確定您的操作，請取消更新。</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">存储库</span><br />允许更改存储库。显示当前连接的存储库。 允许"
-"您更新OS平台。 要切换到其他平台，请选择一个存储库，然后单击&quot;分配&quot;. "
-"更新将自动开始。 选择之前 &quot;<a href=\"https://www.altlinux.org/"
+"weight:600;\">儲存庫</span><br />允許更改存儲庫。 顯示當前連接的存儲庫。 允許"
+"您更新OS平台。 要切換到其他平台，請選擇一個存儲庫，然後點擊 &quot;分發"
+"&quot;. 更新將自動開始。 選擇之前  &quot;<a href=\"https://www.altlinux.org/"
 "%D0%A7%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_Sisyphus%3F\"><span style="
-"\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
-"细阅读其说明。</p></body></html>"
+"\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, 請"
+"仔細閱讀其說明。</p></body></html>"
 
 #: form/main_win.py:222 kernel_manager.py:410
 msgid "Distribution update"
-msgstr "发行更新"
+msgstr "發行更新"
 
 #: form/main_win.py:223
 msgid "Distribution"
@@ -334,7 +335,7 @@ msgstr "分配"
 
 #: form/main_win.py:224
 msgid "Change repository"
-msgstr "变更资料库"
+msgstr "變更資料庫"
 
 #: form/process_win.py:59
 msgid "Information"
@@ -342,7 +343,7 @@ msgstr "信息"
 
 #: form/process_win.py:60
 msgid "Task progress"
-msgstr "任务进度"
+msgstr "任務進度"
 
 #: form/process_win.py:61
 msgid "Stop the process"
@@ -354,23 +355,23 @@ msgstr "取消"
 
 #: form/process_win.py:63
 msgid "Agree to continue the process"
-msgstr "同意继续进行"
+msgstr "同意繼續進行"
 
 #: form/process_win.py:64
 msgid "Confirm"
-msgstr "确认"
+msgstr "確認"
 
 #: kernel_manager.py:81
 msgid "Updating cache wait for completion ..."
-msgstr "正在更新缓存以等待完成..."
+msgstr "正在更新緩存以等待完成..."
 
 #: kernel_manager.py:94
 msgid "Updating cache:"
-msgstr "清理apt-cache:"
+msgstr "更新緩存："
 
 #: kernel_manager.py:99
 msgid "No access to repository"
-msgstr "无法访问存储库"
+msgstr "無法訪問存儲庫"
 
 #: kernel_manager.py:103
 msgid "Updating completed:"
@@ -378,59 +379,59 @@ msgstr "更新完成："
 
 #: kernel_manager.py:189
 msgid "No kernels found to be removed"
-msgstr "没有找到要删除的内核"
+msgstr "沒有發現要刪除的內核"
 
 #: kernel_manager.py:196
 msgid "Flavor - not selected"
-msgstr "风味-未选择"
+msgstr "風味-未選擇"
 
 #: kernel_manager.py:197
 msgid "STD-DEF kernel (main kernel)"
-msgstr "STD-DEF内核（主内核）"
+msgstr "STD-DEF 核心 (主核心)"
 
 #: kernel_manager.py:198
 msgid "OLD-DEF kernel (old std-def branch)"
-msgstr "OLD-DEF内核（旧的std-def分支）"
+msgstr "OLD-DEF內核 (舊的 std-def 分支)"
 
 #: kernel_manager.py:199
 msgid "UN-DEF kernel (experimental kernel)"
-msgstr "UN-DEF内核（实验内核）"
+msgstr "UN-DEF 内核 (实验内核)"
 
 #: kernel_manager.py:200
 msgid "Sisyphus (kernel un-def)"
-msgstr "西西弗斯（内核un-def）"
+msgstr "西西弗斯 (內核 un-def)"
 
 #: kernel_manager.py:246
 msgid "Remove the selected kernel"
-msgstr "删除选定的内核"
+msgstr "刪除選定的內核"
 
 #: kernel_manager.py:249
 msgid "Install the default kernel"
-msgstr "安装默认内核"
+msgstr "安裝默認內核"
 
 #: kernel_manager.py:336
 msgid "Setting the default kernel boot"
-msgstr "设置默认的内核启动"
+msgstr "設置默認的內核啟動"
 
 #: kernel_manager.py:351
 msgid "Removing the kernel"
-msgstr "删除内核"
+msgstr "刪除內核"
 
 #: kernel_manager.py:377
 msgid "Installation"
-msgstr "安装"
+msgstr "安裝"
 
 #: kernel_manager.py:420
 msgid "Removing old kernels"
-msgstr "删除旧内核"
+msgstr "刪除舊內核"
 
 #: kernel_manager.py:432
 msgid "Cleaning apt-cache"
-msgstr "清理apt-cache"
+msgstr "清除 apt-cache"
 
 #: kernel_manager.py:487
 msgid "Process started, please wait ..."
-msgstr "程序已启动，请稍候..."
+msgstr "程序已啟動，請稍候..."
 
 #: kernel_manager.py:489
 msgid "Completed successfully"
@@ -438,7 +439,4 @@ msgstr "成功完成"
 
 #: kernel_manager.py:490
 msgid "The process is complete. You can close the window."
-msgstr "该过程完成。 您可以关闭窗口。"
-
-#~ msgid "Removes old versions of kernels"
-#~ msgstr "删除旧版本的内核"
+msgstr "該過程完成後，可以關閉窗口。"
