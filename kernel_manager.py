@@ -217,20 +217,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
     def show_list_kernel_gui(self, kernel_list):
         """Показать список ядер в listwidget"""
-        self.listWidget_Kernel.setIconSize(QSize(12, 12))
+        self.listWidget_Kernel.setIconSize(QSize(30, 12))
         
         for line in kernel_list:
             if "std" in line:
-                icon = ":/picture/icons/std.png"
+                icon = ":/picture/icons/std-p.png"
                 
             elif "un" in line:
-                icon = ":/picture/icons/un.png"
+                icon = ":/picture/icons/un-p.png"
                 
             elif "old" in line:
-                icon = ":/picture/icons/old.png"
+                icon = ":/picture/icons/old-p.png"
             
             item = QListWidgetItem(QIcon(icon), line)
-            item.setTextAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
             self.listWidget_Kernel.addItem(item)
             
         self.listWidget_Kernel.itemDoubleClicked.connect(self.remove_kernel)
