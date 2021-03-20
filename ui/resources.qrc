@@ -7,5 +7,8 @@
         <file>icons/std.png</file>
         <file>icons/go-up.svg</file>
         <file>icons/list-remove.svg</file>
+        <file>icons/std-p.png</file>
+        <file>icons/un-p.png</file>
+        <file>icons/old-p.png</file>
     </qresource>
 </RCC>
