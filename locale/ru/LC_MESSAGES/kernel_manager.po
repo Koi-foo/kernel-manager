@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-03-19 12:31+0300\n"
-"PO-Revision-Date: 2021-03-19 12:32+0300\n"
+"POT-Creation-Date: 2021-03-21 23:24+0300\n"
+"PO-Revision-Date: 2021-03-21 23:25+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -268,7 +268,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:212 kernel_manager.py:445
+#: form/main_win.py:212 kernel_manager.py:454
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -341,7 +341,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:410
+#: form/main_win.py:222 kernel_manager.py:419
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -417,45 +417,52 @@ msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:246
+#: kernel_manager.py:245
 msgid "Remove the selected kernel"
 msgstr "Удалить выбранное ядро"
 
-#: kernel_manager.py:249
+#: kernel_manager.py:248
 msgid "Install the default kernel"
 msgstr "Установите ядро по умолчанию"
 
-#: kernel_manager.py:336
+#: kernel_manager.py:330
+msgid "Set default kernel boot"
+msgstr "Установить загрузку ядра по умолчанию"
+
+#: kernel_manager.py:337
 msgid "Setting the default kernel boot"
 msgstr "Установка загрузки ядра по умолчанию"
 
-#: kernel_manager.py:351
+#: kernel_manager.py:360
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:377
+#: kernel_manager.py:386
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:420
+#: kernel_manager.py:429
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:432
+#: kernel_manager.py:441
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:487
+#: kernel_manager.py:497
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:489
+#: kernel_manager.py:499
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:490
+#: kernel_manager.py:500
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
+
+#~ msgid "Installing the default boot kernel"
+#~ msgstr "Установить загрузку ядра по умолчанию"
 
 #~ msgid "Default kernel installation"
 #~ msgstr "Установка ядра по умолчанию"
