@@ -327,7 +327,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         kernel_num = kernel[0] 
         kernel = "-".join(kernel)
         
-        command = "/bin/sh -c" + " " \
+        text = _('Set default kernel boot') + f": {kernel_num}?"
+        
+        command = self.dialog(text) \
             + f"installkernel\" \"{kernel}"
         
         self.proc_win.show()
@@ -335,6 +337,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             _('Setting the default kernel boot') + f': v{kernel_num}')
         self.proc_win.start_qprocess(command)
         self.proc_win.textEdit.clear()
+        
+        
+    def dialog(self, text):
+        """Текстовый диалог для окна выполнения процессов"""
+        script = "/bin/sh -c" + " " \
+            + f'"echo {text} ; read answer ; "' \
+            + '"if [ "$answer" == "n" ]; then exit; fi ; "'
+        return script
             
     
     def remove_kernel(self, item):
@@ -404,7 +414,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def distribution_up(self):
         """Обновить дистрибутив"""
         command = self.branches()
-                
+        
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Distribution update'))
         self.proc_win.start_qprocess(command)
@@ -460,12 +470,13 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         
         
     def closeEvent(self, event):
-        """Переопределение события завершения"""        
-        activ_process = run('pidof apt-get dist-upgrade', shell=True, \
-            stdout=PIPE, encoding='utf-8').stdout
-        
-        if activ_process:
-            close_process = run(f'kill {activ_process}', shell=True)
+        """Переопределение события завершения"""
+        for name_process in ["apt-get dist-upgrade"]:
+            activ_process = run(f'pidof {name_process}', shell=True, \
+                stdout=PIPE, encoding='utf-8').stdout
+            
+            if activ_process:
+                close_process = run(f'kill {activ_process}', shell=True)
         
         self.closeWindow.emit()
         
