@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-02-18 10:51+0300\n"
-"PO-Revision-Date: 2021-02-18 11:05+0300\n"
+"POT-Creation-Date: 2021-03-19 12:31+0300\n"
+"PO-Revision-Date: 2021-03-21 16:21+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -22,11 +22,11 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/main_win.py:168
+#: form/main_win.py:175
 msgid "Kernels management"
 msgstr "Διαχείριση Πυρήνων"
 
-#: form/main_win.py:169
+#: form/main_win.py:176
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -51,13 +51,14 @@ msgid ""
 "weight:600; background-color:transparent;\">Removing kernels.</span><span "
 "style=\" background-color:transparent;\"><br />Shows a list of kernels "
 "installed on the system. Double clicking on a line removes the selected "
-"kernel and its modules. The currently active kernel is not displayed in the "
+"kernel and its modules. The currently active core is not displayed in the "
 "list. The Clear button clears the cache of obsolete packages and removes "
 "duplicates.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
-"color:transparent;\">The Remove Kernels button cleans the system of all old "
-"kernels. The currently active kernel cannot be deleted.</span></p>\n"
+"color:transparent;\">The Remove Kernels button clears the system of all "
+"kernels except the current one. The currently active core cannot be removed."
+"</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; background-color:transparent;\">Update kernel.</span><span style="
@@ -66,7 +67,7 @@ msgid ""
 "updates the software to the current version. The repository list allows you "
 "to modify the branches of the repository.</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"<<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -75,46 +76,45 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Βοήθεια Προγράμματος.</span><br />Αυτό το πρόγραμμα παρέχει "
-"ένα απλό εργαλείο διαχείρισης γραφικών σεναρίων: <span style=\" font-style:"
-"italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-"
-"old-kernel</span>.</p>\n"
+"weight:600;\">Βοήθεια Προγράμματος .</span><br />Αυτό το πρόγραμμα παρέχει "
+"ένα απλό εργαλείο διαχείρισης γραφικών σεναρίων <span style=\" font-style:"
+"italic;\">Ενημέρωση (Πυρήνα-Kernel)</span>, <span style=\" font-style:italic;"
+"\">Απομάκρυνση παλαιών πυρήνων(kernel)</span>.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; background-color:transparent;\">Αλλαγή πυρήνα.</span><span style="
-"\" background-color:transparent;\"><br />Σας επιτρέπει να αλλάξετε τον τύπο "
-"του πυρήνα που θα επιλέξετε απο ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
+"weight:600; background-color:transparent;\">Change of kernel.</span><span "
+"style=\" background-color:transparent;\"><br />Σας επιτρέπει να αλλάξετε τον "
+"τύπο του πυρήνα που θα επιλέξετε απο ( STD-DEF, UN-DEF, OLD-DEF ).</span></"
+"p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; background-color:transparent;\">Κατάργηση πυρήνων.</span><span "
 "style=\" background-color:transparent;\"><br />Εμφανίζει μια λίστα πυρήνων "
-"που είναι εγκατεστημένοι στο σύστημα. Το διπλό κλικ σε μια γραμμή αφαιρεί "
-"τον επιλεγμένο πυρήνα και τις ενότητες του. Ο τρέχων ενεργός πυρήνας δεν "
-"εμφανίζεται στη λίστα. Το κουμπί Clear διαγράφει την προσωρινή μνήμη των "
-"παρωχημένων πακέτων και αφαιρεί τα διπλά.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"που είναι εγκατεστημένοι στο σύστημα.Το διπλό κλικ σε μια γραμμή αφαιρεί τον "
+"επιλεγμένο πυρήνα και τις ενότητες του.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-"
-"color:transparent;\">Το κουμπί (Κατάργηση Πυρήνων Kernels) καθαρίζει το "
+"color:transparent;\">ο κουμπί (Κατάργηση Πυρήνων Kernels) καθαρίζει το "
 "σύστημα όλων των παλαιών πυρήνων. Ο τρέχων ενεργός πυρήνας δεν μπορεί να "
 "διαγραφεί.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; background-color:transparent;\">Ενημέρωση Πυρήνα (kernel).</"
 "span><span style=\" background-color:transparent;\"><br />Ενημερώνει "
-"αυτόματα τον πυρήνα και τις ενότητες στη νεότερη έκδοση. Η &quot; "
-"διανομή&quot; Το κουμπί ενημερώνει το λογισμικό στην τρέχουσα έκδοση. Η "
-"λίστα αποθετηρίου σας επιτρέπει να τροποποιήσετε τους κλάδους του "
-"αποθετηρίου.</span></p></body></html>"
+"αυτόματα τον πυρήνα και τις ενότητες στη νεότερη έκδοση.H &quot;διανομή&quot;"
+"Το κουμπί ενημερώνει το λογισμικό στην τρέχουσα έκδοση. Η λίστα αποθετηρίου "
+"σας επιτρέπει να τροποποιήσετε τους κλάδους του αποθετηρίου.</span></p></"
+"body></html>"
 
-#: form/main_win.py:178
+#: form/main_win.py:185
 msgid "Change flavor type"
 msgstr "Αλλαγή (τύπου - έκδοση) του Πυρήνα"
 
-#: form/main_win.py:179
+#: form/main_win.py:186
 msgid "Change"
 msgstr "Αλλαγή"
 
-#: form/main_win.py:180
+#: form/main_win.py:187
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
@@ -122,7 +122,7 @@ msgstr ""
 "Επιλέξτε έναν πυρήνα από τη λίστα και κάντε κλικ στο<br>Κουμπί \"Αλλαγή\" "
 "για μετάβαση σε νέο τύπο-Έκδοση (πυρήνα)"
 
-#: form/main_win.py:181
+#: form/main_win.py:188
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -194,11 +194,64 @@ msgstr ""
 "από την έκδοση της λειτουργικής μονάδας(module) στα σταθερά αποθετήρια.</p></"
 "body></html>"
 
-#: form/main_win.py:190
+#: form/main_win.py:197
 msgid "Change of kernels"
 msgstr "Αλλαγή (πυρήνων) kernels"
 
-#: form/main_win.py:192
+#: form/main_win.py:199
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">The note</span><br />The right mouse button menu provides "
+"additional options such as loading the default kernel. For the convenience "
+"of orientation, color coding has been introduced.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+"\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Color coding.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
+"std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/picture/"
+"icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src=\":/"
+"picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</p></"
+"body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Σημείωση</span><br />Το μενού του δεξιού κουμπιού του "
+"ποντικιού παρέχει πρόσθετες επιλογές, όπως η φόρτωση του προεπιλεγμένου "
+"πυρήνα. Για την ευκολία προσανατολισμού, έχει εισαχθεί χρωματική "
+"κωδικοποίηση .</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+"\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Χρωματική κωδικοποίηση.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
+"std.png\" height=\"12\" /> -τύπος πυρήνα ( std-def ) <img src=\":/picture/"
+"icons/un.png\" height=\"12\" /> -τύπος πυρήνα ( un-def ) <img src=\":/"
+"picture/icons/old.png\" height=\"12\" /> - τύπος πυρήνα ( old-def )</p></"
+"body></html>"
+
+#: form/main_win.py:207
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
@@ -206,31 +259,31 @@ msgstr ""
 "Εκκαθάριση της τοπικής προσωρινής μνήμης<br>παρωχημένων πακέτων και αφαίρεση "
 "διπλών πακέτων"
 
-#: form/main_win.py:193
+#: form/main_win.py:208
 msgid "Clear"
 msgstr "Εκκαθάριση"
 
-#: form/main_win.py:194
+#: form/main_win.py:209
 msgid "Removes all cores except the currently active one"
 msgstr "Καταργεί όλους τους πυρήνες εκτός από τον τρέχοντα ενεργό"
 
-#: form/main_win.py:195
+#: form/main_win.py:210
 msgid "Remove kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:196
+#: form/main_win.py:211
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:197 kernel_manager.py:394
+#: form/main_win.py:212 kernel_manager.py:445
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
-#: form/main_win.py:198 form/main_win.py:210
+#: form/main_win.py:213 form/main_win.py:225
 msgid "Update kernel"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
-#: form/main_win.py:199
+#: form/main_win.py:214
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -298,15 +351,15 @@ msgstr ""
 "%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, διαβάστε προσεκτικά την περιγραφή του.</p></body></html>"
 
-#: form/main_win.py:207 kernel_manager.py:353
+#: form/main_win.py:222 kernel_manager.py:410
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
-#: form/main_win.py:208
+#: form/main_win.py:223
 msgid "Distribution"
 msgstr "Διανομή"
 
-#: form/main_win.py:209
+#: form/main_win.py:224
 msgid "Change repository"
 msgstr "Αλλαγή αποθετηρίου"
 
@@ -334,67 +387,83 @@ msgstr "Συμφωνείτε να συνεχιστεί η διεργασία"
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: kernel_manager.py:80
+#: kernel_manager.py:81
 msgid "Updating cache wait for completion ..."
 msgstr "Ενημέρωση προσωρινής μνήμης για ολοκλήρωση ..."
 
-#: kernel_manager.py:93
+#: kernel_manager.py:94
 msgid "Updating cache:"
 msgstr "Ενημέρωση cache:"
 
-#: kernel_manager.py:97
-msgid "Updating completed:"
-msgstr ""
+#: kernel_manager.py:99
+msgid "No access to repository"
+msgstr "Δεν υπάρχει πρόσβαση στο αποθετήριο"
 
-#: kernel_manager.py:177
+#: kernel_manager.py:103
+msgid "Updating completed:"
+msgstr "Η Ενημερωση ολοκληρώθηκε:"
+
+#: kernel_manager.py:189
 msgid "No kernels found to be removed"
 msgstr "Δεν βρέθηκαν (πυρήνες) kernels για να αφαιρεθούν"
 
-#: kernel_manager.py:184
+#: kernel_manager.py:196
 msgid "Flavor - not selected"
 msgstr "(Τυπός-'Εκδοση) Πυρήνα - δεν επιλέχθηκαν"
 
-#: kernel_manager.py:185
+#: kernel_manager.py:197
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF kernel (Βασικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:186
+#: kernel_manager.py:198
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF (πυρήνας) kernel (παλιά Έκδοση - std-def )"
 
-#: kernel_manager.py:187
+#: kernel_manager.py:199
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF kernel (Πειραματικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:188
+#: kernel_manager.py:200
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (kernel un-def)"
 
-#: kernel_manager.py:274
+#: kernel_manager.py:246
+msgid "Remove the selected kernel"
+msgstr "Κατάργηση του επιλεγμένου (πυρηνα) kernel"
+
+#: kernel_manager.py:249
+msgid "Install the default kernel"
+msgstr "Εγκατάσtαση του προεπιλεγμένου πυρήνα (kernel)"
+
+#: kernel_manager.py:336
+msgid "Setting the default kernel boot"
+msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα (kernel)"
+
+#: kernel_manager.py:351
 msgid "Removing the kernel"
 msgstr "Κατάργηση του (πυρηνα) kernel"
 
-#: kernel_manager.py:302
+#: kernel_manager.py:377
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: kernel_manager.py:365
+#: kernel_manager.py:420
 msgid "Removing old kernels"
 msgstr "Κατάργηση παλαιών (πυρήνων) kernels"
 
-#: kernel_manager.py:379
+#: kernel_manager.py:432
 msgid "Cleaning apt-cache"
 msgstr "Καθάρισμα apt-cache"
 
-#: kernel_manager.py:441
+#: kernel_manager.py:487
 msgid "Process started, please wait ..."
 msgstr "Η διεργασία ξεκίνησε,περιμενετε..."
 
-#: kernel_manager.py:443
+#: kernel_manager.py:489
 msgid "Completed successfully"
 msgstr "Ολοκληρώθηκε επιτυχώς"
 
-#: kernel_manager.py:444
+#: kernel_manager.py:490
 msgid "The process is complete. You can close the window."
 msgstr "Η διεργασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παράθυρο."
 
