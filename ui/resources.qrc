@@ -10,5 +10,7 @@
         <file>icons/std-p.png</file>
         <file>icons/un-p.png</file>
         <file>icons/old-p.png</file>
+        <file>icons/no-p.png</file>
+        <file>icons/no.png</file>
     </qresource>
 </RCC>
