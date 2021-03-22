@@ -226,6 +226,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             elif "un" in line:
                 icon = ":/picture/icons/un-p.png"
                 
+            elif "No" in line:
+                icon = ":/picture/icons/no-p.png"
+                
             elif "old" in line:
                 icon = ":/picture/icons/old-p.png"
             
