@@ -7,18 +7,21 @@ Name=Kernel manager
 Name[ru_RU]=Управление ядром системы
 Name[el]=Διαχείριση πυρήνα συστήματος
 Name[zh]=系统内核管理
+Name[zh_TW]=系統內核管理
 Name[hi]=सिस्टम कर्नेल प्रबंधन
 
 Comment=Uses the update-kernel command
 Comment[ru_RU]=Использует команду update-kernel
 Comment[el]=Χρησιμοποιεί την εντολή update-kernel
 Comment[zh]=使用 update-kernel 命令
+Comment[zh_TW]=使用 update-kernel 命令
 Comment[hi]=अपडेट-कर्नेल कमांड का उपयोग करता है
 
 GenericName[ru_RU]=Обновление ядра Linux
 GenericName[el]=Ενημέρωση πυρήνα Linux
 GenericName=Linux kernel update
 GenericName[zh]=Linux 内核更新
+GenericName[zh_TW]=Linux 內核更新
 GenericName[hi]=लिनक्स कर्नेल अद्यतन
 
 Path=
