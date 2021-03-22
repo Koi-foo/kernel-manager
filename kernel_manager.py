@@ -162,7 +162,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             
             
     def systemic_kernel(self):
-        """Системные ядера"""
+        """Системные ядра"""
         real_number = self.search_re(kernel_num=release())
      
         raw_list_kernel = run(
