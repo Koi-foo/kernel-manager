@@ -226,15 +226,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             elif "un" in line:
                 icon = ":/picture/icons/un-p.png"
                 
-            elif "No" in line:
-                icon = ":/picture/icons/no-p.png"
-                
             elif "old" in line:
                 icon = ":/picture/icons/old-p.png"
-            
+                
+            else:
+                icon = ":/picture/icons/no-p.png"
+                
             item = QListWidgetItem(QIcon(icon), line)
             self.listWidget_Kernel.addItem(item)
-            
+        
         self.listWidget_Kernel.itemDoubleClicked.connect(self.remove_kernel)
         
         
@@ -254,11 +254,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             item = source.itemAt(event.pos())
             
             try:
-                if action == remove:
-                    self.remove_kernel(item)
+                for i in ["std-", "un-", "old-"]:
+                    if i in item.text():
+                        if action == remove:
+                            self.remove_kernel(item)
                 
-                elif action == default:
-                    self.boot_default(item)
+                        elif action == default:
+                            self.boot_default(item)
+                    else:
+                        pass
             except AttributeError:
                 pass
             
