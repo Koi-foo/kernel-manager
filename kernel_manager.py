@@ -360,11 +360,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             + self.search_re(prefix=item.text().split(None, 1)[0]), \
             shell=True, stdout=PIPE, encoding='utf-8').stdout.rstrip()
         
+        version = re.split('[: -]', kernel_select)[4]
+        
         command = "/bin/sh -c" + " " \
             + f"apt-get\" \"remove\" \"{kernel_select}"
         
         self.proc_win.show()
-        self.proc_win.setWindowTitle(_('Removing the kernel'))
+        self.proc_win.setWindowTitle(_('Removing the kernel') + " " + version)
         self.proc_win.start_qprocess(command)
         self.proc_win.textEdit.clear()
             
