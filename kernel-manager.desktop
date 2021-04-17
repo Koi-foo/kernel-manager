@@ -35,4 +35,4 @@ X-KDE-SubstituteUID=false
 X-KDE-Username=
 
 Icon=/opt/kernel-manager/icons/kernel-manager.png
-Exec=xdg-su -c "cd /opt/kernel-manager ; ./kernel_manager.py"
+Exec=pkexec kernel-manager

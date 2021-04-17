@@ -1,0 +1,3 @@
+#!/bin/sh
+# Запуск и на будущее для передачи необходимых атрибутов для pak и im.
+cd /opt/kernel-manager; ./kernel_manager.py
