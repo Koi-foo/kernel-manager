@@ -21,7 +21,6 @@ The program has been translated into Russian and English. The English version ne
 * python3-base
 * python3-module-PyQt5
 * python3-module-gettext
-* xdg-utils
 * update-kernel
 * apt-repo
 * apt-scripts
