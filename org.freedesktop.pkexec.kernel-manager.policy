@@ -13,7 +13,7 @@
 		<description xml:lang="ru">Запустить kernel-manager с правами администратора.</description>
 		<description xml:lang="el">Εκτελέσει του Διαχειριστεί-Πυρήνα(kernel) ως διαχειρι</description>
 		<description xml:lang="hi">रूट के रूप में कर्नेल-प्रबंधक चलाएँ।</description>
-		<description xml:lang="zh">以 root 身份启动内核管理器。</description>
+		<description xml:lang="zh">以 root 身份运行内核-管理器。</description>
         <description xml:lang="zh_TW">以 root 身份運行內核-管理器。</description>
 
 		<message>Root authentication is required to run the kernel-manager as an administrator.</message>
