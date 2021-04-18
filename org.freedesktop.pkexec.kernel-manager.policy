@@ -3,7 +3,7 @@
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
 
-	<icon_name>kernel-manager</icon_name>
+	<icon_name>kernel_manager</icon_name>
 	<vendor>The Kernel Manager Project</vendor>
 	<vendor_url>https://github.com/Koi-foo/kernel-manager</vendor_url>
 
