@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-18 16:34+0300\n"
-"PO-Revision-Date: 2021-04-18 16:36+0300\n"
+"POT-Creation-Date: 2021-04-20 13:49+0300\n"
+"PO-Revision-Date: 2021-04-20 13:50+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -268,7 +268,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:212 kernel_manager.py:479
+#: form/main_win.py:212 kernel_manager.py:469
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -341,7 +341,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:440
+#: form/main_win.py:222 kernel_manager.py:433
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -369,11 +369,11 @@ msgstr "Остановить процесс"
 msgid "Cancel"
 msgstr "Отменить"
 
-#: form/process_win.py:63 kernel_manager.py:548
+#: form/process_win.py:63
 msgid "Agree to continue the process"
 msgstr "Согласитесь продолжить процесс"
 
-#: form/process_win.py:64 kernel_manager.py:547
+#: form/process_win.py:64
 msgid "Confirm"
 msgstr "Подтвердить"
 
@@ -417,57 +417,55 @@ msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:248
+#: kernel_manager.py:252
 msgid "Remove the selected kernel"
 msgstr "Удалить выбранное ядро"
 
-#: kernel_manager.py:251
+#: kernel_manager.py:255
 msgid "Install the default kernel"
 msgstr "Установите ядро по умолчанию"
 
-#: kernel_manager.py:337
+#: kernel_manager.py:335
 msgid "Set default kernel boot"
 msgstr "Установить загрузку ядра по умолчанию"
 
-#: kernel_manager.py:345
+#: kernel_manager.py:342
 msgid "Setting the default kernel boot"
 msgstr "Установка загрузки ядра по умолчанию"
 
-#: kernel_manager.py:372
+#: kernel_manager.py:368
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:404
+#: kernel_manager.py:399
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:452
+#: kernel_manager.py:444
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:465
+#: kernel_manager.py:456
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:522
+#: kernel_manager.py:515
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:524
+#: kernel_manager.py:517
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:525
+#: kernel_manager.py:518
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
-#: kernel_manager.py:553
-msgid "Close"
-msgstr "Закрыть"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
 
-#: kernel_manager.py:554
-msgid "Close a window"
-msgstr "Закрыть окно"
+#~ msgid "Close a window"
+#~ msgstr "Закрыть окно"
 
 #~ msgid "Installing the default boot kernel"
 #~ msgstr "Установить загрузку ядра по умолчанию"

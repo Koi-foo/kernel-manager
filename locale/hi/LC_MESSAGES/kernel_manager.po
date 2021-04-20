@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-18 16:34+0300\n"
-"PO-Revision-Date: 2021-04-18 16:50+0300\n"
+"POT-Creation-Date: 2021-04-20 13:49+0300\n"
+"PO-Revision-Date: 2021-04-20 13:51+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: hi_IN\n"
@@ -221,7 +221,7 @@ msgstr "गुठली निकाल दें"
 msgid "Removing kernels"
 msgstr "गुठली निकालना"
 
-#: form/main_win.py:212 kernel_manager.py:479
+#: form/main_win.py:212 kernel_manager.py:469
 msgid "Kernel update"
 msgstr "कर्नेल अद्यतन"
 
@@ -280,7 +280,7 @@ msgstr ""
 "%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, ध्यान से इसका वर्णन पढ़ें।</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:440
+#: form/main_win.py:222 kernel_manager.py:433
 msgid "Distribution update"
 msgstr "वितरण अद्यतन"
 
@@ -308,11 +308,11 @@ msgstr "प्रक्रिया को रोकें"
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: form/process_win.py:63 kernel_manager.py:548
+#: form/process_win.py:63
 msgid "Agree to continue the process"
 msgstr "प्रक्रिया जारी रखने के लिए सहमत हों"
 
-#: form/process_win.py:64 kernel_manager.py:547
+#: form/process_win.py:64
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
@@ -356,57 +356,55 @@ msgstr "UN-DEF कर्नेल (प्रयोगात्मक कर्�
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (कर्नेल अन-डिफ)"
 
-#: kernel_manager.py:248
+#: kernel_manager.py:252
 msgid "Remove the selected kernel"
 msgstr "चयनित गिरी निकालें"
 
-#: kernel_manager.py:251
+#: kernel_manager.py:255
 msgid "Install the default kernel"
 msgstr "डिफ़ॉल्ट कर्नेल स्थापित करें"
 
-#: kernel_manager.py:337
+#: kernel_manager.py:335
 msgid "Set default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करें"
 
-#: kernel_manager.py:345
+#: kernel_manager.py:342
 msgid "Setting the default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करना"
 
-#: kernel_manager.py:372
+#: kernel_manager.py:368
 msgid "Removing the kernel"
 msgstr "कर्नेल को हटाना"
 
-#: kernel_manager.py:404
+#: kernel_manager.py:399
 msgid "Installation"
 msgstr "स्थापना"
 
-#: kernel_manager.py:452
+#: kernel_manager.py:444
 msgid "Removing old kernels"
 msgstr "पुरानी गुठली निकालना"
 
-#: kernel_manager.py:465
+#: kernel_manager.py:456
 msgid "Cleaning apt-cache"
 msgstr "सफाई apt-कैश"
 
-#: kernel_manager.py:522
+#: kernel_manager.py:515
 msgid "Process started, please wait ..."
 msgstr "प्रक्रिया शुरू हो गई है, प्रतीक्षा करें ..."
 
-#: kernel_manager.py:524
+#: kernel_manager.py:517
 msgid "Completed successfully"
 msgstr "सफलतापूर्वक पूरा"
 
-#: kernel_manager.py:525
+#: kernel_manager.py:518
 msgid "The process is complete. You can close the window."
 msgstr "प्रक्रिया पूरी हो गई है, आप विंडो को बंद कर सकते हैं."
 
-#: kernel_manager.py:553
-msgid "Close"
-msgstr "बंद करे"
+#~ msgid "Close"
+#~ msgstr "बंद करे"
 
-#: kernel_manager.py:554
-msgid "Close a window"
-msgstr "एक खिड़की बंद करो"
+#~ msgid "Close a window"
+#~ msgstr "एक खिड़की बंद करो"
 
 #~ msgid "Removes old versions of kernels"
 #~ msgstr "गुठली के पुराने संस्करण निकालता है"
