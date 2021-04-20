@@ -50,6 +50,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_ChangeFlavour.clicked.connect(self.change_flavour)
 
         # Сигналы
+        self.proc_win.closeWindow.connect(self.update_list_kernel)
         self.listWidget_Kernel.installEventFilter(self)
 
 
@@ -216,6 +217,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def show_list_kernel_gui(self, kernel_list):
         """Показать список ядер в listwidget"""
+        self.listWidget_Kernel.clear()
         self.listWidget_Kernel.setIconSize(QSize(30, 12))
 
         for line in kernel_list:
@@ -234,7 +236,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             item = QListWidgetItem(QIcon(icon), line)
             self.listWidget_Kernel.addItem(item)
 
-        self.listWidget_Kernel.itemDoubleClicked.connect(self.remove_kernel)
+        if "kernel" in item.text():
+            self.listWidget_Kernel.itemDoubleClicked.connect(self.remove_kernel)
+        else:
+            pass
 
 
     def eventFilter(self, source, event):
@@ -281,13 +286,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def update_list_kernel(self):
         """Обновление виджета listwidget"""
-        self.listWidget_Kernel.clear()
         Thread(target=self.systemic_kernel).start()
-
-
-    def close_window(self):
-        """Cлот закрытия окна"""
-        self.update_list_kernel()
 
 
     def branches(self):
@@ -338,7 +337,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = (self.dialog(text)
             + f'"installkernel {kernel}"')
 
-        self.proc_win.activ_button()
         self.proc_win.show()
         self.proc_win.setWindowTitle(
             _('Setting the default kernel boot') + f': v{kernel_num}')
@@ -365,8 +363,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         command = ("/bin/sh -c "
             f'"apt-get remove {kernel_select}"')
 
-        self.proc_win.up_kern_list = True
-        self.proc_win.activ_button()
+        self.proc_win.update_kernel = True
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Removing the kernel') + " " + version)
         self.proc_win.start_qprocess(command)
@@ -397,8 +394,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
             command = f"update-kernel -t {flavour}"
 
-            self.proc_win.up_kern_list = True
-            self.proc_win.activ_button()
+            self.proc_win.update_kernel = True
             self.proc_win.show()
             self.proc_win.setWindowTitle(_('Installation') + " " + f'flavour-{flavour}')
             self.proc_win.start_qprocess(command)
@@ -422,8 +418,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             f'"apt-repo add {combobox_text} ; "'
             '"apt-get update"')
 
-        self.proc_win.up_kern_list = True
-        self.proc_win.activ_button()
+        self.proc_win.update_kernel = True
         self.proc_win.show()
         self.proc_win.setWindowTitle(f'Sisyphus flavour-{flavour}')
         self.proc_win.start_qprocess(command)
@@ -434,7 +429,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Обновить дистрибутив"""
         command = self.branches()
 
-        self.proc_win.activ_button()
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Distribution update'))
         self.proc_win.start_qprocess(command)
@@ -445,8 +439,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Удаление старых ядер"""
         command = "remove-old-kernels"
 
-        self.proc_win.up_kern_list = True
-        self.proc_win.activ_button()
+        self.proc_win.update_kernel = True
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Removing old kernels'))
         self.proc_win.start_qprocess(command)
@@ -459,7 +452,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             '"apt-get autoclean ; "'
             '"apt-get dedup"')
 
-        self.proc_win.activ_button()
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Cleaning apt-cache'))
         self.proc_win.start_qprocess(command)
@@ -472,8 +464,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         command = "update-kernel"
 
-        self.proc_win.up_kern_list = True
-        self.proc_win.activ_button()
+        self.proc_win.update_kernel = True
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Kernel update'))
         self.proc_win.start_qprocess(command)
@@ -482,12 +473,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
     closeWindow = pyqtSignal()
-    """Окно выполнения процессов"""
+    """Окно выолнения процессов"""
     def __init__(self):
         super().__init__()
         self.setWindowModality(QtCore.Qt.ApplicationModal)
         self.setupUi(self)
-        self.up_kern_list = False
+        self.update_kernel = False
 
         #Кнопки
         self.pushButton_Cancel.clicked.connect(self.cancel_button)
@@ -503,6 +494,10 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
             if activ_process:
                 close_process = run(f'kill {activ_process}', shell=True)
 
+        if self.update_kernel:
+            self.closeWindow.emit()
+            self.update_kernel = False
+
 
     def start_qprocess(self, command=''):
         """Запуск qprocess в окне process_win"""
@@ -516,17 +511,11 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
     def bar(self, messages='0'):
         """Передача информации в статус бар"""
         # W - Ждать завершения работы
-        # update_kern - Обновить список ядер
         if messages == 'W':
             self.statusbar.showMessage(_('Process started, please wait ...'))
         else:
             self.statusbar.showMessage(_('Completed successfully'))
             self.textEdit.insertPlainText(_('The process is complete. You can close the window.'))
-            self.close_button()
-
-            if self.up_kern_list:
-                k_m.update_list_kernel()
-                self.up_kern_list = False
 
 
     def text_widget(self):
@@ -541,20 +530,6 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
 
 
     #Функции кнопок
-    def activ_button(self):
-        """Активная кнопка"""
-        self.pushButton_Ok.clicked.connect(self.confirm_button)
-        self.pushButton_Ok.setText(_("Confirm"))
-        self.pushButton_Ok.setToolTip(_("Agree to continue the process"))
-
-
-    def close_button(self):
-        """Закрыть окно выполнения процессов"""
-        self.pushButton_Ok.setText(_("Close"))
-        self.pushButton_Ok.setToolTip(_("Close a window"))
-        self.pushButton_Ok.clicked.connect(lambda:self.close())
-
-
     def confirm_button(self):
         """Подтвердить установку"""
         command = 'y' + "\n"
@@ -573,8 +548,6 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
             self.qproc.write(command.encode())
         except AttributeError:
             pass
-
-        self.up_kern_list = False
 
 
 if __name__ == '__main__':
