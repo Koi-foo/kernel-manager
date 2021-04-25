@@ -72,7 +72,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Thread(target=self.search_kernel).start()
 
 
-    def bar(self, messages='0', new_version=''):
+    def bar(self, messages='0', new_version=None):
         """Передача информации в статус бар"""
         # U - Обновление кэша
         # N - Доступна новая версия ядра
@@ -134,7 +134,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.compare_kernel(new_version, real_number) 
 
 
-    def search_re(self, kernel_num='', kernel_flavour='', prefix=''):
+    def search_re(self, kernel_num=None, kernel_flavour=None, prefix=None):
         """Извлечение элементов"""
         search_num = re.compile(r'[2-9]\.[0-9]{1,2}\.?[0-9]{0,3}(?=-)')
         search_flavour = re.compile(r'[a-z]+-[def]{3}')
@@ -236,8 +236,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             item = QListWidgetItem(QIcon(icon), line)
             self.listWidget_Kernel.addItem(item)
 
+        self.listWidget_Kernel.itemDoubleClicked.connect(self.signal_list_kernel)
+
+
+    def signal_list_kernel(self, item):
+        """Обработка сигнала списка"""
         if "kernel" in item.text():
-            self.listWidget_Kernel.itemDoubleClicked.connect(self.remove_kernel)
+            self.remove_kernel(item)
         else:
             pass
 
@@ -261,7 +266,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 for i in ["std-", "un-", "old-"]:
                     if i in item.text():
                         if action == remove:
-                            self.remove_kernel(item)
+                            self.signal_list_kernel(item)
 
                         elif action == default:
                             self.boot_default(item)
@@ -481,6 +486,7 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         self.update_kernel = False
 
         #Кнопки
+        self.close_button()
         self.pushButton_Cancel.clicked.connect(self.cancel_button)
         self.pushButton_Ok.clicked.connect(self.confirm_button)
 
@@ -495,23 +501,23 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
                 close_process = run(f'kill {activ_process}', shell=True)
 
         if self.update_kernel:
-            self.closeWindow.emit()
             self.update_kernel = False
+            self.closeWindow.emit()
 
 
-    def start_qprocess(self, command=''):
+    def start_qprocess(self, command):
         """Запуск qprocess в окне process_win"""
         self.qproc = QtCore.QProcess()
-        self.bar(messages='W')
+        self.bar(messages=True)
+        self.qproc.stateChanged.connect(self.signal_qprocess)
         self.qproc.finished.connect(self.bar)
         self.qproc.start(command)
         self.qproc.readyRead.connect(self.text_widget)
 
 
-    def bar(self, messages='0'):
+    def bar(self, messages):
         """Передача информации в статус бар"""
-        # W - Ждать завершения работы
-        if messages == 'W':
+        if messages is True:
             self.statusbar.showMessage(_('Process started, please wait ...'))
         else:
             self.statusbar.showMessage(_('Completed successfully'))
@@ -529,7 +535,28 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         self.textEdit.ensureCursorVisible()
 
 
+    def signal_qprocess(self, state):
+        """Сигнал состояния запученного процесса"""
+        if state >= 1:
+            self.pushButton_Close.hide()
+            self.pushButton_Ok.show()
+        else:
+            self.pushButton_Close.show()
+            self.pushButton_Ok.hide()
+
+
     #Функции кнопок
+    def close_button(self, state=None):
+        """Закрыть окно выполнения процессов"""
+        self.pushButton_Close = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_Close.setMinimumSize(QtCore.QSize(150, 0))
+        self.pushButton_Close.setObjectName("pushButton_Close")
+        self.gridLayout_2.addWidget(self.pushButton_Close, 1, 2, 1, 1)
+        self.pushButton_Close.setText(_("Close"))
+        self.pushButton_Close.setToolTip(_("Close a window"))
+        self.pushButton_Close.clicked.connect(lambda:self.close())
+
+
     def confirm_button(self):
         """Подтвердить установку"""
         command = 'y' + "\n"
