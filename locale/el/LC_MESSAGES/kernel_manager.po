@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-20 13:49+0300\n"
-"PO-Revision-Date: 2021-04-20 13:51+0300\n"
+"POT-Creation-Date: 2021-04-25 18:57+0300\n"
+"PO-Revision-Date: 2021-04-25 19:00+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -275,7 +275,7 @@ msgstr "Κατάργηση (πυρήνων) kernels"
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:212 kernel_manager.py:469
+#: form/main_win.py:212 kernel_manager.py:474
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
@@ -351,7 +351,7 @@ msgstr ""
 "%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, διαβάστε προσεκτικά την περιγραφή του.</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:433
+#: form/main_win.py:222 kernel_manager.py:438
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
@@ -427,55 +427,57 @@ msgstr "UN-DEF kernel (Πειραματικός (πυρήνας) kernel)"
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (kernel un-def)"
 
-#: kernel_manager.py:252
+#: kernel_manager.py:257
 msgid "Remove the selected kernel"
 msgstr "Κατάργηση του επιλεγμένου (πυρηνα) kernel"
 
-#: kernel_manager.py:255
+#: kernel_manager.py:260
 msgid "Install the default kernel"
 msgstr "Εγκατάσtαση του προεπιλεγμένου πυρήνα (kernel)"
 
-#: kernel_manager.py:335
+#: kernel_manager.py:340
 msgid "Set default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα (kernel)"
 
-#: kernel_manager.py:342
+#: kernel_manager.py:347
 msgid "Setting the default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα (kernel)"
 
-#: kernel_manager.py:368
+#: kernel_manager.py:373
 msgid "Removing the kernel"
 msgstr "Κατάργηση του (πυρηνα) kernel"
 
-#: kernel_manager.py:399
+#: kernel_manager.py:404
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: kernel_manager.py:444
+#: kernel_manager.py:449
 msgid "Removing old kernels"
 msgstr "Κατάργηση παλαιών (πυρήνων) kernels"
 
-#: kernel_manager.py:456
+#: kernel_manager.py:461
 msgid "Cleaning apt-cache"
 msgstr "Καθάρισμα apt-cache"
 
-#: kernel_manager.py:515
+#: kernel_manager.py:521
 msgid "Process started, please wait ..."
 msgstr "Η διεργασία ξεκίνησε,περιμενετε..."
 
-#: kernel_manager.py:517
+#: kernel_manager.py:523
 msgid "Completed successfully"
 msgstr "Ολοκληρώθηκε επιτυχώς"
 
-#: kernel_manager.py:518
+#: kernel_manager.py:524
 msgid "The process is complete. You can close the window."
 msgstr "Η διεργασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παράθυρο."
 
-#~ msgid "Close"
-#~ msgstr "Κλείσε"
+#: kernel_manager.py:555
+msgid "Close"
+msgstr "Κλείσε"
 
-#~ msgid "Close a window"
-#~ msgstr "Κλείστε ένα παράθυρο"
+#: kernel_manager.py:556
+msgid "Close a window"
+msgstr "Κλείστε ένα παράθυρο"
 
 #~ msgid "Removes old versions of kernels"
 #~ msgstr "Κατάργηση Παλαιών εκδόσεων (πυρήνων) kernels"

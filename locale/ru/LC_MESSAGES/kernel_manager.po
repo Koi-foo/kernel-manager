@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-20 13:49+0300\n"
-"PO-Revision-Date: 2021-04-20 13:50+0300\n"
+"POT-Creation-Date: 2021-04-25 18:57+0300\n"
+"PO-Revision-Date: 2021-04-25 18:58+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -268,7 +268,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:212 kernel_manager.py:469
+#: form/main_win.py:212 kernel_manager.py:474
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -341,7 +341,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:433
+#: form/main_win.py:222 kernel_manager.py:438
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -417,55 +417,57 @@ msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:252
+#: kernel_manager.py:257
 msgid "Remove the selected kernel"
 msgstr "Удалить выбранное ядро"
 
-#: kernel_manager.py:255
+#: kernel_manager.py:260
 msgid "Install the default kernel"
 msgstr "Установите ядро по умолчанию"
 
-#: kernel_manager.py:335
+#: kernel_manager.py:340
 msgid "Set default kernel boot"
 msgstr "Установить загрузку ядра по умолчанию"
 
-#: kernel_manager.py:342
+#: kernel_manager.py:347
 msgid "Setting the default kernel boot"
 msgstr "Установка загрузки ядра по умолчанию"
 
-#: kernel_manager.py:368
+#: kernel_manager.py:373
 msgid "Removing the kernel"
 msgstr "Удаление ядра"
 
-#: kernel_manager.py:399
+#: kernel_manager.py:404
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:444
+#: kernel_manager.py:449
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:456
+#: kernel_manager.py:461
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:515
+#: kernel_manager.py:521
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:517
+#: kernel_manager.py:523
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:518
+#: kernel_manager.py:524
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
-#~ msgid "Close"
-#~ msgstr "Закрыть"
+#: kernel_manager.py:555
+msgid "Close"
+msgstr "Закрыть"
 
-#~ msgid "Close a window"
-#~ msgstr "Закрыть окно"
+#: kernel_manager.py:556
+msgid "Close a window"
+msgstr "Закрыть окно"
 
 #~ msgid "Installing the default boot kernel"
 #~ msgstr "Установить загрузку ядра по умолчанию"

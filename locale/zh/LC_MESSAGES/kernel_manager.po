@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-20 13:49+0300\n"
-"PO-Revision-Date: 2021-04-20 13:50+0300\n"
+"POT-Creation-Date: 2021-04-25 18:57+0300\n"
+"PO-Revision-Date: 2021-04-25 19:52+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -255,7 +255,7 @@ msgstr "删除内核"
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:212 kernel_manager.py:469
+#: form/main_win.py:212 kernel_manager.py:474
 msgid "Kernel update"
 msgstr "内核更新"
 
@@ -324,7 +324,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:433
+#: form/main_win.py:222 kernel_manager.py:438
 msgid "Distribution update"
 msgstr "发行更新"
 
@@ -400,55 +400,57 @@ msgstr "UN-DEF内核（实验内核）"
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核un-def）"
 
-#: kernel_manager.py:252
+#: kernel_manager.py:257
 msgid "Remove the selected kernel"
 msgstr "删除选定的内核"
 
-#: kernel_manager.py:255
+#: kernel_manager.py:260
 msgid "Install the default kernel"
 msgstr "安装默认内核"
 
-#: kernel_manager.py:335
+#: kernel_manager.py:340
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:342
+#: kernel_manager.py:347
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:368
+#: kernel_manager.py:373
 msgid "Removing the kernel"
 msgstr "删除内核"
 
-#: kernel_manager.py:399
+#: kernel_manager.py:404
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:444
+#: kernel_manager.py:449
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:456
+#: kernel_manager.py:461
 msgid "Cleaning apt-cache"
 msgstr "清理apt-cache"
 
-#: kernel_manager.py:515
+#: kernel_manager.py:521
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:517
+#: kernel_manager.py:523
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:518
+#: kernel_manager.py:524
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#~ msgid "Close"
-#~ msgstr "闭闭"
+#: kernel_manager.py:555
+msgid "Close"
+msgstr "闭闭"
 
-#~ msgid "Close a window"
-#~ msgstr "关闭一个窗口"
+#: kernel_manager.py:556
+msgid "Close a window"
+msgstr "关闭一个窗口"
 
 #~ msgid "Removes old versions of kernels"
 #~ msgstr "删除旧版本的内核"
