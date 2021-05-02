@@ -27,7 +27,7 @@
 			<allow_inactive>no</allow_inactive>
 			<allow_active>auth_admin</allow_active>
 		</defaults>
-		<annotate key="org.freedesktop.policykit.exec.path">/usr/bin/kernel-manager.py</annotate>
+		<annotate key="org.freedesktop.policykit.exec.path">/opt/kernel-manager/kernel_manager.py</annotate>
 		<annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
 
 	</action>
