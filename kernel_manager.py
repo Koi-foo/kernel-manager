@@ -359,8 +359,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
+        release = re.search(r'alt[0-9]', item.text()).group()
         kernel_select = run("apt-cache pkgnames" + " " \
-            + self.search_re(prefix=item.text().split(None, 1)[0]), \
+            + self.search_re(prefix=item.text().split(None, 1)[0]) + f"-{release}", \
             shell=True, stdout=PIPE, encoding='utf-8').stdout.rstrip()
 
         version = re.split('[: -]', kernel_select)[4]
