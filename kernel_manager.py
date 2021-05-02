@@ -20,7 +20,7 @@ from PyQt5.QtWidgets import QListWidgetItem
 from form.main_win import Ui_MainWindow
 from form.process_win import Ui_InfoProcessWin
 # Language localization
-gettext.install('kernel_manager', 'locale')
+gettext.install('kernel_manager', '/opt/kernel-manager/locale')
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
