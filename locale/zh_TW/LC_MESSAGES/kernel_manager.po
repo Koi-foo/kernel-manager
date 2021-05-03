@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2021-04-25 18:57+0300\n"
-"PO-Revision-Date: 2021-04-25 19:50+0300\n"
+"PO-Revision-Date: 2021-05-03 21:26+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
@@ -168,8 +168,8 @@ msgstr ""
 "支的補丁用於更正驅動程序和軟件的工作。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">內核：OLD-DEF</span><br />先前的內核分支std-def。 old-def內核支"
-"持較舊的硬件和長期支持。</p>\n"
+"weight:600;\">內核：OLD-DEF</span><br />先前的內核分支 std-def。 old-def 內核"
+"支持較舊的硬件和長期支持。</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">內核：UN-DEF</span><br />台式機的實驗核心。 un-def 內核較新，並"
@@ -391,7 +391,7 @@ msgstr "STD-DEF 核心 (主核心)"
 
 #: kernel_manager.py:198
 msgid "OLD-DEF kernel (old std-def branch)"
-msgstr "OLD-DEF內核 (舊的 std-def 分支)"
+msgstr "OLD-DEF 內核 (舊的 std-def 分支)"
 
 #: kernel_manager.py:199
 msgid "UN-DEF kernel (experimental kernel)"
@@ -447,7 +447,7 @@ msgstr "該過程完成後，可以關閉窗口。"
 
 #: kernel_manager.py:555
 msgid "Close"
-msgstr "閉閉"
+msgstr "閉"
 
 #: kernel_manager.py:556
 msgid "Close a window"
