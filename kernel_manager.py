@@ -5,6 +5,7 @@
 import os
 import re
 import sys
+import json
 import datetime
 import gettext
 from subprocess import run, PIPE, Popen
@@ -19,22 +20,30 @@ from PyQt5.QtWidgets import QListWidgetItem
 # Forms
 from form.main_win import Ui_MainWindow
 from form.process_win import Ui_InfoProcessWin
+from form.info_win import Ui_DialogInfo
 # Language localization
 gettext.install('kernel_manager', '/opt/kernel-manager/locale')
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
+    modulesList = pyqtSignal()
+    kernelList = pyqtSignal(list)
     """Главное окно"""
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.proc_win = ProcessWindow()
+        self.infoWin = DialogInformation()
+        self.message_bar = QtWidgets.QLabel()
+        self.message_bar.setMargin(4)
+        self.statusbar.addWidget(self.message_bar)
 
         self.bar()
         self.combobox_flavour()
         self.combobox_repo()
 
         Thread(target=self.systemic_kernel).start()
+        Thread(target=self.modules_system).start()
         Thread(target=self.update_cache).start()
 
         # Кнопки
@@ -48,10 +57,18 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_Clean.clicked.connect(self.cache_clear_apt)
         self.pushButton_KERN.clicked.connect(self.upgrade_kernel)
         self.pushButton_ChangeFlavour.clicked.connect(self.change_flavour)
+        self.pushButton_Autoremove.clicked.connect(self.autoremove)
 
         # Сигналы
         self.proc_win.closeWindow.connect(self.update_list_kernel)
-        self.listWidget_Kernel.installEventFilter(self)
+        self.modulesList.connect(self.signal_combobox_modules)
+        self.kernelList.connect(self.show_list_kernel_gui)
+        self.listWidget_Kernel.customContextMenuRequested.connect(self.kernel_context_menu)
+        self.comboBox_ModulesSystem.currentIndexChanged.connect(self.signal_combobox_modules)
+        self.listWidget_Kernel.itemDoubleClicked.connect(self.double_clicked_kernel)
+        self.listWidget_Modules.itemDoubleClicked.connect(self.double_clicked_module)
+        self.listWidget_Modules.currentItemChanged.connect(self.modules_tooltip_bar)
+        self.listWidget_Modules.customContextMenuRequested.connect(self.modules_context_menu)
 
 
     def update_cache(self):
@@ -78,7 +95,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # N - Доступна новая версия ядра
         # 0 - Сообщение по умолчанию активное ядро
         if messages == 'U':
-            self.statusbar.showMessage(_('Updating cache wait for completion ...'))
+            self.message_bar.setText(_('Updating cache wait for completion ...'))
 
             up_cache = Popen("LANG=en apt-get update", shell=True, stdout=PIPE, encoding='utf-8')
 
@@ -91,66 +108,48 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 try:
                     if int(num_repo) > int(fulfilled):
                         fulfilled = num_repo
-                        self.statusbar.showMessage(_('Updating cache:') + ' ' + fulfilled + "5%")
+                        self.message_bar.setText(_('Updating cache:') + ' ' + fulfilled + "5%")
                         sleep(1)
 
                 except ValueError:
                     if 'Could' in line:
-                        self.statusbar.showMessage(_('No access to repository'))
+                        self.message_bar.setText(_('No access to repository'))
                         sleep(3)
 
                     elif 'Building' in line:
-                        self.statusbar.showMessage(_('Updating completed:') + ' ' + "100%")
+                        self.message_bar.setText(_('Updating completed:') + ' ' + "100%")
                         sleep(2)
 
         elif messages == 'N':
-            self.statusbar.showMessage("kernel " + release() + " ➤ " + new_version)
+            self.message_bar.setText("kernel " + release() + " ➤ " + new_version)
         else:
-            self.statusbar.showMessage("kernel " + release())
+            self.message_bar.setText("kernel " + release())
 
 
     def search_kernel(self):
         """Поиск ядра для обновления"""
-        flavour = self.search_re(kernel_flavour=release())
-        real_number = self.search_re(kernel_num=release())
-        new_version = real_number
+        flavour = re.search(r'.*-(.+-.+)-', release()).group(1)
+        real_number = release().split('-')[0]
+        new_version = real_number.split('.')
 
         search_version = run(
             f"apt-cache pkgnames kernel-image-{flavour}#",
             shell=True, stdout=PIPE, encoding='utf-8').stdout
 
-        for x in search_version.splitlines():
-            act = self.search_re(kernel_num=x).split(".")
+        for line in search_version.splitlines():
+            act = re.search(r'.*#.*:(.+)-' ,line).group(1).split(".")
 
-            if int(act[0]) > int(new_version.split(".")[0]):
-                new_version = ".".join(act)
+            if int(act[0]) > int(new_version[0]):
+                new_version[0] = act[0]
 
-            if int(act[1]) > int(new_version.split(".")[1]):
-                new_version = ".".join(act)
+            if int(act[1]) > int(new_version[1]):
+                new_version[1] = act[1]
 
-            if int(act[2]) > int(new_version.split(".")[2]):
-                new_version = ".".join(act)
+            if int(act[2]) > int(new_version[2]):
+                new_version[2] = act[2]
 
-        self.compare_kernel(new_version, real_number) 
-
-
-    def search_re(self, kernel_num=None, kernel_flavour=None, prefix=None):
-        """Извлечение элементов"""
-        search_num = re.compile(r'[2-9]\.[0-9]{1,2}\.?[0-9]{0,3}(?=-)')
-        search_flavour = re.compile(r'[a-z]+-[def]{3}')
-        search_prefix = re.compile(r'-alt.*')
-
-        if kernel_num:
-            num_version = "".join(search_num.findall(kernel_num))
-            return num_version
-
-        elif kernel_flavour:
-            flavour_type = "".join(search_flavour.findall(kernel_flavour))
-            return flavour_type
-
-        elif prefix:
-            del_prefix = search_prefix.sub("", prefix).replace('f-', 'f | grep ')
-            return del_prefix
+        new_version = ".".join(new_version)
+        self.compare_kernel(new_version, real_number)
 
 
     def compare_kernel(self, new_version, real_number):
@@ -163,21 +162,21 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def systemic_kernel(self):
         """Системные ядра"""
-        real_number = self.search_re(kernel_num=release())
+        kernel_list = []
+        real_number = release().split('-')[0]
 
         raw_list_kernel = run(
-            'rpm -qa | grep kernel-image-', \
-                shell=True, stdout=PIPE, encoding='utf-8').stdout.splitlines()
-
-        kernel_list = []
-        platform = re.compile(r': ([a-zA-Z0-9]+)')
+            'rpm -qa | grep kernel-image-',
+            shell=True, stdout=PIPE, encoding='utf-8').stdout.splitlines()
 
         for line in raw_list_kernel:
-            kernel_info = run(f'rpm -qi {line} | grep Install', shell=True, stdout=PIPE, \
-            encoding='utf-8').stdout
+            kernel_info = run(
+                f'rpm -qi {line} | grep Install',
+                shell=True, stdout=PIPE, encoding='utf-8').stdout
 
-            dist_tag = str(platform.findall(run(f'rpm -qi {line} | grep DistTag', \
-            shell=True, stdout=PIPE, encoding='utf-8').stdout))
+            dist_tag = str(re.compile(r': ([a-zA-Z0-9]+)').findall(run(
+                f'rpm -qi {line} | grep DistTag', shell=True,
+                stdout=PIPE, encoding='utf-8').stdout))
 
             kernel_list.append(line + "  ➞  " + kernel_info.rstrip() + "  ➞  " + dist_tag)
 
@@ -188,7 +187,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if not kernel_list:
             kernel_list.append(_('No kernels found to be removed'))
 
-        self.show_list_kernel_gui(kernel_list)
+        self.kernelList.emit(kernel_list)
 
 
     def combobox_flavour(self):
@@ -236,48 +235,50 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             item = QListWidgetItem(QIcon(icon), line)
             self.listWidget_Kernel.addItem(item)
 
-        self.listWidget_Kernel.itemDoubleClicked.connect(self.signal_list_kernel)
 
-
-    def signal_list_kernel(self, item):
-        """Обработка сигнала списка"""
-        if "kernel" in item.text():
-            self.remove_kernel(item)
+    def double_clicked_kernel(self, item):
+        """Обработка двойного клика listWidget_Kernel"""
+        kernel = item.text().split()[0]
+        if "kernel" in kernel:
+            self.remove_kernel(kernel)
         else:
             pass
 
 
-    def eventFilter(self, source, event):
-        """Фильтр событий виджета listWidget и контекстное меню"""
-        if (event.type() == QtCore.QEvent.ContextMenu and
-            source is self.listWidget_Kernel):
-            menu = QtWidgets.QMenu()
+    def double_clicked_module(self, item):
+        """Обработка двойного клика listWidget_Modules"""
+        module = item.text()
+        self.remove_kernel(module)
 
-            remove = menu.addAction(
-                QIcon(":/picture/icons/list-remove.svg"), _('Remove the selected kernel'))
 
-            default = menu.addAction(
-                QIcon(":/picture/icons/go-up.svg"), _('Install the default kernel'))
+    def kernel_context_menu(self, pos):
+        """Котекстное меню listWidget_Kernel"""
+        menu = QtWidgets.QMenu(self)
 
-            action = menu.exec_(event.globalPos())
-            item = source.itemAt(event.pos())
+        remove = menu.addAction(
+            QIcon(":/picture/icons/list-remove.svg"), _('Remove the selected kernel'))
 
-            try:
-                for i in ["std-", "un-", "old-"]:
-                    if i in item.text():
-                        if action == remove:
-                            self.signal_list_kernel(item)
+        default = menu.addAction(
+            QIcon(":/picture/icons/go-up.svg"), _('Install the default kernel'))
 
-                        elif action == default:
-                            self.boot_default(item)
-                    else:
-                        pass
-            except AttributeError:
-                pass
+        module_info = menu.addAction(
+            QIcon(":/picture/icons/help-about.svg"), _('Module information'))
 
-            return True
+        action = menu.exec_(self.listWidget_Kernel.mapToGlobal(pos))
+        kernel = self.listWidget_Kernel.currentItem().text().split()[0]
 
-        return super().eventFilter(source, event)
+        if action == remove:
+            self.remove_kernel(kernel)
+
+        elif action == default:
+            self.boot_default(kernel)
+
+        elif action == module_info:
+            description = run(
+                f'rpm -qi {kernel}',
+                shell=True, stdout=PIPE, encoding='utf-8').stdout
+
+            self.information_window(description)
 
 
     def button_switch(self, btn_off_on):
@@ -287,17 +288,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_Clean.setDisabled(btn_off_on)
         self.pushButton_KERN.setDisabled(btn_off_on)
         self.pushButton_ChangeFlavour.setDisabled(btn_off_on)
+        self.pushButton_Autoremove.setDisabled(btn_off_on)
 
 
     def update_list_kernel(self):
         """Обновление виджета listwidget"""
         Thread(target=self.systemic_kernel).start()
+        Thread(target=self.modules_system).start()
 
 
     def branches(self):
         """Смена репозиториев"""
-        current_repo = run('apt-repo', shell=True, stdout=PIPE, \
-            encoding='utf-8').stdout.splitlines()[1]
+        current_repo = run(
+            'apt-repo',
+            shell=True, stdout=PIPE, encoding='utf-8').stdout.splitlines()[1]
         combobox_text = self.comboBox_ChangeRepo.currentText()
 
         if combobox_text in current_repo:
@@ -327,10 +331,131 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return list_command
 
 
+    def information_window(self, description):
+        """Окно информации"""
+        self.infoWin.show()
+        self.infoWin.textEdit_Info.setPlainText(description)
+
+
+    def modules_system(self):
+        """Список установленных модулей"""
+        combobox_list = []
+        name_modules = re.compile(r'kernel-modules-(\w+)-')
+        modules = run(
+            f'rpm -qa | grep kernel-modules',
+            shell=True, stdout=PIPE, encoding='utf-8').stdout.splitlines()
+
+        with open('modules.json', 'w') as file_modules:
+            json.dump(modules, file_modules)
+
+        for line in modules:
+            combobox_item = name_modules.search(line).group(1)
+
+            if combobox_item not in combobox_list:
+                combobox_list.append(combobox_item)
+
+        if self.comboBox_ModulesSystem.count() == 1:
+                self.comboBox_ModulesSystem.addItems(combobox_list)
+
+        self.modulesList.emit()
+
+
+    def signal_combobox_modules(self):
+        """Обработка сигнала comboBox_ModulesSystem"""
+        index_item = self.comboBox_ModulesSystem.currentIndex()
+        text_item = self.comboBox_ModulesSystem.currentText()
+
+        with open('modules.json') as file_modules:
+            modules = json.load(file_modules)
+
+        if index_item == 0:
+            item_filter=""
+
+        elif text_item:
+            item_filter = text_item
+
+        selected_modules = [x for x in modules if item_filter in x]
+        self.show_list_modules_gui(selected_modules)
+
+
+    def show_list_modules_gui(self, item_list):
+        """Показывает список модулей на вкладке Фильтр пакетов"""
+        self.listWidget_Modules.clear()
+        self.listWidget_Modules.setIconSize(QSize(30, 12))
+
+        for line in item_list:
+            if "std" in line:
+                icon = ":/picture/icons/std-p.png"
+
+            elif "un" in line:
+                icon = ":/picture/icons/un-p.png"
+
+            elif "old" in line:
+                icon = ":/picture/icons/old-p.png"
+
+            else:
+                icon = ":/picture/icons/no-p.png"
+
+            item = QListWidgetItem(QIcon(icon), line)
+            self.listWidget_Modules.addItem(item)
+
+
+    def modules_tooltip_bar(self):
+        """Краткое описание для модуля в статус баре"""
+        try:
+            module = self.listWidget_Modules.currentItem().text()
+
+            if module == None:
+                pass
+            else:
+                row = re.compile(r'Summary.*:.(.*)')
+                summary = row.search(run(
+                    f'rpm -qi {module}',
+                    shell=True, stdout=PIPE, encoding='utf-8').stdout).group(1)
+
+                self.statusbar.showMessage(_('Module') + ': ' + summary, 10000)
+        except AttributeError:
+            pass
+
+
+    def modules_context_menu(self, pos):
+        """Контекстное меню listWidget_Modules"""
+        menu = QtWidgets.QMenu(self)
+
+        remove = menu.addAction(
+            QIcon(":/picture/icons/list-remove.svg"), _('Remove the selected module'))
+
+        module_info = menu.addAction(
+            QIcon(":/picture/icons/help-about.svg"), _('Module information'))
+
+        action = menu.exec_(self.listWidget_Modules.mapToGlobal(pos))
+        module = self.listWidget_Modules.currentItem().text()
+
+        if action == remove:
+            self.remove_kernel(module)
+
+        elif action == module_info:
+            description = run(
+                f'rpm -qi {module}',
+                shell=True, stdout=PIPE, encoding='utf-8').stdout
+
+            self.information_window(description)
+
+
     # Функции кнопок
+    def autoremove(self):
+        """Удаление ненужных пакетов используя autoremove"""
+        command = "apt-get autoremove"
+
+        self.proc_win.show()
+        self.proc_win.setWindowTitle(_('Removing unnecessary dependencies'))
+        self.proc_win.start_qprocess(command)
+        self.proc_win.textEdit.clear()
+
+
     def boot_default(self, item):
         """Установка загрузки ядра по умолчанию"""
-        kernel = item.text().split(None, 1)[0].replace(
+        kernel = item.split(None, 1)[0].replace(
             'kernel-image-', '').rsplit('.', 1)[0].split('-')
 
         kernel[0], kernel[1], kernel[2] = kernel[2], kernel[0], kernel[1]
@@ -359,19 +484,26 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
-        release = re.search(r'alt[0-9]', item.text()).group()
-        kernel_select = run("apt-cache pkgnames" + " " \
-            + self.search_re(prefix=item.text().split(None, 1)[0]) + f"-{release}", \
-            shell=True, stdout=PIPE, encoding='utf-8').stdout.rstrip()
+        package = run(
+            f'rpm -qi {item}',
+            shell=True, stdout=PIPE, encoding='utf-8').stdout
+        name = re.compile(r'Name.*:\s(.*)').search(package).group(1) + "#"
+        version = re.compile(r'Version.*:\s(.*)').search(package).group(1)
+        release = re.compile(r'Release.*:\s(.*)').search(package).group(1)
 
-        version = re.split('[: -]', kernel_select)[4]
+        try:
+            epoch = re.compile(r'Epoch.*:\s(.*)').search(package).group(1) + ":"
+        except AttributeError:
+            epoch = ""
+
+        message_title = f"{name}-{version}"
 
         command = ("/bin/sh -c "
-            f'"apt-get remove {kernel_select}"')
+            f'"apt-get remove {name}{epoch}{version}-{release}*"')
 
         self.proc_win.update_kernel = True
         self.proc_win.show()
-        self.proc_win.setWindowTitle(_('Removing the kernel') + " " + version)
+        self.proc_win.setWindowTitle(_('Remove') + " " + message_title)
         self.proc_win.start_qprocess(command)
         self.proc_win.textEdit.clear()
 
@@ -576,6 +708,14 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
             self.qproc.write(command.encode())
         except AttributeError:
             pass
+
+
+class DialogInformation(QtWidgets.QDialog, Ui_DialogInfo):
+    """Окно вывода информации"""
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+        #self.textEdit_Info.zoomOut(-1)
 
 
 if __name__ == '__main__':
