@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2021-05-19 16:46+0300\n"
-"PO-Revision-Date: 2021-05-19 17:02+0300\n"
+"PO-Revision-Date: 2021-05-19 23:15+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -368,32 +368,6 @@ msgid "Change repository"
 msgstr "Αλλαγή αποθετηρίου"
 
 #: form/main_win.py:304
-#, fuzzy
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#| "font-weight:400; font-style:normal;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#| "weight:600;\">The note</span><br />The right mouse button menu provides "
-#| "additional options such as loading the default kernel. For the "
-#| "convenience of orientation, color coding has been introduced.</p>\n"
-#| "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#| "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-#| "\"><br /></p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#| "weight:600;\">Color coding.</span></p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/"
-#| "icons/std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/"
-#| "picture/icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src="
-#| "\":/picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</"
-#| "p></body></html>"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -423,42 +397,37 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Σημείωση</span><br />Το μενού του δεξιού κουμπιού του "
-"ποντικιού παρέχει πρόσθετες επιλογές, όπως η φόρτωση του προεπιλεγμένου "
-"πυρήνα. Για την ευκολία προσανατολισμού, έχει εισαχθεί χρωματική "
-"κωδικοποίηση .</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-"\"><br /></p>\n"
+"weight:600;\">Σημείωση</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Χρωματική κωδικοποίηση.</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
-"std.png\" height=\"12\" /> -τύπος πυρήνα ( std-def ) <img src=\":/picture/"
-"icons/un.png\" height=\"12\" /> -τύπος πυρήνα ( un-def ) <img src=\":/"
-"picture/icons/old.png\" height=\"12\" /> - τύπος πυρήνα ( old-def )</p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Το κεραικό κουμπί (τούβλο) "
+"χρησιμοποιεί το &quot;<span style=\" font-weight:600;\">apt-get autoremove</"
+"span>&quot; εντολή για να καθαρίσετε το σύστημα των πακέτων που δεν "
+"χρησιμοποιούνται από κανένα πρόγραμμα. Μερικές φορές αυτή η εντολή καταργεί "
+"τις βιβλιοθήκες που θέλετε, οπότε δημιουργήστε αντίγραφα ασφαλείας του "
+"συστήματός σας πριν τη χρησιμοποιήσετε. Μπορείτε να μάθετε περισσότερα "
+"πληκτρολογώντας &quot;<span style=\" font-weight:600;\">--autoremove</"
+"span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</"
+"span>&quot; Τερματικό.</p></body></html>"
 
 #: form/main_win.py:310
 msgid "Filter for kernel modules installed on the system"
-msgstr ""
+msgstr "Φίλτρο για μονάδες πυρήνα εγκατεστημένα στο σύστημα"
 
 #: form/main_win.py:311
 msgid "All installed modules"
-msgstr ""
+msgstr "Όλες οι εγκατεστημένες λειτουργικές μονάδες"
 
 #: form/main_win.py:312
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
 msgstr ""
+"Καταργήστε πακέτα που εγκαταστάθηκαν αυτόματα για να "
+"ικανοποιήσουν<br>εξαρτήσεις για άλλα πακέτα και δεν χρειάζονται πλέον. "
 
 #: form/main_win.py:313
-#, fuzzy
-#| msgid "Kernel update"
 msgid "Kernel modules"
-msgstr "Ενημέρωση (πυρήνα) kernel"
+msgstr "Μονάδες Πυρήνων (kernel)"
 
 #: form/process_win.py:62
 msgid "Task progress"
@@ -529,24 +498,20 @@ msgid "Install the default kernel"
 msgstr "Εγκατάσtαση του προεπιλεγμένου πυρήνα (kernel)"
 
 #: kernel_manager.py:265 kernel_manager.py:429
-#, fuzzy
-#| msgid "Information"
 msgid "Module information"
-msgstr "Πληροφορίες"
+msgstr "Πληροφορίες Μονάδας (Πυρήνα-kernel)"
 
 #: kernel_manager.py:416
 msgid "Module"
-msgstr ""
+msgstr "Μονάδα"
 
 #: kernel_manager.py:426
-#, fuzzy
-#| msgid "Remove the selected kernel"
 msgid "Remove the selected module"
-msgstr "Κατάργηση του επιλεγμένου (πυρηνα) kernel"
+msgstr "Κατάργηση της επιλεγμένης μονάδας (πυρηνα-kernel)"
 
 #: kernel_manager.py:451
 msgid "Removing unnecessary dependencies"
-msgstr ""
+msgstr "Κατάργηση περιττών εξαρτήσεων"
 
 #: kernel_manager.py:465
 msgid "Set default kernel boot"
@@ -557,10 +522,8 @@ msgid "Setting the default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα (kernel)"
 
 #: kernel_manager.py:506
-#, fuzzy
-#| msgid "Remove kernels"
 msgid "Remove"
-msgstr "Κατάργηση (πυρήνων) kernels"
+msgstr "Κατάργηση"
 
 #: kernel_manager.py:537
 msgid "Installation"

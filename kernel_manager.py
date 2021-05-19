@@ -713,7 +713,7 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
             pass
 
 
-class DialogInformation(QtWidgets.QDialog, Ui_DialogInfo):
+class DialogInformation(QtWidgets.QMainWindow, Ui_DialogInfo):
     """Окно вывода информации"""
     def __init__(self):
         super().__init__()
