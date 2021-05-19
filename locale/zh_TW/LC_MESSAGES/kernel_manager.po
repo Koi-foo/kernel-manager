@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2021-05-19 16:46+0300\n"
-"PO-Revision-Date: 2021-05-19 17:04+0300\n"
+"PO-Revision-Date: 2021-05-19 21:09+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
@@ -342,32 +342,6 @@ msgid "Change repository"
 msgstr "變更資料庫"
 
 #: form/main_win.py:304
-#, fuzzy
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#| "font-weight:400; font-style:normal;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#| "weight:600;\">The note</span><br />The right mouse button menu provides "
-#| "additional options such as loading the default kernel. For the "
-#| "convenience of orientation, color coding has been introduced.</p>\n"
-#| "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#| "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-#| "\"><br /></p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#| "weight:600;\">Color coding.</span></p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/"
-#| "icons/std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/"
-#| "picture/icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src="
-#| "\":/picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</"
-#| "p></body></html>"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -397,39 +371,32 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">筆記</span><br />鼠標右鍵菜單提供了其他選項，例如，加載默認內"
-"核。 為了方便定位，已經引入了顏色編碼。</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-"\"><br /></p>\n"
+"weight:600;\">筆記</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">顏色編碼。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
-"std.png\" height=\"12\" /> - 內核類型（std-def）<img src=\":/picture/icons/"
-"un.png\" height=\"12\" /> - 內核類型（un-def）<img src=\":/picture/icons/old."
-"png\" height=\"12\" /> - 內核類型（old-def）</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">磚頭按鈕使用 &quot;<span "
+"style=\" font-weight:600;\">apt-get autoremove</span>&quot;命令以清理所有程序"
+"未使用的軟件包系統。 有時，此命令會刪除所需的庫，因此請在使用前備份系統。 您"
+"可以通過鍵入更多信息&quot;<span style=\" font-weight:600;\">--autoremove</"
+"span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-get</"
+"span>&quot; 終端。</p></body></html>"
 
 #: form/main_win.py:310
 msgid "Filter for kernel modules installed on the system"
-msgstr ""
+msgstr "系統中安裝的內核模塊的過濾器"
 
 #: form/main_win.py:311
 msgid "All installed modules"
-msgstr ""
+msgstr "所有已安裝的模塊"
 
 #: form/main_win.py:312
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
-msgstr ""
+msgstr "刪除自動安裝的軟件包以滿足<br>其他軟件包的依賴關係，現在不再需要。 "
 
 #: form/main_win.py:313
-#, fuzzy
-#| msgid "Kernel update"
 msgid "Kernel modules"
-msgstr "內核更新"
+msgstr "內核模塊"
 
 #: form/process_win.py:62
 msgid "Task progress"
@@ -500,24 +467,20 @@ msgid "Install the default kernel"
 msgstr "安裝默認內核"
 
 #: kernel_manager.py:265 kernel_manager.py:429
-#, fuzzy
-#| msgid "Information"
 msgid "Module information"
-msgstr "信息"
+msgstr "模塊信息"
 
 #: kernel_manager.py:416
 msgid "Module"
-msgstr ""
+msgstr "模塊"
 
 #: kernel_manager.py:426
-#, fuzzy
-#| msgid "Remove the selected kernel"
 msgid "Remove the selected module"
-msgstr "刪除選定的內核"
+msgstr "移除所選模塊"
 
 #: kernel_manager.py:451
 msgid "Removing unnecessary dependencies"
-msgstr ""
+msgstr "刪除不必要的依賴"
 
 #: kernel_manager.py:465
 msgid "Set default kernel boot"
@@ -528,10 +491,8 @@ msgid "Setting the default kernel boot"
 msgstr "設置默認的內核啟動"
 
 #: kernel_manager.py:506
-#, fuzzy
-#| msgid "Remove kernels"
 msgid "Remove"
-msgstr "刪除內核"
+msgstr "去掉"
 
 #: kernel_manager.py:537
 msgid "Installation"
