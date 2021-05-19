@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'process_win.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_InfoProcessWin(object):
     def setupUi(self, InfoProcessWin):
@@ -62,5 +64,4 @@ class Ui_InfoProcessWin(object):
         self.pushButton_Cancel.setText(_translate("InfoProcessWin", _("Cancel")))
         self.pushButton_Ok.setToolTip(_translate("InfoProcessWin", _("Agree to continue the process")))
         self.pushButton_Ok.setText(_translate("InfoProcessWin", _("Confirm")))
-
 import resources
