@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-25 18:57+0300\n"
-"PO-Revision-Date: 2021-05-03 21:26+0300\n"
+"POT-Creation-Date: 2021-05-19 16:46+0300\n"
+"PO-Revision-Date: 2021-05-19 17:03+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -22,11 +22,15 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/main_win.py:175
+#: form/info_win.py:41 form/process_win.py:61
+msgid "Information"
+msgstr "信息"
+
+#: form/main_win.py:252
 msgid "Kernels management"
 msgstr "内核管理"
 
-#: form/main_win.py:176
+#: form/main_win.py:253
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -101,21 +105,21 @@ msgstr ""
 "配&quot;指的是该分配。 按钮将软件更新到当前版本。 存储库列表允许您修改存储库"
 "的分支。</span></p></body></html>"
 
-#: form/main_win.py:185
+#: form/main_win.py:262
 msgid "Change flavor type"
 msgstr "改变口味类型"
 
-#: form/main_win.py:186
+#: form/main_win.py:263
 msgid "Change"
 msgstr "更改"
 
-#: form/main_win.py:187
+#: form/main_win.py:264
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
 msgstr "从列表中选择一个内核，然后单击<br>“更改”按钮以切换到新的样式"
 
-#: form/main_win.py:188
+#: form/main_win.py:265
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -179,11 +183,11 @@ msgstr ""
 "用于其他内核不支持的英特尔集成显卡。 使用此存储库中的内核时，将无法使用依赖于"
 "稳定存储库中模块版本的程序。</p></body></html>"
 
-#: form/main_win.py:197
+#: form/main_win.py:274
 msgid "Change of kernels"
 msgstr "更改内核"
 
-#: form/main_win.py:199
+#: form/main_win.py:276
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -233,37 +237,37 @@ msgstr ""
 "un.png\" height=\"12\" /> - 内核类型（un-def） <img src=\":/picture/icons/"
 "old.png\" height=\"12\" /> - 内核类型（old-def）</p></body></html>"
 
-#: form/main_win.py:207
+#: form/main_win.py:284
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
 msgstr "清除过时软件包的本地缓存<br>并删除重复的软件包"
 
-#: form/main_win.py:208
+#: form/main_win.py:285
 msgid "Clear"
 msgstr "明确"
 
-#: form/main_win.py:209
+#: form/main_win.py:286
 msgid "Removes all cores except the currently active one"
 msgstr "删除除当前活动的核心以外的所有核心"
 
-#: form/main_win.py:210
+#: form/main_win.py:287
 msgid "Remove kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:211
+#: form/main_win.py:288
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:212 kernel_manager.py:474
+#: form/main_win.py:289 kernel_manager.py:607
 msgid "Kernel update"
 msgstr "内核更新"
 
-#: form/main_win.py:213 form/main_win.py:225
+#: form/main_win.py:290 form/main_win.py:302
 msgid "Update kernel"
 msgstr "更新内核"
 
-#: form/main_win.py:214
+#: form/main_win.py:291
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -324,133 +328,244 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:438
+#: form/main_win.py:299 kernel_manager.py:571
 msgid "Distribution update"
 msgstr "发行更新"
 
-#: form/main_win.py:223
+#: form/main_win.py:300
 msgid "Distribution"
 msgstr "分配"
 
-#: form/main_win.py:224
+#: form/main_win.py:301
 msgid "Change repository"
 msgstr "变更资料库"
 
-#: form/process_win.py:59
-msgid "Information"
-msgstr "信息"
+#: form/main_win.py:304
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#| "weight:600;\">The note</span><br />The right mouse button menu provides "
+#| "additional options such as loading the default kernel. For the "
+#| "convenience of orientation, color coding has been introduced.</p>\n"
+#| "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#| "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#| "\"><br /></p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#| "weight:600;\">Color coding.</span></p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/"
+#| "icons/std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/"
+#| "picture/icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src="
+#| "\":/picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</"
+#| "p></body></html>"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">The note</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The brick button uses the "
+"&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; "
+"command to clean up the system of packages that are not used by any program. "
+"Sometimes this command removes the libraries you want, so back up your "
+"system before using it. You can find out more by typing &quot;<span style=\" "
+"font-weight:600;\">--autoremove</span>&quot; in &quot;<span style=\" font-"
+"weight:600;\">man apt-get</span>&quot; terminal.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">注意</span><br />鼠标右键菜单提供了其他选项，例如，加载默认内"
+"核。 为了方便定位，已经引入了颜色编码。</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+"\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">颜色编码。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
+"std.png\" height=\"12\" /> - 内核类型（std-def）<img src=\":/picture/icons/"
+"un.png\" height=\"12\" /> - 内核类型（un-def） <img src=\":/picture/icons/"
+"old.png\" height=\"12\" /> - 内核类型（old-def）</p></body></html>"
 
-#: form/process_win.py:60
+#: form/main_win.py:310
+msgid "Filter for kernel modules installed on the system"
+msgstr ""
+
+#: form/main_win.py:311
+msgid "All installed modules"
+msgstr ""
+
+#: form/main_win.py:312
+msgid ""
+"Remove packages that were automatically installed to satisfy<br>dependencies "
+"for other packages and are now no longer needed. "
+msgstr ""
+
+#: form/main_win.py:313
+#, fuzzy
+#| msgid "Kernel update"
+msgid "Kernel modules"
+msgstr "内核更新"
+
+#: form/process_win.py:62
 msgid "Task progress"
 msgstr "任务进度"
 
-#: form/process_win.py:61
+#: form/process_win.py:63
 msgid "Stop the process"
 msgstr "停止程序"
 
-#: form/process_win.py:62
+#: form/process_win.py:64
 msgid "Cancel"
 msgstr "取消"
 
-#: form/process_win.py:63
+#: form/process_win.py:65
 msgid "Agree to continue the process"
 msgstr "同意继续进行"
 
-#: form/process_win.py:64
+#: form/process_win.py:66
 msgid "Confirm"
 msgstr "确认"
 
-#: kernel_manager.py:81
+#: kernel_manager.py:98
 msgid "Updating cache wait for completion ..."
 msgstr "正在更新缓存以等待完成..."
 
-#: kernel_manager.py:94
+#: kernel_manager.py:111
 msgid "Updating cache:"
 msgstr "清理 apt-cache:"
 
-#: kernel_manager.py:99
+#: kernel_manager.py:116
 msgid "No access to repository"
 msgstr "无法访问存储库"
 
-#: kernel_manager.py:103
+#: kernel_manager.py:120
 msgid "Updating completed:"
 msgstr "更新完成："
 
-#: kernel_manager.py:189
+#: kernel_manager.py:188
 msgid "No kernels found to be removed"
 msgstr "没有找到要删除的内核"
 
-#: kernel_manager.py:196
+#: kernel_manager.py:195
 msgid "Flavor - not selected"
 msgstr "风味-未选择"
 
-#: kernel_manager.py:197
+#: kernel_manager.py:196
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF 内核（主内核）"
 
-#: kernel_manager.py:198
+#: kernel_manager.py:197
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF 内核（旧的 std-def 分支）"
 
-#: kernel_manager.py:199
+#: kernel_manager.py:198
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF 内核（实验内核）"
 
-#: kernel_manager.py:200
+#: kernel_manager.py:199
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核 un-def）"
 
-#: kernel_manager.py:257
+#: kernel_manager.py:259
 msgid "Remove the selected kernel"
 msgstr "删除选定的内核"
 
-#: kernel_manager.py:260
+#: kernel_manager.py:262
 msgid "Install the default kernel"
 msgstr "安装默认内核"
 
-#: kernel_manager.py:340
+#: kernel_manager.py:265 kernel_manager.py:429
+#, fuzzy
+#| msgid "Information"
+msgid "Module information"
+msgstr "信息"
+
+#: kernel_manager.py:416
+msgid "Module"
+msgstr ""
+
+#: kernel_manager.py:426
+#, fuzzy
+#| msgid "Remove the selected kernel"
+msgid "Remove the selected module"
+msgstr "删除选定的内核"
+
+#: kernel_manager.py:451
+msgid "Removing unnecessary dependencies"
+msgstr ""
+
+#: kernel_manager.py:465
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:347
+#: kernel_manager.py:472
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:373
-msgid "Removing the kernel"
+#: kernel_manager.py:506
+#, fuzzy
+#| msgid "Remove kernels"
+msgid "Remove"
 msgstr "删除内核"
 
-#: kernel_manager.py:404
+#: kernel_manager.py:537
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:449
+#: kernel_manager.py:582
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:461
+#: kernel_manager.py:594
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:521
+#: kernel_manager.py:654
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:523
+#: kernel_manager.py:656
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:524
+#: kernel_manager.py:657
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:555
+#: kernel_manager.py:688
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:556
+#: kernel_manager.py:689
 msgid "Close a window"
 msgstr "关闭一个窗口"
+
+#~ msgid "Removing the kernel"
+#~ msgstr "删除内核"
 
 #~ msgid "Removes old versions of kernels"
 #~ msgstr "删除旧版本的内核"

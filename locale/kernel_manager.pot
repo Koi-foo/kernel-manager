@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-25 18:57+0300\n"
+"POT-Creation-Date: 2021-05-19 16:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -20,12 +20,17 @@ msgstr ""
 "X-Poedit-SearchPath-0: kernel_manager.py\n"
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
+"X-Poedit-SearchPath-3: form/info_win.py\n"
 
-#: form/main_win.py:175
+#: form/info_win.py:41 form/process_win.py:61
+msgid "Information"
+msgstr ""
+
+#: form/main_win.py:252
 msgid "Kernels management"
 msgstr ""
 
-#: form/main_win.py:176
+#: form/main_win.py:253
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -38,19 +43,19 @@ msgid ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Update kernel.</span><span style=\" background-color:transparent;\"><br />Automatically updates the kernel and modules to the newest version. The &quot;Distribution&quot; button updates the software to the current version. The repository list allows you to modify the branches of the repository.</span></p></body></html>"
 msgstr ""
 
-#: form/main_win.py:185
+#: form/main_win.py:262
 msgid "Change flavor type"
 msgstr ""
 
-#: form/main_win.py:186
+#: form/main_win.py:263
 msgid "Change"
 msgstr ""
 
-#: form/main_win.py:187
+#: form/main_win.py:264
 msgid "Select a kernel from the list and click the <br>\"Change\" button to switch to a new flavor"
 msgstr ""
 
-#: form/main_win.py:188
+#: form/main_win.py:265
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -63,11 +68,11 @@ msgid ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of the latest software. Recommended for Intel integrated graphics not supported by other kernels. When using the kernel from this repository, you will not be able to work with programs that depend on the version of the module in the stable repositories.</p></body></html>"
 msgstr ""
 
-#: form/main_win.py:197
+#: form/main_win.py:274
 msgid "Change of kernels"
 msgstr ""
 
-#: form/main_win.py:199
+#: form/main_win.py:276
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -79,35 +84,35 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/picture/icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src=\":/picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</p></body></html>"
 msgstr ""
 
-#: form/main_win.py:207
+#: form/main_win.py:284
 msgid "Clearing the local cache of obsolete packages<br>and removing duplicate packages"
 msgstr ""
 
-#: form/main_win.py:208
+#: form/main_win.py:285
 msgid "Clear"
 msgstr ""
 
-#: form/main_win.py:209
+#: form/main_win.py:286
 msgid "Removes all cores except the currently active one"
 msgstr ""
 
-#: form/main_win.py:210
+#: form/main_win.py:287
 msgid "Remove kernels"
 msgstr ""
 
-#: form/main_win.py:211
+#: form/main_win.py:288
 msgid "Removing kernels"
 msgstr ""
 
-#: form/main_win.py:212 kernel_manager.py:474
+#: form/main_win.py:289 kernel_manager.py:607
 msgid "Kernel update"
 msgstr ""
 
-#: form/main_win.py:213 form/main_win.py:225
+#: form/main_win.py:290 form/main_win.py:302
 msgid "Update kernel"
 msgstr ""
 
-#: form/main_win.py:214
+#: form/main_win.py:291
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -119,130 +124,168 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Repositories</span><br />Allows changing repositories. Shows the currently connected repositories. Allows you to update the OS platform. To switch to a different platform, select a repository and click &quot;Distribution&quot;. The update will start automatically. Before choosing &quot;<a href=\"https://www.altlinux.org/%D0%A7%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, carefully read its description.</p></body></html>"
 msgstr ""
 
-#: form/main_win.py:222 kernel_manager.py:438
+#: form/main_win.py:299 kernel_manager.py:571
 msgid "Distribution update"
 msgstr ""
 
-#: form/main_win.py:223
+#: form/main_win.py:300
 msgid "Distribution"
 msgstr ""
 
-#: form/main_win.py:224
+#: form/main_win.py:301
 msgid "Change repository"
 msgstr ""
 
-#: form/process_win.py:59
-msgid "Information"
+#: form/main_win.py:304
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The brick button uses the &quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; command to clean up the system of packages that are not used by any program. Sometimes this command removes the libraries you want, so back up your system before using it. You can find out more by typing &quot;<span style=\" font-weight:600;\">--autoremove</span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; terminal.</p></body></html>"
 msgstr ""
 
-#: form/process_win.py:60
-msgid "Task progress"
+#: form/main_win.py:310
+msgid "Filter for kernel modules installed on the system"
 msgstr ""
 
-#: form/process_win.py:61
-msgid "Stop the process"
+#: form/main_win.py:311
+msgid "All installed modules"
+msgstr ""
+
+#: form/main_win.py:312
+msgid "Remove packages that were automatically installed to satisfy<br>dependencies for other packages and are now no longer needed. "
+msgstr ""
+
+#: form/main_win.py:313
+msgid "Kernel modules"
 msgstr ""
 
 #: form/process_win.py:62
-msgid "Cancel"
+msgid "Task progress"
 msgstr ""
 
 #: form/process_win.py:63
-msgid "Agree to continue the process"
+msgid "Stop the process"
 msgstr ""
 
 #: form/process_win.py:64
+msgid "Cancel"
+msgstr ""
+
+#: form/process_win.py:65
+msgid "Agree to continue the process"
+msgstr ""
+
+#: form/process_win.py:66
 msgid "Confirm"
 msgstr ""
 
-#: kernel_manager.py:81
+#: kernel_manager.py:98
 msgid "Updating cache wait for completion ..."
 msgstr ""
 
-#: kernel_manager.py:94
+#: kernel_manager.py:111
 msgid "Updating cache:"
 msgstr ""
 
-#: kernel_manager.py:99
+#: kernel_manager.py:116
 msgid "No access to repository"
 msgstr ""
 
-#: kernel_manager.py:103
+#: kernel_manager.py:120
 msgid "Updating completed:"
 msgstr ""
 
-#: kernel_manager.py:189
+#: kernel_manager.py:188
 msgid "No kernels found to be removed"
 msgstr ""
 
-#: kernel_manager.py:196
+#: kernel_manager.py:195
 msgid "Flavor - not selected"
 msgstr ""
 
-#: kernel_manager.py:197
+#: kernel_manager.py:196
 msgid "STD-DEF kernel (main kernel)"
 msgstr ""
 
-#: kernel_manager.py:198
+#: kernel_manager.py:197
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr ""
 
-#: kernel_manager.py:199
+#: kernel_manager.py:198
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr ""
 
-#: kernel_manager.py:200
+#: kernel_manager.py:199
 msgid "Sisyphus (kernel un-def)"
 msgstr ""
 
-#: kernel_manager.py:257
+#: kernel_manager.py:259
 msgid "Remove the selected kernel"
 msgstr ""
 
-#: kernel_manager.py:260
+#: kernel_manager.py:262
 msgid "Install the default kernel"
 msgstr ""
 
-#: kernel_manager.py:340
+#: kernel_manager.py:265 kernel_manager.py:429
+msgid "Module information"
+msgstr ""
+
+#: kernel_manager.py:416
+msgid "Module"
+msgstr ""
+
+#: kernel_manager.py:426
+msgid "Remove the selected module"
+msgstr ""
+
+#: kernel_manager.py:451
+msgid "Removing unnecessary dependencies"
+msgstr ""
+
+#: kernel_manager.py:465
 msgid "Set default kernel boot"
 msgstr ""
 
-#: kernel_manager.py:347
+#: kernel_manager.py:472
 msgid "Setting the default kernel boot"
 msgstr ""
 
-#: kernel_manager.py:373
-msgid "Removing the kernel"
+#: kernel_manager.py:506
+msgid "Remove"
 msgstr ""
 
-#: kernel_manager.py:404
+#: kernel_manager.py:537
 msgid "Installation"
 msgstr ""
 
-#: kernel_manager.py:449
+#: kernel_manager.py:582
 msgid "Removing old kernels"
 msgstr ""
 
-#: kernel_manager.py:461
+#: kernel_manager.py:594
 msgid "Cleaning apt-cache"
 msgstr ""
 
-#: kernel_manager.py:521
+#: kernel_manager.py:654
 msgid "Process started, please wait ..."
 msgstr ""
 
-#: kernel_manager.py:523
+#: kernel_manager.py:656
 msgid "Completed successfully"
 msgstr ""
 
-#: kernel_manager.py:524
+#: kernel_manager.py:657
 msgid "The process is complete. You can close the window."
 msgstr ""
 
-#: kernel_manager.py:555
+#: kernel_manager.py:688
 msgid "Close"
 msgstr ""
 
-#: kernel_manager.py:556
+#: kernel_manager.py:689
 msgid "Close a window"
 msgstr ""

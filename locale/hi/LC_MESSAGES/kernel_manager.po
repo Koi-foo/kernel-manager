@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-04-25 18:57+0300\n"
-"PO-Revision-Date: 2021-04-25 19:00+0300\n"
+"POT-Creation-Date: 2021-05-19 16:46+0300\n"
+"PO-Revision-Date: 2021-05-19 17:03+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: hi_IN\n"
@@ -22,11 +22,15 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/main_win.py:175
+#: form/info_win.py:41 form/process_win.py:61
+msgid "Information"
+msgstr "जानकारी"
+
+#: form/main_win.py:252
 msgid "Kernels management"
 msgstr "कर्नेल प्रबंधन"
 
-#: form/main_win.py:176
+#: form/main_win.py:253
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd"
 "\">\n"
@@ -89,19 +93,19 @@ msgstr ""
 "करता है। रिपॉजिटरी सूची आपको रिपॉजिटरी की शाखाओं को संशोधित करने की अनुमति देती है।</span></p></body></"
 "html>"
 
-#: form/main_win.py:185
+#: form/main_win.py:262
 msgid "Change flavor type"
 msgstr "स्वाद प्रकार बदलें"
 
-#: form/main_win.py:186
+#: form/main_win.py:263
 msgid "Change"
 msgstr "संपादित करें"
 
-#: form/main_win.py:187
+#: form/main_win.py:264
 msgid "Select a kernel from the list and click the <br>\"Change\" button to switch to a new flavor"
 msgstr "सूची से एक कर्नेल चुनें और नए संस्करण पर स्विच करने के लिए बदलें बटन पर क्लिक करें"
 
-#: form/main_win.py:188
+#: form/main_win.py:265
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd"
 "\">\n"
@@ -157,11 +161,11 @@ msgstr ""
 "इस रिपॉजिटरी से कर्नेल का उपयोग करते समय, आप उन प्रोग्राम के साथ काम नहीं कर पाएंगे जो स्थिर रिपॉजिटरी में "
 "मॉड्यूल के संस्करण पर निर्भर करते हैं।</p></body></html>"
 
-#: form/main_win.py:197
+#: form/main_win.py:274
 msgid "Change of kernels"
 msgstr "गुठली का बदलना"
 
-#: form/main_win.py:199
+#: form/main_win.py:276
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd"
 "\">\n"
@@ -201,35 +205,35 @@ msgstr ""
 "(std-def) <img src=\":/picture/icons/un.png\" height=\"12\" /> - कर्नेल प्रकार (अन-डीफ़) <img src="
 "\":/picture/icons/old.png\" height=\"12\" /> - कर्नेल प्रकार (पुराने-डीफ़)</p></body></html>"
 
-#: form/main_win.py:207
+#: form/main_win.py:284
 msgid "Clearing the local cache of obsolete packages<br>and removing duplicate packages"
 msgstr "अप्रचलित पैकेजों के स्थानीय कैश को साफ़ करना <br> और डुप्लिकेट पैकेजों को हटाना"
 
-#: form/main_win.py:208
+#: form/main_win.py:285
 msgid "Clear"
 msgstr "स्पष्ट"
 
-#: form/main_win.py:209
+#: form/main_win.py:286
 msgid "Removes all cores except the currently active one"
 msgstr "वर्तमान में सक्रिय एक को छोड़कर सभी कोर को निकालता है"
 
-#: form/main_win.py:210
+#: form/main_win.py:287
 msgid "Remove kernels"
 msgstr "गुठली निकाल दें"
 
-#: form/main_win.py:211
+#: form/main_win.py:288
 msgid "Removing kernels"
 msgstr "गुठली निकालना"
 
-#: form/main_win.py:212 kernel_manager.py:474
+#: form/main_win.py:289 kernel_manager.py:607
 msgid "Kernel update"
 msgstr "कर्नेल अद्यतन"
 
-#: form/main_win.py:213 form/main_win.py:225
+#: form/main_win.py:290 form/main_win.py:302
 msgid "Update kernel"
 msgstr "अद्यतन कर्नेल"
 
-#: form/main_win.py:214
+#: form/main_win.py:291
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd"
 "\">\n"
@@ -280,133 +284,232 @@ msgstr ""
 "%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, ध्यान से इसका वर्णन पढ़ें।</p></body></html>"
 
-#: form/main_win.py:222 kernel_manager.py:438
+#: form/main_win.py:299 kernel_manager.py:571
 msgid "Distribution update"
 msgstr "वितरण अद्यतन"
 
-#: form/main_win.py:223
+#: form/main_win.py:300
 msgid "Distribution"
 msgstr "वितरण"
 
-#: form/main_win.py:224
+#: form/main_win.py:301
 msgid "Change repository"
 msgstr "रिपॉजिटरी बदलें"
 
-#: form/process_win.py:59
-msgid "Information"
-msgstr "जानकारी"
+#: form/main_win.py:304
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict."
+#| "dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-"
+#| "style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+#| "indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />The right "
+#| "mouse button menu provides additional options such as loading the default kernel. For the "
+#| "convenience of orientation, color coding has been introduced.</p>\n"
+#| "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; "
+#| "margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+#| "indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Color coding.</span></p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+#| "indent:0; text-indent:0px;\"><img src=\":/picture/icons/std.png\" height=\"12\" /> - kernel "
+#| "type ( std-def ) <img src=\":/picture/icons/un.png\" height=\"12\" /> - kernel type ( un-"
+#| "def ) <img src=\":/picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</p></"
+#| "body></html>"
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd"
+"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-"
+"style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">The brick button uses the &quot;<span style=\" font-weight:600;"
+"\">apt-get autoremove</span>&quot; command to clean up the system of packages that are not used "
+"by any program. Sometimes this command removes the libraries you want, so back up your system "
+"before using it. You can find out more by typing &quot;<span style=\" font-weight:600;\">--"
+"autoremove</span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; "
+"terminal.</p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd"
+"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-"
+"style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />सही माउस बटन "
+"मेनू डिफ़ॉल्ट कर्नेल को लोड करने जैसे अतिरिक्त विकल्प प्रदान करता है। अभिविन्यास की सुविधा के लिए, रंग कोडिंग शुरू "
+"की गई है।</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">रंग कोडिंग।</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><img src=\":/picture/icons/std.png\" height=\"12\" /> - कर्नेल प्रकार "
+"(std-def) <img src=\":/picture/icons/un.png\" height=\"12\" /> - कर्नेल प्रकार (अन-डीफ़) <img src="
+"\":/picture/icons/old.png\" height=\"12\" /> - कर्नेल प्रकार (पुराने-डीफ़)</p></body></html>"
 
-#: form/process_win.py:60
+#: form/main_win.py:310
+msgid "Filter for kernel modules installed on the system"
+msgstr ""
+
+#: form/main_win.py:311
+msgid "All installed modules"
+msgstr ""
+
+#: form/main_win.py:312
+msgid ""
+"Remove packages that were automatically installed to satisfy<br>dependencies for other packages "
+"and are now no longer needed. "
+msgstr ""
+
+#: form/main_win.py:313
+#, fuzzy
+#| msgid "Kernel update"
+msgid "Kernel modules"
+msgstr "कर्नेल अद्यतन"
+
+#: form/process_win.py:62
 msgid "Task progress"
 msgstr "कार्य प्रगति"
 
-#: form/process_win.py:61
+#: form/process_win.py:63
 msgid "Stop the process"
 msgstr "प्रक्रिया को रोकें"
 
-#: form/process_win.py:62
+#: form/process_win.py:64
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: form/process_win.py:63
+#: form/process_win.py:65
 msgid "Agree to continue the process"
 msgstr "प्रक्रिया जारी रखने के लिए सहमत हों"
 
-#: form/process_win.py:64
+#: form/process_win.py:66
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: kernel_manager.py:81
+#: kernel_manager.py:98
 msgid "Updating cache wait for completion ..."
 msgstr "कैश अपडेट हो रहा है, पूरा होने की प्रतीक्षा करें ..."
 
-#: kernel_manager.py:94
+#: kernel_manager.py:111
 msgid "Updating cache:"
 msgstr "सफाई apt-कैश:"
 
-#: kernel_manager.py:99
+#: kernel_manager.py:116
 msgid "No access to repository"
 msgstr "रिपॉजिटरी तक कोई पहुंच नहीं"
 
-#: kernel_manager.py:103
+#: kernel_manager.py:120
 msgid "Updating completed:"
 msgstr "अपडेट पूर्ण हो गया:"
 
-#: kernel_manager.py:189
+#: kernel_manager.py:188
 msgid "No kernels found to be removed"
 msgstr "कोई गुठली नहीं निकाली गई"
 
-#: kernel_manager.py:196
+#: kernel_manager.py:195
 msgid "Flavor - not selected"
 msgstr "स्वाद - चयनित नहीं"
 
-#: kernel_manager.py:197
+#: kernel_manager.py:196
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF कर्नेल (मुख्य कर्नेल)"
 
-#: kernel_manager.py:198
+#: kernel_manager.py:197
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF कर्नेल (पुरानी std-def शाखा)"
 
-#: kernel_manager.py:199
+#: kernel_manager.py:198
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF कर्नेल (प्रयोगात्मक कर्नेल)"
 
-#: kernel_manager.py:200
+#: kernel_manager.py:199
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (कर्नेल अन-डिफ)"
 
-#: kernel_manager.py:257
+#: kernel_manager.py:259
 msgid "Remove the selected kernel"
 msgstr "चयनित गिरी निकालें"
 
-#: kernel_manager.py:260
+#: kernel_manager.py:262
 msgid "Install the default kernel"
 msgstr "डिफ़ॉल्ट कर्नेल स्थापित करें"
 
-#: kernel_manager.py:340
+#: kernel_manager.py:265 kernel_manager.py:429
+#, fuzzy
+#| msgid "Information"
+msgid "Module information"
+msgstr "जानकारी"
+
+#: kernel_manager.py:416
+msgid "Module"
+msgstr ""
+
+#: kernel_manager.py:426
+#, fuzzy
+#| msgid "Remove the selected kernel"
+msgid "Remove the selected module"
+msgstr "चयनित गिरी निकालें"
+
+#: kernel_manager.py:451
+msgid "Removing unnecessary dependencies"
+msgstr ""
+
+#: kernel_manager.py:465
 msgid "Set default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करें"
 
-#: kernel_manager.py:347
+#: kernel_manager.py:472
 msgid "Setting the default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करना"
 
-#: kernel_manager.py:373
-msgid "Removing the kernel"
-msgstr "कर्नेल को हटाना"
+#: kernel_manager.py:506
+#, fuzzy
+#| msgid "Remove kernels"
+msgid "Remove"
+msgstr "गुठली निकाल दें"
 
-#: kernel_manager.py:404
+#: kernel_manager.py:537
 msgid "Installation"
 msgstr "स्थापना"
 
-#: kernel_manager.py:449
+#: kernel_manager.py:582
 msgid "Removing old kernels"
 msgstr "पुरानी गुठली निकालना"
 
-#: kernel_manager.py:461
+#: kernel_manager.py:594
 msgid "Cleaning apt-cache"
 msgstr "सफाई apt-कैश"
 
-#: kernel_manager.py:521
+#: kernel_manager.py:654
 msgid "Process started, please wait ..."
 msgstr "प्रक्रिया शुरू हो गई है, प्रतीक्षा करें ..."
 
-#: kernel_manager.py:523
+#: kernel_manager.py:656
 msgid "Completed successfully"
 msgstr "सफलतापूर्वक पूरा"
 
-#: kernel_manager.py:524
+#: kernel_manager.py:657
 msgid "The process is complete. You can close the window."
 msgstr "प्रक्रिया पूरी हो गई है, आप विंडो को बंद कर सकते हैं."
 
-#: kernel_manager.py:555
+#: kernel_manager.py:688
 msgid "Close"
 msgstr "बंद करे"
 
-#: kernel_manager.py:556
+#: kernel_manager.py:689
 msgid "Close a window"
 msgstr "एक खिड़की बंद करो"
+
+#~ msgid "Removing the kernel"
+#~ msgstr "कर्नेल को हटाना"
 
 #~ msgid "Removes old versions of kernels"
 #~ msgstr "गुठली के पुराने संस्करण निकालता है"
