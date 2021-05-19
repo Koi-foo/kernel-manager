@@ -16,12 +16,12 @@
 		<description xml:lang="zh">以 root 身份运行内核-管理器。</description>
         <description xml:lang="zh_TW">以 root 身份運行內核-管理器。</description>
 
-		<message>Root authentication is required to run the kernel-manager as an administrator.</message>
-		<message xml:lang="hi">व्यवस्थापक के रूप में कर्नेल-प्रबंधक को चलाने के लिए रूट प्रमाणीकरण आवश्यक है।</message>
-		<message xml:lang="el">Απαιτείται έλεγχος ταυτότητας δικαιωμάτων ως διαχειριστείς (root) για την εκτέλεση του Διαχειριστεί-Πυρήνα(kernel).</message>
-		<message xml:lang="zh">需要根身份验证才能以管理员身份运行内核-管理器。</message>
-		<message xml:lang="ru">Для запуска kernel-manager с правами администратора требуется аутентификация root.</message>
-		<message xml:lang="zh_TW">需要根身份驗證才能以管理員身份運行內核-管理器。</message>
+		<message>Running the kernel-manager as an administrator requires authentication of the privileged user.</message>
+		<message xml:lang="hi">व्यवस्थापक के रूप में कर्नेल-प्रबंधक को चलाना विशेषाधिकार प्राप्त उपयोगकर्ता के प्रमाणीकरण की आवश्यकता है।</message>
+		<message xml:lang="el">Εκτελώντας τον Διαχειριστή  Πυρήνα (kernel-manager) σαν διαχειριστείς απαιτεί έλεγχος ταυτότητας του προνομιούχου χρήστη</message>
+		<message xml:lang="zh">以管理员身份运行内核管理器时，需要对特权用户进行身份验证。</message>
+		<message xml:lang="ru">Для запуска kernel-manager с правами администратора требуется аутентификация привилегированного пользователя.</message>
+		<message xml:lang="zh_TW">以管理員身份運行內核管理器時，需要對特權用戶進行身份驗證。</message>
 
 		<defaults>
 			<allow_inactive>no</allow_inactive>
