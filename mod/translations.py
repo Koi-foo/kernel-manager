@@ -14,7 +14,8 @@ class MarkupLine():
         
         files = [
             "../form/main_win.py", 
-            "../form/process_win.py"]
+            "../form/process_win.py",
+            "../form/info_win.py"]
         
         self.search_strings(files)
         
@@ -33,6 +34,8 @@ class MarkupLine():
                         window = 'MainWindow'
                 elif 'process' in path:
                         window = 'InfoProcessWin'
+                elif 'info' in path:
+                    window = 'DialogInfo'
                 
                 with open(path, 'rt') as file_obj:
                     contents = file_obj.read()
