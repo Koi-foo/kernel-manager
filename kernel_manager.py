@@ -267,7 +267,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         action = menu.exec_(self.listWidget_Kernel.mapToGlobal(pos))
         kernel = self.listWidget_Kernel.currentItem().text().split()[0]
 
-        if action == remove:
+        if len(kernel) < 10:
+            pass
+
+        elif action == remove:
             self.remove_kernel(kernel)
 
         elif action == default:
