@@ -12,5 +12,36 @@
         <file>icons/old-p.png</file>
         <file>icons/no-p.png</file>
         <file>icons/no.png</file>
+        <file>icons/v4l.png</file>
+        <file>icons/zfs.png</file>
+        <file>icons/xtables.png</file>
+        <file>icons/virtualbox.png</file>
+        <file>icons/vhba.png</file>
+        <file>icons/drm.png</file>
+        <file>icons/ndpi.png</file>
+        <file>icons/nvidia.png</file>
+        <file>icons/nxp.png</file>
+        <file>icons/promethean.png</file>
+        <file>icons/rtl.png</file>
+        <file>icons/r8.png</file>
+        <file>icons/module.png</file>
+        <file>icons/LiME.png</file>
+        <file>icons/lsadrv.png</file>
+        <file>icons/kvdo.png</file>
+        <file>icons/ixgbe.png</file>
+        <file>icons/ipset.png</file>
+        <file>icons/drbd9.png</file>
+        <file>icons/hifc.png</file>
+        <file>icons/hinic.png</file>
+        <file>icons/e1000e.png</file>
+        <file>icons/intel.png</file>
+        <file>icons/ide.png</file>
+        <file>icons/dm.png</file>
+        <file>icons/ch34x.png</file>
+        <file>icons/bbswitch.png</file>
+        <file>icons/acpi.png</file>
+        <file>icons/accel.png</file>
+        <file>icons/help-about.svg</file>
+        <file>icons/stop.png</file>
     </qresource>
 </RCC>
