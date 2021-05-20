@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2021-05-20 12:40+0300\n"
-"PO-Revision-Date: 2021-05-20 12:42+0300\n"
+"PO-Revision-Date: 2021-05-20 21:37+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
@@ -468,7 +468,7 @@ msgstr "安裝默認內核"
 
 #: kernel_manager.py:265
 msgid "Kernel information"
-msgstr "内核信息"
+msgstr "內核信息"
 
 #: kernel_manager.py:419
 msgid "Module"
