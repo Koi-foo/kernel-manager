@@ -261,8 +261,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         default = menu.addAction(
             QIcon(":/picture/icons/go-up.svg"), _('Install the default kernel'))
 
-        module_info = menu.addAction(
-            QIcon(":/picture/icons/help-about.svg"), _('Module information'))
+        kernel_info = menu.addAction(
+            QIcon(":/picture/icons/help-about.svg"), _('Kernel information'))
 
         action = menu.exec_(self.listWidget_Kernel.mapToGlobal(pos))
         kernel = self.listWidget_Kernel.currentItem().text().split()[0]
@@ -276,12 +276,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif action == default:
             self.boot_default(kernel)
 
-        elif action == module_info:
+        elif action == kernel_info:
             description = run(
                 f'rpm -qi {kernel}',
                 shell=True, stdout=PIPE, encoding='utf-8').stdout
+            messages = kernel
 
-            self.information_window(description)
+            self.information_window(description, messages)
 
 
     def button_switch(self, btn_off_on):
@@ -334,9 +335,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return list_command
 
 
-    def information_window(self, description):
+    def information_window(self, description, messages):
         """Окно информации"""
         self.infoWin.show()
+        self.infoWin.setWindowTitle(messages)
         self.infoWin.textEdit_Info.setPlainText(description)
 
 
@@ -441,8 +443,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             description = run(
                 f'rpm -qi {module}',
                 shell=True, stdout=PIPE, encoding='utf-8').stdout
+            messages = module
 
-            self.information_window(description)
+            self.information_window(description, messages)
 
 
     # Функции кнопок

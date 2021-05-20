@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-05-19 16:46+0300\n"
-"PO-Revision-Date: 2021-05-19 21:09+0300\n"
+"POT-Creation-Date: 2021-05-20 12:40+0300\n"
+"PO-Revision-Date: 2021-05-20 12:42+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/info_win.py:41 form/process_win.py:61
+#: form/info_win.py:46 form/process_win.py:61
 msgid "Information"
 msgstr "信息"
 
@@ -260,7 +260,7 @@ msgstr "刪除內核"
 msgid "Removing kernels"
 msgstr "開始刪除內核"
 
-#: form/main_win.py:289 kernel_manager.py:607
+#: form/main_win.py:289 kernel_manager.py:610
 msgid "Kernel update"
 msgstr "內核更新"
 
@@ -329,7 +329,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, 請"
 "仔細閱讀其說明。</p></body></html>"
 
-#: form/main_win.py:299 kernel_manager.py:571
+#: form/main_win.py:299 kernel_manager.py:574
 msgid "Distribution update"
 msgstr "發行更新"
 
@@ -466,63 +466,67 @@ msgstr "刪除選定的內核"
 msgid "Install the default kernel"
 msgstr "安裝默認內核"
 
-#: kernel_manager.py:265 kernel_manager.py:429
-msgid "Module information"
-msgstr "模塊信息"
+#: kernel_manager.py:265
+msgid "Kernel information"
+msgstr "内核信息"
 
-#: kernel_manager.py:416
+#: kernel_manager.py:419
 msgid "Module"
 msgstr "模塊"
 
-#: kernel_manager.py:426
+#: kernel_manager.py:429
 msgid "Remove the selected module"
 msgstr "移除所選模塊"
 
-#: kernel_manager.py:451
+#: kernel_manager.py:432
+msgid "Module information"
+msgstr "模塊信息"
+
+#: kernel_manager.py:454
 msgid "Removing unnecessary dependencies"
 msgstr "刪除不必要的依賴"
 
-#: kernel_manager.py:465
+#: kernel_manager.py:468
 msgid "Set default kernel boot"
 msgstr "設置默認的內核啟動"
 
-#: kernel_manager.py:472
+#: kernel_manager.py:475
 msgid "Setting the default kernel boot"
 msgstr "設置默認的內核啟動"
 
-#: kernel_manager.py:506
+#: kernel_manager.py:509
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:537
+#: kernel_manager.py:540
 msgid "Installation"
 msgstr "安裝"
 
-#: kernel_manager.py:582
+#: kernel_manager.py:585
 msgid "Removing old kernels"
 msgstr "刪除舊內核"
 
-#: kernel_manager.py:594
+#: kernel_manager.py:597
 msgid "Cleaning apt-cache"
 msgstr "清除 apt-cache"
 
-#: kernel_manager.py:654
+#: kernel_manager.py:657
 msgid "Process started, please wait ..."
 msgstr "程序已啟動，請稍候..."
 
-#: kernel_manager.py:656
+#: kernel_manager.py:659
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:657
+#: kernel_manager.py:660
 msgid "The process is complete. You can close the window."
 msgstr "該過程完成後，可以關閉窗口。"
 
-#: kernel_manager.py:688
+#: kernel_manager.py:691
 msgid "Close"
 msgstr "閉"
 
-#: kernel_manager.py:689
+#: kernel_manager.py:692
 msgid "Close a window"
 msgstr "關閉一個窗口"
 

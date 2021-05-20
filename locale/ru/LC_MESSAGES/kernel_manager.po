@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-05-19 16:46+0300\n"
-"PO-Revision-Date: 2021-05-19 16:58+0300\n"
+"POT-Creation-Date: 2021-05-20 12:40+0300\n"
+"PO-Revision-Date: 2021-05-20 12:43+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
-#: form/info_win.py:41 form/process_win.py:61
+#: form/info_win.py:46 form/process_win.py:61
 msgid "Information"
 msgstr "Информация"
 
@@ -272,7 +272,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:289 kernel_manager.py:607
+#: form/main_win.py:289 kernel_manager.py:610
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -345,7 +345,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:299 kernel_manager.py:571
+#: form/main_win.py:299 kernel_manager.py:574
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -395,7 +395,7 @@ msgstr ""
 "программой. Иногда эта команда удаляет нужные библиотеки, поэтому сделайте "
 "резервную копию своей системы перед ее использованием. Вы можете узнать "
 "больше, набрав &quot;<span style=\" font-weight:600;\">--autoremove</"
-"span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</"
+"span>&quot; в &quot;<span style=\" font-weight:600;\">man apt-get</"
 "span>&quot; терминале.</p></body></html>"
 
 #: form/main_win.py:310
@@ -412,7 +412,7 @@ msgid ""
 "for other packages and are now no longer needed. "
 msgstr ""
 "Удалите пакеты, которые были автоматически установлены<br>для удовлетворения "
-"зависимостей других пакетов и теперь больше не нужны."
+"зависимостей других пакетов и теперь больше не нужны. "
 
 #: form/main_win.py:313
 msgid "Kernel modules"
@@ -486,63 +486,67 @@ msgstr "Удалить выбранное ядро"
 msgid "Install the default kernel"
 msgstr "Установите ядро по умолчанию"
 
-#: kernel_manager.py:265 kernel_manager.py:429
-msgid "Module information"
-msgstr "Информация о модуле"
+#: kernel_manager.py:265
+msgid "Kernel information"
+msgstr "Информация о ядре"
 
-#: kernel_manager.py:416
+#: kernel_manager.py:419
 msgid "Module"
 msgstr "Модуль"
 
-#: kernel_manager.py:426
+#: kernel_manager.py:429
 msgid "Remove the selected module"
 msgstr "Удалить выбранный модуль"
 
-#: kernel_manager.py:451
+#: kernel_manager.py:432
+msgid "Module information"
+msgstr "Информация о модуле"
+
+#: kernel_manager.py:454
 msgid "Removing unnecessary dependencies"
 msgstr "Удаление ненужных зависимостей"
 
-#: kernel_manager.py:465
+#: kernel_manager.py:468
 msgid "Set default kernel boot"
 msgstr "Установить загрузку ядра по умолчанию"
 
-#: kernel_manager.py:472
+#: kernel_manager.py:475
 msgid "Setting the default kernel boot"
 msgstr "Установка загрузки ядра по умолчанию"
 
-#: kernel_manager.py:506
+#: kernel_manager.py:509
 msgid "Remove"
 msgstr "Удалить"
 
-#: kernel_manager.py:537
+#: kernel_manager.py:540
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:582
+#: kernel_manager.py:585
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:594
+#: kernel_manager.py:597
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:654
+#: kernel_manager.py:657
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:656
+#: kernel_manager.py:659
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:657
+#: kernel_manager.py:660
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
-#: kernel_manager.py:688
+#: kernel_manager.py:691
 msgid "Close"
 msgstr "Закрыть"
 
-#: kernel_manager.py:689
+#: kernel_manager.py:692
 msgid "Close a window"
 msgstr "Закрыть окно"
 
