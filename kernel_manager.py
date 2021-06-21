@@ -21,8 +21,10 @@ from PyQt5.QtWidgets import QListWidgetItem
 from form.main_win import Ui_MainWindow
 from form.process_win import Ui_InfoProcessWin
 from form.info_win import Ui_DialogInfo
-# Language localization
-gettext.install('kernel_manager', '/opt/kernel-manager/locale')
+# Изменить рабочий путь
+os.chdir(os.path.dirname(sys.argv[0]))
+# Языковая локализация
+gettext.install('kernel_manager', 'locale')
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -350,7 +352,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             f'rpm -qa | grep kernel-modules',
             shell=True, stdout=PIPE, encoding='utf-8').stdout.splitlines()
 
-        with open('modules.json', 'w') as file_modules:
+        with open('data/modules.json', 'w') as file_modules:
             json.dump(modules, file_modules)
 
         for line in modules:
@@ -370,7 +372,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         index_item = self.comboBox_ModulesSystem.currentIndex()
         text_item = self.comboBox_ModulesSystem.currentText()
 
-        with open('modules.json') as file_modules:
+        with open('data/modules.json') as file_modules:
             modules = json.load(file_modules)
 
         if index_item == 0:
