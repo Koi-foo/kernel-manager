@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2021-06-26 12:10+0300\n"
-"PO-Revision-Date: 2021-06-26 12:13+0300\n"
+"PO-Revision-Date: 2021-06-26 23:51+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -245,7 +245,7 @@ msgstr "清除过时软件包的本地缓存<br>并删除重复的软件包"
 
 #: form/main_win.py:286
 msgid "Clear"
-msgstr "明确"
+msgstr "清除"
 
 #: form/main_win.py:287
 msgid "Removes all cores except the currently active one"
