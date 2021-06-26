@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-06-23 13:44+0300\n"
-"PO-Revision-Date: 2021-06-23 15:02+0300\n"
+"POT-Creation-Date: 2021-06-26 12:10+0300\n"
+"PO-Revision-Date: 2021-06-26 12:10+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: form/main_win.py:252
+#: form/main_win.py:253
 msgid "Kernels management"
 msgstr "Διαχείριση Πυρήνων"
 
-#: form/main_win.py:253
+#: form/main_win.py:254
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -110,15 +110,15 @@ msgstr ""
 "σας επιτρέπει να τροποποιήσετε τους κλάδους του αποθετηρίου.</span></p></"
 "body></html>"
 
-#: form/main_win.py:262
+#: form/main_win.py:263
 msgid "Change flavor type"
 msgstr "Αλλαγή (τύπου - έκδοση) του Πυρήνα"
 
-#: form/main_win.py:263
+#: form/main_win.py:264
 msgid "Change"
 msgstr "Αλλαγή"
 
-#: form/main_win.py:264
+#: form/main_win.py:265
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
@@ -126,7 +126,7 @@ msgstr ""
 "Επιλέξτε έναν πυρήνα από τη λίστα και κάντε κλικ στο<br>Κουμπί \"Αλλαγή\" "
 "για μετάβαση σε νέο τύπο-Έκδοση (πυρήνα)"
 
-#: form/main_win.py:265
+#: form/main_win.py:266
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -198,11 +198,11 @@ msgstr ""
 "από την έκδοση της λειτουργικής μονάδας(module) στα σταθερά αποθετήρια.</p></"
 "body></html>"
 
-#: form/main_win.py:274
+#: form/main_win.py:275
 msgid "Change of kernels"
 msgstr "Αλλαγή (πυρήνων) kernels"
 
-#: form/main_win.py:276
+#: form/main_win.py:277
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -255,7 +255,7 @@ msgstr ""
 "picture/icons/old.png\" height=\"12\" /> - τύπος πυρήνα ( old-def )</p></"
 "body></html>"
 
-#: form/main_win.py:284
+#: form/main_win.py:285
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
@@ -263,31 +263,31 @@ msgstr ""
 "Εκκαθάριση της τοπικής προσωρινής μνήμης<br>παρωχημένων πακέτων και αφαίρεση "
 "διπλών πακέτων"
 
-#: form/main_win.py:285
+#: form/main_win.py:286
 msgid "Clear"
 msgstr "Εκκαθάριση"
 
-#: form/main_win.py:286
+#: form/main_win.py:287
 msgid "Removes all cores except the currently active one"
 msgstr "Καταργεί όλους τους πυρήνες εκτός από τον τρέχοντα ενεργό"
 
-#: form/main_win.py:287
+#: form/main_win.py:288
 msgid "Remove kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:288
+#: form/main_win.py:289
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:289 kernel_manager.py:615
+#: form/main_win.py:290 kernel_manager.py:615
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
-#: form/main_win.py:290 form/main_win.py:302
+#: form/main_win.py:291 form/main_win.py:303
 msgid "Update kernel"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
-#: form/main_win.py:291
+#: form/main_win.py:292
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -355,19 +355,19 @@ msgstr ""
 "%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, διαβάστε προσεκτικά την περιγραφή του.</p></body></html>"
 
-#: form/main_win.py:299 kernel_manager.py:579
+#: form/main_win.py:300 kernel_manager.py:579
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
-#: form/main_win.py:300
+#: form/main_win.py:301
 msgid "Distribution"
 msgstr "Διανομή"
 
-#: form/main_win.py:301
+#: form/main_win.py:302
 msgid "Change repository"
 msgstr "Αλλαγή αποθετηρίου"
 
-#: form/main_win.py:304
+#: form/main_win.py:305
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -409,15 +409,15 @@ msgstr ""
 "span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</"
 "span>&quot; Τερματικό.</p></body></html>"
 
-#: form/main_win.py:310
+#: form/main_win.py:311
 msgid "Filter for kernel modules installed on the system"
 msgstr "Φίλτρο για μονάδες πυρήνα εγκατεστημένα στο σύστημα"
 
-#: form/main_win.py:311
+#: form/main_win.py:312
 msgid "All installed modules"
 msgstr "Όλες οι εγκατεστημένες λειτουργικές μονάδες"
 
-#: form/main_win.py:312
+#: form/main_win.py:313
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
@@ -425,7 +425,7 @@ msgstr ""
 "Καταργήστε πακέτα που εγκαταστάθηκαν αυτόματα για να "
 "ικανοποιήσουν<br>εξαρτήσεις για άλλα πακέτα και δεν χρειάζονται πλέον. "
 
-#: form/main_win.py:313
+#: form/main_win.py:314
 msgid "Kernel modules"
 msgstr "Μονάδες Πυρήνων (kernel)"
 

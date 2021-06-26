@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-05-20 12:40+0300\n"
-"PO-Revision-Date: 2021-05-20 21:36+0300\n"
+"POT-Creation-Date: 2021-06-26 12:10+0300\n"
+"PO-Revision-Date: 2021-06-26 12:13+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Information"
 msgstr "信息"
 
-#: form/main_win.py:252
+#: form/main_win.py:253
 msgid "Kernels management"
 msgstr "内核管理"
 
-#: form/main_win.py:253
+#: form/main_win.py:254
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -105,21 +105,21 @@ msgstr ""
 "配&quot;指的是该分配。 按钮将软件更新到当前版本。 存储库列表允许您修改存储库"
 "的分支。</span></p></body></html>"
 
-#: form/main_win.py:262
+#: form/main_win.py:263
 msgid "Change flavor type"
 msgstr "改变口味类型"
 
-#: form/main_win.py:263
+#: form/main_win.py:264
 msgid "Change"
 msgstr "更改"
 
-#: form/main_win.py:264
+#: form/main_win.py:265
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
 msgstr "从列表中选择一个内核，然后单击<br>“更改”按钮以切换到新的样式"
 
-#: form/main_win.py:265
+#: form/main_win.py:266
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -183,11 +183,11 @@ msgstr ""
 "用于其他内核不支持的英特尔集成显卡。 使用此存储库中的内核时，将无法使用依赖于"
 "稳定存储库中模块版本的程序。</p></body></html>"
 
-#: form/main_win.py:274
+#: form/main_win.py:275
 msgid "Change of kernels"
 msgstr "更改内核"
 
-#: form/main_win.py:276
+#: form/main_win.py:277
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -237,37 +237,37 @@ msgstr ""
 "un.png\" height=\"12\" /> - 内核类型（un-def） <img src=\":/picture/icons/"
 "old.png\" height=\"12\" /> - 内核类型（old-def）</p></body></html>"
 
-#: form/main_win.py:284
+#: form/main_win.py:285
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
 msgstr "清除过时软件包的本地缓存<br>并删除重复的软件包"
 
-#: form/main_win.py:285
+#: form/main_win.py:286
 msgid "Clear"
 msgstr "明确"
 
-#: form/main_win.py:286
+#: form/main_win.py:287
 msgid "Removes all cores except the currently active one"
 msgstr "删除除当前活动的核心以外的所有核心"
 
-#: form/main_win.py:287
+#: form/main_win.py:288
 msgid "Remove kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:288
+#: form/main_win.py:289
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:289 kernel_manager.py:610
+#: form/main_win.py:290 kernel_manager.py:615
 msgid "Kernel update"
 msgstr "内核更新"
 
-#: form/main_win.py:290 form/main_win.py:302
+#: form/main_win.py:291 form/main_win.py:303
 msgid "Update kernel"
 msgstr "更新内核"
 
-#: form/main_win.py:291
+#: form/main_win.py:292
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -328,19 +328,19 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:299 kernel_manager.py:574
+#: form/main_win.py:300 kernel_manager.py:579
 msgid "Distribution update"
 msgstr "发行更新"
 
-#: form/main_win.py:300
+#: form/main_win.py:301
 msgid "Distribution"
 msgstr "分配"
 
-#: form/main_win.py:301
+#: form/main_win.py:302
 msgid "Change repository"
 msgstr "变更资料库"
 
-#: form/main_win.py:304
+#: form/main_win.py:305
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -379,21 +379,21 @@ msgstr ""
 "span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-get</"
 "span>&quot; 终端。</p></body></html>"
 
-#: form/main_win.py:310
+#: form/main_win.py:311
 msgid "Filter for kernel modules installed on the system"
 msgstr "系统中安装的内核模块的过滤器"
 
-#: form/main_win.py:311
+#: form/main_win.py:312
 msgid "All installed modules"
 msgstr "所有已安装的模块"
 
-#: form/main_win.py:312
+#: form/main_win.py:313
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
 msgstr "删除自动安装的软件包以满足<br>其他软件包的依赖关系，现在不再需要。 "
 
-#: form/main_win.py:313
+#: form/main_win.py:314
 msgid "Kernel modules"
 msgstr "内核模块"
 
@@ -417,115 +417,115 @@ msgstr "同意继续进行"
 msgid "Confirm"
 msgstr "确认"
 
-#: kernel_manager.py:98
+#: kernel_manager.py:100
 msgid "Updating cache wait for completion ..."
 msgstr "正在更新缓存以等待完成..."
 
-#: kernel_manager.py:111
+#: kernel_manager.py:113
 msgid "Updating cache:"
 msgstr "清理 apt-cache:"
 
-#: kernel_manager.py:116
+#: kernel_manager.py:118
 msgid "No access to repository"
 msgstr "无法访问存储库"
 
-#: kernel_manager.py:120
+#: kernel_manager.py:122
 msgid "Updating completed:"
 msgstr "更新完成："
 
-#: kernel_manager.py:188
+#: kernel_manager.py:190
 msgid "No kernels found to be removed"
 msgstr "没有找到要删除的内核"
 
-#: kernel_manager.py:195
+#: kernel_manager.py:197
 msgid "Flavor - not selected"
 msgstr "风味-未选择"
 
-#: kernel_manager.py:196
+#: kernel_manager.py:198
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF 内核（主内核）"
 
-#: kernel_manager.py:197
+#: kernel_manager.py:199
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF 内核（旧的 std-def 分支）"
 
-#: kernel_manager.py:198
+#: kernel_manager.py:200
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF 内核（实验内核）"
 
-#: kernel_manager.py:199
+#: kernel_manager.py:201
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核 un-def）"
 
-#: kernel_manager.py:259
+#: kernel_manager.py:261
 msgid "Remove the selected kernel"
 msgstr "删除选定的内核"
 
-#: kernel_manager.py:262
+#: kernel_manager.py:264
 msgid "Install the default kernel"
 msgstr "安装默认内核"
 
-#: kernel_manager.py:265
+#: kernel_manager.py:267
 msgid "Kernel information"
 msgstr "内核信息"
 
-#: kernel_manager.py:419
+#: kernel_manager.py:423
 msgid "Module"
 msgstr "模块"
 
-#: kernel_manager.py:429
+#: kernel_manager.py:433
 msgid "Remove the selected module"
 msgstr "移除所选模块"
 
-#: kernel_manager.py:432
+#: kernel_manager.py:436
 msgid "Module information"
 msgstr "模块信息"
 
-#: kernel_manager.py:454
+#: kernel_manager.py:459
 msgid "Removing unnecessary dependencies"
 msgstr "删除不必要的依赖"
 
-#: kernel_manager.py:468
+#: kernel_manager.py:473
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:475
+#: kernel_manager.py:480
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:509
+#: kernel_manager.py:514
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:540
+#: kernel_manager.py:545
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:585
+#: kernel_manager.py:590
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:597
+#: kernel_manager.py:602
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:657
+#: kernel_manager.py:662
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:659
+#: kernel_manager.py:664
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:660
+#: kernel_manager.py:665
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:691
+#: kernel_manager.py:696
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:692
+#: kernel_manager.py:697
 msgid "Close a window"
 msgstr "关闭一个窗口"
 

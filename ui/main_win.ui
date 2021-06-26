@@ -34,7 +34,7 @@
    <string>Kernels management</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../resources.qrc">
     <normaloff>:/picture/icons/kernel-manager.png</normaloff>:/picture/icons/kernel-manager.png</iconset>
   </property>
   <property name="locale">
@@ -70,7 +70,7 @@
       </property>
       <widget class="QWidget" name="Tab1_Question">
        <attribute name="icon">
-        <iconset>
+        <iconset resource="../resources.qrc">
          <normaloff>:/picture/icons/what.png</normaloff>:/picture/icons/what.png</iconset>
        </attribute>
        <attribute name="title">
@@ -654,12 +654,15 @@ p, li { white-space: pre-wrap; }
           <property name="toolTip">
            <string>Remove packages that were automatically installed to satisfy&lt;br&gt;dependencies for other packages and are now no longer needed. </string>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="icon">
-           <iconset>
-            <normaloff>:/picture/icons/stop.png</normaloff>:/picture/icons/stop.png</iconset>
+           <iconset resource="../resources.qrc">
+            <normaloff>:/picture/icons/edit-paste-style.svg</normaloff>:/picture/icons/edit-paste-style.svg</iconset>
           </property>
           <property name="iconSize">
            <size>
