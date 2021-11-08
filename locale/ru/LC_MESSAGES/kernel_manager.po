@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-11-08 11:33+0300\n"
-"PO-Revision-Date: 2021-11-08 11:37+0300\n"
+"POT-Creation-Date: 2021-11-08 17:06+0300\n"
+"PO-Revision-Date: 2021-11-08 17:13+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -272,7 +272,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:290 kernel_manager.py:615
+#: form/main_win.py:290 kernel_manager.py:623
 msgid "Kernel update"
 msgstr "Обновление текущей версии ядра"
 
@@ -345,7 +345,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:300 kernel_manager.py:579
+#: form/main_win.py:300 kernel_manager.py:587
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -386,11 +386,7 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">The note</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-<<<<<<< HEAD
 "right:0px; -qt-block-indent:0; text-indent:0px;\">The broom button uses the "
-=======
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The paintbrush button uses the "
->>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; "
 "command to clean up the system of packages that are not used by any program. "
 "Sometimes this command removes the libraries you want, so back up your "
@@ -409,11 +405,7 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Заметка</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-<<<<<<< HEAD
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Кнопка веник использует "
-=======
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Кнопка кисть использует "
->>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; "
 "команда для очистки системы от пакетов, которые не используются ни одной "
 "программой. Иногда эта команда удаляет нужные библиотеки, поэтому сделайте "
@@ -498,63 +490,63 @@ msgstr "Установите ядро по умолчанию"
 msgid "Kernel information"
 msgstr "Информация о ядре"
 
-#: kernel_manager.py:423
+#: kernel_manager.py:433
 msgid "Module"
 msgstr "Модуль"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:443
 msgid "Remove the selected module"
 msgstr "Удалить выбранный модуль"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:446
 msgid "Module information"
 msgstr "Информация о модуле"
 
-#: kernel_manager.py:459
+#: kernel_manager.py:469
 msgid "Removing unnecessary dependencies"
 msgstr "Удаление ненужных зависимостей"
 
-#: kernel_manager.py:473
+#: kernel_manager.py:483
 msgid "Set default kernel boot"
 msgstr "Установить загрузку ядра по умолчанию"
 
-#: kernel_manager.py:480
+#: kernel_manager.py:490
 msgid "Setting the default kernel boot"
 msgstr "Установка загрузки ядра по умолчанию"
 
-#: kernel_manager.py:514
+#: kernel_manager.py:524
 msgid "Remove"
 msgstr "Удалить"
 
-#: kernel_manager.py:545
+#: kernel_manager.py:555
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:590
+#: kernel_manager.py:598
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:602
+#: kernel_manager.py:610
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:662
+#: kernel_manager.py:670
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:664
+#: kernel_manager.py:672
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:665
+#: kernel_manager.py:673
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
-#: kernel_manager.py:696
+#: kernel_manager.py:704
 msgid "Close"
 msgstr "Закрыть"
 
-#: kernel_manager.py:697
+#: kernel_manager.py:705
 msgid "Close a window"
 msgstr "Закрыть окно"
 
