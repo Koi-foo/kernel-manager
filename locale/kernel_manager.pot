@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-11-08 11:33+0300\n"
+"POT-Creation-Date: 2021-11-08 17:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Removing kernels"
 msgstr ""
 
-#: form/main_win.py:290 kernel_manager.py:615
+#: form/main_win.py:290 kernel_manager.py:623
 msgid "Kernel update"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Repositories</span><br />Allows changing repositories. Shows the currently connected repositories. Allows you to update the OS platform. To switch to a different platform, select a repository and click &quot;Distribution&quot;. The update will start automatically. Before choosing &quot;<a href=\"https://www.altlinux.org/%D0%A7%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, carefully read its description.</p></body></html>"
 msgstr ""
 
-#: form/main_win.py:300 kernel_manager.py:579
+#: form/main_win.py:300 kernel_manager.py:587
 msgid "Distribution update"
 msgstr ""
 
@@ -234,62 +234,62 @@ msgstr ""
 msgid "Kernel information"
 msgstr ""
 
-#: kernel_manager.py:423
+#: kernel_manager.py:433
 msgid "Module"
 msgstr ""
 
-#: kernel_manager.py:433
+#: kernel_manager.py:443
 msgid "Remove the selected module"
 msgstr ""
 
-#: kernel_manager.py:436
+#: kernel_manager.py:446
 msgid "Module information"
 msgstr ""
 
-#: kernel_manager.py:459
+#: kernel_manager.py:469
 msgid "Removing unnecessary dependencies"
 msgstr ""
 
-#: kernel_manager.py:473
+#: kernel_manager.py:483
 msgid "Set default kernel boot"
 msgstr ""
 
-#: kernel_manager.py:480
+#: kernel_manager.py:490
 msgid "Setting the default kernel boot"
 msgstr ""
 
-#: kernel_manager.py:514
+#: kernel_manager.py:524
 msgid "Remove"
 msgstr ""
 
-#: kernel_manager.py:545
+#: kernel_manager.py:555
 msgid "Installation"
 msgstr ""
 
-#: kernel_manager.py:590
+#: kernel_manager.py:598
 msgid "Removing old kernels"
 msgstr ""
 
-#: kernel_manager.py:602
+#: kernel_manager.py:610
 msgid "Cleaning apt-cache"
 msgstr ""
 
-#: kernel_manager.py:662
+#: kernel_manager.py:670
 msgid "Process started, please wait ..."
 msgstr ""
 
-#: kernel_manager.py:664
+#: kernel_manager.py:672
 msgid "Completed successfully"
 msgstr ""
 
-#: kernel_manager.py:665
+#: kernel_manager.py:673
 msgid "The process is complete. You can close the window."
 msgstr ""
 
-#: kernel_manager.py:696
+#: kernel_manager.py:704
 msgid "Close"
 msgstr ""
 
-#: kernel_manager.py:697
+#: kernel_manager.py:705
 msgid "Close a window"
 msgstr ""
