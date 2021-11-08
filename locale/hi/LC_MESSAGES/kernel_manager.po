@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-11-08 11:33+0300\n"
-"PO-Revision-Date: 2021-11-08 11:39+0300\n"
+"POT-Creation-Date: 2021-11-08 17:06+0300\n"
+"PO-Revision-Date: 2021-11-08 17:31+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: hi_IN\n"
@@ -193,9 +193,9 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-"
 "style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">नोट</span><br />सही माउस बटन मेनू "
-"डिफ़ॉल्ट कर्नेल को लोड करने जैसे अतिरिक्त विकल्प प्रदान करता है। अभिविन्यास की सुविधा के लिए, रंग कोडिंग शुरू की "
-"गई है।</p>\n"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />सही माउस बटन "
+"मेनू डिफ़ॉल्ट कर्नेल को लोड करने जैसे अतिरिक्त विकल्प प्रदान करता है। अभिविन्यास की सुविधा के लिए, रंग कोडिंग शुरू "
+"की गई है।</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
@@ -225,7 +225,7 @@ msgstr "गुठली निकाल दें"
 msgid "Removing kernels"
 msgstr "गुठली निकालना"
 
-#: form/main_win.py:290 kernel_manager.py:615
+#: form/main_win.py:290 kernel_manager.py:623
 msgid "Kernel update"
 msgstr "कर्नेल अद्यतन"
 
@@ -284,7 +284,7 @@ msgstr ""
 "%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, ध्यान से इसका वर्णन पढ़ें।</p></body></html>"
 
-#: form/main_win.py:300 kernel_manager.py:579
+#: form/main_win.py:300 kernel_manager.py:587
 msgid "Distribution update"
 msgstr "वितरण अद्यतन"
 
@@ -354,14 +354,14 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-"
 "style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">नोट</span></p>\n"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
-"indent:0; text-indent:0px;\">झाड़ू की छवि वाला बटन उपयोग करता है&quot;<span style=\" font-"
-"weight:600;\">apt-get autoremove</span>&quot;संकुल के सिस्टम को साफ करने के लिए कमांड जो किसी प्रोग्राम "
-"द्वारा उपयोग नहीं किया जाता है। कभी-कभी यह आदेश आपके इच्छित पुस्तकालयों को हटा देता है, इसलिए इसका उपयोग "
-"करने से पहले अपने सिस्टम का बैकअप लें। आप टाइप करके और अधिक जानकारी प्राप्त कर सकते हैं&quot;<span style=\" "
-"font-weight:600;\">--autoremove</span>&quot; में &quot;<span style=\" font-weight:600;\">man apt-"
-"get</span>&quot; टर्मिनल।</p></body></html>"
+"indent:0; text-indent:0px;\">ईंट बटन का उपयोग करता है &quot;<span style=\" font-weight:600;\">apt-"
+"get autoremove</span>&quot;संकुल के सिस्टम को साफ करने के लिए कमांड जो किसी प्रोग्राम द्वारा उपयोग नहीं "
+"किया जाता है। कभी-कभी यह आदेश आपके इच्छित पुस्तकालयों को हटा देता है, इसलिए इसका उपयोग करने से पहले अपने "
+"सिस्टम का बैकअप लें। आप टाइप करके और अधिक जानकारी प्राप्त कर सकते हैं&quot;<span style=\" font-weight:600;"
+"\">--autoremove</span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; "
+"टर्मिनल।</p></body></html>"
 
 #: form/main_win.py:314
 msgid "Kernel modules"
@@ -437,65 +437,65 @@ msgstr "डिफ़ॉल्ट कर्नेल स्थापित कर
 
 #: kernel_manager.py:267
 msgid "Kernel information"
-msgstr "कर्नेल के बारे में जानकारी"
+msgstr "कर्नेल जानकारी"
 
-#: kernel_manager.py:423
+#: kernel_manager.py:433
 msgid "Module"
 msgstr "मापांक"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:443
 msgid "Remove the selected module"
 msgstr "चयनित मॉड्यूल निकालें"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:446
 msgid "Module information"
 msgstr "मॉड्यूल जानकारी"
 
-#: kernel_manager.py:459
+#: kernel_manager.py:469
 msgid "Removing unnecessary dependencies"
 msgstr "अनावश्यक निर्भरता को हटाना"
 
-#: kernel_manager.py:473
+#: kernel_manager.py:483
 msgid "Set default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करें"
 
-#: kernel_manager.py:480
+#: kernel_manager.py:490
 msgid "Setting the default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करना"
 
-#: kernel_manager.py:514
+#: kernel_manager.py:524
 msgid "Remove"
 msgstr "हटाना"
 
-#: kernel_manager.py:545
+#: kernel_manager.py:555
 msgid "Installation"
 msgstr "स्थापना"
 
-#: kernel_manager.py:590
+#: kernel_manager.py:598
 msgid "Removing old kernels"
 msgstr "पुरानी गुठली निकालना"
 
-#: kernel_manager.py:602
+#: kernel_manager.py:610
 msgid "Cleaning apt-cache"
 msgstr "सफाई apt-कैश"
 
-#: kernel_manager.py:662
+#: kernel_manager.py:670
 msgid "Process started, please wait ..."
 msgstr "प्रक्रिया शुरू हो गई है, प्रतीक्षा करें ..."
 
-#: kernel_manager.py:664
+#: kernel_manager.py:672
 msgid "Completed successfully"
 msgstr "सफलतापूर्वक पूरा"
 
-#: kernel_manager.py:665
+#: kernel_manager.py:673
 msgid "The process is complete. You can close the window."
 msgstr "प्रक्रिया पूरी हो गई है, आप विंडो को बंद कर सकते हैं."
 
-#: kernel_manager.py:696
+#: kernel_manager.py:704
 msgid "Close"
 msgstr "बंद करे"
 
-#: kernel_manager.py:697
+#: kernel_manager.py:705
 msgid "Close a window"
 msgstr "एक खिड़की बंद करो"
 
