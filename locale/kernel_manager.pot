@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-06-26 12:10+0300\n"
+"POT-Creation-Date: 2021-11-08 11:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -136,26 +136,26 @@ msgstr ""
 msgid "Change repository"
 msgstr ""
 
+#: form/main_win.py:304
+msgid "Filter for kernel modules installed on the system"
+msgstr ""
+
 #: form/main_win.py:305
+msgid "All installed modules"
+msgstr ""
+
+#: form/main_win.py:307
+msgid "Remove packages that were automatically installed to satisfy<br>dependencies for other packages and are now no longer needed. "
+msgstr ""
+
+#: form/main_win.py:308
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The brick button uses the &quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; command to clean up the system of packages that are not used by any program. Sometimes this command removes the libraries you want, so back up your system before using it. You can find out more by typing &quot;<span style=\" font-weight:600;\">--autoremove</span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; terminal.</p></body></html>"
-msgstr ""
-
-#: form/main_win.py:311
-msgid "Filter for kernel modules installed on the system"
-msgstr ""
-
-#: form/main_win.py:312
-msgid "All installed modules"
-msgstr ""
-
-#: form/main_win.py:313
-msgid "Remove packages that were automatically installed to satisfy<br>dependencies for other packages and are now no longer needed. "
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The broom button uses the &quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; command to clean up the system of packages that are not used by any program. Sometimes this command removes the libraries you want, so back up your system before using it. You can find out more by typing &quot;<span style=\" font-weight:600;\">--autoremove</span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; terminal.</p></body></html>"
 msgstr ""
 
 #: form/main_win.py:314

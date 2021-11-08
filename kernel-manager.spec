@@ -1,6 +1,6 @@
 Name: kernel-manager
 Version: 1.7
-Release: alt10
+Release: alt11
 
 License: GPL3
 Group: System/Base
@@ -65,7 +65,7 @@ fi
 %attr(755,root,root)/opt/kernel-manager/kernel_manager.py
 %{_datadir}/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
 %{_bindir}/kernel-manager
-%{_pixmapsdir}/kernel_manager.png
+%{_pixmapsdir}/kernel-manager.png
 /opt/kernel-manager/icons*
 /opt/kernel-manager/locale*
 /opt/kernel-manager/form*
@@ -75,6 +75,11 @@ fi
 %doc README.md
 
 %changelog
+* Mon Nov 08 2021 Evgeny Chuck <koi@altlinux.org> 1.7-alt11
+- Fixed translation (Russian)
+- Added function to jump to p10
+- Fixed bug with switching to p10
+
 * Sat Jun 26 2021 Koi <eg.evgeniy@gmail.com> 1.7-alt10
 - Fixed display of the icon for cleaning unnecessary packages
 - Fixed translation string before installing default kernel in Greek translation
