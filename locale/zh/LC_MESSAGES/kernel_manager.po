@@ -5,9 +5,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2021-11-08 11:33+0300\n"
 "PO-Revision-Date: 2021-11-08 11:38+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+=======
+"POT-Creation-Date: 2021-06-26 12:10+0300\n"
+"PO-Revision-Date: 2021-07-19 16:39+0700\n"
+"Last-Translator: \n"
+>>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -388,7 +394,11 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">The note</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+<<<<<<< HEAD
 "right:0px; -qt-block-indent:0; text-indent:0px;\">The broom button uses the "
+=======
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The paintbrush button uses the "
+>>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; "
 "command to clean up the system of packages that are not used by any program. "
 "Sometimes this command removes the libraries you want, so back up your "
@@ -407,10 +417,10 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">注意</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">使用带扫帚的按钮 &quot;"
-"<span style=\" font-weight:600;\">apt-get autoremove</span>&quot;命令来清理所"
-"有程序未使用的软件包系统。 有时，此命令会删除所需的库，因此请在使用前备份系"
-"统。 您可以通过键入更多信息&quot;<span style=\" font-weight:600;\">--"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">使用带有画笔标志的按钮 "
+"&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot;命令来"
+"清理所有程序未使用的软件包系统。 有时，此命令会删除所需的库，因此请在使用前备"
+"份系统。 您可以通过键入更多信息&quot;<span style=\" font-weight:600;\">--"
 "autoremove</span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-"
 "get</span>&quot; 终端。</p></body></html>"
 

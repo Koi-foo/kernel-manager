@@ -386,7 +386,11 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">The note</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+<<<<<<< HEAD
 "right:0px; -qt-block-indent:0; text-indent:0px;\">The broom button uses the "
+=======
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The paintbrush button uses the "
+>>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; "
 "command to clean up the system of packages that are not used by any program. "
 "Sometimes this command removes the libraries you want, so back up your "
@@ -405,7 +409,11 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Заметка</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+<<<<<<< HEAD
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Кнопка веник использует "
+=======
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Кнопка кисть использует "
+>>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; "
 "команда для очистки системы от пакетов, которые не используются ни одной "
 "программой. Иногда эта команда удаляет нужные библиотеки, поэтому сделайте "
