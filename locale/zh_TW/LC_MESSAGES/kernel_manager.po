@@ -5,15 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2021-11-08 11:33+0300\n"
-"PO-Revision-Date: 2021-11-08 11:38+0300\n"
+"POT-Creation-Date: 2021-11-08 17:06+0300\n"
+"PO-Revision-Date: 2021-11-08 17:30+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
-=======
-"POT-Creation-Date: 2021-06-26 12:10+0300\n"
-"PO-Revision-Date: 2021-07-19 16:37+0700\n"
-"Last-Translator: \n"
->>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -266,7 +260,7 @@ msgstr "刪除內核"
 msgid "Removing kernels"
 msgstr "開始刪除內核"
 
-#: form/main_win.py:290 kernel_manager.py:615
+#: form/main_win.py:290 kernel_manager.py:623
 msgid "Kernel update"
 msgstr "內核更新"
 
@@ -335,7 +329,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, 請"
 "仔細閱讀其說明。</p></body></html>"
 
-#: form/main_win.py:300 kernel_manager.py:579
+#: form/main_win.py:300 kernel_manager.py:587
 msgid "Distribution update"
 msgstr "發行更新"
 
@@ -395,11 +389,7 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">The note</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-<<<<<<< HEAD
 "right:0px; -qt-block-indent:0; text-indent:0px;\">The broom button uses the "
-=======
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The paintbrush button uses the "
->>>>>>> 9ea7db670bffd1b2a5134a969baea5465ab67bc4
 "&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot; "
 "command to clean up the system of packages that are not used by any program. "
 "Sometimes this command removes the libraries you want, so back up your "
@@ -418,12 +408,12 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">筆記</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">使用帶有畫筆標誌的按鈕 "
-"&quot;<span style=\" font-weight:600;\">apt-get autoremove</span>&quot;命令以"
-"清理所有程序未使用的軟件包系統。 有時，此命令會刪除所需的庫，因此請在使用前備"
-"份系統。 您可以通過鍵入更多信息&quot;<span style=\" font-weight:600;\">--"
-"autoremove</span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-"
-"get</span>&quot; 終端。</p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">磚頭按鈕使用 &quot;<span "
+"style=\" font-weight:600;\">apt-get autoremove</span>&quot;命令以清理所有程序"
+"未使用的軟件包系統。 有時，此命令會刪除所需的庫，因此請在使用前備份系統。 您"
+"可以通過鍵入更多信息&quot;<span style=\" font-weight:600;\">--autoremove</"
+"span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-get</"
+"span>&quot; 終端。</p></body></html>"
 
 #: form/main_win.py:314
 msgid "Kernel modules"
@@ -501,63 +491,63 @@ msgstr "安裝默認內核"
 msgid "Kernel information"
 msgstr "內核信息"
 
-#: kernel_manager.py:423
+#: kernel_manager.py:433
 msgid "Module"
 msgstr "模塊"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:443
 msgid "Remove the selected module"
 msgstr "移除所選模塊"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:446
 msgid "Module information"
 msgstr "模塊信息"
 
-#: kernel_manager.py:459
+#: kernel_manager.py:469
 msgid "Removing unnecessary dependencies"
 msgstr "刪除不必要的依賴"
 
-#: kernel_manager.py:473
+#: kernel_manager.py:483
 msgid "Set default kernel boot"
 msgstr "設置默認的內核啟動"
 
-#: kernel_manager.py:480
+#: kernel_manager.py:490
 msgid "Setting the default kernel boot"
 msgstr "設置默認的內核啟動"
 
-#: kernel_manager.py:514
+#: kernel_manager.py:524
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:545
+#: kernel_manager.py:555
 msgid "Installation"
 msgstr "安裝"
 
-#: kernel_manager.py:590
+#: kernel_manager.py:598
 msgid "Removing old kernels"
 msgstr "刪除舊內核"
 
-#: kernel_manager.py:602
+#: kernel_manager.py:610
 msgid "Cleaning apt-cache"
 msgstr "清除 apt-cache"
 
-#: kernel_manager.py:662
+#: kernel_manager.py:670
 msgid "Process started, please wait ..."
 msgstr "程序已啟動，請稍候..."
 
-#: kernel_manager.py:664
+#: kernel_manager.py:672
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:665
+#: kernel_manager.py:673
 msgid "The process is complete. You can close the window."
 msgstr "該過程完成後，可以關閉窗口。"
 
-#: kernel_manager.py:696
+#: kernel_manager.py:704
 msgid "Close"
 msgstr "閉"
 
-#: kernel_manager.py:697
+#: kernel_manager.py:705
 msgid "Close a window"
 msgstr "關閉一個窗口"
 
