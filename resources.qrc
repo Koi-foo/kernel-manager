@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/picture">
+        <file>icons/kernel-manager.png</file>
+        <file>icons/what.png</file>
+        <file>icons/un.png</file>
+        <file>icons/old.png</file>
+        <file>icons/std.png</file>
+        <file>icons/go-up.svg</file>
+        <file>icons/list-remove.svg</file>
+        <file>icons/std-p.png</file>
+        <file>icons/un-p.png</file>
+        <file>icons/old-p.png</file>
+        <file>icons/no-p.png</file>
+        <file>icons/no.png</file>
+        <file>icons/help-about.svg</file>
+        <file>icons/edit-paste-style.svg</file>
+        <file>icons/configure.svg</file>
+        <file>icons/application-exit.svg</file>
+        <file>icons/logo/tray.png</file>
+    </qresource>
+</RCC>

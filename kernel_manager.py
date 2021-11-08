@@ -205,7 +205,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Widget comboBox и список репозиториев в нем"""
         current_repo = run('apt-repo', shell=True, stdout=PIPE, \
             encoding='utf-8').stdout.splitlines()[1]
-        list_repo = ["p9", "Sisyphus"]
+        list_repo = ["p9", "p10", "Sisyphus"]
 
         for name_repo in list_repo:
             if name_repo in current_repo:
@@ -318,8 +318,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif combobox_text == 'Sisyphus' and combobox_text not in current_repo:
             list_command = ("/bin/sh -c "
                 '"apt-get dist-upgrade ; "'
-                '"apt-repo rm all ; "'
-                '"apt-repo add Sisyphus ; "'
+                '"apt-repo set Sisyphus ; "'
                 '"apt-get clean ; "'
                 '"apt-get update ; "'
                 '"apt-get install apt rpm ; "'
@@ -327,8 +326,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 '"update-kernel"')
             return list_command
 
+        elif combobox_text == 'p10' and combobox_text not in current_repo:
+            list_command = ("/bin/sh -c "
+                '"apt-get dist-upgrade ; "'
+                '"apt-repo set p10 ; "'
+                '"apt-get clean ; "'
+                '"apt-get update ; "'
+                '"apt-get install apt rpm ; "'
+                '"apt-get dist-upgrade ; "'
+                '"update-kernel -t std-def"')
+            return list_command
+
         elif combobox_text not in current_repo:
-            change_repo = run(f'apt-repo rm all ; apt-repo add {combobox_text}', shell=True)
+            change_repo = run(f'apt-repo set {combobox_text}', shell=True)
             self.bar()
 
             list_command = ("/bin/sh -c "
@@ -556,12 +566,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         flavour = 'un-def'
 
         command = ("/bin/sh -c "
-            '"apt-repo rm all ; "'
-            '"apt-repo add Sisyphus ; "'
+            '"apt-repo set Sisyphus ; "'
             '"apt-get\" \"update" + "; "'
             f'"update-kernel -t {flavour} ; "'
-            '"apt-repo rm all ; "'
-            f'"apt-repo add {combobox_text} ; "'
+            f'"apt-repo set {combobox_text} ; "'
             '"apt-get update"')
 
         self.proc_win.update_kernel = True
