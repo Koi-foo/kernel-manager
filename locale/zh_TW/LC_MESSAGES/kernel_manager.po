@@ -391,7 +391,7 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">磚塊按鈕使用 "
 "&quot;<span style=\" font-weight:600;\">apt-get autoremove</"
 "span>&quot; 命令來清理系統中未被任何程序使用的軟件包。 有時此命令會刪除您想要的庫 "，
-因此請在使用前備份您的系統。 您可以通過鍵入了解更多信息 "
+"因此請在使用前備份您的系統。 您可以通過鍵入了解更多信息 "
 "&quot;<span style=\" font-weight:600;\">--autoremove</span>&quot; 在 "
 "&quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; 終端。"
 "</p></body></html>"
