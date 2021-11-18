@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-11-08 17:06+0300\n"
-"PO-Revision-Date: 2021-11-08 17:30+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"POT-Creation-Date: 2021-11-08 11:33+0300\n"
+"PO-Revision-Date: 2021-11-15 18:17+0700\n"
+"Last-Translator: Dmitry <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -259,7 +259,7 @@ msgstr "删除内核"
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:290 kernel_manager.py:623
+#: form/main_win.py:290 kernel_manager.py:615
 msgid "Kernel update"
 msgstr "内核更新"
 
@@ -328,7 +328,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:300 kernel_manager.py:587
+#: form/main_win.py:300 kernel_manager.py:579
 msgid "Distribution update"
 msgstr "发行更新"
 
@@ -387,13 +387,6 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">那个笔记</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">砖块按钮使用 "
-"&quot;<span style=\" font-weight:600;\">apt-get autoremove</"
-"span>&quot; 命令来清理系统中未被任何程序使用的软件包。 有时此命令会删除您想要的库 "，
-"因此请在使用前备份您的系统。 您可以通过键入了解更多信息 "
-"&quot;<span style=\" font-weight:600;\">--autoremove</span>&quot; in "
-"&quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; 终端。"
-"</p></body></html>"
 
 #: form/main_win.py:314
 msgid "Kernel modules"
@@ -471,63 +464,63 @@ msgstr "安装默认内核"
 msgid "Kernel information"
 msgstr "内核信息"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:423
 msgid "Module"
 msgstr "模块"
 
-#: kernel_manager.py:443
+#: kernel_manager.py:433
 msgid "Remove the selected module"
 msgstr "移除所选模块"
 
-#: kernel_manager.py:446
+#: kernel_manager.py:436
 msgid "Module information"
 msgstr "模块信息"
 
-#: kernel_manager.py:469
+#: kernel_manager.py:459
 msgid "Removing unnecessary dependencies"
 msgstr "删除不必要的依赖"
 
-#: kernel_manager.py:483
+#: kernel_manager.py:473
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:490
+#: kernel_manager.py:480
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:524
+#: kernel_manager.py:514
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:555
+#: kernel_manager.py:545
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:598
+#: kernel_manager.py:590
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:610
+#: kernel_manager.py:602
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:670
+#: kernel_manager.py:662
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:672
+#: kernel_manager.py:664
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:673
+#: kernel_manager.py:665
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:704
+#: kernel_manager.py:696
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:705
+#: kernel_manager.py:697
 msgid "Close a window"
 msgstr "关闭一个窗口"
 
