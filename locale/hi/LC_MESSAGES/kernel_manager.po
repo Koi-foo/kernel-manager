@@ -339,6 +339,12 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
 "indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">नोट</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\">ईंट बटन का उपयोग करता है &quot;<span style=\" font-weight:600;"
+"\">apt-get autoremove</span>&quot; संकुल के सिस्टम को साफ करने के लिए कमांड जो किसी प्रोग्राम द्वारा उपयोग नहीं "
+"किया जाता है। कभी-कभी यह आदेश आपके इच्छित पुस्तकालयों को हटा देता है, इसलिए इसका उपयोग करने से पहले अपने सिस्टम का "
+"बैकअप लें। आप टाइप करके और अधिक जानकारी प्राप्त कर सकते हैं  &quot;<span style=\" font-weight:600;"
+"\">--autoremove</span>&quot; में &quot;<span style=\" font-weight:600;\">man apt-get</"
+"span>&quot; टर्मिनल।</p></body></html>"
 
 #: form/main_win.py:314
 msgid "Kernel modules"
