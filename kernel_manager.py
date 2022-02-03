@@ -137,7 +137,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         search_version = shell(f"apt-cache pkgnames kernel-image-{flavour}#")
 
         for line in search_version.splitlines():
-            act = re.search(r'.*#.*:(.+)-' ,line).group(1).split(".")
+            act = re.search(r':(.+)-alt' ,line).group(1).split(".")
 
             if int(act[0]) > int(new_version[0]):
                 new_version[0] = act[0]
@@ -345,7 +345,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def modules_system(self):
         """Список установленных модулей"""
         combobox_list = []
-        name_modules = re.compile(r'kernel-modules-(\w+)-')
+        name_modules = re.compile(r'kernel-modules-(.*)-.+-.+-.+-alt')
         modules = shell(f'rpm -qa | grep kernel-modules').splitlines()
 
         with open('data/modules.json', 'w') as file_modules:
