@@ -2,12 +2,13 @@ Name: kernel-manager
 Version: 1.7
 Release: alt11
 
-License: GPL3
+License: LGPL-3.0-only
 Group: System/Base
 Url: https://github.com/Koi-foo/kernel-manager
 Packager: Koi <eg.evgeniy at gmail.com>
 Source0: %{name}-%{version}.tar
 
+BuildRequires: rpm-build-python3
 Requires: python3-base >= 3.7.0
 Requires: python3-module-PyQt5
 Requires: python3-module-gettext
@@ -18,7 +19,6 @@ Requires: apt-scripts
 Provides: oldproject = %{version}-%{release}
 BuildArch: noarch
 Obsoletes: oldproject <= 1.7
-Conflicts: au-kernel
 
 Summary: Kernel Manage - kernel update program
 Summary(ru_RU.UTF-8): Kernel Manage - программа обновления ядра
@@ -27,45 +27,46 @@ Summary(ru_RU.UTF-8): Kernel Manage - программа обновления я
 Graphical shell for scripts: update-kernel, remove-old-kernels
 Rendering the interface Qt5\PyQt5
 Language logic Python 3
-The program can update the kernel, change the build type, remove old kernels, clean the file storage, update the distribution.
+The program can update the kernel, change the build type, remove old kernels,
+clean the file storage, update the distribution.
 
 %description -l ru_RU.UTF8
 Графическая оболочка для скриптов: update-kernel, remove-old-kernels
 Отрисовка интерфейса Qt5\PyQt5
 Языковая логика Python 3
-Программа умеет обновлять ядро, изменять тип сборки, удалять старые ядра, очищать файловое хранилище, обновлять дистрибутив.
+Программа умеет обновлять ядро, изменять тип сборки, удалять старые ядра,
+очищать файловое хранилище, обновлять дистрибутив.
 
 %add_findreq_skiplist /opt/kernel-manager/*
 
 %prep
 %setup
 
-%build
-
 %install
 mkdir -p %{buildroot}%{_desktopdir}
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_pixmapsdir}
 mkdir -p %{buildroot}%{_datadir}/polkit-1/actions
-mkdir -p %{buildroot}/opt/kernel-manager
+mkdir -p %{buildroot}/opt/kernel-manager/mod
+
 install -Dm644 *.desktop %{buildroot}%{_desktopdir}
 install -Dm755 kernel-manager %{buildroot}%{_bindir}
 install -Dm644 org.freedesktop.pkexec.kernel-manager.policy %{buildroot}%{_datadir}/polkit-1/actions
-cp -r * %{buildroot}/opt/kernel-manager
+
+install -Dm755 kernel_manager.py %{buildroot}/opt/kernel-manager
+install -Dm755 kernel-indicator %{buildroot}/opt/kernel-manager
+install -Dm644 resources.py %{buildroot}/opt/kernel-manager
+install -Dm755 mod/shell.py %{buildroot}/opt/kernel-manager/mod
+cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
 
 %files
+%doc LICENSE README.md
+%ghost /opt/kernel-manager/locale/kernel_manager.pot.old
 %{_desktopdir}/*.desktop
-/opt/kernel-manager/kernel*
+/opt/kernel-manager
 %{_datadir}/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
 %{_bindir}/kernel-manager
-/opt/kernel-manager/icons
-/opt/kernel-manager/locale
-/opt/kernel-manager/form
-/opt/kernel-manager/mod/shell.py
-/opt/kernel-manager/resources.py
 %dir /opt/kernel-manager/data
-%doc LICENSE
-%doc README.md
 
 %changelog
 * Mon Nov 08 2021 Evgeny Chuck <koi@altlinux.org> 1.7-alt11
