@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-02-08 21:43+0300\n"
-"PO-Revision-Date: 2022-02-08 21:47+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"PO-Revision-Date: 2022-02-09 04:21+0700\n"
+"Last-Translator: dmitrydmitry761y@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -356,7 +356,7 @@ msgstr "删除自动安装的软件包以满足<br>其他软件包的依赖关�
 
 #: form/main_win.py:317
 msgid "rebuilddb - rebuild the rpm package database."
-msgstr ""
+msgstr "rebuilddb - 重建 rpm 包数据库。"
 
 #: form/main_win.py:318
 #, fuzzy
@@ -418,7 +418,8 @@ msgstr ""
 "有程序未使用的软件包系统。 有时，此命令会删除所需的库，因此请在使用前备份系"
 "统。 您可以通过键入更多信息&quot;<span style=\" font-weight:600;\">--"
 "autoremove</span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-"
-"get</span>&quot; 终端。</p></body></html>"
+"get</span>&quot; 终端。<br />这 &quot;<span style=\" font-weight:600;\">"
+"rebuilddb</span>&quot; 按钮用于修复损坏的 rpm 包数据库。</p></body></html>"
 
 #: form/main_win.py:324
 msgid "Kernel modules"
@@ -448,29 +449,29 @@ msgstr "确认"
 #, fuzzy
 #| msgid "Kernel update"
 msgid "Kernel update indicator"
-msgstr "内核更新"
+msgstr "内核更新指示器"
 
 #: kernel-indicator:53
 #, fuzzy
 #| msgid "Close a window"
 msgid "Close indicator"
-msgstr "关闭一个窗口"
+msgstr "关闭指示器"
 
 #: kernel-indicator:57
 msgid "Repeat message"
-msgstr ""
+msgstr "重复消息"
 
 #: kernel-indicator:61
 msgid "Set autoload"
-msgstr ""
+msgstr "设置自动加载"
 
 #: kernel-indicator:65
 msgid "Show updates"
-msgstr ""
+msgstr "显示更新"
 
 #: kernel-indicator:146
 msgid "A new version of the kernel is available: "
-msgstr ""
+msgstr "有一个新版本的内核可用： "
 
 #: kernel_manager.py:102
 msgid "Updating cache wait for completion ..."
@@ -550,6 +551,8 @@ msgid ""
 "OS for a long time, then the likelihood of removing the necessary packages "
 "increases. Continue?"
 msgstr ""
+"建议用于清洁新的操作系统。 如果您已经使用操作系统很长时间，那么删除必要软件包的可能性就会增加。 "
+"继续？"
 
 #: kernel_manager.py:477
 msgid "Removing unnecessary dependencies"
