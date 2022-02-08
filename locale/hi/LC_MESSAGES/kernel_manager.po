@@ -366,7 +366,8 @@ msgstr ""
 "द्वारा उपयोग नहीं किया जाता है। कभी-कभी यह आदेश आपके इच्छित पुस्तकालयों को हटा देता है, इसलिए इसका उपयोग "
 "करने से पहले अपने सिस्टम का बैकअप लें। आप टाइप करके और अधिक जानकारी प्राप्त कर सकते हैं&quot;<span style=\" "
 "font-weight:600;\">--autoremove</span>&quot; में &quot;<span style=\" font-weight:600;\">man apt-"
-"get</span>&quot; टर्मिनल।</p></body></html>"
+"get</span>&quot; टर्मिनल।<br /> &quot;<span style=\" font-weight:600;\">पुनर्निर्माणडीबी</span>&quot;
+"बटन का उपयोग दूषित आरपीएम पैकेज डेटाबेस को सुधारने के लिए किया जाता है।</p></body></html>"
 
 #: form/main_win.py:324
 msgid "Kernel modules"
