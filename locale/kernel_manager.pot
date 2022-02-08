@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-08 14:48+0300\n"
+"POT-Creation-Date: 2022-02-08 21:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Removing kernels"
 msgstr ""
 
-#: form/main_win.py:299 kernel-indicator:142 kernel_manager.py:627
+#: form/main_win.py:299 kernel-indicator:145 kernel_manager.py:630
 msgid "Kernel update"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Repositories</span><br />Allows changing repositories. Shows the currently connected repositories. Allows you to update the OS platform. To switch to a different platform, select a repository and click &quot;Distribution&quot;. The update will start automatically. Before choosing &quot;<a href=\"https://www.altlinux.org/%D0%A7%D1%82%D0%BE_%D1%82%D0%B0%D0%BA%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, carefully read its description.</p></body></html>"
 msgstr ""
 
-#: form/main_win.py:309 kernel_manager.py:591
+#: form/main_win.py:309 kernel_manager.py:594
 msgid "Distribution update"
 msgstr ""
 
@@ -207,7 +207,7 @@ msgstr ""
 msgid "Show updates"
 msgstr ""
 
-#: kernel-indicator:143
+#: kernel-indicator:146
 msgid "A new version of the kernel is available: "
 msgstr ""
 
@@ -275,66 +275,66 @@ msgstr ""
 msgid "Module information"
 msgstr ""
 
-#: kernel_manager.py:451
+#: kernel_manager.py:455
 msgid "Rebuild rpm database?"
 msgstr ""
 
-#: kernel_manager.py:457
+#: kernel_manager.py:461
 msgid "rpm database recovery"
 msgstr ""
 
-#: kernel_manager.py:465
+#: kernel_manager.py:469
 msgid "It is recommended to use for cleaning a fresh OS. If you have been using the OS for a long time, then the likelihood of removing the necessary packages increases. Continue?"
 msgstr ""
 
-#: kernel_manager.py:473
+#: kernel_manager.py:477
 msgid "Removing unnecessary dependencies"
 msgstr ""
 
-#: kernel_manager.py:487
+#: kernel_manager.py:491
 msgid "Set default kernel boot"
 msgstr ""
 
-#: kernel_manager.py:494
+#: kernel_manager.py:498
 msgid "Setting the default kernel boot"
 msgstr ""
 
-#: kernel_manager.py:526
+#: kernel_manager.py:530
 msgid "Remove"
 msgstr ""
 
-#: kernel_manager.py:557
+#: kernel_manager.py:561
 msgid "Installation"
 msgstr ""
 
-#: kernel_manager.py:569
+#: kernel_manager.py:573
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr ""
 
-#: kernel_manager.py:602
+#: kernel_manager.py:605
 msgid "Removing old kernels"
 msgstr ""
 
-#: kernel_manager.py:614
+#: kernel_manager.py:617
 msgid "Cleaning apt-cache"
 msgstr ""
 
-#: kernel_manager.py:674
+#: kernel_manager.py:677
 msgid "Process started, please wait ..."
 msgstr ""
 
-#: kernel_manager.py:676
+#: kernel_manager.py:679
 msgid "Completed successfully"
 msgstr ""
 
-#: kernel_manager.py:677
+#: kernel_manager.py:680
 msgid "The process is complete. You can close the window."
 msgstr ""
 
-#: kernel_manager.py:708
+#: kernel_manager.py:711
 msgid "Close"
 msgstr ""
 
-#: kernel_manager.py:709
+#: kernel_manager.py:712
 msgid "Close a window"
 msgstr ""

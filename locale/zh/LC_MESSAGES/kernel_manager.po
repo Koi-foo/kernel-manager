@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-08 14:48+0300\n"
-"PO-Revision-Date: 2022-02-08 14:57+0300\n"
+"POT-Creation-Date: 2022-02-08 21:43+0300\n"
+"PO-Revision-Date: 2022-02-08 21:47+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -259,7 +259,7 @@ msgstr "删除内核"
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:299 kernel-indicator:142 kernel_manager.py:627
+#: form/main_win.py:299 kernel-indicator:145 kernel_manager.py:630
 msgid "Kernel update"
 msgstr "内核更新"
 
@@ -328,7 +328,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:309 kernel_manager.py:591
+#: form/main_win.py:309 kernel_manager.py:594
 msgid "Distribution update"
 msgstr "发行更新"
 
@@ -468,7 +468,7 @@ msgstr ""
 msgid "Show updates"
 msgstr ""
 
-#: kernel-indicator:143
+#: kernel-indicator:146
 msgid "A new version of the kernel is available: "
 msgstr ""
 
@@ -536,70 +536,70 @@ msgstr "移除所选模块"
 msgid "Module information"
 msgstr "模块信息"
 
-#: kernel_manager.py:451
+#: kernel_manager.py:455
 msgid "Rebuild rpm database?"
 msgstr ""
 
-#: kernel_manager.py:457
+#: kernel_manager.py:461
 msgid "rpm database recovery"
 msgstr ""
 
-#: kernel_manager.py:465
+#: kernel_manager.py:469
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
 "increases. Continue?"
 msgstr ""
 
-#: kernel_manager.py:473
+#: kernel_manager.py:477
 msgid "Removing unnecessary dependencies"
 msgstr "删除不必要的依赖"
 
-#: kernel_manager.py:487
+#: kernel_manager.py:491
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:494
+#: kernel_manager.py:498
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:526
+#: kernel_manager.py:530
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:557
+#: kernel_manager.py:561
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:569
+#: kernel_manager.py:573
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr ""
 
-#: kernel_manager.py:602
+#: kernel_manager.py:605
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:614
+#: kernel_manager.py:617
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:674
+#: kernel_manager.py:677
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:676
+#: kernel_manager.py:679
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:677
+#: kernel_manager.py:680
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:708
+#: kernel_manager.py:711
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:709
+#: kernel_manager.py:712
 msgid "Close a window"
 msgstr "关闭一个窗口"
 
