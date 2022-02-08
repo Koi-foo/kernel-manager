@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-02-08 21:43+0300\n"
-"PO-Revision-Date: 2022-02-08 21:47+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"PO-Revision-Date: 2022-02-09 04:47+0700\n"
+"Last-Translator: Dmitry <dmitrydmitry761y@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -357,7 +357,7 @@ msgstr "刪除自動安裝的軟件包以滿足<br>其他軟件包的依賴關�
 
 #: form/main_win.py:317
 msgid "rebuilddb - rebuild the rpm package database."
-msgstr ""
+msgstr "rebuilddb - 重建 rpm 包數據庫。"
 
 #: form/main_win.py:318
 #, fuzzy
@@ -419,7 +419,8 @@ msgstr ""
 "未使用的軟件包系統。 有時，此命令會刪除所需的庫，因此請在使用前備份系統。 您"
 "可以通過鍵入更多信息&quot;<span style=\" font-weight:600;\">--autoremove</"
 "span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-get</"
-"span>&quot; 終端。</p></body></html>"
+"span>&quot; 終端。<br />這 &quot;<span style=\" font-weight:600;\">"
+"rebuilddb</span>&quot; 按鈕用於修復損壞的 rpm 包數據庫。</p></body></html>"
 
 #: form/main_win.py:324
 msgid "Kernel modules"
@@ -449,29 +450,29 @@ msgstr "確認"
 #, fuzzy
 #| msgid "Kernel update"
 msgid "Kernel update indicator"
-msgstr "內核更新"
+msgstr "內核更新指示器"
 
 #: kernel-indicator:53
 #, fuzzy
 #| msgid "Close a window"
 msgid "Close indicator"
-msgstr "關閉一個窗口"
+msgstr "關閉指示器"
 
 #: kernel-indicator:57
 msgid "Repeat message"
-msgstr ""
+msgstr "重複消息"
 
 #: kernel-indicator:61
 msgid "Set autoload"
-msgstr ""
+msgstr "設置自動加載"
 
 #: kernel-indicator:65
 msgid "Show updates"
-msgstr ""
+msgstr "顯示更新"
 
 #: kernel-indicator:146
 msgid "A new version of the kernel is available: "
-msgstr ""
+msgstr "有一個新版本的內核可用： "
 
 #: kernel_manager.py:102
 msgid "Updating cache wait for completion ..."
@@ -539,11 +540,11 @@ msgstr "模塊信息"
 
 #: kernel_manager.py:455
 msgid "Rebuild rpm database?"
-msgstr ""
+msgstr "重建 rpm 數據庫？"
 
 #: kernel_manager.py:461
 msgid "rpm database recovery"
-msgstr ""
+msgstr "rpm 數據庫恢復"
 
 #: kernel_manager.py:469
 msgid ""
@@ -551,6 +552,8 @@ msgid ""
 "OS for a long time, then the likelihood of removing the necessary packages "
 "increases. Continue?"
 msgstr ""
+"建議用於清潔新的操作系統。 如果您已經使用該操作系統很長時間，那麼刪除必要軟件包的可能性就會增加。"
+"繼續？"
 
 #: kernel_manager.py:477
 msgid "Removing unnecessary dependencies"
@@ -574,7 +577,7 @@ msgstr "安裝"
 
 #: kernel_manager.py:573
 msgid "Install un-def kernel from Sisyphus repository?"
-msgstr ""
+msgstr "從 Sisyphus 存儲庫安裝 un-def 內核？"
 
 #: kernel_manager.py:605
 msgid "Removing old kernels"
