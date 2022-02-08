@@ -1,0 +1,26 @@
+[Desktop Entry]
+Categories=SystemClub;Settings;System;X-Kernel-Manager;
+Keywords=Configuration;Utility;
+MimeType=
+
+Name=Kernel indicator
+Name[ru_RU]=Индикатор ядра
+
+Comment=Tray kernel update icon
+Comment[ru_RU]=Значок обновления ядра в системном лотке
+
+GenericName=Kernel update notifications
+GenericName[ru_RU]=Уведомления об обновлении ядра
+
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=none
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+
+Icon=/opt/kernel-manager/icons/kernel-manager.png
+Exec=/opt/kernel-manager/kernel-indicator --show

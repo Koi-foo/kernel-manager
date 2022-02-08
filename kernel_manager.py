@@ -12,6 +12,7 @@ from subprocess import run, PIPE, Popen
 from platform import release
 from threading import Thread
 from time import sleep
+from mod.shell import shrun, shcom
 # PyQt
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import pyqtSignal, QSize
@@ -50,7 +51,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # Кнопки
         # Исправление не верного растяжения кнопки в греческой локали
-        greek_lang = shell('printenv LANG')
+        greek_lang = shrun('printenv LANG')
         if greek_lang.rstrip() == 'el_GR.UTF-8':
             self.pushButton_KERN.setMinimumSize(0, 0)
 
@@ -60,6 +61,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_KERN.clicked.connect(self.upgrade_kernel)
         self.pushButton_ChangeFlavour.clicked.connect(self.change_flavour)
         self.pushButton_Autoremove.clicked.connect(self.autoremove)
+        self.pushButton_Rpmrebuild.clicked.connect(self.rpm_rebuild)
 
         # Сигналы
         self.proc_win.closeWindow.connect(self.update_list_kernel)
@@ -134,7 +136,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         real_number = release().split('-')[0]
         new_version = real_number.split('.')
 
-        search_version = shell(f"apt-cache pkgnames kernel-image-{flavour}#")
+        search_version = shrun(f"apt-cache pkgnames kernel-image-{flavour}#")
 
         for line in search_version.splitlines():
             act = re.search(r':(.+)-alt' ,line).group(1).split(".")
@@ -165,12 +167,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         kernel_list = []
         real_number = release().split('-')[0]
 
-        raw_list_kernel = shell('rpm -qa | grep kernel-image-').splitlines()
+        raw_list_kernel = shrun('rpm -qa | grep kernel-image-').splitlines()
 
         for line in raw_list_kernel:
-            kernel_info = shell(f'rpm -qi {line} | grep Install')
+            kernel_info = shrun(f'rpm -qi {line} | grep Install')
 
-            dist_tag = str(re.compile(r': ([a-zA-Z0-9]+)').findall(shell(
+            dist_tag = str(re.compile(r': ([a-zA-Z0-9]+)').findall(shrun(
                 f'rpm -qi {line} | grep DistTag')))
 
             kernel_list.append(line + "  ➞  " + kernel_info.rstrip() + "  ➞  " + dist_tag)
@@ -196,7 +198,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def combobox_repo(self):
         """Widget comboBox и список репозиториев в нем"""
-        current_repo = shell('apt-repo').splitlines()[1]
+        current_repo = shrun('apt-repo').splitlines()[1]
         list_repo = ["p9", "p10", "Sisyphus"]
 
         for name_repo in list_repo:
@@ -271,7 +273,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.boot_default(kernel)
 
         elif action == kernel_info:
-            description = shell(f'rpm -qi {kernel}')
+            description = shrun(f'rpm -qi {kernel}')
             messages = kernel
 
             self.information_window(description, messages)
@@ -285,6 +287,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_KERN.setDisabled(btn_off_on)
         self.pushButton_ChangeFlavour.setDisabled(btn_off_on)
         self.pushButton_Autoremove.setDisabled(btn_off_on)
+        self.pushButton_Rpmrebuild.setDisabled(btn_off_on)
 
 
     def update_list_kernel(self):
@@ -295,7 +298,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def branches(self):
         """Смена репозиториев"""
-        current_repo = shell('apt-repo').splitlines()[1]
+        current_repo = shrun('apt-repo').splitlines()[1]
         combobox_text = self.comboBox_ChangeRepo.currentText()
 
         if combobox_text in current_repo:
@@ -326,7 +329,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return list_command
 
         elif combobox_text not in current_repo:
-            change_repo = shell(f'apt-repo set {combobox_text}')
+            change_repo = shrun(f'apt-repo set {combobox_text}')
             self.bar()
 
             list_command = ("/bin/sh -c "
@@ -346,7 +349,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Список установленных модулей"""
         combobox_list = []
         name_modules = re.compile(r'kernel-modules-(.*)-.+-.+-.+-alt')
-        modules = shell(f'rpm -qa | grep kernel-modules').splitlines()
+        modules = shrun(f'rpm -qa | grep kernel-modules').splitlines()
 
         with open('data/modules.json', 'w') as file_modules:
             json.dump(modules, file_modules)
@@ -412,7 +415,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 pass
             else:
                 row = re.compile(r'Summary.*:.(.*)')
-                summary = row.search(shell(f'rpm -qi {module}')).group(1)
+                summary = row.search(shrun(f'rpm -qi {module}')).group(1)
 
                 self.statusbar.showMessage(_('Module') + ': ' + summary, 10000)
         except AttributeError:
@@ -436,16 +439,35 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.remove_kernel(module)
 
         elif action == module_info:
-            description = shell(f'rpm -qi {module}')
+            description = shrun(f'rpm -qi {module}')
             messages = module
 
             self.information_window(description, messages)
 
 
     # Функции кнопок
+    def rpm_rebuild(self):
+        """Пересобрать базу"""
+        text = _('Rebuild rpm database?')
+
+        command = (self.dialog(text) +
+                   '"rpm -v --rebuilddb"')
+
+        self.proc_win.show()
+        self.proc_win.setWindowTitle(_('rpm database recovery'))
+        self.proc_win.start_qprocess(command)
+        self.proc_win.textEdit.clear()
+
+
     def autoremove(self):
         """Удаление ненужных пакетов используя autoremove"""
-        command = "apt-get autoremove"
+        text = _(
+            'It is recommended to use for cleaning a fresh OS. If you have '
+            'been using the OS for a long time, then the likelihood of removing '
+            'the necessary packages increases. Continue?')
+
+        command = (self.dialog(text) +
+                   '"apt-get autoremove"')
 
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Removing unnecessary dependencies'))
@@ -484,7 +506,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
-        package = shell(f'rpm -qi {item}')
+        package = shrun(f'rpm -qi {item}')
         name = re.compile(r'Name.*:\s(.*)').search(package).group(1) + "#"
         version = re.compile(r'Version.*:\s(.*)').search(package).group(1)
         release = re.compile(r'Release.*:\s(.*)').search(package).group(1)
@@ -544,10 +566,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Замена ядра на ядро UN-DEF из Sisyphus"""
         combobox_text = self.comboBox_ChangeRepo.currentText()
         flavour = 'un-def'
+        text = _('Install un-def kernel from Sisyphus repository?')
 
-        command = ("/bin/sh -c "
+        command = (self.dialog(text) +
+            "/bin/sh -c "
             '"apt-repo set Sisyphus ; "'
-            '"apt-get\" \"update" + "; "'
+            '"apt-get update ; "'
             f'"update-kernel -t {flavour} ; "'
             f'"apt-repo set {combobox_text} ; "'
             '"apt-get update"')
@@ -623,10 +647,11 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
     def closeEvent(self, event):
         """Переопределение события завершения"""
         for name_process in ["apt-get dist-upgrade"]:
-            activ_process = shell(f'pidof {name_process}')
+            activ_process = shrun(f'pgrep -o "{name_process}"')
+            print(activ_process)
 
             if activ_process:
-                close_process = shell(f'kill {activ_process}')
+                close_process = shcom(f'kill {activ_process}')
 
         if self.update_kernel:
             self.update_kernel = False
@@ -710,15 +735,8 @@ class DialogInformation(QtWidgets.QMainWindow, Ui_DialogInfo):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        # Масштаб текста в настройке увеличения пока не требуется
         #self.textEdit_Info.zoomOut(-1)
-
-
-def shell(com):
-    """Команды оболочки"""
-    return run(com,
-                shell=True,
-                stdout=PIPE,
-                encoding='utf-8').stdout
 
 
 if __name__ == '__main__':

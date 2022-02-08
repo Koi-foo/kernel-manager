@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 "X-Poedit-SearchPath-3: form/info_win.py\n"
-"X-Poedit-SearchPath-4: kernel-indicator\n"
+"X-Poedit-SearchPath-4: kernel-indicator.py\n"
 
 #: form/info_win.py:46 form/process_win.py:61
 msgid "Information"
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Removing kernels"
 msgstr ""
 
-#: form/main_win.py:299 kernel-indicator:142 kernel_manager.py:627
+#: form/main_win.py:299 kernel-indicator.py:142 kernel_manager.py:627
 msgid "Kernel update"
 msgstr ""
 
@@ -187,27 +187,27 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: kernel-indicator:46
+#: kernel-indicator.py:46
 msgid "Kernel update indicator"
 msgstr ""
 
-#: kernel-indicator:53
+#: kernel-indicator.py:53
 msgid "Close indicator"
 msgstr ""
 
-#: kernel-indicator:57
+#: kernel-indicator.py:57
 msgid "Repeat message"
 msgstr ""
 
-#: kernel-indicator:61
+#: kernel-indicator.py:61
 msgid "Set autoload"
 msgstr ""
 
-#: kernel-indicator:65
+#: kernel-indicator.py:65
 msgid "Show updates"
 msgstr ""
 
-#: kernel-indicator:143
+#: kernel-indicator.py:143
 msgid "A new version of the kernel is available: "
 msgstr ""
 

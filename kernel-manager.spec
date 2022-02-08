@@ -48,25 +48,20 @@ mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_pixmapsdir}
 mkdir -p %{buildroot}%{_datadir}/polkit-1/actions
 mkdir -p %{buildroot}/opt/kernel-manager
-install -Dm644 kernel-manager.desktop %{buildroot}%{_desktopdir}
+install -Dm644 *.desktop %{buildroot}%{_desktopdir}
 install -Dm755 kernel-manager %{buildroot}%{_bindir}
 install -Dm644 org.freedesktop.pkexec.kernel-manager.policy %{buildroot}%{_datadir}/polkit-1/actions
 cp -r * %{buildroot}/opt/kernel-manager
 
-%post
-# remove in next version
-if [ -f "/root/modules.json" ]; then
-    rm -f "/root/modules.json"
-fi
-
 %files
-%{_desktopdir}/kernel-manager.desktop
-%attr(755,root,root)/opt/kernel-manager/kernel_manager.py
+%{_desktopdir}/*.desktop
+/opt/kernel-manager/kernel*
 %{_datadir}/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
 %{_bindir}/kernel-manager
-/opt/kernel-manager/icons*
-/opt/kernel-manager/locale*
-/opt/kernel-manager/form*
+/opt/kernel-manager/icons
+/opt/kernel-manager/locale
+/opt/kernel-manager/form
+/opt/kernel-manager/mod/shell.py
 /opt/kernel-manager/resources.py
 %dir /opt/kernel-manager/data
 %doc LICENSE
