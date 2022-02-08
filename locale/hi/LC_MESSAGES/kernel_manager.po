@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-02-08 21:43+0300\n"
-"PO-Revision-Date: 2022-02-08 21:47+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"PO-Revision-Date: 2022-02-09 03:14+0700\n"
+"Last-Translator: Евгений <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: hi_IN\n"
 "MIME-Version: 1.0\n"
@@ -314,7 +314,7 @@ msgstr ""
 
 #: form/main_win.py:317
 msgid "rebuilddb - rebuild the rpm package database."
-msgstr ""
+msgstr "पुनर्निर्माण - आरपीएम पैकेज डेटाबेस का पुनर्निर्माण करें।"
 
 #: form/main_win.py:318
 #, fuzzy
@@ -396,29 +396,29 @@ msgstr "पुष्टि करें"
 #, fuzzy
 #| msgid "Kernel update"
 msgid "Kernel update indicator"
-msgstr "कर्नेल अद्यतन"
+msgstr "कर्नेल अद्यतन संकेतक"
 
 #: kernel-indicator:53
 #, fuzzy
 #| msgid "Close a window"
 msgid "Close indicator"
-msgstr "एक खिड़की बंद करो"
+msgstr "समापन संकेतक"
 
 #: kernel-indicator:57
 msgid "Repeat message"
-msgstr ""
+msgstr "संदेश दोहराएं"
 
 #: kernel-indicator:61
 msgid "Set autoload"
-msgstr ""
+msgstr "ऑटोलोड सेट करें"
 
 #: kernel-indicator:65
 msgid "Show updates"
-msgstr ""
+msgstr "अपडेट दिखाएं"
 
 #: kernel-indicator:146
 msgid "A new version of the kernel is available: "
-msgstr ""
+msgstr "एक नया कर्नेल संस्करण उपलब्ध है: "
 
 #: kernel_manager.py:102
 msgid "Updating cache wait for completion ..."
@@ -486,17 +486,19 @@ msgstr "मॉड्यूल जानकारी"
 
 #: kernel_manager.py:455
 msgid "Rebuild rpm database?"
-msgstr ""
+msgstr "rpm डेटाबेस का पुनर्निर्माण करें?"
 
 #: kernel_manager.py:461
 msgid "rpm database recovery"
-msgstr ""
+msgstr "rpm डेटाबेस रिकवरी"
 
 #: kernel_manager.py:469
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the OS for a long time, "
 "then the likelihood of removing the necessary packages increases. Continue?"
 msgstr ""
+"एक ताजा ओएस की सफाई के लिए उपयोग करने की सिफारिश की जाती है। यदि आप लंबे समय से ओएस का उपयोग कर रहे हैं, "
+"तो आवश्यक पैकेजों को हटाने की संभावना बढ़ जाती है। जारी रखें?"
 
 #: kernel_manager.py:477
 msgid "Removing unnecessary dependencies"
@@ -520,7 +522,7 @@ msgstr "स्थापना"
 
 #: kernel_manager.py:573
 msgid "Install un-def kernel from Sisyphus repository?"
-msgstr ""
+msgstr "Sisyphus रिपॉजिटरी से un-def कर्नेल स्थापित करें?"
 
 #: kernel_manager.py:605
 msgid "Removing old kernels"
