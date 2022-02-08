@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2021-11-08 11:33+0300\n"
-"PO-Revision-Date: 2021-11-18 19:30+0200\n"
+"POT-Creation-Date: 2022-02-08 21:43+0300\n"
+"PO-Revision-Date: 2022-02-08 21:46+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: form/main_win.py:253
+#: form/main_win.py:262
 msgid "Kernels management"
 msgstr "Διαχείριση Πυρήνων"
 
-#: form/main_win.py:254
+#: form/main_win.py:263
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -110,15 +110,15 @@ msgstr ""
 "σας επιτρέπει να τροποποιήσετε τους κλάδους του αποθετηρίου.</span></p></"
 "body></html>"
 
-#: form/main_win.py:263
+#: form/main_win.py:272
 msgid "Change flavor type"
 msgstr "Αλλαγή (τύπου - έκδοση) του Πυρήνα"
 
-#: form/main_win.py:264
+#: form/main_win.py:273
 msgid "Change"
 msgstr "Αλλαγή"
 
-#: form/main_win.py:265
+#: form/main_win.py:274
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
@@ -126,7 +126,7 @@ msgstr ""
 "Επιλέξτε έναν πυρήνα από τη λίστα και κάντε κλικ στο<br>Κουμπί \"Αλλαγή\" "
 "για μετάβαση σε νέο τύπο-Έκδοση (πυρήνα)"
 
-#: form/main_win.py:266
+#: form/main_win.py:275
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -198,11 +198,11 @@ msgstr ""
 "από την έκδοση της λειτουργικής μονάδας(module) στα σταθερά αποθετήρια.</p></"
 "body></html>"
 
-#: form/main_win.py:275
+#: form/main_win.py:284
 msgid "Change of kernels"
 msgstr "Αλλαγή (πυρήνων) kernels"
 
-#: form/main_win.py:277
+#: form/main_win.py:286
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -255,7 +255,7 @@ msgstr ""
 "picture/icons/old.png\" height=\"12\" /> - τύπος πυρήνα ( old-def )</p></"
 "body></html>"
 
-#: form/main_win.py:285
+#: form/main_win.py:294
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
@@ -263,31 +263,31 @@ msgstr ""
 "Εκκαθάριση της τοπικής προσωρινής μνήμης<br>παρωχημένων πακέτων και αφαίρεση "
 "διπλών πακέτων"
 
-#: form/main_win.py:286
+#: form/main_win.py:295
 msgid "Clear"
 msgstr "Εκκαθάριση"
 
-#: form/main_win.py:287
+#: form/main_win.py:296
 msgid "Removes all cores except the currently active one"
 msgstr "Καταργεί όλους τους πυρήνες εκτός από τον τρέχοντα ενεργό"
 
-#: form/main_win.py:288
+#: form/main_win.py:297
 msgid "Remove kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:289
+#: form/main_win.py:298
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:290 kernel_manager.py:615
+#: form/main_win.py:299 kernel-indicator:145 kernel_manager.py:630
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
-#: form/main_win.py:291 form/main_win.py:303
+#: form/main_win.py:300 form/main_win.py:312
 msgid "Update kernel"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
-#: form/main_win.py:292
+#: form/main_win.py:301
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -355,27 +355,27 @@ msgstr ""
 "%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, διαβάστε προσεκτικά την περιγραφή του.</p></body></html>"
 
-#: form/main_win.py:300 kernel_manager.py:579
+#: form/main_win.py:309 kernel_manager.py:594
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
-#: form/main_win.py:301
+#: form/main_win.py:310
 msgid "Distribution"
 msgstr "Διανομή"
 
-#: form/main_win.py:302
+#: form/main_win.py:311
 msgid "Change repository"
 msgstr "Αλλαγή αποθετηρίου"
 
-#: form/main_win.py:304
+#: form/main_win.py:313
 msgid "Filter for kernel modules installed on the system"
 msgstr "Φίλτρο για μονάδες πυρήνα εγκατεστημένα στο σύστημα"
 
-#: form/main_win.py:305
+#: form/main_win.py:314
 msgid "All installed modules"
 msgstr "Όλες οι εγκατεστημένες λειτουργικές μονάδες"
 
-#: form/main_win.py:307
+#: form/main_win.py:316
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
@@ -383,7 +383,32 @@ msgstr ""
 "Καταργήστε πακέτα που εγκαταστάθηκαν αυτόματα για να "
 "ικανοποιήσουν<br>εξαρτήσεις για άλλα πακέτα και δεν χρειάζονται πλέον. "
 
-#: form/main_win.py:308
+#: form/main_win.py:317
+msgid "rebuilddb - rebuild the rpm package database."
+msgstr ""
+
+#: form/main_win.py:318
+#, fuzzy
+#| msgid ""
+#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#| "REC-html40/strict.dtd\">\n"
+#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#| "css\">\n"
+#| "p, li { white-space: pre-wrap; }\n"
+#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
+#| "font-weight:400; font-style:normal;\">\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#| "weight:600;\">The note</span></p>\n"
+#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#| "right:0px; -qt-block-indent:0; text-indent:0px;\">The broom button uses "
+#| "the &quot;<span style=\" font-weight:600;\">apt-get autoremove</"
+#| "span>&quot; command to clean up the system of packages that are not used "
+#| "by any program. Sometimes this command removes the libraries you want, so "
+#| "back up your system before using it. You can find out more by typing "
+#| "&quot;<span style=\" font-weight:600;\">--autoremove</span>&quot; in "
+#| "&quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; terminal."
+#| "</p></body></html>"
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -402,7 +427,9 @@ msgid ""
 "Sometimes this command removes the libraries you want, so back up your "
 "system before using it. You can find out more by typing &quot;<span style=\" "
 "font-weight:600;\">--autoremove</span>&quot; in &quot;<span style=\" font-"
-"weight:600;\">man apt-get</span>&quot; terminal.</p></body></html>"
+"weight:600;\">man apt-get</span>&quot; terminal.<br />The &quot;<span style="
+"\" font-weight:600;\">rebuilddb</span>&quot; button is used to repair a "
+"corrupted rpm package database.</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -425,7 +452,7 @@ msgstr ""
 "span>&quot; in &quot;<span style=\" font-weight:600;\">man apt-get</"
 "span>&quot; Τερματικό.</p></body></html>"
 
-#: form/main_win.py:314
+#: form/main_win.py:324
 msgid "Kernel modules"
 msgstr "Μονάδες Πυρήνων (kernel)"
 
@@ -449,115 +476,162 @@ msgstr "Συμφωνείτε να συνεχιστεί η διεργασία"
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: kernel_manager.py:100
+#: kernel-indicator:46
+#, fuzzy
+#| msgid "Kernel update"
+msgid "Kernel update indicator"
+msgstr "Ενημέρωση (πυρήνα) kernel"
+
+#: kernel-indicator:53
+#, fuzzy
+#| msgid "Close a window"
+msgid "Close indicator"
+msgstr "Κλείστε ένα παράθυρο"
+
+#: kernel-indicator:57
+msgid "Repeat message"
+msgstr ""
+
+#: kernel-indicator:61
+msgid "Set autoload"
+msgstr ""
+
+#: kernel-indicator:65
+msgid "Show updates"
+msgstr ""
+
+#: kernel-indicator:146
+msgid "A new version of the kernel is available: "
+msgstr ""
+
+#: kernel_manager.py:102
 msgid "Updating cache wait for completion ..."
 msgstr "Ενημέρωση προσωρινής μνήμης για ολοκλήρωση ..."
 
-#: kernel_manager.py:113
+#: kernel_manager.py:115
 msgid "Updating cache:"
 msgstr "Ενημέρωση cache:"
 
-#: kernel_manager.py:118
+#: kernel_manager.py:120
 msgid "No access to repository"
 msgstr "Δεν υπάρχει πρόσβαση στο αποθετήριο"
 
-#: kernel_manager.py:122
+#: kernel_manager.py:124
 msgid "Updating completed:"
 msgstr "Η Ενημερωση ολοκληρώθηκε:"
 
-#: kernel_manager.py:190
+#: kernel_manager.py:185
 msgid "No kernels found to be removed"
 msgstr "Δεν βρέθηκαν (πυρήνες) kernels για να αφαιρεθούν"
 
-#: kernel_manager.py:197
+#: kernel_manager.py:192
 msgid "Flavor - not selected"
 msgstr "(Τυπός-'Εκδοση) Πυρήνα - δεν επιλέχθηκαν"
 
-#: kernel_manager.py:198
+#: kernel_manager.py:193
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF kernel (Βασικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:199
+#: kernel_manager.py:194
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF (πυρήνας) kernel (παλιά Έκδοση - std-def )"
 
-#: kernel_manager.py:200
+#: kernel_manager.py:195
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF kernel (Πειραματικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:201
+#: kernel_manager.py:196
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (kernel un-def)"
 
-#: kernel_manager.py:261
+#: kernel_manager.py:255
 msgid "Remove the selected kernel"
 msgstr "Κατάργηση του επιλεγμένου (πυρηνα) kernel"
 
-#: kernel_manager.py:264
+#: kernel_manager.py:258
 msgid "Install the default kernel"
 msgstr "Εγκατάσtαση του προεπιλεγμένου πυρήνα (kernel)"
 
-#: kernel_manager.py:267
+#: kernel_manager.py:261
 msgid "Kernel information"
 msgstr "Πληροφορίες πυρήνα"
 
-#: kernel_manager.py:423
+#: kernel_manager.py:420
 msgid "Module"
 msgstr "Μονάδα"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:430
 msgid "Remove the selected module"
 msgstr "Κατάργηση της επιλεγμένης μονάδας (πυρηνα-kernel)"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:433
 msgid "Module information"
 msgstr "Πληροφορίες Μονάδας (Πυρήνα-kernel)"
 
-#: kernel_manager.py:459
+#: kernel_manager.py:455
+msgid "Rebuild rpm database?"
+msgstr ""
+
+#: kernel_manager.py:461
+msgid "rpm database recovery"
+msgstr ""
+
+#: kernel_manager.py:469
+msgid ""
+"It is recommended to use for cleaning a fresh OS. If you have been using the "
+"OS for a long time, then the likelihood of removing the necessary packages "
+"increases. Continue?"
+msgstr ""
+
+#: kernel_manager.py:477
 msgid "Removing unnecessary dependencies"
 msgstr "Κατάργηση περιττών εξαρτήσεων"
 
-#: kernel_manager.py:473
+#: kernel_manager.py:491
 msgid "Set default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα \\(kernel\\)"
 
-#: kernel_manager.py:480
+#: kernel_manager.py:498
 msgid "Setting the default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα (kernel)"
 
-#: kernel_manager.py:514
+#: kernel_manager.py:530
 msgid "Remove"
 msgstr "Κατάργηση"
 
-#: kernel_manager.py:545
+#: kernel_manager.py:561
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: kernel_manager.py:590
+#: kernel_manager.py:573
+msgid "Install un-def kernel from Sisyphus repository?"
+msgstr ""
+
+#: kernel_manager.py:605
 msgid "Removing old kernels"
 msgstr "Κατάργηση παλαιών (πυρήνων) kernels"
 
-#: kernel_manager.py:602
+#: kernel_manager.py:617
 msgid "Cleaning apt-cache"
 msgstr "Καθάρισμα apt-cache"
 
-#: kernel_manager.py:662
+#: kernel_manager.py:677
 msgid "Process started, please wait ..."
 msgstr "Η διεργασία ξεκίνησε,περιμενετε..."
 
-#: kernel_manager.py:664
+#: kernel_manager.py:679
 msgid "Completed successfully"
 msgstr "Ολοκληρώθηκε επιτυχώς"
 
-#: kernel_manager.py:665
+#: kernel_manager.py:680
 msgid "The process is complete. You can close the window."
 msgstr "Η διεργασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παράθυρο."
 
-#: kernel_manager.py:696
+#: kernel_manager.py:711
 msgid "Close"
 msgstr "Κλείσε"
 
-#: kernel_manager.py:697
+#: kernel_manager.py:712
 msgid "Close a window"
 msgstr "Κλείστε ένα παράθυρο"
 
