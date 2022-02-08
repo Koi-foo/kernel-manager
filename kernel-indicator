@@ -89,10 +89,13 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         link_indicator = Path(
             f'{Path.home()}/.config/autostart-scripts/kernel-indicator')
 
-        if auto:
-            link_indicator.symlink_to('/opt/kernel-manager/kernel-indicator')
-        else:
-            os.remove(link_indicator)
+        try:
+            if auto:
+                link_indicator.symlink_to('/opt/kernel-manager/kernel-indicator')
+            else:
+                os.remove(link_indicator)
+        except(FileNotFoundError, FileExistsError):
+            pass
 
         self.settings.setValue('autoload', auto)
 
@@ -142,8 +145,9 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         header = _("Kernel update")
         body = _("A new version of the kernel is available: ") + new
 
-        self.tray_icon.showMessage(header,body,
-                                   QSystemTrayIcon.Information, 10000)
+        if new != '':
+            self.tray_icon.showMessage(header,body,
+                                       QSystemTrayIcon.Information, 10000)
 
 
     def open_kernel_manager(self):
