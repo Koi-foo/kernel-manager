@@ -61,7 +61,6 @@ cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
 
 %files
 %doc LICENSE README.md
-%ghost /opt/kernel-manager/locale/kernel_manager.pot.old
 %{_desktopdir}/*.desktop
 /opt/kernel-manager
 %{_datadir}/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
