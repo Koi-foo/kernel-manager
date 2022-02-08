@@ -539,11 +539,11 @@ msgstr "模块信息"
 
 #: kernel_manager.py:455
 msgid "Rebuild rpm database?"
-msgstr ""
+msgstr "重建 rpm 数据库？"
 
 #: kernel_manager.py:461
 msgid "rpm database recovery"
-msgstr ""
+msgstr "rpm 数据库恢复"
 
 #: kernel_manager.py:469
 msgid ""
@@ -576,7 +576,7 @@ msgstr "安装"
 
 #: kernel_manager.py:573
 msgid "Install un-def kernel from Sisyphus repository?"
-msgstr ""
+msgstr "从 Sisyphus 存储库安装 un-def 内核？"
 
 #: kernel_manager.py:605
 msgid "Removing old kernels"
