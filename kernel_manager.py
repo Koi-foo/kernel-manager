@@ -433,16 +433,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             QIcon(":/picture/icons/help-about.svg"), _('Module information'))
 
         action = menu.exec_(self.listWidget_Modules.mapToGlobal(pos))
-        module = self.listWidget_Modules.currentItem().text()
 
-        if action == remove:
-            self.remove_kernel(module)
+        try:
+            module = self.listWidget_Modules.currentItem().text()
 
-        elif action == module_info:
-            description = shrun(f'rpm -qi {module}')
-            messages = module
+            if action == remove:
+                self.remove_kernel(module)
 
-            self.information_window(description, messages)
+            elif action == module_info:
+                description = shrun(f'rpm -qi {module}')
+                messages = module
+
+                self.information_window(description, messages)
+         except(AttributeError, UnboundLocalError):
+            pass
 
 
     # Функции кнопок
@@ -569,7 +573,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         text = _('Install un-def kernel from Sisyphus repository?')
 
         command = (self.dialog(text) +
-            "/bin/sh -c "
             '"apt-repo set Sisyphus ; "'
             '"apt-get update ; "'
             f'"update-kernel -t {flavour} ; "'
