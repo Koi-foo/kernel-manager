@@ -314,7 +314,7 @@ msgstr ""
 
 #: form/main_win.py:317
 msgid "rebuilddb - rebuild the rpm package database."
-msgstr "पुनर्निर्माण - आरपीएम पैकेज डेटाबेस का पुनर्निर्माण करें।"
+msgstr "rebuilddb - आरपीएम पैकेज डेटाबेस का पुनर्निर्माण करें।"
 
 #: form/main_win.py:318
 #, fuzzy
