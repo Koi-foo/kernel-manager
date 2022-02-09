@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-08 21:43+0300\n"
-"PO-Revision-Date: 2022-02-08 21:45+0300\n"
+"POT-Creation-Date: 2022-02-09 17:46+0300\n"
+"PO-Revision-Date: 2022-02-09 17:48+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -27,11 +27,11 @@ msgstr ""
 msgid "Information"
 msgstr "Информация"
 
-#: form/main_win.py:262
+#: form/main_win.py:263
 msgid "Kernels management"
 msgstr "Управление ядрами"
 
-#: form/main_win.py:263
+#: form/main_win.py:264
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -109,15 +109,15 @@ msgstr ""
 "обеспечение до текущей версии. Список репозиториев позволяет вам изменять "
 "ветви репозитория.</span></p></body></html>"
 
-#: form/main_win.py:272
+#: form/main_win.py:273
 msgid "Change flavor type"
 msgstr "Изменить тип flavor"
 
-#: form/main_win.py:273
+#: form/main_win.py:274
 msgid "Change"
 msgstr "Изменить"
 
-#: form/main_win.py:274
+#: form/main_win.py:275
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
@@ -125,7 +125,7 @@ msgstr ""
 "Выберите ядро из списка и нажмите<br>кнопку «Изменить», чтобы переключиться "
 "на новый вариант"
 
-#: form/main_win.py:275
+#: form/main_win.py:276
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -193,11 +193,11 @@ msgstr ""
 "репозитория вы не сможете работать с программами, которые зависят от версии "
 "модуля в стабильных репозиториях.</p></body></html>"
 
-#: form/main_win.py:284
+#: form/main_win.py:285
 msgid "Change of kernels"
 msgstr "Смена ядер"
 
-#: form/main_win.py:286
+#: form/main_win.py:287
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -248,7 +248,7 @@ msgstr ""
 "un.png\" height=\"12\" /> - тип ядра ( un-def ) <img src=\":/picture/icons/"
 "old.png\" height=\"12\" /> - тип ядра ( old-def )</p></body></html>"
 
-#: form/main_win.py:294
+#: form/main_win.py:295
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
@@ -256,31 +256,31 @@ msgstr ""
 "Очистка локального кеша от устаревших пакетов<br>и удаление дубликатов "
 "пакетов"
 
-#: form/main_win.py:295
+#: form/main_win.py:296
 msgid "Clear"
 msgstr "Очистка"
 
-#: form/main_win.py:296
+#: form/main_win.py:297
 msgid "Removes all cores except the currently active one"
 msgstr "Удаляет все ядра, кроме текущего активного"
 
-#: form/main_win.py:297
+#: form/main_win.py:298
 msgid "Remove kernels"
 msgstr "Удалить ядра"
 
-#: form/main_win.py:298
+#: form/main_win.py:299
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:299 kernel-indicator:145 kernel_manager.py:630
+#: form/main_win.py:300 kernel-indicator:145 kernel_manager.py:636
 msgid "Kernel update"
 msgstr "Обновление ядра"
 
-#: form/main_win.py:300 form/main_win.py:312
+#: form/main_win.py:301 form/main_win.py:313
 msgid "Update kernel"
 msgstr "Обновить ядро"
 
-#: form/main_win.py:301
+#: form/main_win.py:302
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -345,27 +345,27 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:309 kernel_manager.py:594
+#: form/main_win.py:310 kernel_manager.py:600
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
-#: form/main_win.py:310
+#: form/main_win.py:311
 msgid "Distribution"
 msgstr "Дистрибутив"
 
-#: form/main_win.py:311
+#: form/main_win.py:312
 msgid "Change repository"
 msgstr "Изменить репозиторий"
 
-#: form/main_win.py:313
+#: form/main_win.py:314
 msgid "Filter for kernel modules installed on the system"
 msgstr "Фильтр модулей ядра, установленных в системе"
 
-#: form/main_win.py:314
+#: form/main_win.py:315
 msgid "All installed modules"
 msgstr "Все установленные модули"
 
-#: form/main_win.py:316
+#: form/main_win.py:317
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
@@ -373,11 +373,11 @@ msgstr ""
 "Удалите пакеты, которые были автоматически установлены<br>для удовлетворения "
 "зависимостей других пакетов и теперь больше не нужны. "
 
-#: form/main_win.py:317
+#: form/main_win.py:318
 msgid "rebuilddb - rebuild the rpm package database."
 msgstr "rebuilddb - пересобрать базу данных пакетов rpm."
 
-#: form/main_win.py:318
+#: form/main_win.py:319
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -422,7 +422,7 @@ msgstr ""
 "\">rebuilddb</span>&quot; кнопка используется для восстановления "
 "поврежденной базы данных пакетов rpm.</p></body></html>"
 
-#: form/main_win.py:324
+#: form/main_win.py:325
 msgid "Kernel modules"
 msgstr "Модули ядра"
 
@@ -470,79 +470,79 @@ msgstr "Показывать обновления"
 msgid "A new version of the kernel is available: "
 msgstr "Доступна новая версия ядра: "
 
-#: kernel_manager.py:102
+#: kernel_manager.py:104
 msgid "Updating cache wait for completion ..."
 msgstr "Обновление кеша, дождитесь завершения ..."
 
-#: kernel_manager.py:115
+#: kernel_manager.py:117
 msgid "Updating cache:"
 msgstr "Обновление cache:"
 
-#: kernel_manager.py:120
+#: kernel_manager.py:122
 msgid "No access to repository"
 msgstr "Нет доступа к репозиторию"
 
-#: kernel_manager.py:124
+#: kernel_manager.py:126
 msgid "Updating completed:"
 msgstr "Обновление завершено:"
 
-#: kernel_manager.py:185
+#: kernel_manager.py:187
 msgid "No kernels found to be removed"
 msgstr "Ядра для удаления не обнаружены"
 
-#: kernel_manager.py:192
+#: kernel_manager.py:194
 msgid "Flavor - not selected"
 msgstr "Flavor - не выбран"
 
-#: kernel_manager.py:193
+#: kernel_manager.py:195
 msgid "STD-DEF kernel (main kernel)"
 msgstr "Ядро STD-DEF ( основное ядро )"
 
-#: kernel_manager.py:194
+#: kernel_manager.py:196
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 
-#: kernel_manager.py:195
+#: kernel_manager.py:197
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
-#: kernel_manager.py:196
+#: kernel_manager.py:198
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:255
+#: kernel_manager.py:257
 msgid "Remove the selected kernel"
 msgstr "Удалить выбранное ядро"
 
-#: kernel_manager.py:258
+#: kernel_manager.py:260
 msgid "Install the default kernel"
 msgstr "Установите ядро по умолчанию"
 
-#: kernel_manager.py:261
+#: kernel_manager.py:263
 msgid "Kernel information"
 msgstr "Информация о ядре"
 
-#: kernel_manager.py:420
+#: kernel_manager.py:426
 msgid "Module"
 msgstr "Модуль"
 
-#: kernel_manager.py:430
+#: kernel_manager.py:436
 msgid "Remove the selected module"
 msgstr "Удалить выбранный модуль"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:439
 msgid "Module information"
 msgstr "Информация о модуле"
 
-#: kernel_manager.py:455
+#: kernel_manager.py:461
 msgid "Rebuild rpm database?"
 msgstr "Перестроить базу данных rpm?"
 
-#: kernel_manager.py:461
+#: kernel_manager.py:467
 msgid "rpm database recovery"
 msgstr "Восстановление базы данных rpm"
 
-#: kernel_manager.py:469
+#: kernel_manager.py:475
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -551,55 +551,55 @@ msgstr ""
 "Рекомендуется использовать для очистки свежей ОС. Если вы давно пользуетесь "
 "ОС, то вероятность удаления нужных пакетов возрастает. Продолжать?"
 
-#: kernel_manager.py:477
+#: kernel_manager.py:483
 msgid "Removing unnecessary dependencies"
 msgstr "Удаление ненужных зависимостей"
 
-#: kernel_manager.py:491
+#: kernel_manager.py:497
 msgid "Set default kernel boot"
 msgstr "Установить загрузку ядра по умолчанию"
 
-#: kernel_manager.py:498
+#: kernel_manager.py:504
 msgid "Setting the default kernel boot"
 msgstr "Установка загрузки ядра по умолчанию"
 
-#: kernel_manager.py:530
+#: kernel_manager.py:536
 msgid "Remove"
 msgstr "Удалить"
 
-#: kernel_manager.py:561
+#: kernel_manager.py:567
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:573
+#: kernel_manager.py:579
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "Установить ядро ​​un-def из репозитория Sisyphus?"
 
-#: kernel_manager.py:605
+#: kernel_manager.py:611
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:617
+#: kernel_manager.py:623
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:677
+#: kernel_manager.py:683
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:679
+#: kernel_manager.py:685
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:680
+#: kernel_manager.py:686
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
-#: kernel_manager.py:711
+#: kernel_manager.py:717
 msgid "Close"
 msgstr "Закрыть"
 
-#: kernel_manager.py:712
+#: kernel_manager.py:718
 msgid "Close a window"
 msgstr "Закрыть окно"
 

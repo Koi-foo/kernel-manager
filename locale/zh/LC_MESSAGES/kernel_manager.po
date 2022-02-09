@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-08 21:43+0300\n"
-"PO-Revision-Date: 2022-02-08 21:47+0300\n"
+"POT-Creation-Date: 2022-02-09 17:46+0300\n"
+"PO-Revision-Date: 2022-02-09 18:05+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "Information"
 msgstr "信息"
 
-#: form/main_win.py:262
+#: form/main_win.py:263
 msgid "Kernels management"
 msgstr "内核管理"
 
-#: form/main_win.py:263
+#: form/main_win.py:264
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -105,21 +105,21 @@ msgstr ""
 "配&quot;指的是该分配。 按钮将软件更新到当前版本。 存储库列表允许您修改存储库"
 "的分支。</span></p></body></html>"
 
-#: form/main_win.py:272
+#: form/main_win.py:273
 msgid "Change flavor type"
 msgstr "改变口味类型"
 
-#: form/main_win.py:273
+#: form/main_win.py:274
 msgid "Change"
 msgstr "更改"
 
-#: form/main_win.py:274
+#: form/main_win.py:275
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
 msgstr "从列表中选择一个内核，然后单击<br>“更改”按钮以切换到新的样式"
 
-#: form/main_win.py:275
+#: form/main_win.py:276
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -183,11 +183,11 @@ msgstr ""
 "用于其他内核不支持的英特尔集成显卡。 使用此存储库中的内核时，将无法使用依赖于"
 "稳定存储库中模块版本的程序。</p></body></html>"
 
-#: form/main_win.py:284
+#: form/main_win.py:285
 msgid "Change of kernels"
 msgstr "更改内核"
 
-#: form/main_win.py:286
+#: form/main_win.py:287
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -237,37 +237,37 @@ msgstr ""
 "un.png\" height=\"12\" /> - 内核类型（un-def） <img src=\":/picture/icons/"
 "old.png\" height=\"12\" /> - 内核类型（old-def）</p></body></html>"
 
-#: form/main_win.py:294
+#: form/main_win.py:295
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
 msgstr "清除过时软件包的本地缓存<br>并删除重复的软件包"
 
-#: form/main_win.py:295
+#: form/main_win.py:296
 msgid "Clear"
 msgstr "明确"
 
-#: form/main_win.py:296
+#: form/main_win.py:297
 msgid "Removes all cores except the currently active one"
 msgstr "删除除当前活动的核心以外的所有核心"
 
-#: form/main_win.py:297
+#: form/main_win.py:298
 msgid "Remove kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:298
+#: form/main_win.py:299
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:299 kernel-indicator:145 kernel_manager.py:630
+#: form/main_win.py:300 kernel-indicator:145 kernel_manager.py:636
 msgid "Kernel update"
 msgstr "内核更新"
 
-#: form/main_win.py:300 form/main_win.py:312
+#: form/main_win.py:301 form/main_win.py:313
 msgid "Update kernel"
 msgstr "更新内核"
 
-#: form/main_win.py:301
+#: form/main_win.py:302
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -328,58 +328,37 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:309 kernel_manager.py:594
+#: form/main_win.py:310 kernel_manager.py:600
 msgid "Distribution update"
 msgstr "发行更新"
 
-#: form/main_win.py:310
+#: form/main_win.py:311
 msgid "Distribution"
 msgstr "分配"
 
-#: form/main_win.py:311
+#: form/main_win.py:312
 msgid "Change repository"
 msgstr "变更资料库"
 
-#: form/main_win.py:313
+#: form/main_win.py:314
 msgid "Filter for kernel modules installed on the system"
 msgstr "系统中安装的内核模块的过滤器"
 
-#: form/main_win.py:314
+#: form/main_win.py:315
 msgid "All installed modules"
 msgstr "所有已安装的模块"
 
-#: form/main_win.py:316
+#: form/main_win.py:317
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
 msgstr "删除自动安装的软件包以满足<br>其他软件包的依赖关系，现在不再需要。 "
 
-#: form/main_win.py:317
-msgid "rebuilddb - rebuild the rpm package database."
-msgstr ""
-
 #: form/main_win.py:318
-#, fuzzy
-#| msgid ""
-#| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#| "REC-html40/strict.dtd\">\n"
-#| "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#| "css\">\n"
-#| "p, li { white-space: pre-wrap; }\n"
-#| "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#| "font-weight:400; font-style:normal;\">\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#| "weight:600;\">The note</span></p>\n"
-#| "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#| "right:0px; -qt-block-indent:0; text-indent:0px;\">The broom button uses "
-#| "the &quot;<span style=\" font-weight:600;\">apt-get autoremove</"
-#| "span>&quot; command to clean up the system of packages that are not used "
-#| "by any program. Sometimes this command removes the libraries you want, so "
-#| "back up your system before using it. You can find out more by typing "
-#| "&quot;<span style=\" font-weight:600;\">--autoremove</span>&quot; in "
-#| "&quot;<span style=\" font-weight:600;\">man apt-get</span>&quot; terminal."
-#| "</p></body></html>"
+msgid "rebuilddb - rebuild the rpm package database."
+msgstr "rebuilddb - 重建 rpm 包数据库。"
+
+#: form/main_win.py:319
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -418,9 +397,10 @@ msgstr ""
 "有程序未使用的软件包系统。 有时，此命令会删除所需的库，因此请在使用前备份系"
 "统。 您可以通过键入更多信息&quot;<span style=\" font-weight:600;\">--"
 "autoremove</span>&quot; 在 &quot;<span style=\" font-weight:600;\">man apt-"
-"get</span>&quot; 终端。</p></body></html>"
+"get</span>&quot; 终端。<br />这 &quot;<span style=\" font-weight:600;"
+"\">rebuilddb</span>&quot; 按钮用于修复损坏的 rpm 包数据库。</p></body></html>"
 
-#: form/main_win.py:324
+#: form/main_win.py:325
 msgid "Kernel modules"
 msgstr "内核模块"
 
@@ -445,161 +425,159 @@ msgid "Confirm"
 msgstr "确认"
 
 #: kernel-indicator:46
-#, fuzzy
-#| msgid "Kernel update"
 msgid "Kernel update indicator"
-msgstr "内核更新"
+msgstr "内核更新指示器"
 
 #: kernel-indicator:53
-#, fuzzy
-#| msgid "Close a window"
 msgid "Close indicator"
-msgstr "关闭一个窗口"
+msgstr "关闭指示器"
 
 #: kernel-indicator:57
 msgid "Repeat message"
-msgstr ""
+msgstr "重复消息"
 
 #: kernel-indicator:61
 msgid "Set autoload"
-msgstr ""
+msgstr "设置自动加载"
 
 #: kernel-indicator:65
 msgid "Show updates"
-msgstr ""
+msgstr "显示更新"
 
 #: kernel-indicator:146
 msgid "A new version of the kernel is available: "
-msgstr ""
+msgstr "有一个新版本的内核可用： "
 
-#: kernel_manager.py:102
+#: kernel_manager.py:104
 msgid "Updating cache wait for completion ..."
 msgstr "正在更新缓存以等待完成..."
 
-#: kernel_manager.py:115
+#: kernel_manager.py:117
 msgid "Updating cache:"
 msgstr "清理 apt-cache:"
 
-#: kernel_manager.py:120
+#: kernel_manager.py:122
 msgid "No access to repository"
 msgstr "无法访问存储库"
 
-#: kernel_manager.py:124
+#: kernel_manager.py:126
 msgid "Updating completed:"
 msgstr "更新完成："
 
-#: kernel_manager.py:185
+#: kernel_manager.py:187
 msgid "No kernels found to be removed"
 msgstr "没有找到要删除的内核"
 
-#: kernel_manager.py:192
+#: kernel_manager.py:194
 msgid "Flavor - not selected"
 msgstr "风味-未选择"
 
-#: kernel_manager.py:193
+#: kernel_manager.py:195
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF 内核（主内核）"
 
-#: kernel_manager.py:194
+#: kernel_manager.py:196
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF 内核（旧的 std-def 分支）"
 
-#: kernel_manager.py:195
+#: kernel_manager.py:197
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF 内核（实验内核）"
 
-#: kernel_manager.py:196
+#: kernel_manager.py:198
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核 un-def）"
 
-#: kernel_manager.py:255
+#: kernel_manager.py:257
 msgid "Remove the selected kernel"
 msgstr "删除选定的内核"
 
-#: kernel_manager.py:258
+#: kernel_manager.py:260
 msgid "Install the default kernel"
 msgstr "安装默认内核"
 
-#: kernel_manager.py:261
+#: kernel_manager.py:263
 msgid "Kernel information"
 msgstr "内核信息"
 
-#: kernel_manager.py:420
+#: kernel_manager.py:426
 msgid "Module"
 msgstr "模块"
 
-#: kernel_manager.py:430
+#: kernel_manager.py:436
 msgid "Remove the selected module"
 msgstr "移除所选模块"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:439
 msgid "Module information"
 msgstr "模块信息"
 
-#: kernel_manager.py:455
-msgid "Rebuild rpm database?"
-msgstr ""
-
 #: kernel_manager.py:461
-msgid "rpm database recovery"
-msgstr ""
+msgid "Rebuild rpm database?"
+msgstr "重建 rpm 数据库？"
 
-#: kernel_manager.py:469
+#: kernel_manager.py:467
+msgid "rpm database recovery"
+msgstr "rpm 数据库恢复"
+
+#: kernel_manager.py:475
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
 "increases. Continue?"
 msgstr ""
+"建议用于清洁新的操作系统。 如果您已经使用操作系统很长时间，那么删除必要软件包"
+"的可能性就会增加。 继续？"
 
-#: kernel_manager.py:477
+#: kernel_manager.py:483
 msgid "Removing unnecessary dependencies"
 msgstr "删除不必要的依赖"
 
-#: kernel_manager.py:491
+#: kernel_manager.py:497
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:498
+#: kernel_manager.py:504
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:530
+#: kernel_manager.py:536
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:561
+#: kernel_manager.py:567
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:573
+#: kernel_manager.py:579
 msgid "Install un-def kernel from Sisyphus repository?"
-msgstr ""
+msgstr "从 Sisyphus 存储库安装 un-def 内核？"
 
-#: kernel_manager.py:605
+#: kernel_manager.py:611
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:617
+#: kernel_manager.py:623
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:677
+#: kernel_manager.py:683
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:679
+#: kernel_manager.py:685
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:680
+#: kernel_manager.py:686
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:711
+#: kernel_manager.py:717
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:712
+#: kernel_manager.py:718
 msgid "Close a window"
 msgstr "关闭一个窗口"
 
