@@ -445,7 +445,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 messages = module
 
                 self.information_window(description, messages)
-         except(AttributeError, UnboundLocalError):
+        except(AttributeError, UnboundLocalError):
             pass
 
 
