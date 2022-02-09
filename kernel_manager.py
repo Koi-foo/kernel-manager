@@ -389,6 +389,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.listWidget_Modules.clear()
         self.listWidget_Modules.setIconSize(QSize(30, 12))
 
+        if len(item_list) == 0:
+            index = self.comboBox_ModulesSystem.currentIndex()
+            self.comboBox_ModulesSystem.removeItem(index)
+
         for line in item_list:
             if "std" in line:
                 icon = ":/picture/icons/std-p.png"
