@@ -17,7 +17,6 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtWidgets import QSystemTrayIcon, QMenu, QAction
 from PyQt5.QtGui import QIcon
 import resources
-# Forms
 # рабочий путь
 os.chdir(os.path.dirname(sys.argv[0]))
 # Языковая локализация
@@ -86,12 +85,20 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
     def set_autoload(self, auto=None):
         """вкл\выкл автозагрузка"""
-        link_indicator = Path(
-            f'{Path.home()}/.config/autostart-scripts/kernel-indicator')
+        dir_home = Path.home()
+        dir_autostart = f'{dir_home}/.config/autostart-scripts'
+        dir_km = '/opt/kernel-manager'
+        link_indicator = Path(f'{dir_autostart}/kernel-indicator')
+
+        if Path(dir_autostart).exists() is False:
+            Path(dir_autostart).mkdir(parents=False)
 
         try:
             if auto:
-                link_indicator.symlink_to('/opt/kernel-manager/kernel-indicator')
+                link_indicator.symlink_to(f'{dir_km}/kernel-indicator')
+                self.tray_icon.showMessage(
+                    _('Autostart directory:'),
+                    dir_autostart, QSystemTrayIcon.Information, 10000)
             else:
                 os.remove(link_indicator)
         except(FileNotFoundError, FileExistsError):
