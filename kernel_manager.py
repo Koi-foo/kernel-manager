@@ -37,6 +37,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.proc_win = ProcessWindow()
         self.infoWin = DialogInformation()
+        self.window_size()
         self.message_bar = QtWidgets.QLabel()
         self.message_bar.setMargin(4)
         self.statusbar.addWidget(self.message_bar)
@@ -453,6 +454,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             pass
 
 
+    def closeEvent(self, event):
+        """Сохранение размера при закрытии"""
+        win_main_size = [
+            int(self.geometry().width()),
+            int(self.geometry().height())]
+
+        settings.setValue('window_main', win_main_size)
+
+
+    def window_size(self):
+        """Установка размера окна"""
+        size = settings.value('window_main', type=int)
+        if size != 0:
+            self.resize(size[0], size[1])
+
+
     # Функции кнопок
     def rpm_rebuild(self):
         """Пересобрать базу"""
@@ -643,6 +660,7 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         super().__init__()
         self.setWindowModality(QtCore.Qt.ApplicationModal)
         self.setupUi(self)
+        self.window_size()
         self.update_kernel = False
 
         #Кнопки
@@ -660,9 +678,21 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
             if activ_process:
                 close_process = shcom(f'kill {activ_process}')
 
+        win_proc_size = [
+            int(self.geometry().width()),
+            int(self.geometry().height())]
+        settings.setValue('window_proc', win_proc_size)
+
         if self.update_kernel:
             self.update_kernel = False
             self.closeWindow.emit()
+
+
+    def window_size(self):
+        """Установка размера окна"""
+        size = settings.value('window_proc', type=int)
+        if size != 0:
+            self.resize(size[0], size[1])
 
 
     def start_qprocess(self, command):
@@ -742,12 +772,28 @@ class DialogInformation(QtWidgets.QMainWindow, Ui_DialogInfo):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        # Масштаб текста в настройке увеличения пока не требуется
-        #self.textEdit_Info.zoomOut(-1)
+        self.window_size()
+
+
+    def closeEvent(self, event):
+        """Сохранение размера при закрытии"""
+        win_dialog_size = [
+            int(self.geometry().width()),
+            int(self.geometry().height())]
+
+        settings.setValue('window_dialog', win_dialog_size)
+
+
+    def window_size(self):
+        """Установка размера окна"""
+        size = settings.value('window_dialog', type=int)
+        if size != 0:
+            self.resize(size[0], size[1])
 
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
+    settings = QtCore.QSettings()
     k_m = MainWindow()
     k_m.show()
 
