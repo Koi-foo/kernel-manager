@@ -8,18 +8,21 @@ Name[ru_RU]=Индикатор ядра
 Name[zh]=内核指标
 Name[zh_TW]=內核指示燈
 Name[hi]=कोर संकेतक
+Name[el]=Δείκτης πυρήνα (kernel)
 
 Comment=Tray kernel update icon
 Comment[ru_RU]=Значок обновления ядра в системном лотке
 Comment[zh]=托盘内核更新图标
 Comment[zh_TW]=托盤內核更新圖標
 Comment[hi]=कर्नेल अद्यतन आइकन
+Comment[el]=Εικονίδιο ενημέρωσης πυρήνα (kernel)
 
 GenericName=Kernel update notifications
 GenericName[ru_RU]=Уведомления об обновлении ядра
 GenericName[zh]=内核更新通知
 GenericName[zh_TW]=內核更新通知
 GenericName[hi]=कर्नेल अद्यतन सूचनाएं
+GenericName[el]=Ειδοποιήσεις ενημέρωσης πυρήνα (kernel)
 
 Path=
 StartupNotify=true
