@@ -123,8 +123,8 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
     def version_kernel(self):
         """Проверка версии ядра"""
         flavour = re.search(r'.*-(.+-.+)-', release()).group(1)
-        current_number = release().split('-')[0]
-        new_version = current_number.split('.')
+        current = release().split('-')[0]
+        new = current.split('.')
         #act = re.compile(r':(.+)-alt')
 
         search_version = shrun(f"apt-cache pkgnames kernel-image-{flavour}#")
@@ -132,15 +132,17 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         for line in search_version.splitlines():
             act = re.search(r':(.+)-alt' ,line).group(1).split(".")
 
-            if int(act[0]) > int(new_version[0]): new_version[0] = act[0]
-            if int(act[1]) > int(new_version[1]): new_version[1] = act[1]
-            if int(act[2]) > int(new_version[2]): new_version[2] = act[2]
+            if int(act[0]) > int(new[0]): new[0] = act[0]
+            if int(act[1]) > int(new[1]): new[1] = act[1]
+            if int(act[2]) > int(new[2]): new[2] = act[2]
 
-        new_version = ".".join(new_version)
-        self.settings.setValue('new_version', new_version)
+        new = ".".join(new)
+        self.settings.setValue('new', new)
 
-        if current_number == new_version and self.show is False:
+        if current == new and self.show is False:
             exit()
+        elif current == new and self.show is True:
+            pass
         else:
             self.tray_icon.setVisible(True)
             self.show_message()
@@ -153,8 +155,8 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         body = _("A new version of the kernel is available: ") + new
 
         if new != '':
-            self.tray_icon.showMessage(header,body,
-                                       QSystemTrayIcon.Information, 10000)
+            self.tray_icon.showMessage(
+                header,body, QSystemTrayIcon.Information, 10000)
 
 
     def open_kernel_manager(self):
