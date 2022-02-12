@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-09 17:46+0300\n"
-"PO-Revision-Date: 2022-02-09 17:48+0300\n"
+"POT-Creation-Date: 2022-02-12 10:53+0300\n"
+"PO-Revision-Date: 2022-02-12 10:54+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -272,7 +272,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:300 kernel-indicator:145 kernel_manager.py:636
+#: form/main_win.py:300 kernel-indicator.py:154 kernel_manager.py:655
 msgid "Kernel update"
 msgstr "Обновление ядра"
 
@@ -345,7 +345,7 @@ msgstr ""
 "underline; color:#2980b9;\">Sisyphus</span></a>&quot;, внимательно прочтите "
 "его описание.</p></body></html>"
 
-#: form/main_win.py:310 kernel_manager.py:600
+#: form/main_win.py:310 kernel_manager.py:619
 msgid "Distribution update"
 msgstr "Обновление дистрибутива и его программного обеспечения"
 
@@ -446,103 +446,107 @@ msgstr "Согласитесь продолжить процесс"
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: kernel-indicator:46
+#: kernel-indicator.py:45
 msgid "Kernel update indicator"
 msgstr "Индикатор обновления ядра"
 
-#: kernel-indicator:53
+#: kernel-indicator.py:52
 msgid "Close indicator"
 msgstr "Закрыть индикатор"
 
-#: kernel-indicator:57
+#: kernel-indicator.py:56
 msgid "Repeat message"
 msgstr "Повторить сообщение"
 
-#: kernel-indicator:61
+#: kernel-indicator.py:60
 msgid "Set autoload"
 msgstr "Установить автозагрузку"
 
-#: kernel-indicator:65
+#: kernel-indicator.py:64
 msgid "Show updates"
 msgstr "Показывать обновления"
 
-#: kernel-indicator:146
+#: kernel-indicator.py:100
+msgid "Autostart directory:"
+msgstr "Каталог автозапуска:"
+
+#: kernel-indicator.py:155
 msgid "A new version of the kernel is available: "
 msgstr "Доступна новая версия ядра: "
 
-#: kernel_manager.py:104
+#: kernel_manager.py:103
 msgid "Updating cache wait for completion ..."
 msgstr "Обновление кеша, дождитесь завершения ..."
 
-#: kernel_manager.py:117
+#: kernel_manager.py:116
 msgid "Updating cache:"
 msgstr "Обновление cache:"
 
-#: kernel_manager.py:122
+#: kernel_manager.py:121
 msgid "No access to repository"
 msgstr "Нет доступа к репозиторию"
 
-#: kernel_manager.py:126
+#: kernel_manager.py:125
 msgid "Updating completed:"
 msgstr "Обновление завершено:"
 
-#: kernel_manager.py:187
+#: kernel_manager.py:186
 msgid "No kernels found to be removed"
 msgstr "Ядра для удаления не обнаружены"
 
-#: kernel_manager.py:194
+#: kernel_manager.py:193
 msgid "Flavor - not selected"
 msgstr "Flavor - не выбран"
 
-#: kernel_manager.py:195
+#: kernel_manager.py:194
 msgid "STD-DEF kernel (main kernel)"
 msgstr "Ядро STD-DEF ( основное ядро )"
 
-#: kernel_manager.py:196
+#: kernel_manager.py:195
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "Ядро OLD-DEF ( старая ветка std-def )"
 
-#: kernel_manager.py:197
+#: kernel_manager.py:196
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "Ядро UN-DEF ( экспериментальное ядро )"
 
-#: kernel_manager.py:198
+#: kernel_manager.py:197
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus ( ядро un-def )"
 
-#: kernel_manager.py:257
+#: kernel_manager.py:256
 msgid "Remove the selected kernel"
 msgstr "Удалить выбранное ядро"
 
-#: kernel_manager.py:260
+#: kernel_manager.py:259
 msgid "Install the default kernel"
 msgstr "Установите ядро по умолчанию"
 
-#: kernel_manager.py:263
+#: kernel_manager.py:262
 msgid "Kernel information"
 msgstr "Информация о ядре"
 
-#: kernel_manager.py:426
+#: kernel_manager.py:429
 msgid "Module"
 msgstr "Модуль"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:439
 msgid "Remove the selected module"
 msgstr "Удалить выбранный модуль"
 
-#: kernel_manager.py:439
+#: kernel_manager.py:442
 msgid "Module information"
 msgstr "Информация о модуле"
 
-#: kernel_manager.py:461
+#: kernel_manager.py:480
 msgid "Rebuild rpm database?"
 msgstr "Перестроить базу данных rpm?"
 
-#: kernel_manager.py:467
+#: kernel_manager.py:486
 msgid "rpm database recovery"
 msgstr "Восстановление базы данных rpm"
 
-#: kernel_manager.py:475
+#: kernel_manager.py:494
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -551,55 +555,55 @@ msgstr ""
 "Рекомендуется использовать для очистки свежей ОС. Если вы давно пользуетесь "
 "ОС, то вероятность удаления нужных пакетов возрастает. Продолжать?"
 
-#: kernel_manager.py:483
+#: kernel_manager.py:502
 msgid "Removing unnecessary dependencies"
 msgstr "Удаление ненужных зависимостей"
 
-#: kernel_manager.py:497
+#: kernel_manager.py:516
 msgid "Set default kernel boot"
 msgstr "Установить загрузку ядра по умолчанию"
 
-#: kernel_manager.py:504
+#: kernel_manager.py:523
 msgid "Setting the default kernel boot"
 msgstr "Установка загрузки ядра по умолчанию"
 
-#: kernel_manager.py:536
+#: kernel_manager.py:555
 msgid "Remove"
 msgstr "Удалить"
 
-#: kernel_manager.py:567
+#: kernel_manager.py:586
 msgid "Installation"
 msgstr "Установка"
 
-#: kernel_manager.py:579
+#: kernel_manager.py:598
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "Установить ядро ​​un-def из репозитория Sisyphus?"
 
-#: kernel_manager.py:611
+#: kernel_manager.py:630
 msgid "Removing old kernels"
 msgstr "Удаление старых ядер"
 
-#: kernel_manager.py:623
+#: kernel_manager.py:642
 msgid "Cleaning apt-cache"
 msgstr "Очистка apt-кеша"
 
-#: kernel_manager.py:683
+#: kernel_manager.py:715
 msgid "Process started, please wait ..."
 msgstr "Процесс начался, подождите ..."
 
-#: kernel_manager.py:685
+#: kernel_manager.py:717
 msgid "Completed successfully"
 msgstr "Завершено успешно"
 
-#: kernel_manager.py:686
+#: kernel_manager.py:718
 msgid "The process is complete. You can close the window."
 msgstr "Процесс завершен. Вы можете закрыть окно."
 
-#: kernel_manager.py:717
+#: kernel_manager.py:749
 msgid "Close"
 msgstr "Закрыть"
 
-#: kernel_manager.py:718
+#: kernel_manager.py:750
 msgid "Close a window"
 msgstr "Закрыть окно"
 

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-09 17:46+0300\n"
-"PO-Revision-Date: 2022-02-09 18:05+0300\n"
+"POT-Creation-Date: 2022-02-12 10:53+0300\n"
+"PO-Revision-Date: 2022-02-12 10:55+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -259,7 +259,7 @@ msgstr "删除内核"
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:300 kernel-indicator:145 kernel_manager.py:636
+#: form/main_win.py:300 kernel-indicator.py:154 kernel_manager.py:655
 msgid "Kernel update"
 msgstr "内核更新"
 
@@ -328,7 +328,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:310 kernel_manager.py:600
+#: form/main_win.py:310 kernel_manager.py:619
 msgid "Distribution update"
 msgstr "发行更新"
 
@@ -424,103 +424,107 @@ msgstr "同意继续进行"
 msgid "Confirm"
 msgstr "确认"
 
-#: kernel-indicator:46
+#: kernel-indicator.py:45
 msgid "Kernel update indicator"
 msgstr "内核更新指示器"
 
-#: kernel-indicator:53
+#: kernel-indicator.py:52
 msgid "Close indicator"
 msgstr "关闭指示器"
 
-#: kernel-indicator:57
+#: kernel-indicator.py:56
 msgid "Repeat message"
 msgstr "重复消息"
 
-#: kernel-indicator:61
+#: kernel-indicator.py:60
 msgid "Set autoload"
 msgstr "设置自动加载"
 
-#: kernel-indicator:65
+#: kernel-indicator.py:64
 msgid "Show updates"
 msgstr "显示更新"
 
-#: kernel-indicator:146
+#: kernel-indicator.py:100
+msgid "Autostart directory:"
+msgstr "自动启动目录："
+
+#: kernel-indicator.py:155
 msgid "A new version of the kernel is available: "
 msgstr "有一个新版本的内核可用： "
 
-#: kernel_manager.py:104
+#: kernel_manager.py:103
 msgid "Updating cache wait for completion ..."
 msgstr "正在更新缓存以等待完成..."
 
-#: kernel_manager.py:117
+#: kernel_manager.py:116
 msgid "Updating cache:"
 msgstr "清理 apt-cache:"
 
-#: kernel_manager.py:122
+#: kernel_manager.py:121
 msgid "No access to repository"
 msgstr "无法访问存储库"
 
-#: kernel_manager.py:126
+#: kernel_manager.py:125
 msgid "Updating completed:"
 msgstr "更新完成："
 
-#: kernel_manager.py:187
+#: kernel_manager.py:186
 msgid "No kernels found to be removed"
 msgstr "没有找到要删除的内核"
 
-#: kernel_manager.py:194
+#: kernel_manager.py:193
 msgid "Flavor - not selected"
 msgstr "风味-未选择"
 
-#: kernel_manager.py:195
+#: kernel_manager.py:194
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF 内核（主内核）"
 
-#: kernel_manager.py:196
+#: kernel_manager.py:195
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF 内核（旧的 std-def 分支）"
 
-#: kernel_manager.py:197
+#: kernel_manager.py:196
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF 内核（实验内核）"
 
-#: kernel_manager.py:198
+#: kernel_manager.py:197
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核 un-def）"
 
-#: kernel_manager.py:257
+#: kernel_manager.py:256
 msgid "Remove the selected kernel"
 msgstr "删除选定的内核"
 
-#: kernel_manager.py:260
+#: kernel_manager.py:259
 msgid "Install the default kernel"
 msgstr "安装默认内核"
 
-#: kernel_manager.py:263
+#: kernel_manager.py:262
 msgid "Kernel information"
 msgstr "内核信息"
 
-#: kernel_manager.py:426
+#: kernel_manager.py:429
 msgid "Module"
 msgstr "模块"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:439
 msgid "Remove the selected module"
 msgstr "移除所选模块"
 
-#: kernel_manager.py:439
+#: kernel_manager.py:442
 msgid "Module information"
 msgstr "模块信息"
 
-#: kernel_manager.py:461
+#: kernel_manager.py:480
 msgid "Rebuild rpm database?"
 msgstr "重建 rpm 数据库？"
 
-#: kernel_manager.py:467
+#: kernel_manager.py:486
 msgid "rpm database recovery"
 msgstr "rpm 数据库恢复"
 
-#: kernel_manager.py:475
+#: kernel_manager.py:494
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -529,55 +533,55 @@ msgstr ""
 "建议用于清洁新的操作系统。 如果您已经使用操作系统很长时间，那么删除必要软件包"
 "的可能性就会增加。 继续？"
 
-#: kernel_manager.py:483
+#: kernel_manager.py:502
 msgid "Removing unnecessary dependencies"
 msgstr "删除不必要的依赖"
 
-#: kernel_manager.py:497
+#: kernel_manager.py:516
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:504
+#: kernel_manager.py:523
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:536
+#: kernel_manager.py:555
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:567
+#: kernel_manager.py:586
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:579
+#: kernel_manager.py:598
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "从 Sisyphus 存储库安装 un-def 内核？"
 
-#: kernel_manager.py:611
+#: kernel_manager.py:630
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:623
+#: kernel_manager.py:642
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:683
+#: kernel_manager.py:715
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:685
+#: kernel_manager.py:717
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:686
+#: kernel_manager.py:718
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:717
+#: kernel_manager.py:749
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:718
+#: kernel_manager.py:750
 msgid "Close a window"
 msgstr "关闭一个窗口"
 
