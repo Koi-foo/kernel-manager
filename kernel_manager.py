@@ -262,7 +262,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             QIcon(":/picture/icons/help-about.svg"), _('Kernel information'))
 
         action = menu.exec_(self.listWidget_Kernel.mapToGlobal(pos))
-        kernel = self.listWidget_Kernel.currentItem().text().split()[0]
+
+        try:
+            kernel = self.listWidget_Kernel.currentItem().text().split()[0]
+        except AttributeError:
+            pass
 
         if len(kernel) < 10:
             pass
