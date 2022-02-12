@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-12 10:53+0300\n"
+"POT-Creation-Date: 2022-02-12 16:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 "X-Poedit-SearchPath-3: form/info_win.py\n"
-"X-Poedit-SearchPath-4: kernel-indicator.py\n"
+"X-Poedit-SearchPath-4: kernel-indicator\n"
 
 #: form/info_win.py:46 form/process_win.py:61
 msgid "Information"
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Removing kernels"
 msgstr ""
 
-#: form/main_win.py:300 kernel-indicator.py:154 kernel_manager.py:655
+#: form/main_win.py:300 kernel-indicator:154 kernel_manager.py:655
 msgid "Kernel update"
 msgstr ""
 
@@ -187,31 +187,31 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: kernel-indicator.py:45
+#: kernel-indicator:45
 msgid "Kernel update indicator"
 msgstr ""
 
-#: kernel-indicator.py:52
+#: kernel-indicator:52
 msgid "Close indicator"
 msgstr ""
 
-#: kernel-indicator.py:56
+#: kernel-indicator:56
 msgid "Repeat message"
 msgstr ""
 
-#: kernel-indicator.py:60
+#: kernel-indicator:60
 msgid "Set autoload"
 msgstr ""
 
-#: kernel-indicator.py:64
+#: kernel-indicator:64
 msgid "Show updates"
 msgstr ""
 
-#: kernel-indicator.py:100
+#: kernel-indicator:100
 msgid "Autostart directory:"
 msgstr ""
 
-#: kernel-indicator.py:155
+#: kernel-indicator:155
 msgid "A new version of the kernel is available: "
 msgstr ""
 

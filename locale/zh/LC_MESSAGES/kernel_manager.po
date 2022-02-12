@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-12 10:53+0300\n"
-"PO-Revision-Date: 2022-02-12 10:55+0300\n"
+"POT-Creation-Date: 2022-02-12 16:05+0300\n"
+"PO-Revision-Date: 2022-02-12 14:30+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -259,7 +259,7 @@ msgstr "删除内核"
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:300 kernel-indicator.py:154 kernel_manager.py:655
+#: form/main_win.py:300 kernel-indicator:154 kernel_manager.py:655
 msgid "Kernel update"
 msgstr "内核更新"
 
@@ -424,31 +424,31 @@ msgstr "同意继续进行"
 msgid "Confirm"
 msgstr "确认"
 
-#: kernel-indicator.py:45
+#: kernel-indicator:45
 msgid "Kernel update indicator"
 msgstr "内核更新指示器"
 
-#: kernel-indicator.py:52
+#: kernel-indicator:52
 msgid "Close indicator"
 msgstr "关闭指示器"
 
-#: kernel-indicator.py:56
+#: kernel-indicator:56
 msgid "Repeat message"
 msgstr "重复消息"
 
-#: kernel-indicator.py:60
+#: kernel-indicator:60
 msgid "Set autoload"
 msgstr "设置自动加载"
 
-#: kernel-indicator.py:64
+#: kernel-indicator:64
 msgid "Show updates"
 msgstr "显示更新"
 
-#: kernel-indicator.py:100
+#: kernel-indicator:100
 msgid "Autostart directory:"
 msgstr "自动启动目录："
 
-#: kernel-indicator.py:155
+#: kernel-indicator:155
 msgid "A new version of the kernel is available: "
 msgstr "有一个新版本的内核可用： "
 

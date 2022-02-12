@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-12 10:53+0300\n"
-"PO-Revision-Date: 2022-02-12 10:54+0300\n"
+"POT-Creation-Date: 2022-02-12 16:05+0300\n"
+"PO-Revision-Date: 2022-02-12 22:01+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -279,7 +279,7 @@ msgstr "Κατάργηση (πυρήνων) kernels"
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:300 kernel-indicator.py:154 kernel_manager.py:655
+#: form/main_win.py:300 kernel-indicator:154 kernel_manager.py:655
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
@@ -457,31 +457,31 @@ msgstr "Συμφωνείτε να συνεχιστεί η διεργασία"
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: kernel-indicator.py:45
+#: kernel-indicator:45
 msgid "Kernel update indicator"
 msgstr "Δείκτης ενημέρωσης πυρήνα"
 
-#: kernel-indicator.py:52
+#: kernel-indicator:52
 msgid "Close indicator"
 msgstr "Ένδειξη κλεισίματος"
 
-#: kernel-indicator.py:56
+#: kernel-indicator:56
 msgid "Repeat message"
 msgstr "Επανάληψη μηνύματος"
 
-#: kernel-indicator.py:60
+#: kernel-indicator:60
 msgid "Set autoload"
 msgstr "Ορίστε το autoload"
 
-#: kernel-indicator.py:64
+#: kernel-indicator:64
 msgid "Show updates"
 msgstr "Εμφάνιση ενημερώσεων"
 
-#: kernel-indicator.py:100
+#: kernel-indicator:100
 msgid "Autostart directory:"
 msgstr "Κατάλογος αυτόματης εκκίνησης:"
 
-#: kernel-indicator.py:155
+#: kernel-indicator:155
 msgid "A new version of the kernel is available: "
 msgstr "Μια νέα έκδοση του πυρήνα είναι διαθέσιμη "
 

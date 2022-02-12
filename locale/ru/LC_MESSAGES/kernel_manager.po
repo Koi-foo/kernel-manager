@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-02-12 10:53+0300\n"
-"PO-Revision-Date: 2022-02-12 10:54+0300\n"
+"POT-Creation-Date: 2022-02-12 16:05+0300\n"
+"PO-Revision-Date: 2022-02-12 14:30+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: ru_RU\n"
@@ -272,7 +272,7 @@ msgstr "Удалить ядра"
 msgid "Removing kernels"
 msgstr "Удаление ядер"
 
-#: form/main_win.py:300 kernel-indicator.py:154 kernel_manager.py:655
+#: form/main_win.py:300 kernel-indicator:154 kernel_manager.py:655
 msgid "Kernel update"
 msgstr "Обновление ядра"
 
@@ -446,31 +446,31 @@ msgstr "Согласитесь продолжить процесс"
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: kernel-indicator.py:45
+#: kernel-indicator:45
 msgid "Kernel update indicator"
 msgstr "Индикатор обновления ядра"
 
-#: kernel-indicator.py:52
+#: kernel-indicator:52
 msgid "Close indicator"
 msgstr "Закрыть индикатор"
 
-#: kernel-indicator.py:56
+#: kernel-indicator:56
 msgid "Repeat message"
 msgstr "Повторить сообщение"
 
-#: kernel-indicator.py:60
+#: kernel-indicator:60
 msgid "Set autoload"
 msgstr "Установить автозагрузку"
 
-#: kernel-indicator.py:64
+#: kernel-indicator:64
 msgid "Show updates"
 msgstr "Показывать обновления"
 
-#: kernel-indicator.py:100
+#: kernel-indicator:100
 msgid "Autostart directory:"
 msgstr "Каталог автозапуска:"
 
-#: kernel-indicator.py:155
+#: kernel-indicator:155
 msgid "A new version of the kernel is available: "
 msgstr "Доступна новая версия ядра: "
 
