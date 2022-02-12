@@ -1,4 +1,4 @@
-Name: kernel-manager-p9
+Name: kernel-manager
 Version: 1.8
 Release: alt1
 
@@ -9,6 +9,7 @@ Packager: Koi <eg.evgeniy at gmail.com>
 Source0: %{name}-%{version}.tar
 
 BuildRequires: rpm-build-python3
+
 Requires: python3-base >= 3.7.0
 Requires: python3-module-PyQt5
 Requires: python3-module-gettext
@@ -43,11 +44,12 @@ clean the file storage, update the distribution.
 %setup
 
 %install
-mkdir -p %{buildroot}%{_desktopdir}
-mkdir -p %{buildroot}%{_bindir}
-mkdir -p %{buildroot}%{_pixmapsdir}
-mkdir -p %{buildroot}%{_datadir}/polkit-1/actions
-mkdir -p %{buildroot}/opt/kernel-manager/mod
+mkdir -p \
+    %{buildroot}%{_desktopdir} \
+    %{buildroot}%{_bindir} \
+    %{buildroot}%{_pixmapsdir} \
+    %{buildroot}%{_datadir}/polkit-1/actions \
+    %{buildroot}/opt/kernel-manager/mod
 
 install -Dm644 *.desktop %{buildroot}%{_desktopdir}
 install -Dm755 kernel-manager %{buildroot}%{_bindir}
@@ -69,8 +71,8 @@ cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
 
 %changelog
 * Sat Feb 12 2022 Evgeny Chuck <eg.evgeniy@gmail.com> 1.8-alt1
-- Building a new version 1.8
-- Added information about the location of the autorun director
+- New version 1.8
+- Added information about the location of the autorun directory
 - Added cleaning of comboBox elements when there is no list
 - Added system tray indicator and rpm base recovery
 - Added function to execute sh shell commands
