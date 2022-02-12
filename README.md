@@ -35,7 +35,9 @@ The program has been translated into Russian and English. The English version ne
 ```
 
 ## Changelog
-* New version v1.7 Release
+* New version v1.8 Release
+
+* New version v1.7
 
 * New version v1.6
 
