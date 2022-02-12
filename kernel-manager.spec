@@ -1,6 +1,6 @@
-Name: kernel-manager
-Version: 1.7
-Release: alt11
+Name: kernel-manager-p9
+Version: 1.8
+Release: alt1
 
 License: LGPL-3.0-only
 Group: System/Base
@@ -18,7 +18,7 @@ Requires: apt-scripts
 
 Provides: oldproject = %{version}-%{release}
 BuildArch: noarch
-Obsoletes: oldproject <= 1.7
+Obsoletes: oldproject <= 1.8
 
 Summary: Kernel Manage - kernel update program
 Summary(ru_RU.UTF-8): Kernel Manage - программа обновления ядра
@@ -68,7 +68,19 @@ cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
 %dir /opt/kernel-manager/data
 
 %changelog
-* Mon Nov 08 2021 Evgeny Chuck <koi@altlinux.org> 1.7-alt11
+* Sat Feb 12 2022 Evgeny Chuck <eg.evgeniy@gmail.com> 1.8-alt1
+- Building a new version 1.8
+- Added information about the location of the autorun director
+- Added cleaning of comboBox elements when there is no list
+- Added system tray indicator and rpm base recovery
+- Added function to execute sh shell commands
+- Implementation of saving window sizes
+- Improved search regular expressions
+- Fixed a crash in the context menu
+- Fixed kernel installation from Sisyphus repository
+- Fixed display of the position of the rebuild icon
+
+* Mon Nov 08 2021 Evgeny Chuck <eg.evgeniy@gmail.com> 1.7-alt11
 - Fixed translation (Russian)
 - Added function to jump to p10
 - Fixed bug with switching to p10
