@@ -8,6 +8,7 @@ import sys
 import argparse
 import gettext
 from subprocess import Popen
+from shutil import copy
 from platform import release
 from mod.shell import shrun
 from pathlib import Path
@@ -86,21 +87,20 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
     def set_autoload(self, auto=None):
         """вкл\выкл автозагрузка"""
         dir_home = Path.home()
-        dir_autostart = f'{dir_home}/.config/autostart-scripts'
-        dir_km = '/opt/kernel-manager'
-        link_indicator = Path(f'{dir_autostart}/kernel-indicator')
+        dir_autostart = f'{dir_home}/.config/autostart'
+        file_indicator = '/opt/kernel-manager/autostart-kernel-indicator.desktop'
 
         if Path(dir_autostart).exists() is False:
             Path(dir_autostart).mkdir(parents=False)
 
         try:
             if auto:
-                link_indicator.symlink_to(f'{dir_km}/kernel-indicator')
+                copy(file_indicator, f'{dir_autostart}/autostart-kernel-indicator.desktop')
                 self.tray_icon.showMessage(
                     _('Autostart directory:'),
                     dir_autostart, QSystemTrayIcon.Information, 10000)
             else:
-                os.remove(link_indicator)
+                os.remove(f'{dir_autostart}/autostart-kernel-indicator.desktop')
         except(FileNotFoundError, FileExistsError):
             pass
 
@@ -150,7 +150,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
     def show_message(self):
         """Показать сообщения в трее"""
-        new = self.settings.value('new_version', type=str)
+        new = self.settings.value('new', type=str)
         header = _("Kernel update")
         body = _("A new version of the kernel is available: ") + new
 
