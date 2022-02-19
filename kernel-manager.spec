@@ -1,6 +1,6 @@
-Name: kernel-manager-p9
+Name: kernel-manager
 Version: 1.8
-Release: alt1
+Release: alt2
 
 License: LGPL-3.0-only
 Group: System/Base
@@ -9,6 +9,7 @@ Packager: Koi <eg.evgeniy at gmail.com>
 Source0: %{name}-%{version}.tar
 
 BuildRequires: rpm-build-python3
+
 Requires: python3-base >= 3.7.0
 Requires: python3-module-PyQt5
 Requires: python3-module-gettext
@@ -43,13 +44,14 @@ clean the file storage, update the distribution.
 %setup
 
 %install
-mkdir -p %{buildroot}%{_desktopdir}
-mkdir -p %{buildroot}%{_bindir}
-mkdir -p %{buildroot}%{_pixmapsdir}
-mkdir -p %{buildroot}%{_datadir}/polkit-1/actions
-mkdir -p %{buildroot}/opt/kernel-manager/mod
+mkdir -p \
+    %{buildroot}%{_desktopdir} \
+    %{buildroot}%{_bindir} \
+    %{buildroot}%{_pixmapsdir} \
+    %{buildroot}%{_datadir}/polkit-1/actions \
+    %{buildroot}/opt/kernel-manager/mod
 
-install -Dm644 *.desktop %{buildroot}%{_desktopdir}
+install -Dm644 kernel-*.desktop %{buildroot}%{_desktopdir}
 install -Dm755 kernel-manager %{buildroot}%{_bindir}
 install -Dm644 org.freedesktop.pkexec.kernel-manager.policy %{buildroot}%{_datadir}/polkit-1/actions
 
@@ -58,6 +60,7 @@ install -Dm755 kernel-indicator %{buildroot}/opt/kernel-manager
 install -Dm644 resources.py %{buildroot}/opt/kernel-manager
 install -Dm755 mod/shell.py %{buildroot}/opt/kernel-manager/mod
 cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
+install -Dm644 autostart-kernel-indicator.desktop %{buildroot}/opt/kernel-manager
 
 %files
 %doc LICENSE README.md
@@ -68,9 +71,9 @@ cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
 %dir /opt/kernel-manager/data
 
 %changelog
-* Sat Feb 12 2022 Evgeny Chuck <eg.evgeniy@gmail.com> 1.8-alt1
-- Building a new version 1.8
-- Added information about the location of the autorun director
+* Sat Feb 19 2022 Evgeny Chuck <koi@altlinux.org> 1.8-alt2
+- New version 1.8
+- Added information about the location of the autorun directory
 - Added cleaning of comboBox elements when there is no list
 - Added system tray indicator and rpm base recovery
 - Added function to execute sh shell commands
@@ -79,6 +82,12 @@ cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
 - Fixed a crash in the context menu
 - Fixed kernel installation from Sisyphus repository
 - Fixed display of the position of the rebuild icon
+- Fixed the text of the kernel update message
+- Fixed localization detection
+
+* Sat Feb 12 2022 Evgeny Chuck <eg.evgeniy@gmail.com> 1.8-alt1
+- Fixed the text of the kernel update message
+- Fixed localization detection
 
 * Mon Nov 08 2021 Evgeny Chuck <eg.evgeniy@gmail.com> 1.7-alt11
 - Fixed translation (Russian)
