@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+#
 # Python
 import os
 import re
@@ -13,6 +13,7 @@ from platform import release
 from threading import Thread
 from time import sleep
 from mod.shell import shrun, shcom
+from mod.load_config import loadConfig, saveFileConfig
 # PyQt
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import pyqtSignal, QSize
@@ -41,20 +42,18 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.message_bar = QtWidgets.QLabel()
         self.message_bar.setMargin(4)
         self.statusbar.addWidget(self.message_bar)
+        self.config = loadConfig()
 
         self.bar()
         self.combobox_flavour()
         self.combobox_repo()
+        self.spinBox()
+        self.comboBoxService()
+        self.comboBoxTime()
 
         Thread(target=self.systemic_kernel).start()
         Thread(target=self.modules_system).start()
         Thread(target=self.update_cache).start()
-
-        # Кнопки
-        # Исправление не верного растяжения кнопки в греческой локали
-        greek_lang = shrun('printenv LANG')
-        if greek_lang.rstrip() == 'el_GR.UTF-8':
-            self.pushButton_KERN.setMinimumSize(0, 0)
 
         self.pushButton_DISTR.clicked.connect(self.distribution_up)
         self.pushButton_DELK.clicked.connect(self.del_kernel_old)
@@ -74,6 +73,47 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.listWidget_Modules.itemDoubleClicked.connect(self.double_clicked_module)
         self.listWidget_Modules.currentItemChanged.connect(self.modules_tooltip_bar)
         self.listWidget_Modules.customContextMenuRequested.connect(self.modules_context_menu)
+        self.spinBoxDayUpdate.valueChanged.connect(self.dayUpdate)
+        self.comboBoxTimeStart.currentTextChanged.connect(self.timeStart)
+        self.comboBoxStartService.currentIndexChanged.connect(self.initService)
+
+
+    def comboBoxTime(self):
+        """Комбобокс для изменения время отсрочки старта"""
+        index = self.comboBoxTimeStart.findText(str(self.config['time']))
+        self.comboBoxTimeStart.setCurrentIndex(index)
+
+
+    def dayUpdate(self, value):
+        """Установка интервала обновления"""
+        self.config = loadConfig()
+        self.config['days'] = value
+        saveFileConfig(self.config)
+
+
+    def timeStart(self, value):
+        """Установка время задержки старта"""
+        self.config = loadConfig()
+        self.config['time'] = value
+        saveFileConfig(self.config)
+
+
+    def comboBoxService(self):
+        """Комбобокс для установки загрузки сервиса"""
+        index = 0 if self.config['service'] else 1
+        self.comboBoxStartService.setCurrentIndex(index)
+
+
+    def initService(self, value):
+        """Включение и выключение сервивы kernel-service"""
+        self.config = loadConfig()
+        if value:
+            shrun('chkconfig kernel-service on')
+            self.config['service'] = False
+        else:
+            shrun('chkconfig kernel-service off')
+            self.config['service'] = True
+        saveFileConfig(self.config)
 
 
     def update_cache(self):
@@ -94,37 +134,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Thread(target=self.search_kernel).start()
 
 
+    def spinBox(self):
+        """Настройки переключателя"""
+        self.spinBoxDayUpdate.setValue(self.config['days'])
+
+
     def bar(self, messages='0', new_version=None):
         """Передача информации в статус бар"""
-        # U - Обновление кэша
-        # N - Доступна новая версия ядра
-        # 0 - Сообщение по умолчанию активное ядро
         if messages == 'U':
             self.message_bar.setText(_('Updating cache wait for completion ...'))
-
             up_cache = Popen("LANG=en apt-get update", shell=True, stdout=PIPE, encoding='utf-8')
-
             search_number = re.compile(r':([1-9]{1})\s')
             fulfilled = 0
-
             for line in up_cache.stdout.readlines():
                 num_repo = "".join(search_number.findall(line))
-
                 try:
                     if int(num_repo) > int(fulfilled):
                         fulfilled = num_repo
                         self.message_bar.setText(_('Updating cache:') + ' ' + fulfilled + "5%")
                         sleep(1)
-
                 except ValueError:
                     if 'Could' in line:
                         self.message_bar.setText(_('No access to repository'))
                         sleep(3)
-
                     elif 'Building' in line:
                         self.message_bar.setText(_('Updating completed:') + ' ' + "100%")
                         sleep(2)
-
         elif messages == 'N':
             self.message_bar.setText("kernel " + release() + " ➤ " + new_version)
         else:
@@ -136,20 +171,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         flavour = re.search(r'.*-(.+-.+)-', release()).group(1)
         real_number = release().split('-')[0]
         new_version = real_number.split('.')
-
         search_version = shrun(f"apt-cache pkgnames kernel-image-{flavour}#")
-
         for line in search_version.splitlines():
             act = re.search(r':(.+)-alt' ,line).group(1).split(".")
-
-            if int(act[0]) > int(new_version[0]):
-                new_version[0] = act[0]
-
-            if int(act[1]) > int(new_version[1]):
-                new_version[1] = act[1]
-
-            if int(act[2]) > int(new_version[2]):
-                new_version[2] = act[2]
+            if int(act[0]) > int(new_version[0]): new_version[0] = act[0]
+            if int(act[1]) > int(new_version[1]): new_version[1] = act[1]
+            if int(act[2]) > int(new_version[2]): new_version[2] = act[2]
 
         new_version = ".".join(new_version)
         self.compare_kernel(new_version, real_number)
@@ -157,25 +184,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def compare_kernel(self, new_version, real_number):
         """Сравнения версий ядер"""
-        if new_version == real_number:
-            self.bar()
-        else:
-            self.bar(messages='N', new_version=new_version)
+        if new_version == real_number: self.bar()
+        else: self.bar(messages='N', new_version=new_version)
 
 
     def systemic_kernel(self):
         """Системные ядра"""
         kernel_list = []
         real_number = release().split('-')[0]
-
         raw_list_kernel = shrun('rpm -qa | grep kernel-image-').splitlines()
-
         for line in raw_list_kernel:
             kernel_info = shrun(f'rpm -qi {line} | grep Install')
-
             dist_tag = str(re.compile(r': ([a-zA-Z0-9]+)').findall(shrun(
                 f'rpm -qi {line} | grep DistTag')))
-
             kernel_list.append(line + "  ➞  " + kernel_info.rstrip() + "  ➞  " + dist_tag)
 
         for line in kernel_list:
@@ -217,17 +238,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.listWidget_Kernel.setIconSize(QSize(30, 12))
 
         for line in kernel_list:
-            if "std" in line:
-                icon = ":/picture/icons/std-p.png"
-
-            elif "un" in line:
-                icon = ":/picture/icons/un-p.png"
-
-            elif "old" in line:
-                icon = ":/picture/icons/old-p.png"
-
-            else:
-                icon = ":/picture/icons/no-p.png"
+            if "std" in line: icon = ":/picture/icons/std-p.png"
+            elif "un" in line: icon = ":/picture/icons/un-p.png"
+            elif "old" in line: icon = ":/picture/icons/old-p.png"
+            else: icon = ":/picture/icons/no-p.png"
 
             item = QListWidgetItem(QIcon(icon), line)
             self.listWidget_Kernel.addItem(item)
@@ -236,10 +250,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def double_clicked_kernel(self, item):
         """Обработка двойного клика listWidget_Kernel"""
         kernel = item.text().split()[0]
-        if "kernel" in kernel:
-            self.remove_kernel(kernel)
-        else:
-            pass
+        if "kernel" in kernel: self.remove_kernel(kernel)
+        else: pass
 
 
     def double_clicked_module(self, item):
@@ -251,16 +263,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def kernel_context_menu(self, pos):
         """Котекстное меню listWidget_Kernel"""
         menu = QtWidgets.QMenu(self)
+        iconRemove = ":/picture/icons/list-remove.svg"
+        iconUp = ":/picture/icons/go-up.svg"
+        iconHelp = ":/picture/icons/help-about.svg"
 
-        remove = menu.addAction(
-            QIcon(":/picture/icons/list-remove.svg"), _('Remove the selected kernel'))
-
-        default = menu.addAction(
-            QIcon(":/picture/icons/go-up.svg"), _('Install the default kernel'))
-
-        kernel_info = menu.addAction(
-            QIcon(":/picture/icons/help-about.svg"), _('Kernel information'))
-
+        remove = menu.addAction(QIcon(iconRemove), _('Remove the selected kernel'))
+        default = menu.addAction(QIcon(iconUp), _('Install the default kernel'))
+        kernel_info = menu.addAction(QIcon(iconHelp), _('Kernel information'))
         action = menu.exec_(self.listWidget_Kernel.mapToGlobal(pos))
 
         try:
@@ -268,15 +277,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         except AttributeError:
             pass
 
-        if len(kernel) < 10:
-            pass
-
-        elif action == remove:
-            self.remove_kernel(kernel)
-
-        elif action == default:
-            self.boot_default(kernel)
-
+        if len(kernel) < 10: pass
+        elif action == remove: self.remove_kernel(kernel)
+        elif action == default: self.boot_default(kernel)
         elif action == kernel_info:
             description = shrun(f'rpm -qi {kernel}')
             messages = kernel
@@ -361,7 +364,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         for line in modules:
             combobox_item = name_modules.search(line).group(1)
-
             if combobox_item not in combobox_list:
                 combobox_list.append(combobox_item)
 
@@ -379,11 +381,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         with open('data/modules.json') as file_modules:
             modules = json.load(file_modules)
 
-        if index_item == 0:
-            item_filter=""
-
-        elif text_item:
-            item_filter = text_item
+        if index_item == 0: item_filter=""
+        elif text_item: item_filter = text_item
 
         selected_modules = [x for x in modules if item_filter in x]
         self.show_list_modules_gui(selected_modules)
@@ -399,17 +398,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.comboBox_ModulesSystem.removeItem(index)
 
         for line in item_list:
-            if "std" in line:
-                icon = ":/picture/icons/std-p.png"
-
-            elif "un" in line:
-                icon = ":/picture/icons/un-p.png"
-
-            elif "old" in line:
-                icon = ":/picture/icons/old-p.png"
-
-            else:
-                icon = ":/picture/icons/no-p.png"
+            if "std" in line: icon = ":/picture/icons/std-p.png"
+            elif "un" in line: icon = ":/picture/icons/un-p.png"
+            elif "old" in line: icon = ":/picture/icons/old-p.png"
+            else: icon = ":/picture/icons/no-p.png"
 
             item = QListWidgetItem(QIcon(icon), line)
             self.listWidget_Modules.addItem(item)
@@ -434,37 +426,34 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def modules_context_menu(self, pos):
         """Контекстное меню listWidget_Modules"""
         menu = QtWidgets.QMenu(self)
+        iconRemove = ":/picture/icons/list-remove.svg"
+        iconHelp = ":/picture/icons/help-about.svg"
 
-        remove = menu.addAction(
-            QIcon(":/picture/icons/list-remove.svg"), _('Remove the selected module'))
-
-        module_info = menu.addAction(
-            QIcon(":/picture/icons/help-about.svg"), _('Module information'))
-
+        remove = menu.addAction(QIcon(iconRemove), _('Remove the selected module'))
+        module_info = menu.addAction(QIcon(iconHelp), _('Module information'))
         action = menu.exec_(self.listWidget_Modules.mapToGlobal(pos))
 
         try:
             module = self.listWidget_Modules.currentItem().text()
-
             if action == remove:
                 self.remove_kernel(module)
-
             elif action == module_info:
                 description = shrun(f'rpm -qi {module}')
                 messages = module
-
                 self.information_window(description, messages)
         except(AttributeError, UnboundLocalError):
             pass
 
 
     def closeEvent(self, event):
-        """Сохранение размера при закрытии"""
+        """Действия ри закрытии программы"""
         win_main_size = [
             int(self.geometry().width()),
             int(self.geometry().height())]
-
         settings.setValue('window_main', win_main_size)
+
+        if self.config['service']:
+            shrun('/etc/init.d/kernel-service start')
 
 
     def window_size(self):
@@ -478,7 +467,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def rpm_rebuild(self):
         """Пересобрать базу"""
         text = _('Rebuild rpm database?')
-
         command = (self.dialog(text) +
                    '"rpm -v --rebuilddb"')
 
@@ -508,13 +496,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Установка загрузки ядра по умолчанию"""
         kernel = item.split(None, 1)[0].replace(
             'kernel-image-', '').rsplit('.', 1)[0].split('-')
-
         kernel[0], kernel[1], kernel[2] = kernel[2], kernel[0], kernel[1]
         kernel_num = kernel[0] 
         kernel = "-".join(kernel)
-
         text = _('Set default kernel boot') + f": {kernel_num}?"
-
         command = (self.dialog(text)
             + f'"installkernel {kernel}"')
 
@@ -546,7 +531,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             epoch = ""
 
         message_title = f"{name}-{version}"
-
         command = ("/bin/sh -c "
             f'"apt-get remove {name}{epoch}{version}-{release}*"')
 
@@ -561,32 +545,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Изменить тип ядра"""
         combobox_item = self.comboBox_ChangeKernel.currentIndex()
 
-        if 0 == combobox_item:
-            pass
-
-        elif 1 == combobox_item:
-            flavour = 'std-def'
-
-        elif 2 == combobox_item:
-            flavour = 'old-def'
-
-        elif 3 == combobox_item:
-            flavour = 'un-def'
-
-        elif 4 == combobox_item:
-            self.sisyphus_flavour()
+        if 0 == combobox_item: pass
+        elif 1 == combobox_item: flavour = 'std-def'
+        elif 2 == combobox_item: flavour = 'old-def'
+        elif 3 == combobox_item: flavour = 'un-def'
+        elif 4 == combobox_item: self.sisyphus_flavour()
 
         try:
             self.branches()
-
             command = f"update-kernel -t {flavour}"
-
             self.proc_win.update_kernel = True
             self.proc_win.show()
             self.proc_win.setWindowTitle(_('Installation') + " " + f'flavour-{flavour}')
             self.proc_win.start_qprocess(command)
             self.proc_win.textEdit.clear()
-
         except UnboundLocalError:
             pass
 
@@ -596,7 +568,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         combobox_text = self.comboBox_ChangeRepo.currentText()
         flavour = 'un-def'
         text = _('Install un-def kernel from Sisyphus repository?')
-
         command = (self.dialog(text) +
             '"apt-repo set Sisyphus ; "'
             '"apt-get update ; "'
@@ -677,7 +648,6 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         """Переопределение события завершения"""
         for name_process in ["apt-get dist-upgrade"]:
             activ_process = shrun(f'pgrep -o "{name_process}"')
-            print(activ_process)
 
             if activ_process:
                 close_process = shcom(f'kill {activ_process}')
@@ -721,7 +691,6 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
     def text_widget(self):
         """Параметры виджета textEdit"""
         content = self.qproc.readAll().data().decode('utf-8')
-
         cursor = self.textEdit.textCursor()
         cursor.movePosition(QtGui.QTextCursor.End)
 

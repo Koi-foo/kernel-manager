@@ -5,12 +5,12 @@
 import os
 import re
 import sys
-import argparse
 import gettext
+import json
 from subprocess import Popen
-from shutil import copy
-from platform import release
 from mod.shell import shrun
+from mod.create_desktop import autostart_desktop
+from mod.load_config import pathConfig
 from pathlib import Path
 from time import sleep
 # PyQt
@@ -23,141 +23,166 @@ os.chdir(os.path.dirname(sys.argv[0]))
 # Языковая локализация
 gettext.install('kernel_manager', 'locale')
 
-parser = argparse.ArgumentParser(allow_abbrev=True,
-description='Kernel update indicator')
-parser.add_argument('--show', action="store_true", help='show indicator')
-parser.add_argument('--delay', metavar='', default=[600], type=int, nargs=1, help='time-out')
-args = parser.parse_args()
-
 class SystemTrayWindows(QtWidgets.QMainWindow):
     """Окно настроек уведомлений на панели задач"""
     def __init__(self):
         super().__init__()
         # Сохранение настроек средством qt (тест)
-        # TODO: сделать тест скорости чтения из файла json и кэш ресурсов qt
         self.settings = QtCore.QSettings()
-        self.show = args.show
-        self.delay = args.delay[0]
+        self.default_settings()
+        self.config = self.settings.value('config', type=dict)
 
         # Значок трея
-        self.tray_icon = QSystemTrayIcon(self)
-        self.tray_icon.setIcon(QIcon(":/picture/icons/kernel-manager.png"))
-        self.tray_icon.setVisible(False)
-        self.tray_icon.setToolTip(_("Kernel update indicator"))
+        self.trayIcon = QSystemTrayIcon(self)
+        self.trayIcon.setIcon(QIcon(":/picture/icons/kernel-manager.png"))
+        self.trayIcon.setVisible(True)
+        self.trayIcon.setToolTip(_("Kernel update indicator"))
 
         # Сигналы
-        self.tray_icon.activated.connect(self.open_kernel_manager)
+        self.trayIcon.activated.connect(self.open_kernel_manager)
 
         # Действия для меню
-        quit_action = QAction(
-            QIcon(":/picture/icons/application-exit.svg"), _("Close indicator"), self)
+        iconExit = ":/picture/icons/application-exit.svg"
+        quit_action = QAction(QIcon(iconExit), _("Close indicator"), self)
         quit_action.triggered.connect(exit)
 
-        show_old_message = QAction(
-            QIcon(':/picture/icons/dialog-messages.svg'), _('Repeat message'), self)
+        iconMessages = ':/picture/icons/dialog-messages.svg'
+        show_old_message = QAction(QIcon(iconMessages), _('Repeat message'), self)
         show_old_message.triggered.connect(self.show_message)
 
         # Действия с проверкой состояния
         autoload = QAction(_('Set autoload'), self, checkable=True)
-        autoload.triggered.connect(
-            lambda:self.set_autoload(auto=autoload.isChecked()))
+        autoload.triggered.connect(lambda:self.set_autoload(auto=autoload.isChecked()))
 
-        kern_update = QAction(_('Show updates'), self, checkable=True)
-        kern_update.triggered.connect(
-            lambda:self.check_kernel(click=kern_update.isChecked()))
+        kern_update = QAction(_('Show kernel update'), self, checkable=True)
+        kern_update.triggered.connect(lambda:self.check_kernel(click=kern_update.isChecked()))
+
+        software_update = QAction(_('Show updates'), self, checkable=True)
+        software_update.triggered.connect(lambda:self.check_soft(click=software_update.isChecked()))
 
         # Меню
         tray_menu = QMenu()
         tray_menu.addAction(kern_update)
+        tray_menu.addAction(software_update)
         tray_menu.addAction(autoload)
         tray_menu.addSeparator()
         tray_menu.addAction(show_old_message)
         tray_menu.addAction(quit_action)
 
         # Установка позиций
-        autoload.setChecked(self.settings.value('autoload', type=bool))
-        kern_update.setChecked(self.settings.value('kern', type=bool))
+        autoload.setChecked(self.config['start'])
+        kern_update.setChecked(self.config['kernel'])
+        software_update.setChecked(self.config['software'])
 
-        self.tray_icon.setContextMenu(tray_menu)
-        self.tray_icon.setVisible(self.show)
+        self.trayIcon.setContextMenu(tray_menu)
+        self.wait_service()
 
         self.check_kernel(check=kern_update.isChecked())
-
+        self.check_soft(check=software_update.isChecked())
 
     def set_autoload(self, auto=None):
         """вкл\выкл автозагрузка"""
         dir_home = Path.home()
         dir_autostart = f'{dir_home}/.config/autostart'
-        file_indicator = '/opt/kernel-manager/autostart-kernel-indicator.desktop'
 
         if Path(dir_autostart).exists() is False:
             Path(dir_autostart).mkdir(parents=False)
 
         try:
             if auto:
-                copy(file_indicator, f'{dir_autostart}/autostart-kernel-indicator.desktop')
-                self.tray_icon.showMessage(
-                    _('Autostart directory:'),
-                    dir_autostart, QSystemTrayIcon.Information, 10000)
+                autostart_desktop(dir_autostart)
+                self.trayIcon.showMessage(
+                    _('Autostart directory:'), dir_autostart, QSystemTrayIcon.Information, 10000)
             else:
                 os.remove(f'{dir_autostart}/autostart-kernel-indicator.desktop')
         except(FileNotFoundError, FileExistsError):
             pass
 
-        self.settings.setValue('autoload', auto)
+        self.config['start'] = auto
+        self.save_settings()
 
+    def default_settings(self):
+        """Стандартные настройки"""
+        self.settings.setValue('config', CONFIG)
+
+    def save_settings(self):
+        """Сохранение настроек пользователя"""
+        self.settings.setValue('config', self.config)
+        with open(FILE_CONFIG, 'w') as f:
+            json.dump(self.config, f)
+
+    def show_message(self):
+        """Общее сообщение"""
+        self.kern_show_message()
+        self.soft_show_message()
 
     def check_kernel(self, click=None, check=None):
         """Обработка сигнала с триггера kern"""
         if click is not None:
-            self.settings.setValue('kern', click)
+            self.config['kernel'] = click
 
         if click or check:
-            if self.show:
-                self.delay = 0
+            self.kern_show_message()
 
-            sleep(self.delay)
-            self.version_kernel()
+        self.save_settings()
 
+    def check_soft(self, click=None, check=None):
+        """Обработка сигнала с триггера kern"""
+        if click is not None:
+            self.config['software'] = click
 
-    def version_kernel(self):
-        """Проверка версии ядра"""
-        flavour = re.search(r'.*-(.+-.+)-', release()).group(1)
-        current = release().split('-')[0]
-        new = current.split('.')
-        #act = re.compile(r':(.+)-alt')
+        if click or check:
+            self.soft_show_message()
 
-        search_version = shrun(f"apt-cache pkgnames kernel-image-{flavour}#")
+        self.save_settings()
 
-        for line in search_version.splitlines():
-            act = re.search(r':(.+)-alt' ,line).group(1).split(".")
+    def wait_service(self):
+        """Ждём окончания работы сервиса"""
+        try:
+            if sys.argv[1] == '--show':
+                pass
+        except:
+            while True:
+                if not shrun('pgrep -f kernel-service'):
+                    break
+                sleep(150)
+        finally:
+            if self.config['service'] is False:
+                self.show_disabled_message()
 
-            if int(act[0]) > int(new[0]): new[0] = act[0]
-            if int(act[1]) > int(new[1]): new[1] = act[1]
-            if int(act[2]) > int(new[2]): new[2] = act[2]
+    def show_disabled_message(self):
+        """Сообщение об отключении сервиса"""
+        header = _("Update service")
+        body = _("The update service is disabled. Enable the service \
+            in the kernel-manager settings. Without the service enabled, \
+            the indicator will not work.")
+        self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
 
-        new = ".".join(new)
-        self.settings.setValue('new', new)
-
-        if current == new and self.show is False:
-            exit()
-        elif current == new and self.show is True:
+    def kern_show_message(self):
+        """Показать сообщения ядра"""
+        try:
+            kern = self.config['version']
+            header_kern = _("Kernel update")
+            body_kern = _("A new version of the kernel is available: ") + kern
+            sleep(1)
+            self.trayIcon.showMessage(header_kern,body_kern, QSystemTrayIcon.Information, 10000)
+        except:
             pass
-        else:
-            self.tray_icon.setVisible(True)
-            self.show_message()
 
-
-    def show_message(self):
-        """Показать сообщения в трее"""
-        new = self.settings.value('new', type=str)
-        header = _("Kernel update")
-        body = _("A new version of the kernel is available: ") + new
-
-        if new != '':
-            self.tray_icon.showMessage(
-                header,body, QSystemTrayIcon.Information, 10000)
-
+    def soft_show_message(self):
+        """Показать сообщения софта"""
+        try:
+            kern = self.config['version']
+            header_soft = _("Software update")
+            pkgUpdate = _("Packages to update: ") + self.config['pkg'][0]
+            pkgInstall = _('Newly installed: ') + self.config['pkg'][1]
+            pkgRemove = _('For removing: ') + self.config['pkg'][2]
+            pkgNotUpdate = _('Will not be updated: ') + self.config['pkg'][3]
+            body_soft = f'{pkgUpdate}\n{pkgInstall}\n{pkgRemove}\n{pkgNotUpdate}'
+            sleep(1)
+            self.trayIcon.showMessage(header_soft,body_soft, QSystemTrayIcon.Information, 10000)
+        except:
+            pass
 
     def open_kernel_manager(self):
         """Открыть kernel manager"""
@@ -166,8 +191,16 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         if activ_manager: pass
         else: Popen("kernel-manager")
 
+def load_settings():
+    """Загрузка конфига"""
+    with open(FILE_CONFIG) as  f:
+        config = json.load(f)
+
+    return config
 
 if __name__ == '__main__':
+    FILE_CONFIG = pathConfig
+    CONFIG = load_settings()
     app = QtWidgets.QApplication(sys.argv)
     sys_tray = SystemTrayWindows()
     sys.exit(app.exec_())
