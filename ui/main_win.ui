@@ -34,7 +34,7 @@
    <string>Kernels management</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources.qrc">
+   <iconset>
     <normaloff>:/picture/icons/kernel-manager.png</normaloff>:/picture/icons/kernel-manager.png</iconset>
   </property>
   <property name="locale">
@@ -42,7 +42,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QTabWidget" name="Tab1">
       <property name="font">
        <font>
@@ -70,14 +70,48 @@
       </property>
       <widget class="QWidget" name="Tab1_Question">
        <attribute name="icon">
-        <iconset resource="../resources.qrc">
-         <normaloff>:/picture/icons/what.png</normaloff>:/picture/icons/what.png</iconset>
+        <iconset>
+         <normaloff>:/picture/icons/setting.png</normaloff>:/picture/icons/setting.png</iconset>
        </attribute>
        <attribute name="title">
         <string/>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
+        <item row="2" column="3">
+         <widget class="QSpinBox" name="spinBoxDayUpdate">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="toolTip">
+           <string>Interval between updates (days)</string>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="suffix">
+           <string> day</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>365</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="4">
          <widget class="QTextBrowser" name="text_Question">
           <property name="contextMenuPolicy">
            <enum>Qt::NoContextMenu</enum>
@@ -93,6 +127,102 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;The Remove Kernels button clears the system of all kernels except the current one. The currently active core cannot be removed.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Update kernel.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Automatically updates the kernel and modules to the newest version. The &amp;quot;Distribution&amp;quot; button updates the software to the current version. The repository list allows you to modify the branches of the repository.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QComboBox" name="comboBoxTimeStart">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="toolTip">
+           <string>Delayed check for updates &lt;br&gt;after system startup (in seconds)</string>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <item>
+           <property name="text">
+            <string>150</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>300</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>450</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>600</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>447</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="comboBoxStartService">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="toolTip">
+           <string>Starting and canceling the &lt;br&gt;update service when the computer boots</string>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="editable">
+           <bool>false</bool>
+          </property>
+          <property name="currentText">
+           <string>service enabled</string>
+          </property>
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+          </property>
+          <item>
+           <property name="text">
+            <string>service enabled</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>service disabled</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>
@@ -361,9 +491,27 @@ p, li { white-space: pre-wrap; }
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="1" column="0">
          <widget class="QPushButton" name="pushButton_KERN">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
-            <width>150</width>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
             <height>0</height>
            </size>
           </property>
@@ -413,6 +561,12 @@ p, li { white-space: pre-wrap; }
         </item>
         <item row="1" column="3">
          <widget class="QPushButton" name="pushButton_DISTR">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>150</width>
@@ -634,7 +788,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../resources.qrc">
+           <iconset>
             <normaloff>:/picture/icons/edit-paste-style.svg</normaloff>:/picture/icons/edit-paste-style.svg</iconset>
           </property>
           <property name="iconSize">
@@ -663,7 +817,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../resources.qrc">
+           <iconset>
             <normaloff>:/picture/icons/network-server-database.svg</normaloff>:/picture/icons/network-server-database.svg</iconset>
           </property>
           <property name="iconSize">

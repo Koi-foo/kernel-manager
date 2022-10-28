@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/picture">
         <file>icons/kernel-manager.png</file>
-        <file>icons/what.png</file>
+        <file>icons/setting.png</file>
         <file>icons/un.png</file>
         <file>icons/old.png</file>
         <file>icons/std.png</file>
