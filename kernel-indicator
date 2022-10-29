@@ -143,12 +143,12 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
                 pass
         except:
             while True:
-                if not shrun('pgrep -f kernel-service'):
+                if not shrun('pgrep -f "python3 /usr/bin/kernel-service"'):
                     break
                 sleep(150)
-        finally:
-            if self.config['service'] is False:
-                self.show_disabled_message()
+
+        if self.config['service'] is False:
+            self.show_disabled_message()
 
     def show_disabled_message(self):
         """Сообщение об отключении сервиса"""
@@ -160,18 +160,16 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
     def kern_show_message(self):
         """Показать сообщения ядра"""
-        try:
+        if self.config['version']!= False:
             kern = self.config['version']
             header_kern = _("Kernel update")
             body_kern = _("A new version of the kernel is available: ") + kern
             sleep(1)
             self.trayIcon.showMessage(header_kern,body_kern, QSystemTrayIcon.Information, 10000)
-        except:
-            pass
 
     def soft_show_message(self):
         """Показать сообщения софта"""
-        try:
+        if self.config['pkg'] != False:
             kern = self.config['version']
             header_soft = _("Software update")
             pkgUpdate = _("Packages to update: ") + self.config['pkg'][0]
@@ -181,8 +179,6 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
             body_soft = f'{pkgUpdate}\n{pkgInstall}\n{pkgRemove}\n{pkgNotUpdate}'
             sleep(1)
             self.trayIcon.showMessage(header_soft,body_soft, QSystemTrayIcon.Information, 10000)
-        except:
-            pass
 
     def open_kernel_manager(self):
         """Открыть kernel manager"""

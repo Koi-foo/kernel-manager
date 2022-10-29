@@ -1,6 +1,6 @@
 Name: kernel-manager
-Version: 1.8
-Release: alt2
+Version: 1.9
+Release: alt1
 
 License: LGPL-3.0-only
 Group: System/Base
@@ -10,16 +10,17 @@ Source0: %{name}-%{version}.tar
 
 BuildRequires: rpm-build-python3
 
-Requires: python3-base >= 3.7.0
+Requires: python3-base
 Requires: python3-module-PyQt5
 Requires: python3-module-gettext
+Requires: python3-module-requests
 Requires: update-kernel
 Requires: apt-repo
 Requires: apt-scripts
 
 Provides: oldproject = %{version}-%{release}
 BuildArch: noarch
-Obsoletes: oldproject <= 1.8
+Obsoletes: oldproject <= 1.9
 
 Summary: Kernel Manage - kernel update program
 Summary(ru_RU.UTF-8): Kernel Manage - программа обновления ядра
@@ -49,28 +50,38 @@ mkdir -p \
     %{buildroot}%{_bindir} \
     %{buildroot}%{_pixmapsdir} \
     %{buildroot}%{_datadir}/polkit-1/actions \
-    %{buildroot}/opt/kernel-manager/mod
+    %{buildroot}/opt/kernel-manager/mod \
+    %buildroot/%_initdir
 
 install -Dm644 kernel-*.desktop %{buildroot}%{_desktopdir}
 install -Dm755 kernel-manager %{buildroot}%{_bindir}
+install -Dm755 kernel-service %{buildroot}%{_bindir}
 install -Dm644 org.freedesktop.pkexec.kernel-manager.policy %{buildroot}%{_datadir}/polkit-1/actions
 
 install -Dm755 kernel_manager.py %{buildroot}/opt/kernel-manager
 install -Dm755 kernel-indicator %{buildroot}/opt/kernel-manager
 install -Dm644 resources.py %{buildroot}/opt/kernel-manager
 install -Dm755 mod/shell.py %{buildroot}/opt/kernel-manager/mod
+install -Dm755 mod/load_config.py %{buildroot}/opt/kernel-manager/mod
+install -Dm755 mod/create_desktop.py %{buildroot}/opt/kernel-manager/mod
+install -Dm755 service/kernel-service %{buildroot}/%_initdir/kernel-service
 cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
-install -Dm644 autostart-kernel-indicator.desktop %{buildroot}/opt/kernel-manager
+chmod 666 %{buildroot}/opt/kernel-manager/data/config.json
 
 %files
 %doc LICENSE README.md
 %{_desktopdir}/*.desktop
 /opt/kernel-manager
 %{_datadir}/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
-%{_bindir}/kernel-manager
+%{_bindir}/*
 %dir /opt/kernel-manager/data
+%_initdir/kernel-service
 
 %changelog
+* Sat Oct 29 2022 Evgeny Chuck <koi@altlinux.org> 1.9-alt1
+- New version 1.8
+- Update service added
+
 * Sat Feb 19 2022 Evgeny Chuck <koi@altlinux.org> 1.8-alt2
 - New version 1.8
 - Added information about the location of the autorun directory
