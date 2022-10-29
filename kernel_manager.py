@@ -94,7 +94,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def timeStart(self, value):
         """Установка время задержки старта"""
         self.config = loadConfig()
-        self.config['time'] = value
+        self.config['time'] = int(value)
         saveFileConfig(self.config)
 
 
@@ -108,10 +108,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Включение и выключение сервивы kernel-service"""
         self.config = loadConfig()
         if value:
-            shrun('chkconfig kernel-service on')
+            shrun('chkconfig kernel-service off')
             self.config['service'] = False
         else:
-            shrun('chkconfig kernel-service off')
+            shrun('chkconfig kernel-service on')
             self.config['service'] = True
         saveFileConfig(self.config)
 
@@ -451,9 +451,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             int(self.geometry().width()),
             int(self.geometry().height())]
         settings.setValue('window_main', win_main_size)
-
-        if self.config['service']:
-            shrun('/etc/init.d/kernel-service start')
 
 
     def window_size(self):

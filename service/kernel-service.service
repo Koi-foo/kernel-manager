@@ -1,0 +1,9 @@
+[Unit]
+Description=Kernel update indicator service for kernel-indicator
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kernel-service
+
+[Install]
+WantedBy=multi-user.target

@@ -6,7 +6,7 @@ import requests
 from platform import release
 from time import sleep
 from re import findall, search
-from os import path, chmod, access, R_OK
+from os import path, chmod
 from datetime import date
 from subprocess import run, PIPE
 
@@ -17,10 +17,11 @@ def update_cache():
         permission = date.fromtimestamp(path.getmtime(LOCK))
         difference = (current - permission).days
     except PermissionError:
-        pass
-    else:
-        if CONFIG['days'] >= difference:
-            shell('apt-get update')
+        exit(f'no access to file {LOCK}')
+
+    if difference >= CONFIG['days']:
+        shell('apt-get update')
+    else: exit()
 
 def update_packages():
     """Список пакетов для обновления"""
@@ -30,13 +31,16 @@ def update_packages():
     update = shell(command).splitlines()
 
     for item in update:
-        if len(packages) == 1:
-            break
-        if text in item:
-            packages.append(item)
-
+        if len(packages) == 1: break
+        if text in item: packages.append(item)
     packages = findall(r'[0-9]+', packages[0])
-    return packages
+
+    if not int(packages[0]) \
+        and not int(packages[1]) \
+        and not int(packages[2]) \
+        and not int(packages[3]):
+            CONFIG['pkg'] = False
+    else: CONFIG['pkg'] = packages
 
 def load_settings():
     """Загрузить настройки"""
@@ -56,7 +60,9 @@ def default_settings():
         'software': False,
         'days': 1,
         'start': False,
-        'service': False}
+        'service': False,
+        'pkg': False,
+        'version': False}
 
     save_settings(config)
 
@@ -78,18 +84,11 @@ def save_settings(content):
 
 def main():
     """Старт"""
-    if CONFIG['start']:
-        connection_test()
-        sleep(CONFIG['time'])
-        update_cache()
-
-        if CONFIG['kernel']:
-            version_kernel()
-
-        if CONFIG['software']:
-            CONFIG['pkg'] = update_packages()
-
-        save_settings(CONFIG)
+    connection_test()
+    update_cache()
+    if CONFIG['kernel']: version_kernel()
+    if CONFIG['pkg']: update_packages()
+    save_settings(CONFIG)
 
 def version_kernel():
     """Проверка версии ядра"""
@@ -103,22 +102,21 @@ def version_kernel():
         if int(act[0]) > int(new[0]): new[0] = act[0]
         if int(act[1]) > int(new[1]): new[1] = act[1]
         if int(act[2]) > int(new[2]): new[2] = act[2]
+    new_version = ".".join(new)
 
-    CONFIG['version'] = ".".join(new)
+    if current == new_version: CONFIG['version'] = False
+    else: CONFIG['version'] = new_version
 
 def connection_test():
     """Тест интернета"""
     try:
         requests.head('https://duckduckgo.com')
     except:
-        print('Your internet is dead :-D')
-        exit()
+        exit('Your internet is dead :-D')
 
 if __name__ == '__main__':
     FILE_CONFIG = '/opt/kernel-manager/data/config.json'
     LOCK = '/var/lib/apt/lists/lock'
-    if access(LOCK, R_OK):
-        CONFIG = load_settings()
-        main()
-    else: exit()
+    CONFIG = load_settings()
+    main()
 

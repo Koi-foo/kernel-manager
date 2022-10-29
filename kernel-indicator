@@ -10,7 +10,7 @@ import json
 from subprocess import Popen
 from mod.shell import shrun
 from mod.create_desktop import autostart_desktop
-from mod.load_config import pathConfig
+from mod.load_config import pathConfig, loadConfig
 from pathlib import Path
 from time import sleep
 # PyQt
@@ -35,7 +35,6 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         # Значок трея
         self.trayIcon = QSystemTrayIcon(self)
         self.trayIcon.setIcon(QIcon(":/picture/icons/kernel-manager.png"))
-        self.trayIcon.setVisible(True)
         self.trayIcon.setToolTip(_("Kernel update indicator"))
 
         # Сигналы
@@ -75,7 +74,8 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         software_update.setChecked(self.config['software'])
 
         self.trayIcon.setContextMenu(tray_menu)
-        self.wait_service()
+        self.trayIcon.setVisible(True)
+        self.show_disabled_message()
 
         self.check_kernel(check=kern_update.isChecked())
         self.check_soft(check=software_update.isChecked())
@@ -136,53 +136,33 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
         self.save_settings()
 
-    def wait_service(self):
-        """Ждём окончания работы сервиса"""
-        try:
-            if sys.argv[1] == '--show':
-                pass
-        except:
-            while True:
-                if not shrun('pgrep -f kernel-service'):
-                    break
-                sleep(150)
-        finally:
-            if self.config['service'] is False:
-                self.show_disabled_message()
-
     def show_disabled_message(self):
         """Сообщение об отключении сервиса"""
-        header = _("Update service")
-        body = _("The update service is disabled. Enable the service \
-            in the kernel-manager settings. Without the service enabled, \
-            the indicator will not work.")
-        self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
+        if self.config['service'] is False:
+            header = _("Update service")
+            body = _("The update service is disabled. Enable the service \
+                in the kernel-manager settings. Without the service enabled, \
+                the indicator will not work.")
+            self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
 
     def kern_show_message(self):
         """Показать сообщения ядра"""
-        try:
+        if self.config['version']!= False:
             kern = self.config['version']
             header_kern = _("Kernel update")
             body_kern = _("A new version of the kernel is available: ") + kern
-            sleep(1)
-            self.trayIcon.showMessage(header_kern,body_kern, QSystemTrayIcon.Information, 10000)
-        except:
-            pass
+            self.trayIcon.showMessage(header_kern,body_kern, QSystemTrayIcon.Information, 20000)
 
     def soft_show_message(self):
         """Показать сообщения софта"""
-        try:
-            kern = self.config['version']
+        if self.config['pkg'] != False:
             header_soft = _("Software update")
             pkgUpdate = _("Packages to update: ") + self.config['pkg'][0]
             pkgInstall = _('Newly installed: ') + self.config['pkg'][1]
             pkgRemove = _('For removing: ') + self.config['pkg'][2]
             pkgNotUpdate = _('Will not be updated: ') + self.config['pkg'][3]
             body_soft = f'{pkgUpdate}\n{pkgInstall}\n{pkgRemove}\n{pkgNotUpdate}'
-            sleep(1)
-            self.trayIcon.showMessage(header_soft,body_soft, QSystemTrayIcon.Information, 10000)
-        except:
-            pass
+            self.trayIcon.showMessage(header_soft,body_soft, QSystemTrayIcon.Information, 20000)
 
     def open_kernel_manager(self):
         """Открыть kernel manager"""
@@ -191,16 +171,24 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         if activ_manager: pass
         else: Popen("kernel-manager")
 
-def load_settings():
-    """Загрузка конфига"""
-    with open(FILE_CONFIG) as  f:
-        config = json.load(f)
+def wait_service():
+    """Ждём окончания работы сервиса"""
+    try:
+        if sys.argv[1] == '--show':
+            pass
+    except:
+        while True:
+            if not shrun('pgrep -f "python3 /usr/bin/kernel-service"'):
+                break
+            sleep(CONFIG['time'])
 
-    return config
+        if not CONFIG['version'] and not CONFIG['pkg']:
+            exit()
 
 if __name__ == '__main__':
     FILE_CONFIG = pathConfig
-    CONFIG = load_settings()
+    CONFIG = loadConfig()
+    wait_service()
     app = QtWidgets.QApplication(sys.argv)
     sys_tray = SystemTrayWindows()
     sys.exit(app.exec_())

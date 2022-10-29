@@ -34,5 +34,7 @@ def createConfigFile():
         'software': False,
         'days': 1,
         'start': False,
-        'service': False}
+        'service': False,
+        'pkg': False,
+        'version': False}
     return configFile
