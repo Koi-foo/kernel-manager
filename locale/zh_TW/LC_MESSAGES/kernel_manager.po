@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-10-28 21:53+0300\n"
-"PO-Revision-Date: 2022-10-28 22:50+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"PO-Revision-Date: 2022-10-31 20:40+0700\n"
+"Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +32,11 @@ msgstr "內核管理"
 
 #: form/main_win.py:317
 msgid "Interval between updates (days)"
-msgstr ""
+msgstr "更新間隔（天）"
 
 #: form/main_win.py:318
 msgid " day"
-msgstr ""
+msgstr " 日"
 
 #: form/main_win.py:319
 msgid ""
@@ -116,35 +116,35 @@ msgstr ""
 
 #: form/main_win.py:328
 msgid "Delayed check for updates <br>after system startup (in seconds)"
-msgstr ""
+msgstr "系統啟動後延遲檢查更新 <br>（以秒為單位）"
 
 #: form/main_win.py:329
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: form/main_win.py:330
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: form/main_win.py:331
 msgid "450"
-msgstr ""
+msgstr "450"
 
 #: form/main_win.py:332
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: form/main_win.py:333
 msgid "Starting and canceling the <br>update service when the computer boots"
-msgstr ""
+msgstr "在計算機啟動時啟動和取消 <br>更新服務"
 
 #: form/main_win.py:334 form/main_win.py:335
 msgid "service enabled"
-msgstr ""
+msgstr "啟用服務"
 
 #: form/main_win.py:336
 msgid "service disabled"
-msgstr ""
+msgstr "服務已禁用"
 
 #: form/main_win.py:337
 msgid "Change flavor type"
@@ -226,7 +226,7 @@ msgstr ""
 
 #: form/main_win.py:349
 msgid "Change of kernels"
-msgstr "換仁"
+msgstr "內核的變化"
 
 #: form/main_win.py:351
 msgid ""
@@ -482,10 +482,8 @@ msgid "Set autoload"
 msgstr "設置自動加載"
 
 #: kernel-indicator:56
-#, fuzzy
-#| msgid "Kernel update"
 msgid "Show kernel update"
-msgstr "內核更新"
+msgstr "顯示內核更新"
 
 #: kernel-indicator:59
 msgid "Show updates"
@@ -496,45 +494,40 @@ msgid "Autostart directory:"
 msgstr "自動啟動目錄："
 
 #: kernel-indicator:154
-#, fuzzy
-#| msgid "Update kernel"
 msgid "Update service"
-msgstr "更新內核"
+msgstr "更新服務"
 
 #: kernel-indicator:155
 msgid ""
 "The update service is disabled. Enable the service             in the kernel-"
 "manager settings. Without the service enabled,             the indicator "
 "will not work."
-msgstr ""
+msgstr "更新服務被禁用。 在內核管理器設置中啟用該服務。" 
+"沒有啟用該服務，該指示器將無法工作。"
 
 #: kernel-indicator:165
 msgid "A new version of the kernel is available: "
 msgstr "有一個新版本的內核可用： "
 
 #: kernel-indicator:175
-#, fuzzy
-#| msgid "Show updates"
 msgid "Software update"
-msgstr "顯示更新"
+msgstr "軟件更新"
 
 #: kernel-indicator:176
 msgid "Packages to update: "
-msgstr ""
+msgstr "要更新的軟件包： "
 
 #: kernel-indicator:177
-#, fuzzy
-#| msgid "All installed modules"
 msgid "Newly installed: "
-msgstr "所有已安裝的模塊"
+msgstr "新安裝的： "
 
 #: kernel-indicator:178
 msgid "For removing: "
-msgstr ""
+msgstr "對於刪除： "
 
 #: kernel-indicator:179
 msgid "Will not be updated: "
-msgstr ""
+msgstr "不會更新： "
 
 #: kernel_manager.py:145
 msgid "Updating cache wait for completion ..."
