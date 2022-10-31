@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-10-28 21:53+0300\n"
-"PO-Revision-Date: 2022-10-31 21:08+0700\n"
+"POT-Creation-Date: 2022-10-31 20:10+0300\n"
+"PO-Revision-Date: 2022-10-31 20:20+0300\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: hi_IN\n"
@@ -265,7 +265,7 @@ msgstr "गुठली निकाल दें"
 msgid "Removing kernels"
 msgstr "गुठली निकालना"
 
-#: form/main_win.py:364 kernel-indicator:164 kernel_manager.py:626
+#: form/main_win.py:364 kernel-indicator:150 kernel_manager.py:623
 msgid "Kernel update"
 msgstr "कर्नेल अद्यतन"
 
@@ -324,7 +324,7 @@ msgstr ""
 "%D0%BE%D0%B5_Sisyphus%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, ध्यान से इसका वर्णन पढ़ें।</p></body></html>"
 
-#: form/main_win.py:374 kernel_manager.py:590
+#: form/main_win.py:374 kernel_manager.py:587
 msgid "Distribution update"
 msgstr "वितरण अद्यतन"
 
@@ -440,43 +440,47 @@ msgstr "कर्नेल अपडेट दिखाएं"
 msgid "Show updates"
 msgstr "अपडेट दिखाएं"
 
-#: kernel-indicator:94
+#: kernel-indicator:95
 msgid "Autostart directory:"
 msgstr "ऑटो-स्टार्ट निर्देशिका:"
 
-#: kernel-indicator:154
+#: kernel-indicator:142
 msgid "Update service"
 msgstr "अद्यतन सेवा"
 
-#: kernel-indicator:155
+#: kernel-indicator:143
+#, fuzzy
+#| msgid ""
+#| "The update service is disabled. Enable the service             in the kernel-manager "
+#| "settings. Without the service enabled,             the indicator will not work."
 msgid ""
-"The update service is disabled. Enable the service             in the kernel-manager settings. "
-"Without the service enabled,             the indicator will not work."
+"The update service is disabled. Enable the service in the kernel-manager settings. Without the "
+"service enabled, the indicator will not work."
 msgstr ""
-"अद्यतन सेवा अक्षम है। कर्नेल-प्रबंधक सेटिंग्स             में सेवा को सक्षम करें। "
-"सेवा सक्षम किए बिना,             संकेतक काम नहीं करेगा।"
+"अद्यतन सेवा अक्षम है। कर्नेल-प्रबंधक सेटिंग्स             में सेवा को सक्षम करें। सेवा सक्षम किए बिना,             "
+"संकेतक काम नहीं करेगा।"
 
-#: kernel-indicator:165
+#: kernel-indicator:151
 msgid "A new version of the kernel is available: "
 msgstr "एक नया कर्नेल संस्करण उपलब्ध है: "
 
-#: kernel-indicator:175
+#: kernel-indicator:157
 msgid "Software update"
 msgstr "सॉफ्टवेयर अपडेट"
 
-#: kernel-indicator:176
+#: kernel-indicator:158
 msgid "Packages to update: "
 msgstr "अद्यतन करने के लिए पैकेज: "
 
-#: kernel-indicator:177
+#: kernel-indicator:159
 msgid "Newly installed: "
 msgstr "नव स्थापित: "
 
-#: kernel-indicator:178
+#: kernel-indicator:160
 msgid "For removing: "
 msgstr "हटाने के लिए: "
 
-#: kernel-indicator:179
+#: kernel-indicator:161
 msgid "Will not be updated: "
 msgstr "अपडेट नहीं होगा: "
 
@@ -544,15 +548,15 @@ msgstr "चयनित मॉड्यूल निकालें"
 msgid "Module information"
 msgstr "मॉड्यूल जानकारी"
 
-#: kernel_manager.py:469
+#: kernel_manager.py:466
 msgid "Rebuild rpm database?"
 msgstr "rpm डेटाबेस का पुनर्निर्माण करें?"
 
-#: kernel_manager.py:474
+#: kernel_manager.py:471
 msgid "rpm database recovery"
 msgstr "rpm डेटाबेस रिकवरी"
 
-#: kernel_manager.py:482
+#: kernel_manager.py:479
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the OS for a long time, "
 "then the likelihood of removing the necessary packages increases. Continue?"
@@ -560,55 +564,55 @@ msgstr ""
 "एक ताजा ओएस की सफाई के लिए उपयोग करने की सिफारिश की जाती है। यदि आप लंबे समय से ओएस का उपयोग कर रहे हैं, "
 "तो आवश्यक पैकेजों को हटाने की संभावना बढ़ जाती है। जारी रखें?"
 
-#: kernel_manager.py:490
+#: kernel_manager.py:487
 msgid "Removing unnecessary dependencies"
 msgstr "अनावश्यक निर्भरता को हटाना"
 
-#: kernel_manager.py:502
+#: kernel_manager.py:499
 msgid "Set default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करें"
 
-#: kernel_manager.py:508
+#: kernel_manager.py:505
 msgid "Setting the default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करना"
 
-#: kernel_manager.py:539
+#: kernel_manager.py:536
 msgid "Remove"
 msgstr "हटाना"
 
-#: kernel_manager.py:559
+#: kernel_manager.py:556
 msgid "Installation"
 msgstr "स्थापना"
 
-#: kernel_manager.py:570
+#: kernel_manager.py:567
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "Sisyphus रिपॉजिटरी से un-def कर्नेल स्थापित करें?"
 
-#: kernel_manager.py:601
+#: kernel_manager.py:598
 msgid "Removing old kernels"
 msgstr "पुरानी गुठली निकालना"
 
-#: kernel_manager.py:613
+#: kernel_manager.py:610
 msgid "Cleaning apt-cache"
 msgstr "सफाई apt-कैश"
 
-#: kernel_manager.py:685
+#: kernel_manager.py:682
 msgid "Process started, please wait ..."
 msgstr "प्रक्रिया शुरू हो गई है, प्रतीक्षा करें ..."
 
-#: kernel_manager.py:687
+#: kernel_manager.py:684
 msgid "Completed successfully"
 msgstr "सफलतापूर्वक पूरा"
 
-#: kernel_manager.py:688
+#: kernel_manager.py:685
 msgid "The process is complete. You can close the window."
 msgstr "प्रक्रिया पूरी हो गई है, आप विंडो को बंद कर सकते हैं."
 
-#: kernel_manager.py:718
+#: kernel_manager.py:715
 msgid "Close"
 msgstr "बंद करे"
 
-#: kernel_manager.py:719
+#: kernel_manager.py:716
 msgid "Close a window"
 msgstr "एक खिड़की बंद करो"
 

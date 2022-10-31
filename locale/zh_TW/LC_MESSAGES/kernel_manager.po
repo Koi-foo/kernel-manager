@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-10-28 21:53+0300\n"
-"PO-Revision-Date: 2022-10-31 20:40+0700\n"
+"POT-Creation-Date: 2022-10-31 20:10+0300\n"
+"PO-Revision-Date: 2022-10-31 20:20+0300\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
@@ -300,7 +300,7 @@ msgstr "刪除內核"
 msgid "Removing kernels"
 msgstr "開始刪除內核"
 
-#: form/main_win.py:364 kernel-indicator:164 kernel_manager.py:626
+#: form/main_win.py:364 kernel-indicator:150 kernel_manager.py:623
 msgid "Kernel update"
 msgstr "內核更新"
 
@@ -369,7 +369,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, 請"
 "仔細閱讀其說明。</p></body></html>"
 
-#: form/main_win.py:374 kernel_manager.py:590
+#: form/main_win.py:374 kernel_manager.py:587
 msgid "Distribution update"
 msgstr "發行更新"
 
@@ -489,43 +489,48 @@ msgstr "顯示內核更新"
 msgid "Show updates"
 msgstr "顯示更新"
 
-#: kernel-indicator:94
+#: kernel-indicator:95
 msgid "Autostart directory:"
 msgstr "自動啟動目錄："
 
-#: kernel-indicator:154
+#: kernel-indicator:142
 msgid "Update service"
 msgstr "更新服務"
 
-#: kernel-indicator:155
+#: kernel-indicator:143
+#, fuzzy
+#| msgid ""
+#| "The update service is disabled. Enable the service             in the "
+#| "kernel-manager settings. Without the service enabled,             the "
+#| "indicator will not work."
 msgid ""
-"The update service is disabled. Enable the service             in the kernel-"
-"manager settings. Without the service enabled,             the indicator "
-"will not work."
-msgstr "更新服務被禁用。 在內核管理器設置中啟用該服務。" 
-"沒有啟用該服務，該指示器將無法工作。"
+"The update service is disabled. Enable the service in the kernel-manager "
+"settings. Without the service enabled, the indicator will not work."
+msgstr ""
+"更新服務被禁用。 在內核管理器設置中啟用該服務。沒有啟用該服務，該指示器將無法"
+"工作。"
 
-#: kernel-indicator:165
+#: kernel-indicator:151
 msgid "A new version of the kernel is available: "
 msgstr "有一個新版本的內核可用： "
 
-#: kernel-indicator:175
+#: kernel-indicator:157
 msgid "Software update"
 msgstr "軟件更新"
 
-#: kernel-indicator:176
+#: kernel-indicator:158
 msgid "Packages to update: "
 msgstr "要更新的軟件包： "
 
-#: kernel-indicator:177
+#: kernel-indicator:159
 msgid "Newly installed: "
 msgstr "新安裝的： "
 
-#: kernel-indicator:178
+#: kernel-indicator:160
 msgid "For removing: "
 msgstr "對於刪除： "
 
-#: kernel-indicator:179
+#: kernel-indicator:161
 msgid "Will not be updated: "
 msgstr "不會更新： "
 
@@ -593,15 +598,15 @@ msgstr "移除所選模塊"
 msgid "Module information"
 msgstr "模塊信息"
 
-#: kernel_manager.py:469
+#: kernel_manager.py:466
 msgid "Rebuild rpm database?"
 msgstr "重建 rpm 數據庫？"
 
-#: kernel_manager.py:474
+#: kernel_manager.py:471
 msgid "rpm database recovery"
 msgstr "rpm 數據庫恢復"
 
-#: kernel_manager.py:482
+#: kernel_manager.py:479
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -610,55 +615,55 @@ msgstr ""
 "建議用於清潔新的操作系統。 如果您已經使用該操作系統很長時間，那麼刪除必要軟件"
 "包的可能性就會增加。繼續？"
 
-#: kernel_manager.py:490
+#: kernel_manager.py:487
 msgid "Removing unnecessary dependencies"
 msgstr "刪除不必要的依賴"
 
-#: kernel_manager.py:502
+#: kernel_manager.py:499
 msgid "Set default kernel boot"
 msgstr "設置默認的內核啟動"
 
-#: kernel_manager.py:508
+#: kernel_manager.py:505
 msgid "Setting the default kernel boot"
 msgstr "設置默認的內核啟動"
 
-#: kernel_manager.py:539
+#: kernel_manager.py:536
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:559
+#: kernel_manager.py:556
 msgid "Installation"
 msgstr "安裝"
 
-#: kernel_manager.py:570
+#: kernel_manager.py:567
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "從 Sisyphus 存儲庫安裝 un-def 內核？"
 
-#: kernel_manager.py:601
+#: kernel_manager.py:598
 msgid "Removing old kernels"
 msgstr "刪除舊內核"
 
-#: kernel_manager.py:613
+#: kernel_manager.py:610
 msgid "Cleaning apt-cache"
 msgstr "清除 apt-cache"
 
-#: kernel_manager.py:685
+#: kernel_manager.py:682
 msgid "Process started, please wait ..."
 msgstr "程序已啟動，請稍候..."
 
-#: kernel_manager.py:687
+#: kernel_manager.py:684
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:688
+#: kernel_manager.py:685
 msgid "The process is complete. You can close the window."
 msgstr "該過程完成後，可以關閉窗口。"
 
-#: kernel_manager.py:718
+#: kernel_manager.py:715
 msgid "Close"
 msgstr "閉"
 
-#: kernel_manager.py:719
+#: kernel_manager.py:716
 msgid "Close a window"
 msgstr "關閉一個窗口"
 

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-10-28 21:53+0300\n"
-"PO-Revision-Date: 2022-10-28 22:48+0300\n"
+"POT-Creation-Date: 2022-10-31 20:10+0300\n"
+"PO-Revision-Date: 2022-10-31 20:21+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -319,7 +319,7 @@ msgstr "Κατάργηση (πυρήνων) kernels"
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:364 kernel-indicator:164 kernel_manager.py:626
+#: form/main_win.py:364 kernel-indicator:150 kernel_manager.py:623
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
@@ -395,7 +395,7 @@ msgstr ""
 "%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, διαβάστε προσεκτικά την περιγραφή του.</p></body></html>"
 
-#: form/main_win.py:374 kernel_manager.py:590
+#: form/main_win.py:374 kernel_manager.py:587
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
@@ -523,48 +523,47 @@ msgstr "Ενημέρωση (πυρήνα) kernel"
 msgid "Show updates"
 msgstr "Εμφάνιση ενημερώσεων"
 
-#: kernel-indicator:94
+#: kernel-indicator:95
 msgid "Autostart directory:"
 msgstr "Κατάλογος αυτόματης εκκίνησης:"
 
-#: kernel-indicator:154
+#: kernel-indicator:142
 #, fuzzy
 #| msgid "Update kernel"
 msgid "Update service"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
-#: kernel-indicator:155
+#: kernel-indicator:143
 msgid ""
-"The update service is disabled. Enable the service             in the kernel-"
-"manager settings. Without the service enabled,             the indicator "
-"will not work."
+"The update service is disabled. Enable the service in the kernel-manager "
+"settings. Without the service enabled, the indicator will not work."
 msgstr ""
 
-#: kernel-indicator:165
+#: kernel-indicator:151
 msgid "A new version of the kernel is available: "
 msgstr "Μια νέα έκδοση του πυρήνα είναι διαθέσιμη "
 
-#: kernel-indicator:175
+#: kernel-indicator:157
 #, fuzzy
 #| msgid "Show updates"
 msgid "Software update"
 msgstr "Εμφάνιση ενημερώσεων"
 
-#: kernel-indicator:176
+#: kernel-indicator:158
 msgid "Packages to update: "
 msgstr ""
 
-#: kernel-indicator:177
+#: kernel-indicator:159
 #, fuzzy
 #| msgid "All installed modules"
 msgid "Newly installed: "
 msgstr "Όλες οι εγκατεστημένες λειτουργικές μονάδες"
 
-#: kernel-indicator:178
+#: kernel-indicator:160
 msgid "For removing: "
 msgstr ""
 
-#: kernel-indicator:179
+#: kernel-indicator:161
 msgid "Will not be updated: "
 msgstr ""
 
@@ -632,15 +631,15 @@ msgstr "Κατάργηση της επιλεγμένης μονάδας (πυρ�
 msgid "Module information"
 msgstr "Πληροφορίες Μονάδας (Πυρήνα-kernel)"
 
-#: kernel_manager.py:469
+#: kernel_manager.py:466
 msgid "Rebuild rpm database?"
 msgstr "Ανακατασκευή βάσης δεδομένων rpm;"
 
-#: kernel_manager.py:474
+#: kernel_manager.py:471
 msgid "rpm database recovery"
 msgstr "-Ανάκτηση βάσης δεδομένων rpm"
 
-#: kernel_manager.py:482
+#: kernel_manager.py:479
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -651,55 +650,55 @@ msgstr ""
 "διάστημα, τότε αυξάνεται η πιθανότητα κατάργησης των απαραίτητων πακέτων. Να "
 "συνεχίσω;"
 
-#: kernel_manager.py:490
+#: kernel_manager.py:487
 msgid "Removing unnecessary dependencies"
 msgstr "Κατάργηση περιττών εξαρτήσεων"
 
-#: kernel_manager.py:502
+#: kernel_manager.py:499
 msgid "Set default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα \\(kernel\\)"
 
-#: kernel_manager.py:508
+#: kernel_manager.py:505
 msgid "Setting the default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα (kernel)"
 
-#: kernel_manager.py:539
+#: kernel_manager.py:536
 msgid "Remove"
 msgstr "Κατάργηση"
 
-#: kernel_manager.py:559
+#: kernel_manager.py:556
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: kernel_manager.py:570
+#: kernel_manager.py:567
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "Εγκαταστήστε τον πυρήνα un-def από το αποθετήριο Sisyphus;"
 
-#: kernel_manager.py:601
+#: kernel_manager.py:598
 msgid "Removing old kernels"
 msgstr "Κατάργηση παλαιών (πυρήνων) kernels"
 
-#: kernel_manager.py:613
+#: kernel_manager.py:610
 msgid "Cleaning apt-cache"
 msgstr "Καθάρισμα apt-cache"
 
-#: kernel_manager.py:685
+#: kernel_manager.py:682
 msgid "Process started, please wait ..."
 msgstr "Η διεργασία ξεκίνησε,περιμενετε..."
 
-#: kernel_manager.py:687
+#: kernel_manager.py:684
 msgid "Completed successfully"
 msgstr "Ολοκληρώθηκε επιτυχώς"
 
-#: kernel_manager.py:688
+#: kernel_manager.py:685
 msgid "The process is complete. You can close the window."
 msgstr "Η διεργασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παράθυρο."
 
-#: kernel_manager.py:718
+#: kernel_manager.py:715
 msgid "Close"
 msgstr "Κλείσε"
 
-#: kernel_manager.py:719
+#: kernel_manager.py:716
 msgid "Close a window"
 msgstr "Κλείστε ένα παράθυρο"
 
