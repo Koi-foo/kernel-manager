@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-10-28 21:53+0300\n"
-"PO-Revision-Date: 2022-10-28 22:49+0300\n"
-"Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
+"PO-Revision-Date: 2022-10-31 21:08+0700\n"
+"Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: hi_IN\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +32,11 @@ msgstr "कर्नेल प्रबंधन"
 
 #: form/main_win.py:317
 msgid "Interval between updates (days)"
-msgstr ""
+msgstr "अपडेट के बीच अंतराल (दिन)"
 
 #: form/main_win.py:318
 msgid " day"
-msgstr ""
+msgstr " दिन"
 
 #: form/main_win.py:319
 msgid ""
@@ -103,35 +103,35 @@ msgstr ""
 
 #: form/main_win.py:328
 msgid "Delayed check for updates <br>after system startup (in seconds)"
-msgstr ""
+msgstr "अपडेट के लिए विलंबित जांच <br>सिस्टम स्टार्टअप के बाद (सेकंड में)"
 
 #: form/main_win.py:329
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: form/main_win.py:330
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: form/main_win.py:331
 msgid "450"
-msgstr ""
+msgstr "450"
 
 #: form/main_win.py:332
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: form/main_win.py:333
 msgid "Starting and canceling the <br>update service when the computer boots"
-msgstr ""
+msgstr "कंप्यूटर के बूट होने पर <br>अपडेट सेवा शुरू करना और रद्द करना"
 
 #: form/main_win.py:334 form/main_win.py:335
 msgid "service enabled"
-msgstr ""
+msgstr "सेवा सक्षम"
 
 #: form/main_win.py:336
 msgid "service disabled"
-msgstr ""
+msgstr "सेवा अक्षम"
 
 #: form/main_win.py:337
 msgid "Change flavor type"
@@ -433,10 +433,8 @@ msgid "Set autoload"
 msgstr "ऑटोलोड सेट करें"
 
 #: kernel-indicator:56
-#, fuzzy
-#| msgid "Kernel update"
 msgid "Show kernel update"
-msgstr "कर्नेल अद्यतन"
+msgstr "कर्नेल अपडेट दिखाएं"
 
 #: kernel-indicator:59
 msgid "Show updates"
@@ -447,44 +445,40 @@ msgid "Autostart directory:"
 msgstr "ऑटो-स्टार्ट निर्देशिका:"
 
 #: kernel-indicator:154
-#, fuzzy
-#| msgid "Update kernel"
 msgid "Update service"
-msgstr "अद्यतन कर्नेल"
+msgstr "अद्यतन सेवा"
 
 #: kernel-indicator:155
 msgid ""
 "The update service is disabled. Enable the service             in the kernel-manager settings. "
 "Without the service enabled,             the indicator will not work."
 msgstr ""
+"अद्यतन सेवा अक्षम है। कर्नेल-प्रबंधक सेटिंग्स             में सेवा को सक्षम करें। "
+"सेवा सक्षम किए बिना,             संकेतक काम नहीं करेगा।"
 
 #: kernel-indicator:165
 msgid "A new version of the kernel is available: "
 msgstr "एक नया कर्नेल संस्करण उपलब्ध है: "
 
 #: kernel-indicator:175
-#, fuzzy
-#| msgid "Show updates"
 msgid "Software update"
-msgstr "अपडेट दिखाएं"
+msgstr "सॉफ्टवेयर अपडेट"
 
 #: kernel-indicator:176
 msgid "Packages to update: "
-msgstr ""
+msgstr "अद्यतन करने के लिए पैकेज: "
 
 #: kernel-indicator:177
-#, fuzzy
-#| msgid "All installed modules"
 msgid "Newly installed: "
-msgstr "सभी स्थापित मॉड्यूल"
+msgstr "नव स्थापित: "
 
 #: kernel-indicator:178
 msgid "For removing: "
-msgstr ""
+msgstr "हटाने के लिए: "
 
 #: kernel-indicator:179
 msgid "Will not be updated: "
-msgstr ""
+msgstr "अपडेट नहीं होगा: "
 
 #: kernel_manager.py:145
 msgid "Updating cache wait for completion ..."
