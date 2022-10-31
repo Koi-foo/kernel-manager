@@ -32,11 +32,11 @@ msgstr "内核管理"
 
 #: form/main_win.py:317
 msgid "Interval between updates (days)"
-msgstr ""
+msgstr "更新间隔（天）"
 
 #: form/main_win.py:318
 msgid " day"
-msgstr ""
+msgstr " 日"
 
 #: form/main_win.py:319
 msgid ""
@@ -115,35 +115,35 @@ msgstr ""
 
 #: form/main_win.py:328
 msgid "Delayed check for updates <br>after system startup (in seconds)"
-msgstr ""
+msgstr "系统启动后延迟检查更新 <br>（以秒为单位）"
 
 #: form/main_win.py:329
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: form/main_win.py:330
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: form/main_win.py:331
 msgid "450"
-msgstr ""
+msgstr "450"
 
 #: form/main_win.py:332
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: form/main_win.py:333
 msgid "Starting and canceling the <br>update service when the computer boots"
-msgstr ""
+msgstr "在计算机启动时启动和取消 <br>更新服务"
 
 #: form/main_win.py:334 form/main_win.py:335
 msgid "service enabled"
-msgstr ""
+msgstr "启用服务"
 
 #: form/main_win.py:336
 msgid "service disabled"
-msgstr ""
+msgstr "服务已禁用"
 
 #: form/main_win.py:337
 msgid "Change flavor type"
@@ -481,10 +481,8 @@ msgid "Set autoload"
 msgstr "设置自动加载"
 
 #: kernel-indicator:56
-#, fuzzy
-#| msgid "Kernel update"
 msgid "Show kernel update"
-msgstr "内核更新"
+msgstr "显示内核更新"
 
 #: kernel-indicator:59
 msgid "Show updates"
@@ -495,45 +493,40 @@ msgid "Autostart directory:"
 msgstr "自动启动目录："
 
 #: kernel-indicator:154
-#, fuzzy
-#| msgid "Update kernel"
 msgid "Update service"
-msgstr "更新内核"
+msgstr "更新服务"
 
 #: kernel-indicator:155
 msgid ""
 "The update service is disabled. Enable the service             in the kernel-"
 "manager settings. Without the service enabled,             the indicator "
 "will not work."
-msgstr ""
+msgstr "更新服务被禁用。 在内核管理器设置中启用该服务。 
+"没有启用该服务，该指示器将无法工作。"
 
 #: kernel-indicator:165
 msgid "A new version of the kernel is available: "
 msgstr "有一个新版本的内核可用： "
 
 #: kernel-indicator:175
-#, fuzzy
-#| msgid "Show updates"
 msgid "Software update"
-msgstr "显示更新"
+msgstr "软件更新"
 
 #: kernel-indicator:176
 msgid "Packages to update: "
-msgstr ""
+msgstr "要更新的软件包： "
 
 #: kernel-indicator:177
-#, fuzzy
-#| msgid "All installed modules"
 msgid "Newly installed: "
-msgstr "所有已安装的模块"
+msgstr "新安装的： "
 
 #: kernel-indicator:178
 msgid "For removing: "
-msgstr ""
+msgstr "对于删除： "
 
 #: kernel-indicator:179
 msgid "Will not be updated: "
-msgstr ""
+msgstr "不会更新： "
 
 #: kernel_manager.py:145
 msgid "Updating cache wait for completion ..."
