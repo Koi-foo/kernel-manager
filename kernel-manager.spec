@@ -6,7 +6,7 @@ License: LGPL-3.0-only
 Group: System/Base
 Url: https://github.com/Koi-foo/kernel-manager
 Packager: Koi <eg.evgeniy at gmail.com>
-Source0: %{name}-%{version}.tar
+Source0: %name-%version.tar
 
 BuildRequires: rpm-build-python3
 
@@ -18,7 +18,7 @@ Requires: update-kernel
 Requires: apt-repo
 Requires: apt-scripts
 
-Provides: oldproject = %{version}-%{release}
+Provides: oldproject = %version-%release
 BuildArch: noarch
 Obsoletes: oldproject <= 1.9
 
@@ -46,41 +46,44 @@ clean the file storage, update the distribution.
 
 %install
 mkdir -p \
-    %{buildroot}%{_desktopdir} \
-    %{buildroot}%{_bindir} \
-    %{buildroot}%{_pixmapsdir} \
-    %{buildroot}%{_datadir}/polkit-1/actions \
-    %{buildroot}/opt/kernel-manager/mod \
+    %buildroot%_desktopdir \
+    %buildroot%_bindir \
+    %buildroot%_pixmapsdir \
+    %buildroot%_datadir/polkit-1/actions \
+    %buildroot/opt/kernel-manager/mod \
     %buildroot/%_initdir
 
-install -Dm644 kernel-*.desktop %{buildroot}%{_desktopdir}
-install -Dm755 kernel-manager %{buildroot}%{_bindir}
-install -Dm755 kernel-service %{buildroot}%{_bindir}
-install -Dm644 org.freedesktop.pkexec.kernel-manager.policy %{buildroot}%{_datadir}/polkit-1/actions
+install -Dm644 kernel-*.desktop %buildroot%_desktopdir
+install -Dm755 kernel-manager %buildroot%_bindir
+install -Dm755 kernel-service %buildroot%_bindir
+install -Dm644 org.freedesktop.pkexec.kernel-manager.policy %buildroot%_datadir/polkit-1/actions
 
-install -Dm755 kernel_manager.py %{buildroot}/opt/kernel-manager
-install -Dm755 kernel-indicator %{buildroot}/opt/kernel-manager
-install -Dm644 resources.py %{buildroot}/opt/kernel-manager
-install -Dm755 mod/shell.py %{buildroot}/opt/kernel-manager/mod
-install -Dm755 mod/load_config.py %{buildroot}/opt/kernel-manager/mod
-install -Dm755 mod/create_desktop.py %{buildroot}/opt/kernel-manager/mod
-install -Dm755 service/kernel-service %{buildroot}/%_initdir/kernel-service
+install -Dm755 kernel_manager.py %buildroot/opt/kernel-manager
+install -Dm755 kernel-indicator %buildroot/opt/kernel-manager
+install -Dm644 resources.py %buildroot/opt/kernel-manager
+install -Dm755 mod/shell.py %buildroot/opt/kernel-manager/mod
+install -Dm755 mod/load_config.py %buildroot/opt/kernel-manager/mod
+install -Dm755 mod/create_desktop.py %buildroot/opt/kernel-manager/mod
+install -Dm755 service/kernel-service %buildroot/%_initdir/kernel-service
 install -Dm 644 service/kernel-service.service %buildroot/%_unitdir/kernel-service.service
-cp -r {data,form,icons,locale} %{buildroot}/opt/kernel-manager
-chmod 666 %{buildroot}/opt/kernel-manager/data/config.json
+cp -r {data,form,icons,locale} %buildroot/opt/kernel-manager
+chmod 666 %buildroot/opt/kernel-manager/data/config.json
 
 %files
 %doc LICENSE README.md
-%{_desktopdir}/*.desktop
+%_desktopdir/*.desktop
 /opt/kernel-manager
-%{_datadir}/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
-%{_bindir}/*
+%_datadir/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
+%_bindir/*
 %dir /opt/kernel-manager/data
 %_initdir/kernel-service
-%_unitdir/%name.service
+%_unitdir/kernel-service.service
 
 %preun
 %preun_service kernel-service
+
+# Delete the directory as it creates a lot of Python cache files.
+rm -rf /opt/kernel-manager
 
 %changelog
 * Sat Oct 29 2022 Evgeny Chuck <koi@altlinux.org> 1.9-alt1
