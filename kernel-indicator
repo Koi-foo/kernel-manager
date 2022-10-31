@@ -140,9 +140,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         """Сообщение об отключении сервиса"""
         if self.config['service'] is False:
             header = _("Update service")
-            body = _("The update service is disabled. Enable the service \
-                in the kernel-manager settings. Without the service enabled, \
-                the indicator will not work.")
+            body = _("The update service is disabled. Enable the service in the kernel-manager settings. Without the service enabled, the indicator will not work.")
             self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
 
     def kern_show_message(self):
