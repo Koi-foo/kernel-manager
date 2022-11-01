@@ -87,7 +87,7 @@ def main():
     connection_test()
     update_cache()
     if CONFIG['kernel']: version_kernel()
-    if CONFIG['pkg']: update_packages()
+    if CONFIG['software']: update_packages()
     save_settings(CONFIG)
 
 def version_kernel():
