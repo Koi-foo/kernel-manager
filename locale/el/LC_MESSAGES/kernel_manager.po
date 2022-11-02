@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-10-31 20:10+0300\n"
-"PO-Revision-Date: 2022-10-31 20:21+0300\n"
+"PO-Revision-Date: 2022-11-03 00:24+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -32,11 +32,11 @@ msgstr "Διαχείριση Πυρήνων"
 
 #: form/main_win.py:317
 msgid "Interval between updates (days)"
-msgstr ""
+msgstr "Διάστημα μεταξύ ενημερώσεων (ημέρες)"
 
 #: form/main_win.py:318
 msgid " day"
-msgstr ""
+msgstr " Ημέρα"
 
 #: form/main_win.py:319
 msgid ""
@@ -121,34 +121,38 @@ msgstr ""
 #: form/main_win.py:328
 msgid "Delayed check for updates <br>after system startup (in seconds)"
 msgstr ""
+"Καθυστέρηση στον έλεγχο για ενημερώσεις <br>μετά την εκκίνηση του συστήματος "
+"(σε δευτερόλεπτα)"
 
 #: form/main_win.py:329
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: form/main_win.py:330
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: form/main_win.py:331
 msgid "450"
-msgstr ""
+msgstr "450"
 
 #: form/main_win.py:332
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: form/main_win.py:333
 msgid "Starting and canceling the <br>update service when the computer boots"
 msgstr ""
+"Εκκίνηση και ακύρωση <br> της υπηρεσίας ενημέρωσης όταν γίνει εκκίνηση του "
+"υπολογιστή"
 
 #: form/main_win.py:334 form/main_win.py:335
 msgid "service enabled"
-msgstr ""
+msgstr "υπηρεσία ενεργοποιημένη"
 
 #: form/main_win.py:336
 msgid "service disabled"
-msgstr ""
+msgstr "γπηρεσία απενεργοποιημένη"
 
 #: form/main_win.py:337
 msgid "Change flavor type"
@@ -514,10 +518,8 @@ msgid "Set autoload"
 msgstr "Ορίστε το autoload"
 
 #: kernel-indicator:56
-#, fuzzy
-#| msgid "Kernel update"
 msgid "Show kernel update"
-msgstr "Ενημέρωση (πυρήνα) kernel"
+msgstr "Εμφάνιση ενημέρωσης  (πυρήνα) kernel"
 
 #: kernel-indicator:59
 msgid "Show updates"
@@ -528,44 +530,41 @@ msgid "Autostart directory:"
 msgstr "Κατάλογος αυτόματης εκκίνησης:"
 
 #: kernel-indicator:142
-#, fuzzy
-#| msgid "Update kernel"
 msgid "Update service"
-msgstr "Ενημέρωση (πυρήνα) kernel"
+msgstr "Ενημέρωση υπηρεσίας"
 
 #: kernel-indicator:143
 msgid ""
 "The update service is disabled. Enable the service in the kernel-manager "
 "settings. Without the service enabled, the indicator will not work."
 msgstr ""
+"Η Υπηρεσία ενημερώσεων ειναι απενεργοποιημένη.Ενεργοποιηστε την υπηρεσία "
+"μεσα απο τις επιλογες του διαχειριστή kernel-manager.Χωρίς την υπηρεσια "
+"ενεργοποιημενη ,ο δείκτης δεν θα λειτουργήσει."
 
 #: kernel-indicator:151
 msgid "A new version of the kernel is available: "
 msgstr "Μια νέα έκδοση του πυρήνα είναι διαθέσιμη "
 
 #: kernel-indicator:157
-#, fuzzy
-#| msgid "Show updates"
 msgid "Software update"
-msgstr "Εμφάνιση ενημερώσεων"
+msgstr "Ενημέρωση Λογισμικού"
 
 #: kernel-indicator:158
 msgid "Packages to update: "
-msgstr ""
+msgstr "Ενημέρωση πακέτων: "
 
 #: kernel-indicator:159
-#, fuzzy
-#| msgid "All installed modules"
 msgid "Newly installed: "
-msgstr "Όλες οι εγκατεστημένες λειτουργικές μονάδες"
+msgstr "Πρόσφατα Εγκατεστημένο: "
 
 #: kernel-indicator:160
 msgid "For removing: "
-msgstr ""
+msgstr "Προς απομάκρυνση "
 
 #: kernel-indicator:161
 msgid "Will not be updated: "
-msgstr ""
+msgstr "Δεν θα ενημερωθεί "
 
 #: kernel_manager.py:145
 msgid "Updating cache wait for completion ..."
