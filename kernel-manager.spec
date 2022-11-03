@@ -5,7 +5,6 @@ Release: alt1
 License: LGPL-3.0-only
 Group: System/Base
 Url: https://github.com/Koi-foo/kernel-manager
-Packager: Koi <eg.evgeniy at gmail.com>
 Source0: %name-%version.tar
 
 BuildRequires: rpm-build-python3
@@ -75,15 +74,12 @@ chmod 666 %buildroot/opt/kernel-manager/data/config.json
 /opt/kernel-manager
 %_datadir/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
 %_bindir/*
-%dir /opt/kernel-manager/data
+/opt/kernel-manager/data/config.json
 %_initdir/kernel-service
 %_unitdir/kernel-service.service
 
 %preun
 %preun_service kernel-service
-
-# Delete the directory as it creates a lot of Python cache files.
-rm -rf /opt/kernel-manager
 
 %changelog
 * Sat Oct 29 2022 Evgeny Chuck <koi@altlinux.org> 1.9-alt1
