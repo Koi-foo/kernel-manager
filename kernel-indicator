@@ -8,6 +8,7 @@ import sys
 import gettext
 import json
 from subprocess import Popen
+from threading import Thread
 from mod.shell import shrun
 from mod.create_desktop import autostart_desktop
 from mod.load_config import pathConfig, loadConfig
@@ -27,7 +28,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
     """Окно настроек уведомлений на панели задач"""
     def __init__(self):
         super().__init__()
-        # Сохранение настроек средством qt (тест)
+        self.no_updates()
         self.settings = QtCore.QSettings()
         self.default_settings()
         self.config = self.settings.value('config', type=dict)
@@ -75,7 +76,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
         self.trayIcon.setContextMenu(tray_menu)
         self.trayIcon.setVisible(True)
-        self.show_disabled_message()
+        self.service_off()
 
         self.check_kernel(check=kern_update.isChecked())
         self.check_soft(check=software_update.isChecked())
@@ -122,7 +123,8 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
             self.config['kernel'] = click
 
         if click or check:
-            self.kern_show_message()
+            if self.config['version']!= False:
+                self.kern_show_message()
 
         self.save_settings()
 
@@ -132,35 +134,49 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
             self.config['software'] = click
 
         if click or check:
-            self.soft_show_message()
+            if self.config['pkg'] != False:
+                self.soft_show_message()
 
         self.save_settings()
 
+    def no_updates(self):
+        """Если нет обновлений"""
+        if not CONFIG['version'] and not CONFIG['pkg']:
+            exit()
+
+    def service_off(self):
+        """Проверка статуса сервиса"""
+        if self.config['service'] is False:
+            self.show_disabled_message()
+
     def show_disabled_message(self):
         """Сообщение об отключении сервиса"""
-        if self.config['service'] is False:
-            header = _("Update service")
-            body = _("The update service is disabled. Enable the service in the kernel-manager settings. Without the service enabled, the indicator will not work.")
-            self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
+        header = _("Update service")
+        body = _("The update service is disabled. Enable the service in the kernel-manager settings. Without the service enabled, the indicator will not work.")
+        self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
 
     def kern_show_message(self):
         """Показать сообщения ядра"""
-        if self.config['version']!= False:
-            kern = self.config['version']
-            header_kern = _("Kernel update")
-            body_kern = _("A new version of the kernel is available: ") + kern
-            self.trayIcon.showMessage(header_kern,body_kern, QSystemTrayIcon.Information, 20000)
+        kern = self.config['version']
+        header_kern = _("Kernel update")
+        body_kern = _("A new version of the kernel is available: ") + kern
+        self.trayIcon.showMessage(header_kern,body_kern, QSystemTrayIcon.Information, 20000)
+        self.message_sound()
 
     def soft_show_message(self):
         """Показать сообщения софта"""
-        if self.config['pkg'] != False:
-            header_soft = _("Software update")
-            pkgUpdate = _("Packages to update: ") + self.config['pkg'][0]
-            pkgInstall = _('Newly installed: ') + self.config['pkg'][1]
-            pkgRemove = _('For removing: ') + self.config['pkg'][2]
-            pkgNotUpdate = _('Will not be updated: ') + self.config['pkg'][3]
-            body_soft = f'{pkgUpdate}\n{pkgInstall}\n{pkgRemove}\n{pkgNotUpdate}'
-            self.trayIcon.showMessage(header_soft,body_soft, QSystemTrayIcon.Information, 20000)
+        header_soft = _("Software update")
+        pkgUpdate = _("Packages to update: ") + self.config['pkg'][0]
+        pkgInstall = _('Newly installed: ') + self.config['pkg'][1]
+        pkgRemove = _('For removing: ') + self.config['pkg'][2]
+        pkgNotUpdate = _('Will not be updated: ') + self.config['pkg'][3]
+        body_soft = f'{pkgUpdate}\n{pkgInstall}\n{pkgRemove}\n{pkgNotUpdate}'
+        self.trayIcon.showMessage(header_soft,body_soft, QSystemTrayIcon.Information, 20000)
+        self.message_sound()
+
+    def message_sound(self):
+        """Звук обычных сообщений через ALSA"""
+        shrun('aplay -q /opt/kernel-manager/sound/message.wav')
 
     def open_kernel_manager(self):
         """Открыть kernel manager"""
@@ -178,15 +194,12 @@ def wait_service():
         while True:
             if not shrun('pgrep -f "python3 /usr/bin/kernel-service"'):
                 break
-            sleep(CONFIG['time'])
-
-        if not CONFIG['version'] and not CONFIG['pkg']:
-            exit()
+            sleep(150)
 
 if __name__ == '__main__':
     FILE_CONFIG = pathConfig
-    CONFIG = loadConfig()
     wait_service()
+    CONFIG = loadConfig()
     app = QtWidgets.QApplication(sys.argv)
     sys_tray = SystemTrayWindows()
     sys.exit(app.exec_())
