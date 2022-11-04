@@ -65,6 +65,7 @@ install -Dm755 mod/load_config.py %buildroot/opt/kernel-manager/mod
 install -Dm755 mod/create_desktop.py %buildroot/opt/kernel-manager/mod
 install -Dm755 service/kernel-service %buildroot/%_initdir/kernel-service
 install -Dm 644 service/kernel-service.service %buildroot/%_unitdir/kernel-service.service
+install -Dm 644 sound/message.wav %buildroot/opt/kernel-manager/sound/message.wav
 cp -r {data,form,icons,locale} %buildroot/opt/kernel-manager
 chmod 666 %buildroot/opt/kernel-manager/data/config.json
 
@@ -72,6 +73,7 @@ chmod 666 %buildroot/opt/kernel-manager/data/config.json
 %doc LICENSE README.md
 %_desktopdir/*.desktop
 /opt/kernel-manager
+/opt/kernel-manager/sound/message.wav
 %_datadir/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
 %_bindir/*
 /opt/kernel-manager/data/config.json
