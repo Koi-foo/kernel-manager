@@ -8,7 +8,6 @@ import sys
 import gettext
 import json
 from subprocess import Popen
-from threading import Thread
 from mod.shell import shrun
 from mod.create_desktop import autostart_desktop
 from mod.load_config import pathConfig, loadConfig
@@ -28,7 +27,6 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
     """Окно настроек уведомлений на панели задач"""
     def __init__(self):
         super().__init__()
-        self.no_updates()
         self.settings = QtCore.QSettings()
         self.default_settings()
         self.config = self.settings.value('config', type=dict)
@@ -78,6 +76,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         self.trayIcon.setVisible(True)
         self.service_off()
 
+
         self.check_kernel(check=kern_update.isChecked())
         self.check_soft(check=software_update.isChecked())
 
@@ -94,6 +93,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
                 autostart_desktop(dir_autostart)
                 self.trayIcon.showMessage(
                     _('Autostart directory:'), dir_autostart, QSystemTrayIcon.Information, 10000)
+                self.message_sound()
             else:
                 os.remove(f'{dir_autostart}/autostart-kernel-indicator.desktop')
         except(FileNotFoundError, FileExistsError):
@@ -114,8 +114,8 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
     def show_message(self):
         """Общее сообщение"""
-        self.kern_show_message()
-        self.soft_show_message()
+        self.check_kernel(check=True)
+        self.check_soft(check=True)
 
     def check_kernel(self, click=None, check=None):
         """Обработка сигнала с триггера kern"""
@@ -139,11 +139,6 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
         self.save_settings()
 
-    def no_updates(self):
-        """Если нет обновлений"""
-        if not CONFIG['version'] and not CONFIG['pkg']:
-            exit()
-
     def service_off(self):
         """Проверка статуса сервиса"""
         if self.config['service'] is False:
@@ -154,6 +149,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         header = _("Update service")
         body = _("The update service is disabled. Enable the service in the kernel-manager settings. Without the service enabled, the indicator will not work.")
         self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
+        self.message_sound()
 
     def kern_show_message(self):
         """Показать сообщения ядра"""
@@ -195,6 +191,10 @@ def wait_service():
             if not shrun('pgrep -f "python3 /usr/bin/kernel-service"'):
                 break
             sleep(150)
+
+        CONFIG = loadConfig()
+        if not CONFIG['version'] and not CONFIG['pkg']:
+            exit()
 
 if __name__ == '__main__':
     FILE_CONFIG = pathConfig

@@ -110,6 +110,7 @@ def version_kernel():
 def connection_test():
     """Тест интернета"""
     try:
+        sleep(CONFIG['time'])
         requests.head('https://duckduckgo.com')
     except:
         exit('Your internet is dead :-D')
