@@ -310,6 +310,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         combobox_text = self.comboBox_ChangeRepo.currentText()
 
         if combobox_text in current_repo:
+            self.proc_win.update_pkg = True
             list_command = ("/bin/sh -c "
                 '"apt-get dist-upgrade"')
             return list_command
@@ -618,7 +619,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         command = "update-kernel"
 
-        self.proc_win.update_kernel = True
+        self.proc_win.update_version = True
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Kernel update'))
         self.proc_win.start_qprocess(command)
@@ -634,6 +635,8 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         self.setupUi(self)
         self.window_size()
         self.update_kernel = False
+        self.update_pkg = False
+        self.update_version = False
 
         #Кнопки
         self.close_button()
@@ -717,12 +720,27 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         self.pushButton_Close.clicked.connect(lambda:self.close())
 
 
+    def status_update(self):
+        """Установка статуса обновления версии ядра"""
+        if self.update_pkg or self.update_version:
+            self.config = loadConfig()
+
+            if self.update_version:
+                self.config['version'] = False
+
+            if self.update_pkg:
+                self.config['pkg'] = False
+
+        saveFileConfig(self.config)
+
+
     def confirm_button(self):
         """Подтвердить установку"""
         command = 'y' + "\n"
 
         try:
             self.qproc.write(command.encode())
+            self.status_update()
         except AttributeError:
             pass
 
