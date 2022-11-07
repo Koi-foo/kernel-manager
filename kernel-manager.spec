@@ -7,7 +7,7 @@ Group: System/Base
 Url: https://github.com/Koi-foo/kernel-manager
 Source0: %name-%version.tar
 
-BuildRequires: rpm-build-python3
+BuildRequires(pre): rpm-build-python3
 
 Requires: python3-base
 Requires: python3-module-PyQt5
@@ -44,49 +44,31 @@ clean the file storage, update the distribution.
 %setup
 
 %install
-mkdir -p \
-    %buildroot%_desktopdir \
-    %buildroot%_bindir \
-    %buildroot%_pixmapsdir \
-    %buildroot%_datadir/polkit-1/actions \
-    %buildroot/opt/kernel-manager/mod \
-    %buildroot/%_initdir
-
-install -Dm644 kernel-*.desktop %buildroot%_desktopdir
-install -Dm755 kernel-manager %buildroot%_bindir
-install -Dm755 kernel-service %buildroot%_bindir
-install -Dm644 org.freedesktop.pkexec.kernel-manager.policy %buildroot%_datadir/polkit-1/actions
-
-install -Dm755 kernel_manager.py %buildroot/opt/kernel-manager
-install -Dm755 kernel-indicator %buildroot/opt/kernel-manager
-install -Dm644 resources.py %buildroot/opt/kernel-manager
-install -Dm755 mod/shell.py %buildroot/opt/kernel-manager/mod
-install -Dm755 mod/load_config.py %buildroot/opt/kernel-manager/mod
-install -Dm755 mod/create_desktop.py %buildroot/opt/kernel-manager/mod
-install -Dm755 service/kernel-service %buildroot/%_initdir/kernel-service
-install -Dm 644 service/kernel-service.service %buildroot/%_unitdir/kernel-service.service
-install -Dm 644 sound/message.wav %buildroot/opt/kernel-manager/sound/message.wav
-cp -r {data,form,icons,locale} %buildroot/opt/kernel-manager
-chmod 666 %buildroot/opt/kernel-manager/data/config.json
+python3 setup.py \
+    --prefix=/opt \
+    --buildroot=%buildroot \
+    --polkit=%_datadir/polkit-1/actions \
+    --sysv=%_initdir \
+    --sysd=%_unitdir \
+    --bindir=%_bindir
 
 %files
 %doc LICENSE README.md
 %_desktopdir/*.desktop
-/opt/kernel-manager
-/opt/kernel-manager/sound/message.wav
 %_datadir/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
 %_bindir/*
-/opt/kernel-manager/data/config.json
 %_initdir/kernel-service
 %_unitdir/kernel-service.service
+/opt/kernel-manager
 
 %preun
 %preun_service kernel-service
 
 %changelog
 * Sat Oct 29 2022 Evgeny Chuck <koi@altlinux.org> 1.9-alt1
-- New version 1.8
+- New version 1.9
 - Update service added
+- Add install script
 
 * Sat Feb 19 2022 Evgeny Chuck <koi@altlinux.org> 1.8-alt2
 - New version 1.8
