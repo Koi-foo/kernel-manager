@@ -74,8 +74,6 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
         self.trayIcon.setContextMenu(tray_menu)
         self.trayIcon.setVisible(True)
-        self.service_off()
-
 
         self.check_kernel(check=kern_update.isChecked())
         self.check_soft(check=software_update.isChecked())
@@ -104,6 +102,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
     def default_settings(self):
         """Стандартные настройки"""
+        global CONFIG
         self.settings.setValue('config', CONFIG)
 
     def save_settings(self):
@@ -139,18 +138,6 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
         self.save_settings()
 
-    def service_off(self):
-        """Проверка статуса сервиса"""
-        if self.config['service'] is False:
-            self.show_disabled_message()
-
-    def show_disabled_message(self):
-        """Сообщение об отключении сервиса"""
-        header = _("Update service")
-        body = _("The update service is disabled. Enable the service in the kernel-manager settings. Without the service enabled, the indicator will not work.")
-        self.trayIcon.showMessage(header,body, QSystemTrayIcon.Warning, 60000)
-        self.message_sound()
-
     def kern_show_message(self):
         """Показать сообщения ядра"""
         kern = self.config['version']
@@ -183,23 +170,25 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
 
 def wait_service():
     """Ждём окончания работы сервиса"""
+    global CONFIG
+
     try:
         if sys.argv[1] == '--show':
             pass
     except:
-        while True:
-            if not shrun('pgrep -f "python3 /usr/bin/kernel-service"'):
-                break
-            sleep(150)
+        sleep(CONFIG['time'])
+        shrun('pkexec kernel-service')
 
         CONFIG = loadConfig()
-        if not CONFIG['version'] and not CONFIG['pkg']:
-            exit()
+        if not CONFIG['version'] and not CONFIG['pkg']: exit()
+        elif not CONFIG['software'] and not CONFIG['kernel']: exit()
+        elif not CONFIG['software'] and not CONFIG['version']: exit()
+        elif not CONFIG['kernel'] and not CONFIG['pkg']: exit()
 
 if __name__ == '__main__':
     FILE_CONFIG = pathConfig
-    wait_service()
     CONFIG = loadConfig()
+    wait_service()
     app = QtWidgets.QApplication(sys.argv)
     sys_tray = SystemTrayWindows()
     sys.exit(app.exec_())

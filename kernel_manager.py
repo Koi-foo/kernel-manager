@@ -48,7 +48,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.combobox_flavour()
         self.combobox_repo()
         self.spinBox()
-        self.comboBoxService()
         self.comboBoxTime()
 
         Thread(target=self.systemic_kernel).start()
@@ -75,7 +74,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.listWidget_Modules.customContextMenuRequested.connect(self.modules_context_menu)
         self.spinBoxDayUpdate.valueChanged.connect(self.dayUpdate)
         self.comboBoxTimeStart.currentTextChanged.connect(self.timeStart)
-        self.comboBoxStartService.currentIndexChanged.connect(self.initService)
 
 
     def comboBoxTime(self):
@@ -95,24 +93,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Установка время задержки старта"""
         self.config = loadConfig()
         self.config['time'] = int(value)
-        saveFileConfig(self.config)
-
-
-    def comboBoxService(self):
-        """Комбобокс для установки загрузки сервиса"""
-        index = 0 if self.config['service'] else 1
-        self.comboBoxStartService.setCurrentIndex(index)
-
-
-    def initService(self, value):
-        """Включение и выключение сервивы kernel-service"""
-        self.config = loadConfig()
-        if value:
-            shrun('chkconfig kernel-service off')
-            self.config['service'] = False
-        else:
-            shrun('chkconfig kernel-service on')
-            self.config['service'] = True
         saveFileConfig(self.config)
 
 

@@ -3,8 +3,8 @@
 #
 import json
 import requests
+from requests.adapters import Retry, PoolManager
 from platform import release
-from time import sleep
 from re import findall, search
 from os import path, chmod
 from datetime import date
@@ -21,7 +21,8 @@ def update_cache():
 
     if difference >= CONFIG['days']:
         shell('apt-get update')
-    else: exit()
+    else:
+        exit()
 
 def update_packages():
     """Список пакетов для обновления"""
@@ -31,8 +32,12 @@ def update_packages():
     update = shell(command).splitlines()
 
     for item in update:
-        if len(packages) == 1: break
-        if text in item: packages.append(item)
+        if len(packages) == 1:
+            break
+
+        if text in item:
+            packages.append(item)
+
     packages = findall(r'[0-9]+', packages[0])
 
     if not int(packages[0]) \
@@ -40,7 +45,8 @@ def update_packages():
         and not int(packages[2]) \
         and not int(packages[3]):
             CONFIG['pkg'] = False
-    else: CONFIG['pkg'] = packages
+    else:
+        CONFIG['pkg'] = packages
 
 def load_settings():
     """Загрузить настройки"""
@@ -55,12 +61,11 @@ def load_settings():
 def default_settings():
     """Восстановить настройки"""
     config = {
-        'time': 600,
+        'time': 300,
         'kernel': False,
         'software': False,
         'days': 1,
         'start': False,
-        'service': False,
         'pkg': False,
         'version': False}
 
@@ -86,8 +91,13 @@ def main():
     """Старт"""
     connection_test()
     update_cache()
-    if CONFIG['kernel']: version_kernel()
-    if CONFIG['software']: update_packages()
+
+    if CONFIG['kernel']:
+        version_kernel()
+
+    if CONFIG['software']:
+        update_packages()
+
     save_settings(CONFIG)
 
 def version_kernel():
@@ -104,14 +114,18 @@ def version_kernel():
         if int(act[2]) > int(new[2]): new[2] = act[2]
     new_version = ".".join(new)
 
-    if current == new_version: CONFIG['version'] = False
-    else: CONFIG['version'] = new_version
+    if current == new_version:
+        CONFIG['version'] = False
+    else:
+        CONFIG['version'] = new_version
 
 def connection_test():
     """Тест интернета"""
+    retries = Retry(connect=3, backoff_factor=60)
+    http = PoolManager(retries=retries)
+
     try:
-        sleep(CONFIG['time'])
-        requests.head('https://duckduckgo.com')
+        http.request("HEAD", 'https://duckduckgo.com')
     except:
         exit('Your internet is dead :-D')
 

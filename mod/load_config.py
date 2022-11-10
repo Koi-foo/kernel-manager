@@ -29,12 +29,11 @@ def saveFileConfig(config):
 def createConfigFile():
     """Создать файл конфигурации"""
     configFile = {
-        'time': 600,
+        'time': 300,
         'kernel': False,
         'software': False,
         'days': 1,
         'start': False,
-        'service': False,
         'pkg': False,
         'version': False}
     return configFile

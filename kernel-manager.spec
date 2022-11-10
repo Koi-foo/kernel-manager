@@ -1,6 +1,6 @@
 Name: kernel-manager
 Version: 1.9
-Release: alt1
+Release: alt2
 
 License: LGPL-3.0-only
 Group: System/Base
@@ -48,23 +48,20 @@ python3 setup.py \
     --prefix=/opt \
     --buildroot=%buildroot \
     --polkit=%_datadir/polkit-1/actions \
-    --sysv=%_initdir \
-    --sysd=%_unitdir \
     --bindir=%_bindir
 
 %files
 %doc LICENSE README.md
 %_desktopdir/*.desktop
-%_datadir/polkit-1/actions/org.freedesktop.pkexec.kernel-manager.policy
+%_datadir/polkit-1/actions/*
 %_bindir/*
-%_initdir/kernel-service
-%_unitdir/kernel-service.service
 /opt/kernel-manager
 
-%preun
-%preun_service kernel-service
-
 %changelog
+* Fri Nov 11 2022 Evgeny Chuck <koi@altlinux.org> 1.9-alt2
+- Removed systemd and sysv services
+- Added polkit rule to launch indicator service utility
+
 * Sat Oct 29 2022 Evgeny Chuck <koi@altlinux.org> 1.9-alt1
 - New version 1.9
 - Update service added

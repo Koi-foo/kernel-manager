@@ -77,41 +77,7 @@
         <string/>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="2" column="3">
-         <widget class="QSpinBox" name="spinBoxDayUpdate">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="contextMenuPolicy">
-           <enum>Qt::NoContextMenu</enum>
-          </property>
-          <property name="toolTip">
-           <string>Interval between updates (days)</string>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="suffix">
-           <string> day</string>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>365</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="4">
+        <item row="0" column="0" colspan="3">
          <widget class="QTextBrowser" name="text_Question">
           <property name="contextMenuPolicy">
            <enum>Qt::NoContextMenu</enum>
@@ -128,6 +94,19 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Update kernel.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Automatically updates the kernel and modules to the newest version. The &amp;quot;Distribution&amp;quot; button updates the software to the current version. The repository list allows you to modify the branches of the repository.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
+        </item>
+        <item row="2" column="1">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>447</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="2" column="0">
          <widget class="QComboBox" name="comboBoxTimeStart">
@@ -169,20 +148,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="2" column="2">
-         <spacer name="horizontalSpacer_5">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>447</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="1">
-         <widget class="QComboBox" name="comboBoxStartService">
+         <widget class="QSpinBox" name="spinBoxDayUpdate">
           <property name="sizePolicy">
            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -199,30 +165,20 @@ p, li { white-space: pre-wrap; }
            <enum>Qt::NoContextMenu</enum>
           </property>
           <property name="toolTip">
-           <string>Starting and canceling the &lt;br&gt;update service when the computer boots</string>
+           <string>Interval between updates (days)</string>
           </property>
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>
-          <property name="editable">
-           <bool>false</bool>
+          <property name="suffix">
+           <string> day</string>
           </property>
-          <property name="currentText">
-           <string>service enabled</string>
+          <property name="minimum">
+           <number>1</number>
           </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+          <property name="maximum">
+           <number>365</number>
           </property>
-          <item>
-           <property name="text">
-            <string>service enabled</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>service disabled</string>
-           </property>
-          </item>
          </widget>
         </item>
        </layout>
