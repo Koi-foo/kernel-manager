@@ -8,12 +8,11 @@ import sys
 import json
 import datetime
 import gettext
-from subprocess import run, PIPE, Popen
+#from subprocess import run, PIPE, Popen
 from platform import release
 from threading import Thread
 from time import sleep
-from mod.shell import shrun, shcom
-from mod.load_config import loadConfig, saveFileConfig
+from mod.shell import Shell
 # PyQt
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import pyqtSignal, QSize
@@ -42,13 +41,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.message_bar = QtWidgets.QLabel()
         self.message_bar.setMargin(4)
         self.statusbar.addWidget(self.message_bar)
-        self.config = loadConfig()
 
         self.bar()
         self.combobox_flavour()
         self.combobox_repo()
-        self.spinBox()
-        self.comboBoxTime()
 
         Thread(target=self.systemic_kernel).start()
         Thread(target=self.modules_system).start()
@@ -72,28 +68,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.listWidget_Modules.itemDoubleClicked.connect(self.double_clicked_module)
         self.listWidget_Modules.currentItemChanged.connect(self.modules_tooltip_bar)
         self.listWidget_Modules.customContextMenuRequested.connect(self.modules_context_menu)
-        self.spinBoxDayUpdate.valueChanged.connect(self.dayUpdate)
-        self.comboBoxTimeStart.currentTextChanged.connect(self.timeStart)
-
-
-    def comboBoxTime(self):
-        """Комбобокс для изменения время отсрочки старта"""
-        index = self.comboBoxTimeStart.findText(str(self.config['time']))
-        self.comboBoxTimeStart.setCurrentIndex(index)
-
-
-    def dayUpdate(self, value):
-        """Установка интервала обновления"""
-        self.config = loadConfig()
-        self.config['days'] = value
-        saveFileConfig(self.config)
-
-
-    def timeStart(self, value):
-        """Установка время задержки старта"""
-        self.config = loadConfig()
-        self.config['time'] = int(value)
-        saveFileConfig(self.config)
 
 
     def update_cache(self):
@@ -114,16 +88,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Thread(target=self.search_kernel).start()
 
 
-    def spinBox(self):
-        """Настройки переключателя"""
-        self.spinBoxDayUpdate.setValue(self.config['days'])
-
-
     def bar(self, messages='0', new_version=None):
         """Передача информации в статус бар"""
         if messages == 'U':
             self.message_bar.setText(_('Updating cache wait for completion ...'))
-            up_cache = Popen("LANG=en apt-get update", shell=True, stdout=PIPE, encoding='utf-8')
+            up_cache = Shell().popen_connect("LANG=en apt-get update")
             search_number = re.compile(r':([1-9]{1})\s')
             fulfilled = 0
             for line in up_cache.stdout.readlines():
@@ -151,7 +120,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         flavour = re.search(r'.*-(.+-.+)-', release()).group(1)
         real_number = release().split('-')[0]
         new_version = real_number.split('.')
-        search_version = shrun(f"apt-cache pkgnames kernel-image-{flavour}#")
+        search_version = Shell().run(f"apt-cache pkgnames kernel-image-{flavour}#")
         for line in search_version.splitlines():
             act = re.search(r':(.+)-alt' ,line).group(1).split(".")
             if int(act[0]) > int(new_version[0]): new_version[0] = act[0]
@@ -172,10 +141,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Системные ядра"""
         kernel_list = []
         real_number = release().split('-')[0]
-        raw_list_kernel = shrun('rpm -qa | grep kernel-image-').splitlines()
+        raw_list_kernel = Shell().run('rpm -qa | grep kernel-image-').splitlines()
         for line in raw_list_kernel:
-            kernel_info = shrun(f'rpm -qi {line} | grep Install')
-            dist_tag = str(re.compile(r': ([a-zA-Z0-9]+)').findall(shrun(
+            kernel_info = Shell().run(f'rpm -qi {line} | grep Install')
+            dist_tag = str(re.compile(r': ([a-zA-Z0-9]+)').findall(Shell().run(
                 f'rpm -qi {line} | grep DistTag')))
             kernel_list.append(line + "  ➞  " + kernel_info.rstrip() + "  ➞  " + dist_tag)
 
@@ -200,7 +169,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def combobox_repo(self):
         """Widget comboBox и список репозиториев в нем"""
-        current_repo = shrun('apt-repo').splitlines()[1]
+        current_repo = Shell().run('apt-repo').splitlines()[1]
         list_repo = ["p9", "p10", "Sisyphus"]
 
         for name_repo in list_repo:
@@ -261,7 +230,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif action == remove: self.remove_kernel(kernel)
         elif action == default: self.boot_default(kernel)
         elif action == kernel_info:
-            description = shrun(f'rpm -qi {kernel}')
+            description = Shell().run(f'rpm -qi {kernel}')
             messages = kernel
 
             self.information_window(description, messages)
@@ -286,11 +255,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def branches(self):
         """Смена репозиториев"""
-        current_repo = shrun('apt-repo').splitlines()[1]
+        current_repo = Shell().run('apt-repo').splitlines()[1]
         combobox_text = self.comboBox_ChangeRepo.currentText()
 
         if combobox_text in current_repo:
-            self.proc_win.update_pkg = True
             list_command = ("/bin/sh -c "
                 '"apt-get dist-upgrade"')
             return list_command
@@ -318,7 +286,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             return list_command
 
         elif combobox_text not in current_repo:
-            change_repo = shrun(f'apt-repo set {combobox_text}')
+            change_repo = Shell().run(f'apt-repo set {combobox_text}')
             self.bar()
 
             list_command = ("/bin/sh -c "
@@ -338,7 +306,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         """Список установленных модулей"""
         combobox_list = []
         name_modules = re.compile(r'kernel-modules-(.*)-.+-.+-.+-alt')
-        modules = shrun(f'rpm -qa | grep kernel-modules').splitlines()
+        modules = Shell().run(f'rpm -qa | grep kernel-modules').splitlines()
 
         with open('data/modules.json', 'w') as file_modules:
             json.dump(modules, file_modules)
@@ -397,7 +365,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 pass
             else:
                 row = re.compile(r'Summary.*:.(.*)')
-                summary = row.search(shrun(f'rpm -qi {module}')).group(1)
+                summary = row.search(Shell().run(f'rpm -qi {module}')).group(1)
 
                 self.statusbar.showMessage(_('Module') + ': ' + summary, 10000)
         except AttributeError:
@@ -419,7 +387,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if action == remove:
                 self.remove_kernel(module)
             elif action == module_info:
-                description = shrun(f'rpm -qi {module}')
+                description = Shell().run(f'rpm -qi {module}')
                 messages = module
                 self.information_window(description, messages)
         except(AttributeError, UnboundLocalError):
@@ -498,7 +466,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def remove_kernel(self, item):
         """Удаление ядра из списка listwidget """
-        package = shrun(f'rpm -qi {item}')
+        package = Shell().run(f'rpm -qi {item}')
         name = re.compile(r'Name.*:\s(.*)').search(package).group(1) + "#"
         version = re.compile(r'Version.*:\s(.*)').search(package).group(1)
         release = re.compile(r'Release.*:\s(.*)').search(package).group(1)
@@ -599,7 +567,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         command = "update-kernel"
 
-        self.proc_win.update_version = True
         self.proc_win.show()
         self.proc_win.setWindowTitle(_('Kernel update'))
         self.proc_win.start_qprocess(command)
@@ -615,8 +582,6 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         self.setupUi(self)
         self.window_size()
         self.update_kernel = False
-        self.update_pkg = False
-        self.update_version = False
 
         #Кнопки
         self.close_button()
@@ -627,10 +592,10 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
     def closeEvent(self, event):
         """Переопределение события завершения"""
         for name_process in ["apt-get dist-upgrade"]:
-            activ_process = shrun(f'pgrep -o "{name_process}"')
+            activ_process = Shell().run(f'pgrep -o "{name_process}"')
 
             if activ_process:
-                close_process = shcom(f'kill {activ_process}')
+                close_process = Shell().no_output(f'kill {activ_process}')
 
         win_proc_size = [
             int(self.geometry().width()),
@@ -700,27 +665,12 @@ class ProcessWindow(QtWidgets.QMainWindow, Ui_InfoProcessWin):
         self.pushButton_Close.clicked.connect(lambda:self.close())
 
 
-    def status_update(self):
-        """Установка статуса обновления версии ядра"""
-        if self.update_pkg or self.update_version:
-            self.config = loadConfig()
-
-            if self.update_version:
-                self.config['version'] = False
-
-            if self.update_pkg:
-                self.config['pkg'] = False
-
-        saveFileConfig(self.config)
-
-
     def confirm_button(self):
         """Подтвердить установку"""
         command = 'y' + "\n"
 
         try:
             self.qproc.write(command.encode())
-            self.status_update()
         except AttributeError:
             pass
 
@@ -761,7 +711,7 @@ class DialogInformation(QtWidgets.QMainWindow, Ui_DialogInfo):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    settings = QtCore.QSettings()
+    settings = QtCore.QSettings("AltLinux Club", "kernel_manager")
     k_m = MainWindow()
     k_m.show()
 

@@ -1,6 +1,6 @@
 Name: kernel-manager
-Version: 1.9
-Release: alt2
+Version: 1.10
+Release: alt1
 
 License: LGPL-3.0-only
 Group: System/Base
@@ -13,13 +13,12 @@ Requires: python3-base
 Requires: python3-module-PyQt5
 Requires: python3-module-gettext
 Requires: python3-module-requests
+Requires: python3-module-dbus
 Requires: update-kernel
 Requires: apt-repo
 Requires: apt-scripts
 
-Provides: oldproject = %version-%release
 BuildArch: noarch
-Obsoletes: oldproject <= 1.9
 
 Summary: Kernel Manage - kernel update program
 Summary(ru_RU.UTF-8): Kernel Manage - программа обновления ядра
@@ -47,17 +46,28 @@ clean the file storage, update the distribution.
 python3 setup.py \
     --prefix=/opt \
     --buildroot=%buildroot \
-    --polkit=%_datadir/polkit-1/actions \
+    --polkit=%_datadir/polkit-1 \
     --bindir=%_bindir
 
 %files
 %doc LICENSE README.md
 %_desktopdir/*.desktop
 %_datadir/polkit-1/actions/*
+%_datadir/polkit-1/rules.d/*
 %_bindir/*
 /opt/kernel-manager
 
 %changelog
+* Fri Nov 25 2022 Evgeny Chuck <koi@altlinux.org> 1.10-alt1
+- New version 1.10
+- Added indicator menu window
+- Merged polkit rules into one file
+- Removed unnecessary polkit rules file
+- Shared configuration file replaced with local
+- Changed notification server from qt to dbus
+- Service daemon operation algorithm changed
+- Boot delay and startup timer removed from kernel manager
+
 * Fri Nov 11 2022 Evgeny Chuck <koi@altlinux.org> 1.9-alt2
 - Removed systemd and sysv services
 - Added polkit rule to launch indicator service utility

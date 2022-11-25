@@ -16,8 +16,10 @@ args = parser.parse_args()
 
 modules = [
     '/mod/create_desktop.py',
-    '/mod/load_config.py',
-    '/mod/shell.py'
+    '/mod/shell.py',
+    '/mod/default.py',
+    '/mod/indicator_settings.py',
+    '/mod/notifications.py'
     ]
 
 directories = [
@@ -30,7 +32,7 @@ directories = [
 
 files = [
     '/kernel_manager.py',
-    '/kernel-indicator',
+    '/kernel_indicator.py',
     '/resources.py'
     ]
 
@@ -40,13 +42,12 @@ desktop = [
     ]
 
 executant = [
-    '/kernel-service',
+    '/kernel_service.py',
     '/kernel-manager'
     ]
 
 polkit = [
-    '/org.freedesktop.pkexec.kernel-manager.policy',
-    '/org.freedesktop.pkexec.kernel-service.policy'
+    '/org.freedesktop.pkexec.kernel-manager.policy'
     ]
 
 build_dir = os.getcwd()
@@ -77,8 +78,11 @@ os.makedirs(bin_dir)
 for item in executant:
     shutil.copy(f'{build_dir}/bin{item}', f'{bin_dir}{item}')
 
-os.makedirs(polkit_dir)
-for item in polkit:
-    shutil.copy(f'{build_dir}/polkit{item}', f'{polkit_dir}{item}')
+rules = polkit_dir + '/rules.d'
+os.makedirs(rules, exist_ok=True)
+file_rules = '/org.freedesktop.kernel-manager.rules'
+shutil.copy(f'{build_dir}/polkit/rules.d{file_rules}', f'{rules}{file_rules}')
 
-os.chmod(f'{install_dir}/data/config.json', 0o666)
+os.makedirs(f'{polkit_dir}/actions', exist_ok=True)
+for item in polkit:
+    shutil.copy(f'{build_dir}/polkit{item}', f'{polkit_dir}/actions{item}')

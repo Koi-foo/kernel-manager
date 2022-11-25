@@ -15,7 +15,7 @@ X-DBUS-StartupType=none
 X-KDE-SubstituteUID=false
 X-GNOME-Autostart-enabled=true
 Icon=/opt/kernel-manager/icons/kernel-manager.png
-Exec=/opt/kernel-manager/kernel-indicator"""
+Exec=/opt/kernel-manager/kernel_indicator.py"""
     return text
 
 def autostart_desktop(path_dir):

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-10-31 20:10+0300\n"
+"POT-Creation-Date: 2022-11-25 21:26+0300\n"
 "PO-Revision-Date: 2022-10-31 20:19+0300\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -22,23 +22,69 @@ msgstr ""
 "X-Poedit-SearchPath-1: form/main_win.py\n"
 "X-Poedit-SearchPath-2: form/process_win.py\n"
 
+#: form/indicator_win.py:101
+msgid "Indicator settings"
+msgstr ""
+
+#: form/indicator_win.py:102
+msgid "Wait"
+msgstr ""
+
+#: form/indicator_win.py:103
+msgid "Delayed check for updates <br>after system startup (in seconds)"
+msgstr "系统启动后延迟检查更新 <br>（以秒为单位）"
+
+#: form/indicator_win.py:108
+msgid "Period"
+msgstr ""
+
+#: form/indicator_win.py:109
+msgid "Interval between updates (days)"
+msgstr "更新间隔（天）"
+
+#: form/indicator_win.py:110
+msgid " day"
+msgstr " 日"
+
+#: form/indicator_win.py:111
+#, fuzzy
+msgid "Check for updates"
+msgstr "显示更新"
+
+#: form/indicator_win.py:112
+msgid "Notify about a new version of the system kernel."
+msgstr ""
+
+#: form/indicator_win.py:113
+#, fuzzy
+msgid "Notify about software updates."
+msgstr "软件更新"
+
+#: form/indicator_win.py:114
+msgid "Enable or disable the refresh button in notifications."
+msgstr ""
+
+#: form/indicator_win.py:115
+msgid "Enable-Disable the button in notifications"
+msgstr ""
+
+#: form/indicator_win.py:116
+msgid "Autorun"
+msgstr ""
+
+#: form/indicator_win.py:117
+msgid "Enable or disable indicator autoload."
+msgstr ""
+
 #: form/info_win.py:46 form/process_win.py:61
 msgid "Information"
 msgstr "信息"
 
-#: form/main_win.py:316
+#: form/main_win.py:276
 msgid "Kernels management"
 msgstr "内核管理"
 
-#: form/main_win.py:317
-msgid "Interval between updates (days)"
-msgstr "更新间隔（天）"
-
-#: form/main_win.py:318
-msgid " day"
-msgstr " 日"
-
-#: form/main_win.py:319
+#: form/main_win.py:277
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -113,53 +159,21 @@ msgstr ""
 "配&quot;指的是该分配。 按钮将软件更新到当前版本。 存储库列表允许您修改存储库"
 "的分支。</span></p></body></html>"
 
-#: form/main_win.py:328
-msgid "Delayed check for updates <br>after system startup (in seconds)"
-msgstr "系统启动后延迟检查更新 <br>（以秒为单位）"
-
-#: form/main_win.py:329
-msgid "150"
-msgstr "150"
-
-#: form/main_win.py:330
-msgid "300"
-msgstr "300"
-
-#: form/main_win.py:331
-msgid "450"
-msgstr "450"
-
-#: form/main_win.py:332
-msgid "600"
-msgstr "600"
-
-#: form/main_win.py:333
-msgid "Starting and canceling the <br>update service when the computer boots"
-msgstr "在计算机启动时启动和取消 <br>更新服务"
-
-#: form/main_win.py:334 form/main_win.py:335
-msgid "service enabled"
-msgstr "启用服务"
-
-#: form/main_win.py:336
-msgid "service disabled"
-msgstr "服务已禁用"
-
-#: form/main_win.py:337
+#: form/main_win.py:286
 msgid "Change flavor type"
 msgstr "改变口味类型"
 
-#: form/main_win.py:338
+#: form/main_win.py:287
 msgid "Change"
 msgstr "更改"
 
-#: form/main_win.py:339
+#: form/main_win.py:288
 msgid ""
 "Select a kernel from the list and click the <br>\"Change\" button to switch "
 "to a new flavor"
 msgstr "从列表中选择一个内核，然后单击<br>“更改”按钮以切换到新的样式"
 
-#: form/main_win.py:340
+#: form/main_win.py:289
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -223,11 +237,11 @@ msgstr ""
 "用于其他内核不支持的英特尔集成显卡。 使用此存储库中的内核时，将无法使用依赖于"
 "稳定存储库中模块版本的程序。</p></body></html>"
 
-#: form/main_win.py:349
+#: form/main_win.py:298
 msgid "Change of kernels"
 msgstr "更改内核"
 
-#: form/main_win.py:351
+#: form/main_win.py:300
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -277,37 +291,37 @@ msgstr ""
 "un.png\" height=\"12\" /> - 内核类型（un-def） <img src=\":/picture/icons/"
 "old.png\" height=\"12\" /> - 内核类型（old-def）</p></body></html>"
 
-#: form/main_win.py:359
+#: form/main_win.py:308
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
 msgstr "清除过时软件包的本地缓存<br>并删除重复的软件包"
 
-#: form/main_win.py:360
+#: form/main_win.py:309
 msgid "Clear"
 msgstr "明确"
 
-#: form/main_win.py:361
+#: form/main_win.py:310
 msgid "Removes all cores except the currently active one"
 msgstr "删除除当前活动的核心以外的所有核心"
 
-#: form/main_win.py:362
+#: form/main_win.py:311
 msgid "Remove kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:363
+#: form/main_win.py:312
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:364 kernel-indicator:150 kernel_manager.py:623
+#: form/main_win.py:313 kernel_manager.py:574 mod/notifications.py:80
 msgid "Kernel update"
 msgstr "内核更新"
 
-#: form/main_win.py:365 form/main_win.py:377
+#: form/main_win.py:314 form/main_win.py:326
 msgid "Update kernel"
 msgstr "更新内核"
 
-#: form/main_win.py:366
+#: form/main_win.py:315
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -368,37 +382,37 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:374 kernel_manager.py:587
+#: form/main_win.py:323 kernel_manager.py:538
 msgid "Distribution update"
 msgstr "发行更新"
 
-#: form/main_win.py:375
+#: form/main_win.py:324
 msgid "Distribution"
 msgstr "分配"
 
-#: form/main_win.py:376
+#: form/main_win.py:325
 msgid "Change repository"
 msgstr "变更资料库"
 
-#: form/main_win.py:378
+#: form/main_win.py:327
 msgid "Filter for kernel modules installed on the system"
 msgstr "系统中安装的内核模块的过滤器"
 
-#: form/main_win.py:379
+#: form/main_win.py:328
 msgid "All installed modules"
 msgstr "所有已安装的模块"
 
-#: form/main_win.py:381
+#: form/main_win.py:330
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
 msgstr "删除自动安装的软件包以满足<br>其他软件包的依赖关系，现在不再需要。 "
 
-#: form/main_win.py:382
+#: form/main_win.py:331
 msgid "rebuilddb - rebuild the rpm package database."
 msgstr "rebuilddb - 重建 rpm 包数据库。"
 
-#: form/main_win.py:383
+#: form/main_win.py:332
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -440,7 +454,7 @@ msgstr ""
 "get</span>&quot; 终端。<br />这 &quot;<span style=\" font-weight:600;"
 "\">rebuilddb</span>&quot; 按钮用于修复损坏的 rpm 包数据库。</p></body></html>"
 
-#: form/main_win.py:389
+#: form/main_win.py:338
 msgid "Kernel modules"
 msgstr "内核模块"
 
@@ -464,148 +478,95 @@ msgstr "同意继续进行"
 msgid "Confirm"
 msgstr "确认"
 
-#: kernel-indicator:38
+#: kernel_indicator.py:46
 msgid "Kernel update indicator"
 msgstr "内核更新指示器"
 
-#: kernel-indicator:45
+#: kernel_indicator.py:59
 msgid "Close indicator"
 msgstr "关闭指示器"
 
-#: kernel-indicator:49
+#: kernel_indicator.py:63
 msgid "Repeat message"
 msgstr "重复消息"
 
-#: kernel-indicator:53
-msgid "Set autoload"
-msgstr "设置自动加载"
-
-#: kernel-indicator:56
-msgid "Show kernel update"
-msgstr "显示内核更新"
-
-#: kernel-indicator:59
-msgid "Show updates"
-msgstr "显示更新"
-
-#: kernel-indicator:95
-msgid "Autostart directory:"
-msgstr "自动启动目录："
-
-#: kernel-indicator:142
-msgid "Update service"
-msgstr "更新服务"
-
-#: kernel-indicator:143
-#, fuzzy
-#| msgid ""
-#| "The update service is disabled. Enable the service             in the "
-#| "kernel-manager settings. Without the service enabled,             the "
-#| "indicator will not work."
-msgid ""
-"The update service is disabled. Enable the service in the kernel-manager "
-"settings. Without the service enabled, the indicator will not work."
+#: kernel_indicator.py:67
+msgid "Settings"
 msgstr ""
-"更新服务被禁用。 在内核管理器设置中启用该服务没有启用该服务，该指示器将无法工"
-"作。"
 
-#: kernel-indicator:151
-msgid "A new version of the kernel is available: "
-msgstr "有一个新版本的内核可用： "
-
-#: kernel-indicator:157
-msgid "Software update"
-msgstr "软件更新"
-
-#: kernel-indicator:158
-msgid "Packages to update: "
-msgstr "要更新的软件包： "
-
-#: kernel-indicator:159
-msgid "Newly installed: "
-msgstr "新安装的： "
-
-#: kernel-indicator:160
-msgid "For removing: "
-msgstr "对于删除： "
-
-#: kernel-indicator:161
-msgid "Will not be updated: "
-msgstr "不会更新： "
-
-#: kernel_manager.py:145
+#: kernel_manager.py:95
 msgid "Updating cache wait for completion ..."
 msgstr "正在更新缓存以等待完成..."
 
-#: kernel_manager.py:154
+#: kernel_manager.py:104
 msgid "Updating cache:"
 msgstr "清理 apt-cache:"
 
-#: kernel_manager.py:158
+#: kernel_manager.py:108
 msgid "No access to repository"
 msgstr "无法访问存储库"
 
-#: kernel_manager.py:161
+#: kernel_manager.py:111
 msgid "Updating completed:"
 msgstr "更新完成："
 
-#: kernel_manager.py:207
+#: kernel_manager.py:157
 msgid "No kernels found to be removed"
 msgstr "没有找到要删除的内核"
 
-#: kernel_manager.py:214
+#: kernel_manager.py:164
 msgid "Flavor - not selected"
 msgstr "风味-未选择"
 
-#: kernel_manager.py:215
+#: kernel_manager.py:165
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF 内核（主内核）"
 
-#: kernel_manager.py:216
+#: kernel_manager.py:166
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF 内核（旧的 std-def 分支）"
 
-#: kernel_manager.py:217
+#: kernel_manager.py:167
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF 内核（实验内核）"
 
-#: kernel_manager.py:218
+#: kernel_manager.py:168
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核 un-def）"
 
-#: kernel_manager.py:270
+#: kernel_manager.py:220
 msgid "Remove the selected kernel"
 msgstr "删除选定的内核"
 
-#: kernel_manager.py:271
+#: kernel_manager.py:221
 msgid "Install the default kernel"
 msgstr "安装默认内核"
 
-#: kernel_manager.py:272
+#: kernel_manager.py:222
 msgid "Kernel information"
 msgstr "内核信息"
 
-#: kernel_manager.py:421
+#: kernel_manager.py:372
 msgid "Module"
 msgstr "模块"
 
-#: kernel_manager.py:432
+#: kernel_manager.py:383
 msgid "Remove the selected module"
 msgstr "移除所选模块"
 
-#: kernel_manager.py:433
+#: kernel_manager.py:384
 msgid "Module information"
 msgstr "模块信息"
 
-#: kernel_manager.py:466
+#: kernel_manager.py:417
 msgid "Rebuild rpm database?"
 msgstr "重建 rpm 数据库？"
 
-#: kernel_manager.py:471
+#: kernel_manager.py:422
 msgid "rpm database recovery"
 msgstr "rpm 数据库恢复"
 
-#: kernel_manager.py:479
+#: kernel_manager.py:430
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -614,57 +575,173 @@ msgstr ""
 "建议用于清洁新的操作系统。 如果您已经使用操作系统很长时间，那么删除必要软件包"
 "的可能性就会增加。 继续？"
 
-#: kernel_manager.py:487
+#: kernel_manager.py:438
 msgid "Removing unnecessary dependencies"
 msgstr "删除不必要的依赖"
 
-#: kernel_manager.py:499
+#: kernel_manager.py:450
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:505
+#: kernel_manager.py:456
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:536
+#: kernel_manager.py:487
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:556
+#: kernel_manager.py:507
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:567
+#: kernel_manager.py:518
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "从 Sisyphus 存储库安装 un-def 内核？"
 
-#: kernel_manager.py:598
+#: kernel_manager.py:549
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:610
+#: kernel_manager.py:561
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:682
+#: kernel_manager.py:635
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:684
+#: kernel_manager.py:637
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:685
+#: kernel_manager.py:638
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:715
+#: kernel_manager.py:668
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:716
+#: kernel_manager.py:669
 msgid "Close a window"
 msgstr "关闭一个窗口"
+
+#: mod/notifications.py:40
+#, fuzzy
+msgid "Update completed"
+msgstr "更新完成："
+
+#: mod/notifications.py:41
+msgid ""
+"Distribution update completed. For correct operation of all updated "
+"libraries, it is recommended to restart the computer."
+msgstr ""
+
+#: mod/notifications.py:48
+#, fuzzy
+msgid "Update started"
+msgstr "更新服务"
+
+#: mod/notifications.py:49
+msgid ""
+"Software update in progress. This may take some time. When the update is "
+"complete, you will receive a notification and the taskbar icon will stop "
+"animating."
+msgstr ""
+
+#: mod/notifications.py:56
+msgid "Button disabled"
+msgstr ""
+
+#: mod/notifications.py:57
+msgid ""
+"The Update button for new packages will no longer appear in update messages."
+msgstr ""
+
+#: mod/notifications.py:64
+msgid "Button enabled"
+msgstr ""
+
+#: mod/notifications.py:65
+msgid "Messages will now show a button to update rpm packages."
+msgstr ""
+
+#: mod/notifications.py:72
+msgid "Autostart directory:"
+msgstr "自动启动目录："
+
+#: mod/notifications.py:81
+msgid "A new version of the kernel is available: "
+msgstr "有一个新版本的内核可用： "
+
+#: mod/notifications.py:88
+#, fuzzy
+msgid "Updating packages"
+msgstr "清理 apt-cache:"
+
+#: mod/notifications.py:89
+msgid "Update RPM packages"
+msgstr ""
+
+#: mod/notifications.py:100
+msgid "Packages to update: "
+msgstr "要更新的软件包： "
+
+#: mod/notifications.py:101
+msgid "Newly installed: "
+msgstr "新安装的： "
+
+#: mod/notifications.py:102
+msgid "For removing: "
+msgstr "对于删除： "
+
+#: mod/notifications.py:103
+msgid "Will not be updated: "
+msgstr "不会更新： "
+
+#~ msgid "150"
+#~ msgstr "150"
+
+#~ msgid "300"
+#~ msgstr "300"
+
+#~ msgid "450"
+#~ msgstr "450"
+
+#~ msgid "600"
+#~ msgstr "600"
+
+#~ msgid "Software update"
+#~ msgstr "软件更新"
+
+#~ msgid ""
+#~ "Starting and canceling the <br>update service when the computer boots"
+#~ msgstr "在计算机启动时启动和取消 <br>更新服务"
+
+#~ msgid "service enabled"
+#~ msgstr "启用服务"
+
+#~ msgid "service disabled"
+#~ msgstr "服务已禁用"
+
+#~ msgid "Set autoload"
+#~ msgstr "设置自动加载"
+
+#~ msgid "Show kernel update"
+#~ msgstr "显示内核更新"
+
+#, fuzzy
+#~| msgid ""
+#~| "The update service is disabled. Enable the service             in the "
+#~| "kernel-manager settings. Without the service enabled,             the "
+#~| "indicator will not work."
+#~ msgid ""
+#~ "The update service is disabled. Enable the service in the kernel-manager "
+#~ "settings. Without the service enabled, the indicator will not work."
+#~ msgstr ""
+#~ "更新服务被禁用。 在内核管理器设置中启用该服务没有启用该服务，该指示器将无"
+#~ "法工作。"
 
 #~ msgid "Removing the kernel"
 #~ msgstr "删除内核"

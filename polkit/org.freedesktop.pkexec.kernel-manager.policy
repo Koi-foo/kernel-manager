@@ -3,18 +3,17 @@
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
 
-	<icon_name>kernel_manager</icon_name>
+	<icon_name>kernel-manager</icon_name>
 	<vendor>The Kernel Manager Project</vendor>
 	<vendor_url>https://github.com/Koi-foo/kernel-manager</vendor_url>
 
 	<action id="org.freedesktop.pkexec.kernel-manager">
-
 		<description>Run kernel-manager as root.</description>
 		<description xml:lang="ru">Запустить kernel-manager с правами администратора.</description>
 		<description xml:lang="el">Εκτελέσει του Διαχειριστεί-Πυρήνα(kernel) ως διαχειρι</description>
 		<description xml:lang="hi">रूट के रूप में कर्नेल-प्रबंधक चलाएँ।</description>
 		<description xml:lang="zh">以 root 身份运行内核-管理器。</description>
-        <description xml:lang="zh_TW">以 root 身份運行內核-管理器。</description>
+		<description xml:lang="zh_TW">以 root 身份運行內核-管理器。</description>
 
 		<message>Running the kernel-manager as an administrator requires authentication of the privileged user.</message>
 		<message xml:lang="hi">व्यवस्थापक के रूप में कर्नेल-प्रबंधक को चलाना विशेषाधिकार प्राप्त उपयोगकर्ता के प्रमाणीकरण की आवश्यकता है।</message>
@@ -27,9 +26,28 @@
 			<allow_inactive>no</allow_inactive>
 			<allow_active>auth_admin</allow_active>
 		</defaults>
+
 		<annotate key="org.freedesktop.policykit.exec.path">/opt/kernel-manager/kernel_manager.py</annotate>
 		<annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+	</action>
 
+	<action id="org.freedesktop.pkexec.kernel-service">
+		<description>Service utility for kernel update indicator, included in kernel-manager.</description>
+
+		<message>The kernel_service.py update service was started by a user with insufficient privileges. You must be in the Administrators group. Please disable autoloading of kernel_indicator.py and notify your system administrator.</message>
+		<message xml:lang="hi">kernel_service.py अद्यतन सेवा अपर्याप्त विशेषाधिकार वाले उपयोक्ता द्वारा शुरू की गई थी। आपको व्यवस्थापकों के समूह में होना चाहिए। कृपया kernel_indicator.py की ऑटोलोडिंग अक्षम करें और अपने सिस्टम व्यवस्थापक को सूचित करें।</message>
+		<message xml:lang="el">Η υπηρεσία ενημέρωσης kernel_service.py ξεκίνησε από έναν χρήστη με ανεπαρκή δικαιώματα. Πρέπει να είστε στην ομάδα διαχειριστών. Απενεργοποιήστε την αυτόματη φόρτωση του kernel_indicator.py και ειδοποιήστε τον διαχειριστή του συστήματός σας.</message>
+		<message xml:lang="zh">kernel_service.py 更新服务由权限不足的用户启动。 您必须在管理员组中。 请禁用 kernel_indicator.py 的自动加载并通知您的系统管理员。</message>
+		<message xml:lang="ru">Служба обновления kernel_service.py была запущена пользователем с недостаточными правами. Вы должны быть в группе администраторов. Пожалуйста, отключите автозагрузку kernel_indicator.py и сообщите об этом вашему системному администратору.</message>
+		<message xml:lang="zh_TW">kernel_service.py 更新服務由權限不足的用戶啟動。 您必須在管理員組中。 請禁用 kernel_indicator.py 的自動加載並通知您的系統管理員。</message>
+
+		<defaults>
+			<allow_inactive>no</allow_inactive>
+			<allow_active>auth_admin</allow_active>
+		</defaults>
+
+		<annotate key="org.freedesktop.policykit.exec.path">/usr/bin/kernel_service.py</annotate>
+		<annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
 	</action>
 
 </policyconfig>

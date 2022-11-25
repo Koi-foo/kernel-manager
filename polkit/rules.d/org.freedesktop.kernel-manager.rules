@@ -1,0 +1,8 @@
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.freedesktop.pkexec.kernel-manager" ||
+     action.id == "org.freedesktop.pkexec.kernel-service") &&
+        subject.isInGroup("wheel"))
+    {
+        return polkit.Result.YES;
+    }
+}); 

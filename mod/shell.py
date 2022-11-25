@@ -8,29 +8,51 @@
 # Python
 import os
 import sys
-from subprocess import run, PIPE, CalledProcessError
+from subprocess import run, PIPE, CalledProcessError, Popen
 
+class Shell():
+    """Готовые шаблоны запуска команд в оболочке sh"""
+    def __init__(self):
+        pass
 
-def shrun(bash_comand):
-    """Запуск run вывод stdout"""
-    return run(bash_comand,
-               shell=True,
-               stdout=PIPE,
-               encoding='utf-8'
-               ).stdout
+    def run(self, command):
+        """Запуск run вывод stdout"""
+        return run(
+            command,
+            shell=True,
+            stdout=PIPE,
+            encoding='utf-8'
+            ).stdout
 
+    def popen_connect(self, command):
+        """Запустить и соединиться"""
+        return Popen(
+            command,
+            shell=True,
+            stdout=PIPE,
+            encoding='utf-8'
+            ).stdout
 
-def shcheck(bash_comand):
-    """Запуск run вывод stdout с проверкой check=True
-    возбуждение исключния CalledProcessError"""
-    return run(bash_comand,
-               shell=True,
-               check=True,
-               stdout=PIPE,
-               encoding='utf-8'
-               ).stdout.rstrip()
+    def popen(self,command):
+        """Запустить и отсоединится"""
+        return Popen(
+            command,
+            shell=True).stdout
 
+    def check(self, command):
+        """Запуск run вывод stdout с проверкой check=True
+        возбуждение исключния CalledProcessError"""
+        return run(
+            command,
+            shell=True,
+            check=True,
+            stdout=PIPE,
+            encoding='utf-8'
+            ).stdout.rstrip()
 
-def shcom(bash_comand):
-    """Запуск run без вывода"""
-    return run(bash_comand, shell=True).stdout
+    def no_output(self, command):
+        """Запуск run без вывода"""
+        return run(
+            command,
+            shell=True
+            ).stdout
