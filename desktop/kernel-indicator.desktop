@@ -35,4 +35,4 @@ X-KDE-SubstituteUID=false
 X-KDE-Username=
 
 Icon=/opt/kernel-manager/icons/kernel-manager.png
-Exec=/opt/kernel-manager/kernel-indicator --show
+Exec=/opt/kernel-manager/kernel_indicator.py --show

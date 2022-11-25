@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 import json
+import argparse
+import sys
 import requests
 from requests.adapters import Retry, PoolManager
 from platform import release
@@ -10,6 +12,13 @@ from os import path, chmod
 from datetime import date
 from subprocess import run, PIPE
 
+parser = argparse.ArgumentParser(allow_abbrev=True, description='Service for kernel_indicator')
+required = parser.add_argument_group('required arguments')
+parser.add_argument('-v', '--version', action='version', version='v0.2 Project page https://github.com/Koi-foo/kernel-manager')
+parser.add_argument('-u', '--update', action='store_true', help='Update distribution')
+required.add_argument('-p', '--path', metavar='', type=str, nargs=1, required=True, help='File path QSettings kernel_indicator')
+args = parser.parse_args()
+
 def update_cache():
     """Обновление кэша"""
     try:
@@ -17,18 +26,18 @@ def update_cache():
         permission = date.fromtimestamp(path.getmtime(LOCK))
         difference = (current - permission).days
     except PermissionError:
-        exit(f'no access to file {LOCK}')
+        sys.exit(f'no access to file {LOCK}')
 
     if difference >= CONFIG['days']:
         shell('apt-get update')
     else:
-        exit()
+        sys.exit()
 
 def update_packages():
     """Список пакетов для обновления"""
     packages = []
     text = 'not upgraded.'
-    command = 'LANG=en apt-get dist-upgrade -sq'
+    command = 'echo "-n" | LANG=en apt-get dist-upgrade'
     update = shell(command).splitlines()
 
     for item in update:
@@ -48,29 +57,6 @@ def update_packages():
     else:
         CONFIG['pkg'] = packages
 
-def load_settings():
-    """Загрузить настройки"""
-    if not path.isfile(FILE_CONFIG):
-        default_settings()
-
-    with open(FILE_CONFIG) as  f:
-        config = json.load(f)
-
-    return config
-
-def default_settings():
-    """Восстановить настройки"""
-    config = {
-        'time': 300,
-        'kernel': False,
-        'software': False,
-        'days': 1,
-        'start': False,
-        'pkg': False,
-        'version': False}
-
-    save_settings(config)
-
 def shell(command):
     """Запуск run вывод stdout"""
     return run(
@@ -80,12 +66,11 @@ def shell(command):
         encoding='utf-8'
         ).stdout
 
-def save_settings(content):
+def save_settings():
     """Сохранение новых настроек"""
-    with open(FILE_CONFIG, 'w') as f:
-        json.dump(content, f)
-
-    chmod(FILE_CONFIG, 0o666)
+    with open(config_path, 'w') as f:
+        json.dump(CONFIG, f)
+    chmod(config_path, 0o666)
 
 def main():
     """Старт"""
@@ -98,7 +83,7 @@ def main():
     if CONFIG['software']:
         update_packages()
 
-    save_settings(CONFIG)
+    save_settings()
 
 def version_kernel():
     """Проверка версии ядра"""
@@ -127,11 +112,31 @@ def connection_test():
     try:
         http.request("HEAD", 'https://duckduckgo.com')
     except:
-        exit('Your internet is dead :-D')
+        sys.exit('Your internet is dead :-D')
+
+def update_distribution():
+    """Обновить дистрибутив"""
+    shell('apt-get dist-upgrade -y')
+    CONFIG['pkg'] = False
+    save_settings()
+    sys.exit()
+
+def load(path, obj=None):
+    """Чтение из файла"""
+    with open(path) as f:
+        obj = json.load(f)
+    return obj
 
 if __name__ == '__main__':
-    FILE_CONFIG = '/opt/kernel-manager/data/config.json'
+    config_path = args.path[0]
+    CONFIG = load(config_path)
     LOCK = '/var/lib/apt/lists/lock'
-    CONFIG = load_settings()
+
+    if type(CONFIG) is not dict:
+        sys.exit('Invalid file format')
+
+    if args.update:
+        update_distribution()
+
     main()
 
