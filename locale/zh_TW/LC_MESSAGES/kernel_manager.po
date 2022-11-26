@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-11-25 21:26+0300\n"
-"PO-Revision-Date: 2022-10-31 20:20+0300\n"
+"PO-Revision-Date: 2022-11-26 20:00+0700\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_TW\n"
@@ -24,11 +24,11 @@ msgstr ""
 
 #: form/indicator_win.py:101
 msgid "Indicator settings"
-msgstr ""
+msgstr "指標設置"
 
 #: form/indicator_win.py:102
 msgid "Wait"
-msgstr ""
+msgstr "等待"
 
 #: form/indicator_win.py:103
 msgid "Delayed check for updates <br>after system startup (in seconds)"
@@ -36,7 +36,7 @@ msgstr "系統啟動後延遲檢查更新 <br>（以秒為單位）"
 
 #: form/indicator_win.py:108
 msgid "Period"
-msgstr ""
+msgstr "時期"
 
 #: form/indicator_win.py:109
 msgid "Interval between updates (days)"
@@ -47,34 +47,32 @@ msgid " day"
 msgstr " 日"
 
 #: form/indicator_win.py:111
-#, fuzzy
 msgid "Check for updates"
-msgstr "顯示更新"
+msgstr "檢查更新"
 
 #: form/indicator_win.py:112
 msgid "Notify about a new version of the system kernel."
-msgstr ""
+msgstr "通知系統中的新內核版本。"
 
 #: form/indicator_win.py:113
-#, fuzzy
 msgid "Notify about software updates."
-msgstr "軟件更新"
+msgstr "通知軟件更新。"
 
 #: form/indicator_win.py:114
 msgid "Enable or disable the refresh button in notifications."
-msgstr ""
+msgstr "啟用或禁用通知中的刷新按鈕。"
 
 #: form/indicator_win.py:115
 msgid "Enable-Disable the button in notifications"
-msgstr ""
+msgstr "啟用-禁用通知中的按鈕"
 
 #: form/indicator_win.py:116
 msgid "Autorun"
-msgstr ""
+msgstr "自動運行"
 
 #: form/indicator_win.py:117
 msgid "Enable or disable indicator autoload."
-msgstr ""
+msgstr "啟用或禁用指標自動加載。"
 
 #: form/info_win.py:46 form/process_win.py:61
 msgid "Information"
@@ -493,7 +491,7 @@ msgstr "重複消息"
 
 #: kernel_indicator.py:67
 msgid "Settings"
-msgstr ""
+msgstr "設置"
 
 #: kernel_manager.py:95
 msgid "Updating cache wait for completion ..."
@@ -629,20 +627,19 @@ msgid "Close a window"
 msgstr "關閉一個窗口"
 
 #: mod/notifications.py:40
-#, fuzzy
 msgid "Update completed"
-msgstr "更新完成："
+msgstr "更新完成"
 
 #: mod/notifications.py:41
 msgid ""
 "Distribution update completed. For correct operation of all updated "
 "libraries, it is recommended to restart the computer."
 msgstr ""
+"分發更新完成。 為了正確運行所有更新的庫，建議重新啟動計算機。"
 
 #: mod/notifications.py:48
-#, fuzzy
 msgid "Update started"
-msgstr "更新服務"
+msgstr "更新開始"
 
 #: mod/notifications.py:49
 msgid ""
@@ -650,23 +647,25 @@ msgid ""
 "complete, you will receive a notification and the taskbar icon will stop "
 "animating."
 msgstr ""
+"正在進行軟件更新。 這可能要花點時間。 更新完成後，您將收到通知並且任務欄圖標將停止動畫。"
 
 #: mod/notifications.py:56
 msgid "Button disabled"
-msgstr ""
+msgstr "按鈕已禁用"
 
 #: mod/notifications.py:57
 msgid ""
 "The Update button for new packages will no longer appear in update messages."
 msgstr ""
+"新包的更新按鈕將不再出現在更新消息中。"
 
 #: mod/notifications.py:64
 msgid "Button enabled"
-msgstr ""
+msgstr "按鈕啟用"
 
 #: mod/notifications.py:65
 msgid "Messages will now show a button to update rpm packages."
-msgstr ""
+msgstr "消息現在將顯示一個更新 rpm 包的按鈕。"
 
 #: mod/notifications.py:72
 msgid "Autostart directory:"
@@ -677,13 +676,12 @@ msgid "A new version of the kernel is available: "
 msgstr "有一個新版本的內核可用： "
 
 #: mod/notifications.py:88
-#, fuzzy
 msgid "Updating packages"
-msgstr "更新緩存："
+msgstr "包更新"
 
 #: mod/notifications.py:89
 msgid "Update RPM packages"
-msgstr ""
+msgstr "更新 RPM 包"
 
 #: mod/notifications.py:100
 msgid "Packages to update: "
