@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-11-26 18:57+0300\n"
-"PO-Revision-Date: 2022-11-03 00:24+0300\n"
+"PO-Revision-Date: 2022-11-26 21:19+0200\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: el\n"
@@ -24,11 +24,11 @@ msgstr ""
 
 #: form/indicator_win.py:101
 msgid "Indicator settings"
-msgstr ""
+msgstr "Ρυθμίσεις ένδειξης"
 
 #: form/indicator_win.py:102
 msgid "Wait"
-msgstr ""
+msgstr "Περιμένετε"
 
 #: form/indicator_win.py:103
 msgid "Delayed check for updates <br>after system startup (in seconds)"
@@ -38,7 +38,7 @@ msgstr ""
 
 #: form/indicator_win.py:108
 msgid "Period"
-msgstr ""
+msgstr "Περίοδος"
 
 #: form/indicator_win.py:109
 msgid "Interval between updates (days)"
@@ -49,34 +49,34 @@ msgid " day"
 msgstr " Ημέρα"
 
 #: form/indicator_win.py:111
-#, fuzzy
 msgid "Check for updates"
-msgstr "Εμφάνιση ενημερώσεων"
+msgstr "Έλεγχος Ενημερώσεων"
 
 #: form/indicator_win.py:112
 msgid "Notify about a new version of the system kernel."
-msgstr ""
+msgstr "Σημείωση σχετικά με την νεα έκδοση συτήματος κέρνελ.."
 
 #: form/indicator_win.py:113
-#, fuzzy
 msgid "Notify about software updates."
-msgstr "Ενημέρωση Λογισμικού"
+msgstr "Σημείωση σχετικά με τις ενημερώσεις λογισμικού.."
 
 #: form/indicator_win.py:114
 msgid "Enable or disable the refresh button in notifications."
 msgstr ""
+"Ενεργοποίηση ή Απενεργοποίηση του διακόπτη (button) ανανέωσης στις "
+"Σημειώσεις."
 
 #: form/indicator_win.py:115
 msgid "Enable-Disable the button in notifications"
-msgstr ""
+msgstr "Ενεργοποίηση ή Απενεργοποίηση του διακόπτη (button) στις Σημειώσεις"
 
 #: form/indicator_win.py:116
 msgid "Autorun"
-msgstr ""
+msgstr "Αυτόματη Εκτέλεση"
 
 #: form/indicator_win.py:117
 msgid "Enable or disable indicator autoload."
-msgstr ""
+msgstr "Ενεργοποίηση ή απενεργοποίηση αυτόματης ένδειξης."
 
 #: form/info_win.py:46 form/process_win.py:61
 msgid "Information"
@@ -527,7 +527,7 @@ msgstr "Επανάληψη μηνύματος"
 
 #: kernel_indicator.py:64
 msgid "Settings"
-msgstr ""
+msgstr "Ρυθμίσεις"
 
 #: kernel_manager.py:94
 msgid "Updating cache wait for completion ..."
@@ -665,20 +665,20 @@ msgid "Close a window"
 msgstr "Κλείστε ένα παράθυρο"
 
 #: mod/notifications.py:40
-#, fuzzy
 msgid "Update completed"
-msgstr "Η Ενημερωση ολοκληρώθηκε:"
+msgstr "Η Ενημερωσεις ολοκληρώθηκαν"
 
 #: mod/notifications.py:41
 msgid ""
 "Distribution update completed. For correct operation of all updated "
 "libraries, it is recommended to restart the computer."
 msgstr ""
+"Οι ενημερώσεις λογισμικού ολοκληρώθηκαν.Για τη σωστή λειτουργία όλων των "
+"ενημερωμένων βιβλιοθηκών, συνιστάται η επανεκκίνηση του υπολογιστή."
 
 #: mod/notifications.py:48
-#, fuzzy
 msgid "Update started"
-msgstr "Ενημέρωση υπηρεσίας"
+msgstr "Η Ενημέρωση ξεκίνησε"
 
 #: mod/notifications.py:49
 msgid ""
@@ -686,23 +686,30 @@ msgid ""
 "complete, you will receive a notification and the taskbar icon will stop "
 "animating."
 msgstr ""
+"Οι ενημερώσεις λογισμικού είναι σε εξέλιξη.Αυτο μπορεί να κρατήσει λίγη ώρα."
+"Όταν οι ενημερώσεις ολοκληρωθούν,θα λάβετε μια ειδοποίηση και το εικονίδιο "
+"της γραμμής εργασιών θα σταματήσει να κινείται."
 
 #: mod/notifications.py:56
 msgid "Button disabled"
-msgstr ""
+msgstr "Απενεργοποίηση Διακόπτη (button)"
 
 #: mod/notifications.py:57
 msgid ""
 "The Update button for new packages will no longer appear in update messages."
 msgstr ""
+"Ο Διακόπτης (button) Ενημερώσεων δεν θα εμφανίζεται στις ενημερώσεις "
+"μηνημάτων για νεα πακέτα.."
 
 #: mod/notifications.py:64
 msgid "Button enabled"
-msgstr ""
+msgstr "Διακόπτης (button) ενεργοποιημένος"
 
 #: mod/notifications.py:65
 msgid "Messages will now show a button to update rpm packages."
 msgstr ""
+"Τα μηνύματα τώρα θα εμφανίζονται σε ενα διακόπτη (button) ενημερώσεων για "
+"πακέτα rpm.."
 
 #: mod/notifications.py:72
 msgid "Autostart directory:"
@@ -713,13 +720,12 @@ msgid "A new version of the kernel is available: "
 msgstr "Μια νέα έκδοση του πυρήνα είναι διαθέσιμη "
 
 #: mod/notifications.py:88
-#, fuzzy
 msgid "Updating packages"
-msgstr "Ενημέρωση cache:"
+msgstr "Ενημέρωσεις πακέτων"
 
 #: mod/notifications.py:89
 msgid "Update RPM packages"
-msgstr ""
+msgstr "Ενεμερώσεις RPM Πακέτων"
 
 #: mod/notifications.py:99
 msgid "Packages to update: "

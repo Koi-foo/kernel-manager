@@ -19,6 +19,7 @@ from time import sleep
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtWidgets import QSystemTrayIcon, QMenu, QAction
 from PyQt5.QtGui import QIcon, QMovie, QPixmap
+from PyQt5.QtCore import pyqtSignal
 import resources
 # рабочий путь
 os.chdir(os.path.dirname(sys.argv[0]))
@@ -26,6 +27,7 @@ os.chdir(os.path.dirname(sys.argv[0]))
 gettext.install('kernel_manager', 'locale')
 
 class SystemTrayWindows(QtWidgets.QMainWindow):
+    endUpdate = pyqtSignal()
     """Окно настроек уведомлений на панели задач"""
     def __init__(self):
         super().__init__()
@@ -50,6 +52,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
         self.indicator.notifiButton.connect(self.notifi_check_botton_signal)
         self.icon_movie.frameChanged.connect(self.icon_animation)
         self.notifi.distUpdate.connect(self.update_signal)
+        self.endUpdate.connect(self.end_update)
 
         # Действия для меню
         iconExit = ":/picture/icons/application-exit.svg"
@@ -88,7 +91,7 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
     def update_distribution(self):
         """Обновитьдистрибутив"""
         self.bash.run(f'pkexec kernel_service.py -p "{self.path_config}" -u')
-        self.end_update()
+        self.endUpdate.emit()
 
     def end_update(self):
         """Завершение обновления"""
@@ -146,7 +149,8 @@ class SystemTrayWindows(QtWidgets.QMainWindow):
     def close_app(self):
         """Закрыть и сохранить данные"""
         self.save_settings()
-        exit()
+        sys.exit()
+
 
     def save_settings(self):
         """Сохранение настроек пользователя"""
@@ -201,5 +205,6 @@ if __name__ == '__main__':
     mod.default.config_check()
     wait_service()
     app = QtWidgets.QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(False)
     sys_tray = SystemTrayWindows()
     sys.exit(app.exec_())
