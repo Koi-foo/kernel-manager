@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-11-25 21:26+0300\n"
+"POT-Creation-Date: 2022-11-26 18:57+0300\n"
 "PO-Revision-Date: 2022-11-03 00:24+0300\n"
 "Last-Translator: Евгений <eg.evgeniy@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -335,7 +335,7 @@ msgstr "Κατάργηση (πυρήνων) kernels"
 msgid "Removing kernels"
 msgstr "Κατάργηση (πυρήνων) kernels"
 
-#: form/main_win.py:313 kernel_manager.py:574 mod/notifications.py:80
+#: form/main_win.py:313 kernel_manager.py:571 mod/notifications.py:80
 msgid "Kernel update"
 msgstr "Ενημέρωση (πυρήνα) kernel"
 
@@ -411,7 +411,7 @@ msgstr ""
 "%3F\"><span style=\" text-decoration: underline; color:#2980b9;\">Sisyphus</"
 "span></a>&quot;, διαβάστε προσεκτικά την περιγραφή του.</p></body></html>"
 
-#: form/main_win.py:323 kernel_manager.py:538
+#: form/main_win.py:323 kernel_manager.py:536
 msgid "Distribution update"
 msgstr "Ενημέρωση διανομής"
 
@@ -513,95 +513,95 @@ msgstr "Συμφωνείτε να συνεχιστεί η διεργασία"
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: kernel_indicator.py:46
+#: kernel_indicator.py:43
 msgid "Kernel update indicator"
 msgstr "Δείκτης ενημέρωσης πυρήνα"
 
-#: kernel_indicator.py:59
+#: kernel_indicator.py:56
 msgid "Close indicator"
 msgstr "Ένδειξη κλεισίματος"
 
-#: kernel_indicator.py:63
+#: kernel_indicator.py:60
 msgid "Repeat message"
 msgstr "Επανάληψη μηνύματος"
 
-#: kernel_indicator.py:67
+#: kernel_indicator.py:64
 msgid "Settings"
 msgstr ""
 
-#: kernel_manager.py:95
+#: kernel_manager.py:94
 msgid "Updating cache wait for completion ..."
 msgstr "Ενημέρωση προσωρινής μνήμης για ολοκλήρωση ..."
 
-#: kernel_manager.py:104
+#: kernel_manager.py:103
 msgid "Updating cache:"
 msgstr "Ενημέρωση cache:"
 
-#: kernel_manager.py:108
+#: kernel_manager.py:107
 msgid "No access to repository"
 msgstr "Δεν υπάρχει πρόσβαση στο αποθετήριο"
 
-#: kernel_manager.py:111
+#: kernel_manager.py:110
 msgid "Updating completed:"
 msgstr "Η Ενημερωση ολοκληρώθηκε:"
 
-#: kernel_manager.py:157
+#: kernel_manager.py:156
 msgid "No kernels found to be removed"
 msgstr "Δεν βρέθηκαν (πυρήνες) kernels για να αφαιρεθούν"
 
-#: kernel_manager.py:164
+#: kernel_manager.py:163
 msgid "Flavor - not selected"
 msgstr "(Τυπός-'Εκδοση) Πυρήνα - δεν επιλέχθηκαν"
 
-#: kernel_manager.py:165
+#: kernel_manager.py:164
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF kernel (Βασικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:166
+#: kernel_manager.py:165
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF (πυρήνας) kernel (παλιά Έκδοση - std-def )"
 
-#: kernel_manager.py:167
+#: kernel_manager.py:166
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF kernel (Πειραματικός (πυρήνας) kernel)"
 
-#: kernel_manager.py:168
+#: kernel_manager.py:167
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (kernel un-def)"
 
-#: kernel_manager.py:220
+#: kernel_manager.py:219
 msgid "Remove the selected kernel"
 msgstr "Κατάργηση του επιλεγμένου (πυρηνα) kernel"
 
-#: kernel_manager.py:221
+#: kernel_manager.py:220
 msgid "Install the default kernel"
 msgstr "Εγκατάσtαση του προεπιλεγμένου πυρήνα (kernel)"
 
-#: kernel_manager.py:222
+#: kernel_manager.py:221
 msgid "Kernel information"
 msgstr "Πληροφορίες πυρήνα"
 
-#: kernel_manager.py:372
+#: kernel_manager.py:370
 msgid "Module"
 msgstr "Μονάδα"
 
-#: kernel_manager.py:383
+#: kernel_manager.py:381
 msgid "Remove the selected module"
 msgstr "Κατάργηση της επιλεγμένης μονάδας (πυρηνα-kernel)"
 
-#: kernel_manager.py:384
+#: kernel_manager.py:382
 msgid "Module information"
 msgstr "Πληροφορίες Μονάδας (Πυρήνα-kernel)"
 
-#: kernel_manager.py:417
+#: kernel_manager.py:415
 msgid "Rebuild rpm database?"
 msgstr "Ανακατασκευή βάσης δεδομένων rpm;"
 
-#: kernel_manager.py:422
+#: kernel_manager.py:420
 msgid "rpm database recovery"
 msgstr "-Ανάκτηση βάσης δεδομένων rpm"
 
-#: kernel_manager.py:430
+#: kernel_manager.py:428
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -612,55 +612,55 @@ msgstr ""
 "διάστημα, τότε αυξάνεται η πιθανότητα κατάργησης των απαραίτητων πακέτων. Να "
 "συνεχίσω;"
 
-#: kernel_manager.py:438
+#: kernel_manager.py:436
 msgid "Removing unnecessary dependencies"
 msgstr "Κατάργηση περιττών εξαρτήσεων"
 
-#: kernel_manager.py:450
+#: kernel_manager.py:448
 msgid "Set default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα \\(kernel\\)"
 
-#: kernel_manager.py:456
+#: kernel_manager.py:454
 msgid "Setting the default kernel boot"
 msgstr "Ρύθμιση της προεπιλεγμένης εκκίνησης του πυρήνα (kernel)"
 
-#: kernel_manager.py:487
+#: kernel_manager.py:485
 msgid "Remove"
 msgstr "Κατάργηση"
 
-#: kernel_manager.py:507
+#: kernel_manager.py:505
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: kernel_manager.py:518
+#: kernel_manager.py:516
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "Εγκαταστήστε τον πυρήνα un-def από το αποθετήριο Sisyphus;"
 
-#: kernel_manager.py:549
+#: kernel_manager.py:547
 msgid "Removing old kernels"
 msgstr "Κατάργηση παλαιών (πυρήνων) kernels"
 
-#: kernel_manager.py:561
+#: kernel_manager.py:559
 msgid "Cleaning apt-cache"
 msgstr "Καθάρισμα apt-cache"
 
-#: kernel_manager.py:635
+#: kernel_manager.py:630
 msgid "Process started, please wait ..."
 msgstr "Η διεργασία ξεκίνησε,περιμενετε..."
 
-#: kernel_manager.py:637
+#: kernel_manager.py:632
 msgid "Completed successfully"
 msgstr "Ολοκληρώθηκε επιτυχώς"
 
-#: kernel_manager.py:638
+#: kernel_manager.py:633
 msgid "The process is complete. You can close the window."
 msgstr "Η διεργασία έχει ολοκληρωθεί. Μπορείτε να κλείσετε το παράθυρο."
 
-#: kernel_manager.py:668
+#: kernel_manager.py:663
 msgid "Close"
 msgstr "Κλείσε"
 
-#: kernel_manager.py:669
+#: kernel_manager.py:664
 msgid "Close a window"
 msgstr "Κλείστε ένα παράθυρο"
 
@@ -721,19 +721,19 @@ msgstr "Ενημέρωση cache:"
 msgid "Update RPM packages"
 msgstr ""
 
-#: mod/notifications.py:100
+#: mod/notifications.py:99
 msgid "Packages to update: "
 msgstr "Ενημέρωση πακέτων: "
 
-#: mod/notifications.py:101
+#: mod/notifications.py:100
 msgid "Newly installed: "
 msgstr "Πρόσφατα Εγκατεστημένο: "
 
-#: mod/notifications.py:102
+#: mod/notifications.py:101
 msgid "For removing: "
 msgstr "Προς απομάκρυνση "
 
-#: mod/notifications.py:103
+#: mod/notifications.py:102
 msgid "Will not be updated: "
 msgstr "Δεν θα ενημερωθεί "
 

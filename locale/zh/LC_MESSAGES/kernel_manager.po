@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-11-25 21:26+0300\n"
+"POT-Creation-Date: 2022-11-26 18:57+0300\n"
 "PO-Revision-Date: 2022-11-26 02:36+0700\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -311,7 +311,7 @@ msgstr "删除内核"
 msgid "Removing kernels"
 msgstr "删除内核"
 
-#: form/main_win.py:313 kernel_manager.py:574 mod/notifications.py:80
+#: form/main_win.py:313 kernel_manager.py:571 mod/notifications.py:80
 msgid "Kernel update"
 msgstr "内核更新"
 
@@ -380,7 +380,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;,仔"
 "细阅读其说明。</p></body></html>"
 
-#: form/main_win.py:323 kernel_manager.py:538
+#: form/main_win.py:323 kernel_manager.py:536
 msgid "Distribution update"
 msgstr "发行更新"
 
@@ -476,95 +476,95 @@ msgstr "同意继续进行"
 msgid "Confirm"
 msgstr "确认"
 
-#: kernel_indicator.py:46
+#: kernel_indicator.py:43
 msgid "Kernel update indicator"
 msgstr "内核更新指示器"
 
-#: kernel_indicator.py:59
+#: kernel_indicator.py:56
 msgid "Close indicator"
 msgstr "关闭指示器"
 
-#: kernel_indicator.py:63
+#: kernel_indicator.py:60
 msgid "Repeat message"
 msgstr "重复消息"
 
-#: kernel_indicator.py:67
+#: kernel_indicator.py:64
 msgid "Settings"
 msgstr "设置"
 
-#: kernel_manager.py:95
+#: kernel_manager.py:94
 msgid "Updating cache wait for completion ..."
 msgstr "正在更新缓存以等待完成..."
 
-#: kernel_manager.py:104
+#: kernel_manager.py:103
 msgid "Updating cache:"
 msgstr "清理 apt-cache:"
 
-#: kernel_manager.py:108
+#: kernel_manager.py:107
 msgid "No access to repository"
 msgstr "无法访问存储库"
 
-#: kernel_manager.py:111
+#: kernel_manager.py:110
 msgid "Updating completed:"
 msgstr "更新完成："
 
-#: kernel_manager.py:157
+#: kernel_manager.py:156
 msgid "No kernels found to be removed"
 msgstr "没有找到要删除的内核"
 
-#: kernel_manager.py:164
+#: kernel_manager.py:163
 msgid "Flavor - not selected"
 msgstr "风味-未选择"
 
-#: kernel_manager.py:165
+#: kernel_manager.py:164
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF 内核（主内核）"
 
-#: kernel_manager.py:166
+#: kernel_manager.py:165
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF 内核（旧的 std-def 分支）"
 
-#: kernel_manager.py:167
+#: kernel_manager.py:166
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF 内核（实验内核）"
 
-#: kernel_manager.py:168
+#: kernel_manager.py:167
 msgid "Sisyphus (kernel un-def)"
 msgstr "西西弗斯（内核 un-def）"
 
-#: kernel_manager.py:220
+#: kernel_manager.py:219
 msgid "Remove the selected kernel"
 msgstr "删除选定的内核"
 
-#: kernel_manager.py:221
+#: kernel_manager.py:220
 msgid "Install the default kernel"
 msgstr "安装默认内核"
 
-#: kernel_manager.py:222
+#: kernel_manager.py:221
 msgid "Kernel information"
 msgstr "内核信息"
 
-#: kernel_manager.py:372
+#: kernel_manager.py:370
 msgid "Module"
 msgstr "模块"
 
-#: kernel_manager.py:383
+#: kernel_manager.py:381
 msgid "Remove the selected module"
 msgstr "移除所选模块"
 
-#: kernel_manager.py:384
+#: kernel_manager.py:382
 msgid "Module information"
 msgstr "模块信息"
 
-#: kernel_manager.py:417
+#: kernel_manager.py:415
 msgid "Rebuild rpm database?"
 msgstr "重建 rpm 数据库？"
 
-#: kernel_manager.py:422
+#: kernel_manager.py:420
 msgid "rpm database recovery"
 msgstr "rpm 数据库恢复"
 
-#: kernel_manager.py:430
+#: kernel_manager.py:428
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -573,55 +573,55 @@ msgstr ""
 "建议用于清洁新的操作系统。 如果您已经使用操作系统很长时间，那么删除必要软件包"
 "的可能性就会增加。 继续？"
 
-#: kernel_manager.py:438
+#: kernel_manager.py:436
 msgid "Removing unnecessary dependencies"
 msgstr "删除不必要的依赖"
 
-#: kernel_manager.py:450
+#: kernel_manager.py:448
 msgid "Set default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:456
+#: kernel_manager.py:454
 msgid "Setting the default kernel boot"
 msgstr "设置默认的内核启动"
 
-#: kernel_manager.py:487
+#: kernel_manager.py:485
 msgid "Remove"
 msgstr "去掉"
 
-#: kernel_manager.py:507
+#: kernel_manager.py:505
 msgid "Installation"
 msgstr "安装"
 
-#: kernel_manager.py:518
+#: kernel_manager.py:516
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "从 Sisyphus 存储库安装 un-def 内核？"
 
-#: kernel_manager.py:549
+#: kernel_manager.py:547
 msgid "Removing old kernels"
 msgstr "删除旧内核"
 
-#: kernel_manager.py:561
+#: kernel_manager.py:559
 msgid "Cleaning apt-cache"
 msgstr "清理 apt-cache"
 
-#: kernel_manager.py:635
+#: kernel_manager.py:630
 msgid "Process started, please wait ..."
 msgstr "程序已启动，请稍候..."
 
-#: kernel_manager.py:637
+#: kernel_manager.py:632
 msgid "Completed successfully"
 msgstr "成功完成"
 
-#: kernel_manager.py:638
+#: kernel_manager.py:633
 msgid "The process is complete. You can close the window."
 msgstr "该过程完成。 您可以关闭窗口。"
 
-#: kernel_manager.py:668
+#: kernel_manager.py:663
 msgid "Close"
 msgstr "闭"
 
-#: kernel_manager.py:669
+#: kernel_manager.py:664
 msgid "Close a window"
 msgstr "关闭一个窗口"
 
@@ -633,8 +633,7 @@ msgstr "更新完成"
 msgid ""
 "Distribution update completed. For correct operation of all updated "
 "libraries, it is recommended to restart the computer."
-msgstr ""
-"分发更新完成。 为了所有更新的库的正确操作，建议重新启动计算机。"
+msgstr "分发更新完成。 为了所有更新的库的正确操作，建议重新启动计算机。"
 
 #: mod/notifications.py:48
 msgid "Update started"
@@ -646,7 +645,8 @@ msgid ""
 "complete, you will receive a notification and the taskbar icon will stop "
 "animating."
 msgstr ""
-"正在进行软件更新。 这可能要花点时间。 更新完成后，您将收到一条通知，任务栏图标将停止动画。"
+"正在进行软件更新。 这可能要花点时间。 更新完成后，您将收到一条通知，任务栏图"
+"标将停止动画。"
 
 #: mod/notifications.py:56
 msgid "Button disabled"
@@ -655,8 +655,7 @@ msgstr "按钮禁用"
 #: mod/notifications.py:57
 msgid ""
 "The Update button for new packages will no longer appear in update messages."
-msgstr ""
-"新包的更新按钮将不再出现在更新消息中。"
+msgstr "新包的更新按钮将不再出现在更新消息中。"
 
 #: mod/notifications.py:64
 msgid "Button enabled"
@@ -682,19 +681,19 @@ msgstr "包更新"
 msgid "Update RPM packages"
 msgstr "更新 RPM 包"
 
-#: mod/notifications.py:100
+#: mod/notifications.py:99
 msgid "Packages to update: "
 msgstr "要更新的软件包： "
 
-#: mod/notifications.py:101
+#: mod/notifications.py:100
 msgid "Newly installed: "
 msgstr "新安装的： "
 
-#: mod/notifications.py:102
+#: mod/notifications.py:101
 msgid "For removing: "
 msgstr "对于删除： "
 
-#: mod/notifications.py:103
+#: mod/notifications.py:102
 msgid "Will not be updated: "
 msgstr "不会更新： "
 

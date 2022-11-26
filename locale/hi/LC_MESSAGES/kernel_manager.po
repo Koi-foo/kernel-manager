@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-11-25 21:26+0300\n"
+"POT-Creation-Date: 2022-11-26 18:57+0300\n"
 "PO-Revision-Date: 2022-11-26 00:20+0700\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -316,7 +316,7 @@ msgstr "गुठली निकाल दें"
 msgid "Removing kernels"
 msgstr "गुठली निकालना"
 
-#: form/main_win.py:313 kernel_manager.py:574 mod/notifications.py:80
+#: form/main_win.py:313 kernel_manager.py:571 mod/notifications.py:80
 msgid "Kernel update"
 msgstr "कर्नेल अद्यतन"
 
@@ -388,7 +388,7 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, "
 "ध्यान से इसका वर्णन पढ़ें।</p></body></html>"
 
-#: form/main_win.py:323 kernel_manager.py:538
+#: form/main_win.py:323 kernel_manager.py:536
 msgid "Distribution update"
 msgstr "वितरण अद्यतन"
 
@@ -488,95 +488,95 @@ msgstr "प्रक्रिया जारी रखने के लिए �
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: kernel_indicator.py:46
+#: kernel_indicator.py:43
 msgid "Kernel update indicator"
 msgstr "कर्नेल अद्यतन संकेतक"
 
-#: kernel_indicator.py:59
+#: kernel_indicator.py:56
 msgid "Close indicator"
 msgstr "समापन संकेतक"
 
-#: kernel_indicator.py:63
+#: kernel_indicator.py:60
 msgid "Repeat message"
 msgstr "संदेश दोहराएं"
 
-#: kernel_indicator.py:67
+#: kernel_indicator.py:64
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: kernel_manager.py:95
+#: kernel_manager.py:94
 msgid "Updating cache wait for completion ..."
 msgstr "कैश अपडेट हो रहा है, पूरा होने की प्रतीक्षा करें ..."
 
-#: kernel_manager.py:104
+#: kernel_manager.py:103
 msgid "Updating cache:"
 msgstr "सफाई apt-कैश:"
 
-#: kernel_manager.py:108
+#: kernel_manager.py:107
 msgid "No access to repository"
 msgstr "रिपॉजिटरी तक कोई पहुंच नहीं"
 
-#: kernel_manager.py:111
+#: kernel_manager.py:110
 msgid "Updating completed:"
 msgstr "अपडेट पूर्ण हो गया:"
 
-#: kernel_manager.py:157
+#: kernel_manager.py:156
 msgid "No kernels found to be removed"
 msgstr "कोई गुठली नहीं निकाली गई"
 
-#: kernel_manager.py:164
+#: kernel_manager.py:163
 msgid "Flavor - not selected"
 msgstr "स्वाद - चयनित नहीं"
 
-#: kernel_manager.py:165
+#: kernel_manager.py:164
 msgid "STD-DEF kernel (main kernel)"
 msgstr "STD-DEF कर्नेल (मुख्य कर्नेल)"
 
-#: kernel_manager.py:166
+#: kernel_manager.py:165
 msgid "OLD-DEF kernel (old std-def branch)"
 msgstr "OLD-DEF कर्नेल (पुरानी std-def शाखा)"
 
-#: kernel_manager.py:167
+#: kernel_manager.py:166
 msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF कर्नेल (प्रयोगात्मक कर्नेल)"
 
-#: kernel_manager.py:168
+#: kernel_manager.py:167
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (कर्नेल अन-डिफ)"
 
-#: kernel_manager.py:220
+#: kernel_manager.py:219
 msgid "Remove the selected kernel"
 msgstr "चयनित गिरी निकालें"
 
-#: kernel_manager.py:221
+#: kernel_manager.py:220
 msgid "Install the default kernel"
 msgstr "डिफ़ॉल्ट कर्नेल स्थापित करें"
 
-#: kernel_manager.py:222
+#: kernel_manager.py:221
 msgid "Kernel information"
 msgstr "कर्नेल के बारे में जानकारी"
 
-#: kernel_manager.py:372
+#: kernel_manager.py:370
 msgid "Module"
 msgstr "मापांक"
 
-#: kernel_manager.py:383
+#: kernel_manager.py:381
 msgid "Remove the selected module"
 msgstr "चयनित मॉड्यूल निकालें"
 
-#: kernel_manager.py:384
+#: kernel_manager.py:382
 msgid "Module information"
 msgstr "मॉड्यूल जानकारी"
 
-#: kernel_manager.py:417
+#: kernel_manager.py:415
 msgid "Rebuild rpm database?"
 msgstr "rpm डेटाबेस का पुनर्निर्माण करें?"
 
-#: kernel_manager.py:422
+#: kernel_manager.py:420
 msgid "rpm database recovery"
 msgstr "rpm डेटाबेस रिकवरी"
 
-#: kernel_manager.py:430
+#: kernel_manager.py:428
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -585,55 +585,55 @@ msgstr ""
 "एक ताजा ओएस की सफाई के लिए उपयोग करने की सिफारिश की जाती है। यदि आप लंबे समय से "
 "ओएस का उपयोग कर रहे हैं, तो आवश्यक पैकेजों को हटाने की संभावना बढ़ जाती है। जारी रखें?"
 
-#: kernel_manager.py:438
+#: kernel_manager.py:436
 msgid "Removing unnecessary dependencies"
 msgstr "अनावश्यक निर्भरता को हटाना"
 
-#: kernel_manager.py:450
+#: kernel_manager.py:448
 msgid "Set default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करें"
 
-#: kernel_manager.py:456
+#: kernel_manager.py:454
 msgid "Setting the default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करना"
 
-#: kernel_manager.py:487
+#: kernel_manager.py:485
 msgid "Remove"
 msgstr "हटाना"
 
-#: kernel_manager.py:507
+#: kernel_manager.py:505
 msgid "Installation"
 msgstr "स्थापना"
 
-#: kernel_manager.py:518
+#: kernel_manager.py:516
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "Sisyphus रिपॉजिटरी से un-def कर्नेल स्थापित करें?"
 
-#: kernel_manager.py:549
+#: kernel_manager.py:547
 msgid "Removing old kernels"
 msgstr "पुरानी गुठली निकालना"
 
-#: kernel_manager.py:561
+#: kernel_manager.py:559
 msgid "Cleaning apt-cache"
 msgstr "सफाई apt-कैश"
 
-#: kernel_manager.py:635
+#: kernel_manager.py:630
 msgid "Process started, please wait ..."
 msgstr "प्रक्रिया शुरू हो गई है, प्रतीक्षा करें ..."
 
-#: kernel_manager.py:637
+#: kernel_manager.py:632
 msgid "Completed successfully"
 msgstr "सफलतापूर्वक पूरा"
 
-#: kernel_manager.py:638
+#: kernel_manager.py:633
 msgid "The process is complete. You can close the window."
 msgstr "प्रक्रिया पूरी हो गई है, आप विंडो को बंद कर सकते हैं."
 
-#: kernel_manager.py:668
+#: kernel_manager.py:663
 msgid "Close"
 msgstr "बंद करे"
 
-#: kernel_manager.py:669
+#: kernel_manager.py:664
 msgid "Close a window"
 msgstr "एक खिड़की बंद करो"
 
@@ -646,8 +646,8 @@ msgid ""
 "Distribution update completed. For correct operation of all updated "
 "libraries, it is recommended to restart the computer."
 msgstr ""
-"वितरण अद्यतन पूरा हुआ। सभी अद्यतन पुस्तकालयों के सही संचालन के लिए, "
-"कंप्यूटर को पुनरारंभ करने की अनुशंसा की जाती है।"
+"वितरण अद्यतन पूरा हुआ। सभी अद्यतन पुस्तकालयों के सही संचालन के लिए, कंप्यूटर को पुनरारंभ "
+"करने की अनुशंसा की जाती है।"
 
 #: mod/notifications.py:48
 msgid "Update started"
@@ -658,8 +658,9 @@ msgid ""
 "Software update in progress. This may take some time. When the update is "
 "complete, you will receive a notification and the taskbar icon will stop "
 "animating."
-msgstr "सॉफ़्टवेयर अद्यतन प्रगति पर है। इसमें कुछ समय लग सकता है। "
-"अपडेट पूर्ण होने पर, आपको एक सूचना प्राप्त होगी और टास्कबार आइकन एनिमेट करना बंद कर देगा।"
+msgstr ""
+"सॉफ़्टवेयर अद्यतन प्रगति पर है। इसमें कुछ समय लग सकता है। अपडेट पूर्ण होने पर, आपको एक "
+"सूचना प्राप्त होगी और टास्कबार आइकन एनिमेट करना बंद कर देगा।"
 
 #: mod/notifications.py:56
 msgid "Button disabled"
@@ -694,19 +695,19 @@ msgstr "संकुल अद्यतन कर रहा है"
 msgid "Update RPM packages"
 msgstr "RPM पैकेज अपडेट करें"
 
-#: mod/notifications.py:100
+#: mod/notifications.py:99
 msgid "Packages to update: "
 msgstr "अद्यतन करने के लिए पैकेज: "
 
-#: mod/notifications.py:101
+#: mod/notifications.py:100
 msgid "Newly installed: "
 msgstr "नव स्थापित: "
 
-#: mod/notifications.py:102
+#: mod/notifications.py:101
 msgid "For removing: "
 msgstr "हटाने के लिए: "
 
-#: mod/notifications.py:103
+#: mod/notifications.py:102
 msgid "Will not be updated: "
 msgstr "अपडेट नहीं होगा: "
 
