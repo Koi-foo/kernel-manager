@@ -13,10 +13,10 @@ Requires: python3-base
 Requires: python3-module-PyQt5
 Requires: python3-module-gettext
 Requires: python3-module-requests
-Requires: python3-module-dbus
 Requires: update-kernel
 Requires: apt-repo
 Requires: apt-scripts
+Requires: libnotify
 
 BuildArch: noarch
 
