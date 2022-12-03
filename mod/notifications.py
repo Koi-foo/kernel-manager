@@ -121,7 +121,7 @@ class TrayNotifications(QObject):
         return activ
 
     def update_test(self, status=None):
-        """роверка запущено ли обновление"""
+        """Проверка запущено ли обновление"""
         pid = self.bash.run('pgrep -fo "apt-get dist-upgrade"')
 
         if pid: status = True
