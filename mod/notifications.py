@@ -77,7 +77,7 @@ class TrayNotifications(QObject):
         summary = _('Kernel update')
         body = _('A new version of the kernel is available: ') + config['version']
 
-        self.bash.run(f'{self.notify} -u "normal" -r 5 -t 20000 "{summary}" "{body}"')
+        self.bash.run(f'{self.notify} -u "normal" -t 20000 "{summary}" "{body}"')
         self.message_sound()
 
     def software_message(self, config):
@@ -95,7 +95,7 @@ class TrayNotifications(QObject):
         body = f'{update}\n{install}\n{remove}\n{not_update}'
 
         self.bash.popen('aplay -q /opt/kernel-manager/sound/message.wav')
-        message = self.bash.run(f'{self.notify} -u {urg} -r 6 {action} -t 20000 "{summary}" "{body}"')
+        message = self.bash.run(f'{self.notify} -u {urg} {action} -t 20000 "{summary}" "{body}"')
         self.start_update(message)
 
     def start_update(self, message):
