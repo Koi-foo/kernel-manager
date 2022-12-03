@@ -1,6 +1,6 @@
 Name: kernel-manager
 Version: 1.10
-Release: alt1
+Release: alt2
 
 License: LGPL-3.0-only
 Group: System/Base
@@ -58,6 +58,9 @@ python3 setup.py \
 /opt/kernel-manager
 
 %changelog
+* Sat Dec 03 2022 Evgeny Chuck <koi@altlinux.org> 1.10-alt2
+- Disable dbus notification replacement feature
+
 * Fri Nov 25 2022 Evgeny Chuck <koi@altlinux.org> 1.10-alt1
 - New version 1.10
 - Added indicator menu window

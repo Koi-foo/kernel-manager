@@ -31,6 +31,8 @@ def update_cache():
     if difference >= CONFIG['days']:
         shell('apt-get update')
     else:
+        version_kernel()
+        save_settings()
         sys.exit()
 
 def update_packages():
