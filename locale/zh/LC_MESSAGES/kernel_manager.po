@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
 "POT-Creation-Date: 2022-11-26 18:57+0300\n"
-"PO-Revision-Date: 2022-11-26 02:36+0700\n"
+"PO-Revision-Date: 2022-12-12 02:36+0700\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
 "Language: zh_CN\n"
@@ -32,7 +32,7 @@ msgstr "等待"
 
 #: form/indicator_win.py:103
 msgid "Delayed check for updates <br>after system startup (in seconds)"
-msgstr "系统启动后延迟检查更新 <br>（以秒为单位）"
+msgstr "延迟检查更新 <br>系统启动后（以秒为单位）"
 
 #: form/indicator_win.py:108
 msgid "Period"
