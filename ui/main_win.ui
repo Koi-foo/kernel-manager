@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>465</height>
+    <height>509</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -42,7 +42,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
+    <item row="0" column="0">
      <widget class="QTabWidget" name="Tab1">
       <property name="font">
        <font>
@@ -88,7 +88,7 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Program help.&lt;/span&gt;&lt;br /&gt;This program provides a simple graphical script management tool: &lt;span style=&quot; font-style:italic;&quot;&gt;update-kernel&lt;/span&gt;, &lt;span style=&quot; font-style:italic;&quot;&gt;remove-old-kernel&lt;/span&gt;.&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Change of kernel.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Change of kernel.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF, RT ).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Removing kernels.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules. The currently active core is not displayed in the list. The Clear button clears the cache of obsolete packages and removes duplicates.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;The Remove Kernels button clears the system of all kernels except the current one. The currently active core cannot be removed.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:transparent;&quot;&gt;Update kernel.&lt;/span&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;&lt;br /&gt;Automatically updates the kernel and modules to the newest version. The &amp;quot;Distribution&amp;quot; button updates the software to the current version. The repository list allows you to modify the branches of the repository.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -164,6 +164,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Kernel: STD-DEF&lt;/span&gt;&lt;br /&gt;Standard kernel. During the assembly, patches from the stable kernel branch are used to correct the work of drivers and software.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Kernel: OLD-DEF&lt;/span&gt;&lt;br /&gt;Previous kernel branch std-def. The old-def kernel supports older hardware and long-term support.&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Kernel: UN-DEF&lt;/span&gt;&lt;br /&gt;An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Kernel: RT&lt;/span&gt;&lt;br /&gt;Realtime kernel. Used in systems requiring high response speed.&lt;br /&gt;Read more: &lt;span style=&quot; text-decoration: underline;&quot;&gt;www.wiki.linuxfoundation.org/realtime/start&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sisyphus: UN-DEF &lt;/span&gt;&lt;br /&gt;It is an unstable repository of the latest software. Recommended for Intel integrated graphics not supported by other kernels. When using the kernel from this repository, you will not be able to work with programs that depend on the version of the module in the stable repositories.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
@@ -292,8 +293,8 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;The note&lt;/span&gt;&lt;br /&gt;The right mouse button menu provides additional options such as loading the default kernel. For the convenience of orientation, color coding has been introduced.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Color coding.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/picture/icons/std.png&quot; height=&quot;12&quot; /&gt; - kernel type ( std-def ) &lt;img src=&quot;:/picture/icons/un.png&quot; height=&quot;12&quot; /&gt; - kernel type ( un-def ) &lt;img src=&quot;:/picture/icons/old.png&quot; height=&quot;12&quot; /&gt; - kernel type ( old-def )&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Color designation of kernel types.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/picture/icons/std.png&quot; height=&quot;12&quot; /&gt; - std-def    &lt;img src=&quot;:/picture/icons/un.png&quot; height=&quot;12&quot; /&gt; - un-def     &lt;img src=&quot;:/picture/icons/old.png&quot; height=&quot;12&quot; /&gt; - old-def     &lt;img src=&quot;:/picture/icons/rt.png&quot; height=&quot;12&quot; /&gt; - rt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(700, 465)
+        MainWindow.resize(700, 509)
         MainWindow.setMinimumSize(QtCore.QSize(700, 465))
         MainWindow.setMaximumSize(QtCore.QSize(950, 600))
         font = QtGui.QFont()
@@ -261,7 +261,7 @@ class Ui_MainWindow(object):
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.gridLayout_6.addWidget(self.textBrowser_2, 1, 0, 1, 4)
         self.Tab1.addTab(self.Tab5_PacketFilter, "")
-        self.gridLayout.addWidget(self.Tab1, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.Tab1, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -279,7 +279,7 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Program help.</span><br />This program provides a simple graphical script management tool: <span style=\" font-style:italic;\">update-kernel</span>, <span style=\" font-style:italic;\">remove-old-kernel</span>.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Change of kernel.</span><span style=\" background-color:transparent;\"><br />Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Change of kernel.</span><span style=\" background-color:transparent;\"><br />Allows you to change the kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF, RT ).</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Removing kernels.</span><span style=\" background-color:transparent;\"><br />Shows a list of kernels installed on the system. Double clicking on a line removes the selected kernel and its modules. The currently active core is not displayed in the list. The Clear button clears the cache of obsolete packages and removes duplicates.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" background-color:transparent;\">The Remove Kernels button clears the system of all kernels except the current one. The currently active core cannot be removed.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; background-color:transparent;\">Update kernel.</span><span style=\" background-color:transparent;\"><br />Automatically updates the kernel and modules to the newest version. The &quot;Distribution&quot; button updates the software to the current version. The repository list allows you to modify the branches of the repository.</span></p></body></html>")))
@@ -294,6 +294,7 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: STD-DEF</span><br />Standard kernel. During the assembly, patches from the stable kernel branch are used to correct the work of drivers and software.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: OLD-DEF</span><br />Previous kernel branch std-def. The old-def kernel supports older hardware and long-term support.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. The un-def kernel is newer and may support hardware that does not work in std-def.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Kernel: RT</span><br />Realtime kernel. Used in systems requiring high response speed.<br />Read more: <span style=\" text-decoration: underline;\">www.wiki.linuxfoundation.org/realtime/start</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of the latest software. Recommended for Intel integrated graphics not supported by other kernels. When using the kernel from this repository, you will not be able to work with programs that depend on the version of the module in the stable repositories.</p></body></html>")))
         self.Tab1.setTabText(self.Tab1.indexOf(self.Tab2_ChangeKernel), _translate("MainWindow", _("Change of kernels")))
         self.listWidget_Kernel.setSortingEnabled(False)
@@ -303,8 +304,8 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:\'Sans Serif\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">The note</span><br />The right mouse button menu provides additional options such as loading the default kernel. For the convenience of orientation, color coding has been introduced.</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Color coding.</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/picture/icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src=\":/picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</p></body></html>")))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Color designation of kernel types.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/std.png\" height=\"12\" /> - std-def    <img src=\":/picture/icons/un.png\" height=\"12\" /> - un-def     <img src=\":/picture/icons/old.png\" height=\"12\" /> - old-def     <img src=\":/picture/icons/rt.png\" height=\"12\" /> - rt</p></body></html>")))
         self.pushButton_Clean.setToolTip(_translate("MainWindow", _("Clearing the local cache of obsolete packages<br>and removing duplicate packages")))
         self.pushButton_Clean.setText(_translate("MainWindow", _("Clear")))
         self.pushButton_DELK.setToolTip(_translate("MainWindow", _("Removes all cores except the currently active one")))

@@ -117,7 +117,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def search_kernel(self):
         """Поиск ядра для обновления"""
-        flavour = re.search(r'.*-(.+-.+)-', release()).group(1)
+        flavour = re.search(r'.*-(.+-.+)-|.*-(.+)-', release()).group(1)
         real_number = release().split('-')[0]
         new_version = real_number.split('.')
         search_version = Shell().run(f"apt-cache pkgnames kernel-image-{flavour}#")
@@ -164,6 +164,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboBox_ChangeKernel.addItem(_('STD-DEF kernel (main kernel)'))
         self.comboBox_ChangeKernel.addItem(_('OLD-DEF kernel (old std-def branch)'))
         self.comboBox_ChangeKernel.addItem(_('UN-DEF kernel (experimental kernel)'))
+        self.comboBox_ChangeKernel.addItem(_('RT kernel (realtime kernel)'))
         self.comboBox_ChangeKernel.addItem(_('Sisyphus (kernel un-def)'))
 
 
@@ -190,6 +191,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if "std" in line: icon = ":/picture/icons/std-p.png"
             elif "un" in line: icon = ":/picture/icons/un-p.png"
             elif "old" in line: icon = ":/picture/icons/old-p.png"
+            elif "rt" in line: icon = ":/picture/icons/rt-p.png"
             else: icon = ":/picture/icons/no-p.png"
 
             item = QListWidgetItem(QIcon(icon), line)
@@ -350,6 +352,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             if "std" in line: icon = ":/picture/icons/std-p.png"
             elif "un" in line: icon = ":/picture/icons/un-p.png"
             elif "old" in line: icon = ":/picture/icons/old-p.png"
+            elif "rt" in line: icon = ":/picture/icons/rt-p.png"
             else: icon = ":/picture/icons/no-p.png"
 
             item = QListWidgetItem(QIcon(icon), line)
@@ -495,7 +498,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif 1 == combobox_item: flavour = 'std-def'
         elif 2 == combobox_item: flavour = 'old-def'
         elif 3 == combobox_item: flavour = 'un-def'
-        elif 4 == combobox_item: self.sisyphus_flavour()
+        elif 4 == combobox_item: flavour = 'rt'
+        elif 5 == combobox_item: self.sisyphus_flavour()
 
         try:
             self.branches()
