@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kernel Manager\n"
-"POT-Creation-Date: 2022-11-26 18:57+0300\n"
+"POT-Creation-Date: 2022-12-25 17:24+0300\n"
 "PO-Revision-Date: 2022-11-26 00:20+0700\n"
 "Last-Translator: Дмитрий <dmitrydmitry761@gmail.com>\n"
 "Language-Team: LANGUAGE <eg.evgeniy@gmail.com>\n"
@@ -83,6 +83,7 @@ msgid "Kernels management"
 msgstr "कर्नेल प्रबंधन"
 
 #: form/main_win.py:277
+#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -101,7 +102,7 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; background-color:transparent;\">Change of kernel.</span><span "
 "style=\" background-color:transparent;\"><br />Allows you to change the "
-"kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF ).</span></p>\n"
+"kernel type to choose from ( STD-DEF, UN-DEF, OLD-DEF, RT ).</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; background-color:transparent;\">Removing kernels.</span><span "
@@ -174,6 +175,7 @@ msgid ""
 msgstr "सूची से एक कर्नेल चुनें और नए संस्करण पर स्विच करने के लिए बदलें बटन पर क्लिक करें"
 
 #: form/main_win.py:289
+#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -200,6 +202,12 @@ msgid ""
 "weight:600;\">Kernel: UN-DEF</span><br />An experimental core for desktops. "
 "The un-def kernel is newer and may support hardware that does not work in "
 "std-def.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Kernel: RT</span><br />Realtime kernel. Used in systems "
+"requiring high response speed.<br />Read more: <span style=\" text-"
+"decoration: underline;\">www.wiki.linuxfoundation.org/realtime/start</span></"
+"p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Sisyphus: UN-DEF </span><br />It is an unstable repository of "
@@ -239,11 +247,12 @@ msgstr ""
 "रिपॉजिटरी से कर्नेल का उपयोग करते समय, आप उन प्रोग्राम के साथ काम नहीं कर पाएंगे जो "
 "स्थिर रिपॉजिटरी में मॉड्यूल के संस्करण पर निर्भर करते हैं।</p></body></html>"
 
-#: form/main_win.py:298
+#: form/main_win.py:299
 msgid "Change of kernels"
 msgstr "गुठली का बदलना"
 
-#: form/main_win.py:300
+#: form/main_win.py:301
+#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -262,13 +271,13 @@ msgid ""
 "\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Color coding.</span></p>\n"
+"weight:600;\">Color designation of kernel types.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/picture/icons/"
-"std.png\" height=\"12\" /> - kernel type ( std-def ) <img src=\":/picture/"
-"icons/un.png\" height=\"12\" /> - kernel type ( un-def ) <img src=\":/"
-"picture/icons/old.png\" height=\"12\" /> - kernel type ( old-def )</p></"
-"body></html>"
+"std.png\" height=\"12\" /> - std-def    <img src=\":/picture/icons/un.png\" "
+"height=\"12\" /> - un-def     <img src=\":/picture/icons/old.png\" height="
+"\"12\" /> - old-def     <img src=\":/picture/icons/rt.png\" height=\"12\" /> "
+"- rt</p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -294,37 +303,37 @@ msgstr ""
 "un.png\" height=\"12\" /> - कर्नेल प्रकार (अन-डीफ़) <img src=\":/picture/icons/"
 "old.png\" height=\"12\" /> - कर्नेल प्रकार (पुराने-डीफ़)</p></body></html>"
 
-#: form/main_win.py:308
+#: form/main_win.py:309
 msgid ""
 "Clearing the local cache of obsolete packages<br>and removing duplicate "
 "packages"
 msgstr "अप्रचलित पैकेजों के स्थानीय कैश को साफ़ करना <br> और डुप्लिकेट पैकेजों को हटाना"
 
-#: form/main_win.py:309
+#: form/main_win.py:310
 msgid "Clear"
 msgstr "स्पष्ट"
 
-#: form/main_win.py:310
+#: form/main_win.py:311
 msgid "Removes all cores except the currently active one"
 msgstr "वर्तमान में सक्रिय एक को छोड़कर सभी कोर को निकालता है"
 
-#: form/main_win.py:311
+#: form/main_win.py:312
 msgid "Remove kernels"
 msgstr "गुठली निकाल दें"
 
-#: form/main_win.py:312
+#: form/main_win.py:313
 msgid "Removing kernels"
 msgstr "गुठली निकालना"
 
-#: form/main_win.py:313 kernel_manager.py:571 mod/notifications.py:80
+#: form/main_win.py:314 kernel_manager.py:575 mod/notifications.py:77
 msgid "Kernel update"
 msgstr "कर्नेल अद्यतन"
 
-#: form/main_win.py:314 form/main_win.py:326
+#: form/main_win.py:315 form/main_win.py:327
 msgid "Update kernel"
 msgstr "अद्यतन कर्नेल"
 
-#: form/main_win.py:315
+#: form/main_win.py:316
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -388,27 +397,27 @@ msgstr ""
 "\" text-decoration: underline; color:#2980b9;\">Sisyphus</span></a>&quot;, "
 "ध्यान से इसका वर्णन पढ़ें।</p></body></html>"
 
-#: form/main_win.py:323 kernel_manager.py:536
+#: form/main_win.py:324 kernel_manager.py:540
 msgid "Distribution update"
 msgstr "वितरण अद्यतन"
 
-#: form/main_win.py:324
+#: form/main_win.py:325
 msgid "Distribution"
 msgstr "वितरण"
 
-#: form/main_win.py:325
+#: form/main_win.py:326
 msgid "Change repository"
 msgstr "रिपॉजिटरी बदलें"
 
-#: form/main_win.py:327
+#: form/main_win.py:328
 msgid "Filter for kernel modules installed on the system"
 msgstr "सिस्टम पर संस्थापित कर्नेल मॉड्यूल के लिए फ़िल्टर"
 
-#: form/main_win.py:328
+#: form/main_win.py:329
 msgid "All installed modules"
 msgstr "सभी स्थापित मॉड्यूल"
 
-#: form/main_win.py:330
+#: form/main_win.py:331
 msgid ""
 "Remove packages that were automatically installed to satisfy<br>dependencies "
 "for other packages and are now no longer needed. "
@@ -416,11 +425,11 @@ msgstr ""
 "संतुष्ट करने के लिए स्वचालित रूप से स्थापित संकुल को हटा दें<br>अन्य पैकेजों के लिए निर्भरता और "
 "अब इसकी आवश्यकता नहीं है। "
 
-#: form/main_win.py:331
+#: form/main_win.py:332
 msgid "rebuilddb - rebuild the rpm package database."
 msgstr "rebuilddb - आरपीएम पैकेज डेटाबेस का पुनर्निर्माण करें।"
 
-#: form/main_win.py:332
+#: form/main_win.py:333
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -464,7 +473,7 @@ msgstr ""
 "> &quot;<span style=\" font-weight:600;\">rebuilddb</span>&quot;बटन का उपयोग "
 "दूषित आरपीएम पैकेज डेटाबेस को सुधारने के लिए किया जाता है।</p></body></html>"
 
-#: form/main_win.py:338
+#: form/main_win.py:339
 msgid "Kernel modules"
 msgstr "कर्नेल मॉड्यूल"
 
@@ -488,19 +497,19 @@ msgstr "प्रक्रिया जारी रखने के लिए �
 msgid "Confirm"
 msgstr "पुष्टि करें"
 
-#: kernel_indicator.py:43
+#: kernel_indicator.py:45
 msgid "Kernel update indicator"
 msgstr "कर्नेल अद्यतन संकेतक"
 
-#: kernel_indicator.py:56
+#: kernel_indicator.py:59
 msgid "Close indicator"
 msgstr "समापन संकेतक"
 
-#: kernel_indicator.py:60
+#: kernel_indicator.py:63
 msgid "Repeat message"
 msgstr "संदेश दोहराएं"
 
-#: kernel_indicator.py:64
+#: kernel_indicator.py:67
 msgid "Settings"
 msgstr "सेटिंग्स"
 
@@ -541,42 +550,47 @@ msgid "UN-DEF kernel (experimental kernel)"
 msgstr "UN-DEF कर्नेल (प्रयोगात्मक कर्नेल)"
 
 #: kernel_manager.py:167
+#, fuzzy
+msgid "RT kernel (realtime kernel)"
+msgstr "STD-DEF कर्नेल (मुख्य कर्नेल)"
+
+#: kernel_manager.py:168
 msgid "Sisyphus (kernel un-def)"
 msgstr "Sisyphus (कर्नेल अन-डिफ)"
 
-#: kernel_manager.py:219
+#: kernel_manager.py:221
 msgid "Remove the selected kernel"
 msgstr "चयनित गिरी निकालें"
 
-#: kernel_manager.py:220
+#: kernel_manager.py:222
 msgid "Install the default kernel"
 msgstr "डिफ़ॉल्ट कर्नेल स्थापित करें"
 
-#: kernel_manager.py:221
+#: kernel_manager.py:223
 msgid "Kernel information"
 msgstr "कर्नेल के बारे में जानकारी"
 
-#: kernel_manager.py:370
+#: kernel_manager.py:373
 msgid "Module"
 msgstr "मापांक"
 
-#: kernel_manager.py:381
+#: kernel_manager.py:384
 msgid "Remove the selected module"
 msgstr "चयनित मॉड्यूल निकालें"
 
-#: kernel_manager.py:382
+#: kernel_manager.py:385
 msgid "Module information"
 msgstr "मॉड्यूल जानकारी"
 
-#: kernel_manager.py:415
+#: kernel_manager.py:418
 msgid "Rebuild rpm database?"
 msgstr "rpm डेटाबेस का पुनर्निर्माण करें?"
 
-#: kernel_manager.py:420
+#: kernel_manager.py:423
 msgid "rpm database recovery"
 msgstr "rpm डेटाबेस रिकवरी"
 
-#: kernel_manager.py:428
+#: kernel_manager.py:431
 msgid ""
 "It is recommended to use for cleaning a fresh OS. If you have been using the "
 "OS for a long time, then the likelihood of removing the necessary packages "
@@ -585,63 +599,63 @@ msgstr ""
 "एक ताजा ओएस की सफाई के लिए उपयोग करने की सिफारिश की जाती है। यदि आप लंबे समय से "
 "ओएस का उपयोग कर रहे हैं, तो आवश्यक पैकेजों को हटाने की संभावना बढ़ जाती है। जारी रखें?"
 
-#: kernel_manager.py:436
+#: kernel_manager.py:439
 msgid "Removing unnecessary dependencies"
 msgstr "अनावश्यक निर्भरता को हटाना"
 
-#: kernel_manager.py:448
+#: kernel_manager.py:451
 msgid "Set default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करें"
 
-#: kernel_manager.py:454
+#: kernel_manager.py:457
 msgid "Setting the default kernel boot"
 msgstr "डिफ़ॉल्ट कर्नेल बूट सेट करना"
 
-#: kernel_manager.py:485
+#: kernel_manager.py:488
 msgid "Remove"
 msgstr "हटाना"
 
-#: kernel_manager.py:505
+#: kernel_manager.py:509
 msgid "Installation"
 msgstr "स्थापना"
 
-#: kernel_manager.py:516
+#: kernel_manager.py:520
 msgid "Install un-def kernel from Sisyphus repository?"
 msgstr "Sisyphus रिपॉजिटरी से un-def कर्नेल स्थापित करें?"
 
-#: kernel_manager.py:547
+#: kernel_manager.py:551
 msgid "Removing old kernels"
 msgstr "पुरानी गुठली निकालना"
 
-#: kernel_manager.py:559
+#: kernel_manager.py:563
 msgid "Cleaning apt-cache"
 msgstr "सफाई apt-कैश"
 
-#: kernel_manager.py:630
+#: kernel_manager.py:634
 msgid "Process started, please wait ..."
 msgstr "प्रक्रिया शुरू हो गई है, प्रतीक्षा करें ..."
 
-#: kernel_manager.py:632
+#: kernel_manager.py:636
 msgid "Completed successfully"
 msgstr "सफलतापूर्वक पूरा"
 
-#: kernel_manager.py:633
+#: kernel_manager.py:637
 msgid "The process is complete. You can close the window."
 msgstr "प्रक्रिया पूरी हो गई है, आप विंडो को बंद कर सकते हैं."
 
-#: kernel_manager.py:663
+#: kernel_manager.py:667
 msgid "Close"
 msgstr "बंद करे"
 
-#: kernel_manager.py:664
+#: kernel_manager.py:668
 msgid "Close a window"
 msgstr "एक खिड़की बंद करो"
 
-#: mod/notifications.py:40
+#: mod/notifications.py:37
 msgid "Update completed"
 msgstr "अपडेट पूर्ण हो गया"
 
-#: mod/notifications.py:41
+#: mod/notifications.py:38
 msgid ""
 "Distribution update completed. For correct operation of all updated "
 "libraries, it is recommended to restart the computer."
@@ -649,11 +663,11 @@ msgstr ""
 "वितरण अद्यतन पूरा हुआ। सभी अद्यतन पुस्तकालयों के सही संचालन के लिए, कंप्यूटर को पुनरारंभ "
 "करने की अनुशंसा की जाती है।"
 
-#: mod/notifications.py:48
+#: mod/notifications.py:45
 msgid "Update started"
 msgstr "अपडेट शुरू हुआ"
 
-#: mod/notifications.py:49
+#: mod/notifications.py:46
 msgid ""
 "Software update in progress. This may take some time. When the update is "
 "complete, you will receive a notification and the taskbar icon will stop "
@@ -662,52 +676,52 @@ msgstr ""
 "सॉफ़्टवेयर अद्यतन प्रगति पर है। इसमें कुछ समय लग सकता है। अपडेट पूर्ण होने पर, आपको एक "
 "सूचना प्राप्त होगी और टास्कबार आइकन एनिमेट करना बंद कर देगा।"
 
-#: mod/notifications.py:56
+#: mod/notifications.py:53
 msgid "Button disabled"
 msgstr "बटन अक्षम"
 
-#: mod/notifications.py:57
+#: mod/notifications.py:54
 msgid ""
 "The Update button for new packages will no longer appear in update messages."
 msgstr "नए पैकेज के लिए अपडेट बटन अब अपडेट संदेशों में दिखाई नहीं देगा।"
 
-#: mod/notifications.py:64
+#: mod/notifications.py:61
 msgid "Button enabled"
 msgstr "बटन सक्षम"
 
-#: mod/notifications.py:65
+#: mod/notifications.py:62
 msgid "Messages will now show a button to update rpm packages."
 msgstr "संदेश अब rpm संकुल को अद्यतन करने के लिए एक बटन दिखाएगा।"
 
-#: mod/notifications.py:72
+#: mod/notifications.py:69
 msgid "Autostart directory:"
 msgstr "ऑटो-स्टार्ट निर्देशिका:"
 
-#: mod/notifications.py:81
+#: mod/notifications.py:78
 msgid "A new version of the kernel is available: "
 msgstr "एक नया कर्नेल संस्करण उपलब्ध है: "
 
-#: mod/notifications.py:88
+#: mod/notifications.py:85
 msgid "Updating packages"
 msgstr "संकुल अद्यतन कर रहा है"
 
-#: mod/notifications.py:89
+#: mod/notifications.py:86
 msgid "Update RPM packages"
 msgstr "RPM पैकेज अपडेट करें"
 
-#: mod/notifications.py:99
+#: mod/notifications.py:90
 msgid "Packages to update: "
 msgstr "अद्यतन करने के लिए पैकेज: "
 
-#: mod/notifications.py:100
+#: mod/notifications.py:91
 msgid "Newly installed: "
 msgstr "नव स्थापित: "
 
-#: mod/notifications.py:101
+#: mod/notifications.py:92
 msgid "For removing: "
 msgstr "हटाने के लिए: "
 
-#: mod/notifications.py:102
+#: mod/notifications.py:93
 msgid "Will not be updated: "
 msgstr "अपडेट नहीं होगा: "
 
