@@ -1,6 +1,6 @@
 Name: kernel-manager
 Version: 1.10
-Release: alt2
+Release: alt3
 
 License: LGPL-3.0-only
 Group: System/Base
@@ -58,6 +58,12 @@ python3 setup.py \
 /opt/kernel-manager
 
 %changelog
+* Sat Mar 04 2023 Evgeny Chuck <koi@altlinux.org> 1.10-alt3
+- Added the ability to change the kernel to a real-time type
+- Changed search expression for new kernels and version comparisons
+- The service no longer checks for access to the local repository
+- Update service starts via indicator
+
 * Sat Dec 03 2022 Evgeny Chuck <koi@altlinux.org> 1.10-alt2
 - Disable dbus notification replacement feature
 
