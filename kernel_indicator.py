@@ -7,6 +7,8 @@ import re
 import sys
 import gettext
 import json
+from datetime import date
+from datetime import datetime
 from threading import Thread
 from mod.shell import Shell
 from mod.create_desktop import autostart_desktop
@@ -193,13 +195,21 @@ def wait_service():
         path_config = mod.default.config_file()
         config = mod.default.load(path_config)
         sleep(config['time'])
-        Shell().run(f'pkexec kernel_service.py -p "{path_config}"')
 
-        config = mod.default.load(path_config)
-        if not config['version'] and not config['pkg']: exit()
-        elif not config['software'] and not config['kernel']: exit()
-        elif not config['software'] and not config['version']: exit()
-        elif not config['kernel'] and not config['pkg']: exit()
+        current = date.today()
+        update_date = datetime.strptime(config['update_date'], '%Y-%m-%d').date()
+        difference = (current - update_date).days
+
+        if difference >= config['days']:
+            Shell().run(f'pkexec kernel_service.py -p "{path_config}"')
+
+            config = mod.default.load(path_config)
+            if not config['version'] and not config['pkg']: exit()
+            elif not config['software'] and not config['kernel']: exit()
+            elif not config['software'] and not config['version']: exit()
+            elif not config['kernel'] and not config['pkg']: exit()
+        else:
+            sys.exit()
 
 if __name__ == '__main__':
     mod.default.config_check()

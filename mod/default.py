@@ -3,6 +3,7 @@
 #
 import json
 from pathlib import Path
+from datetime import date
 
 def config_dir():
     """Путь к конфигу индикатора"""
@@ -23,13 +24,14 @@ config = {
     'pkg': False,
     'version': False,
     'upbutton': True,
-    'home': config_file()
+    'home': config_file(),
+    'update_date': date.today()
         }
 
 def save(path, value):
     """Сохранение файла"""
     with open(path, 'w') as f:
-        json.dump(value, f)
+        json.dump(value, f, default=str)
 
 def load(path, obj=None):
     """Чтение из файла"""
@@ -43,5 +45,6 @@ def config_check():
     _dir = config_dir()
 
     if not Path(_config).exists():
-        Path(_dir).mkdir(parents=True)
+        Path(_dir).mkdir(parents=True, exist_ok=True)
         save(_config, config)
+
