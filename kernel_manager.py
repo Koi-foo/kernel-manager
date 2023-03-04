@@ -117,12 +117,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def search_kernel(self):
         """Поиск ядра для обновления"""
-        flavour = re.search(r'.*-(.+-.+)-|.*-(.+)-', release()).group(1)
+        flavour = re.search(r'[.]\d+-(.+)-alt', release()).group(1)
         real_number = release().split('-')[0]
         new_version = real_number.split('.')
         search_version = Shell().run(f"apt-cache pkgnames kernel-image-{flavour}#")
         for line in search_version.splitlines():
-            act = re.search(r':(.+)-alt' ,line).group(1).split(".")
+            act = re.search(r'([\d.]+)-alt' ,line).group(1).split(".")
             if int(act[0]) > int(new_version[0]): new_version[0] = act[0]
             if int(act[1]) > int(new_version[1]): new_version[1] = act[1]
             if int(act[2]) > int(new_version[2]): new_version[2] = act[2]
