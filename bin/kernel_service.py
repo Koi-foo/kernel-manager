@@ -21,19 +21,9 @@ args = parser.parse_args()
 
 def update_cache():
     """Обновление кэша"""
-    try:
-        current = date.today()
-        permission = date.fromtimestamp(path.getmtime(LOCK))
-        difference = (current - permission).days
-    except PermissionError:
-        sys.exit(f'no access to file {LOCK}')
-
-    if difference >= CONFIG['days']:
-        shell('apt-get update')
-    else:
-        version_kernel()
-        save_settings()
-        sys.exit()
+    shell('apt-get update')
+    current = date.today()
+    CONFIG['update_date'] = current
 
 def update_packages():
     """Список пакетов для обновления"""
@@ -71,7 +61,7 @@ def shell(command):
 def save_settings():
     """Сохранение новых настроек"""
     with open(config_path, 'w') as f:
-        json.dump(CONFIG, f)
+        json.dump(CONFIG, f, default=str)
     chmod(config_path, 0o666)
 
 def main():
@@ -89,13 +79,13 @@ def main():
 
 def version_kernel():
     """Проверка версии ядра"""
-    flavour = search(r'.*-(.+-.+)-', release()).group(1)
+    flavour = search(r'[.]\d+-(.+)-alt', release()).group(1)
     current = release().split('-')[0]
     new = current.split('.')
     search_version = shell(f"apt-cache pkgnames kernel-image-{flavour}#")
 
     for line in search_version.splitlines():
-        act = search(r':(.+)-alt' ,line).group(1).split(".")
+        act = search(r'([\d.]+)-alt' ,line).group(1).split(".")
         if int(act[0]) > int(new[0]): new[0] = act[0]
         if int(act[1]) > int(new[1]): new[1] = act[1]
         if int(act[2]) > int(new[2]): new[2] = act[2]
@@ -132,7 +122,6 @@ def load(path, obj=None):
 if __name__ == '__main__':
     config_path = args.path[0]
     CONFIG = load(config_path)
-    LOCK = '/var/lib/apt/lists/lock'
 
     if type(CONFIG) is not dict:
         sys.exit('Invalid file format')
